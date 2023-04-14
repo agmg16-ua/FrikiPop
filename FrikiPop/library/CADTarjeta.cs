@@ -7,33 +7,33 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class CADPais
+    class CADTarjeta
     {
         private string constring;
 
-        public CADPais()
+        public CADTarjeta()
         {
             constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
         }
 
         //Crea el pais pasado como parametro
-        public bool createPais(ENPais pais)
+        public bool createTarjeta(ENTarjeta tarjeta)
         {
 
         }
 
         //Lee el pais pasado como parametro
-        public bool readPais(ENPais pais)
+        public bool readTarjeta(ENTarjeta tarjeta)
         {
 
         }
         //Actualiza el pais actual por el pasado por parametro
-        public bool updatePais(ENPais pais)
+        public bool updateTarjeta(ENTarjeta tarjeta)
         {
 
         }
         //Borra el pais pasado como parametro si existe
-        public bool deletePais(ENPais pais)
+        public bool deleteTarjeta(ENTarjeta tarjeta)
         {
 
         }
