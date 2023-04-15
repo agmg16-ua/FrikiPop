@@ -11,7 +11,7 @@ namespace library
         private int _num;
         private int _diaFecha;
         private int _mesFecha;
-        private int _cvc;
+        private int _cvv;
 
         public int num
         {
@@ -44,20 +44,60 @@ namespace library
             }
             set
             {
-                __mesFecha = value;
+                _mesFecha = value;
             }
         }
 
-        public int cvc
+        public int cvv
         {
             get
             {
-                return _cvc;
+                return _cvv;
             }
             set
             {
-                _cvc = value;
+                _cvv = value;
             }
+        }
+
+        public ENTarjeta()
+        {
+            num = 0;
+            diaFecha = 0;
+            mesFecha = 0;
+            cvv = 0;
+        }
+
+        public ENTarjeta(int num, int diaFecha, int mesFecha, int cvv)
+        {
+            this.num = num;
+            this.diaFecha = diaFecha;
+            this.mesFecha = mesFecha;
+            this.cvv = cvv;
+        }
+
+        public bool createTarjeta()
+        {
+            CADTarjeta tarjeta = new CADTarjeta();
+            return tarjeta.createTarjeta();
+        }
+
+        public bool readTarjeta()
+        {
+            CADTarjeta tarjeta = new CADTarjeta();
+            return tarjeta.readTarjeta();
+        }
+
+        public bool updateTarjeta()
+        {
+            CADTarjeta tarjeta = new CADTarjeta();
+            return tarjeta.updateTarjeta();
+        }
+
+        public bool deleteTarjeta()
+        {
+            CADTarjeta tarjeta = new CADTarjeta();
+            return tarjeta.deleteTarjeta();
         }
 
 
