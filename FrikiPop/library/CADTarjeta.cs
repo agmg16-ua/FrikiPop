@@ -13,7 +13,7 @@ namespace library
 
         public CADTarjeta()
         {
-            constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
 
         //Crea el pais pasado como parametro
