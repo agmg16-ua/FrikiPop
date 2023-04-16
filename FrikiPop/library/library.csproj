@@ -50,6 +50,7 @@
     <Compile Include="ENLocalidad.cs" />
     <Compile Include="ENPais.cs" />
     <Compile Include="ENUsuarios.cs" />
+    <Compile Include="ENCarrito.cs" />
     <Compile Include="CADUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
