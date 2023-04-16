@@ -12,6 +12,7 @@ namespace library
         private int _diaFecha;
         private int _mesFecha;
         private int _cvv;
+        private string _usuario;
 
         public int num
         {
@@ -60,6 +61,17 @@ namespace library
             }
         }
 
+        public string usuario
+        {
+            get
+            {
+                return _usuario;
+            }
+            set
+            {
+                _usuario = value;
+            }
+        }
         public ENTarjeta()
         {
             num = 0;
