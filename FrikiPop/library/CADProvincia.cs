@@ -6,30 +6,28 @@ using System.Threading.Tasks;
 using System.Configuration;
 
 namespace library {
-    class CADLocalidad {
+    class CADProvincia {
 
         private String constring;
-        
-        public CADLocalidad() {
+
+        public CADProvincia() {
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
 
-        public bool createLocalidad(ENLocalidad localidad) {
+        public bool createProvincia(ENProvincia provincia) {
 
         }
 
-        public bool deleteLocalidad(ENLocalidad localidad) {
+        public bool deleteProvincia(ENProvincia provincia) {
 
         }
 
-        public bool readLocalidad(ENLocalidad localidad) {
+        public bool readProvincia(ENProvincia provincia) {
 
         }
 
-        public bool updateLocalidad(ENLocalidad localidad) {
+        public bool updateProvincia(ENProvincia provincia) {
 
         }
-
-
     }
 }

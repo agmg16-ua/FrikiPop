@@ -9,21 +9,13 @@ namespace library {
 
         private string _localidad;
 
-        private string _pais;
-
         public string localidad {
             get { return _localidad; }
             set { _localidad = value; }
         }
 
-        public string pais {
-            get { return _pais; }
-            set { _pais = value; }
-        }
-
         public ENLocalidad() {
             localidad = null;
-            pais = null;
         }
 
         public bool createLocalidad() {
