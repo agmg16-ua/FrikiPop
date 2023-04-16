@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CADPais.cs" />
+    <Compile Include="CADPedido.cs" />
+    <Compile Include="ENPedido.cs" />
     <Compile Include="ENPais.cs" />
     <Compile Include="ENUsuarios.cs" />
     <Compile Include="CADUsuarios.cs" />
