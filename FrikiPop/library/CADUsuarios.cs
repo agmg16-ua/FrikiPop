@@ -147,7 +147,7 @@ namespace library
         {
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
-            String comando = "DELETE FROM [dbo].[Usuarios] WHERE nif = '" + en.nif + "'";
+            String comando = "DELETE FROM [dbo].[Usuarios] WHERE nick = '" + en.nick + "'";
 
             try
             {
