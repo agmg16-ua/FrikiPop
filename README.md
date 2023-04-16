@@ -66,19 +66,19 @@ no se podrá comprar.
 		Entidad LinCarrito
 		Organización del CSS
 
-	+Ilyas ():
+	+Ilyas Umatolov(X7279165E):
 		Entidad Articulo
 		Funcionalidad Redes Sociales
 
-	+Youness ():
+	+Younes Zahid(51237104G):
 		Entidad Carrito
 		Funcionalidad Publicidad
 	
-	+Aurelio Bonilla():
+	+Aurelio Bonilla(29523160S):
 		Entidad Pedido
 		Entidad TipoArticulo
 
-	+Javier ():
+	+Javier Arribas(05445569C):
 		Entidad LinPedido
 		Funcionalidad Estadísticas
 		
