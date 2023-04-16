@@ -109,7 +109,8 @@ namespace library
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
             String comando = "UPDATE [dbo].[Usuarios] SET edad = " + en.edad + ",nombre = '" + en.nombre + 
-                                        "',apellidos = '" + en.apellidos + "' where nick = '" + en.nick + "'";
+                                        "',apellidos = '" + en.apellidos + "',contrasenya = '" + en.contrasenya +
+                                        "', imagen = '" + en.imagen + "', localidad = '" + en.localidad + "' where nick = '" + en.nick + "'";
 
             try
             {
