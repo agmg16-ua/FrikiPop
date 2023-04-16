@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CADCarrito.cs" />
     <Compile Include="CADPais.cs" />
+    <Compile Include="ENCarrito.cs" />
     <Compile Include="ENPais.cs" />
     <Compile Include="ENUsuarios.cs" />
     <Compile Include="CADUsuarios.cs" />
