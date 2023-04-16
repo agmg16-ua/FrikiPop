@@ -57,10 +57,7 @@ namespace library
             }
             set
             {
-                if(value < 0)
-                {
-                    edadIncorrecta(this, new EdadIncorrectaArgs(value));
-                }
+                _edad = edad;
             }
         }
         public string contrasenya
@@ -105,7 +102,6 @@ namespace library
             contrasenya = null;
             imagen = null;
             localidad = null;
-            carrito = -1;
             edad = 0;
         }
         public ENUsuario(string nif, string nombre,string apellidos,string contrasenya,string localidad, int edad)
@@ -139,18 +135,6 @@ namespace library
             return cADUsuario.deleteUsuario(this);
         }
 
-        //EVENTOS
-        public event EventHandler<EdadIncorrectaArgs> edadIncorrecta;
-    }
-
-    //clases para los EVENTOS
-    public class EdadIncorrectaArgs : EventArgs
-    {
-        public int edad { get; set; }
-        public EdadIncorrectaArgs(int edad)
-        {
-            this.edad = edad;
-        }
     }
 }
 
