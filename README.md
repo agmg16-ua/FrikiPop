@@ -74,11 +74,11 @@ no se podrá comprar.
 		Entidad Carrito
 		Funcionalidad Publicidad
 	
-	+Aurelio Bonilla():
+	+Aurelio Bonilla(29523160S):
 		Entidad Pedido
 		Entidad TipoArticulo
 
-	+Javier ():
+	+Javier Arribas(05445569C):
 		Entidad LinPedido
 		Funcionalidad Estadísticas
 		
