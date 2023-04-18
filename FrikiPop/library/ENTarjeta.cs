@@ -78,40 +78,78 @@ namespace library
             diaFecha = 0;
             mesFecha = 0;
             cvv = 0;
+            usuario = "";
         }
 
-        public ENTarjeta(int num, int diaFecha, int mesFecha, int cvv)
+        public ENTarjeta(int num, int diaFecha, int mesFecha, int cvv, string usuario)
         {
             this.num = num;
             this.diaFecha = diaFecha;
             this.mesFecha = mesFecha;
             this.cvv = cvv;
+            this.usuario = usuario;
         }
 
         public bool createTarjeta()
         {
             CADTarjeta tarjeta = new CADTarjeta();
-            return tarjeta.createTarjeta();
+            bool creado = false;
+            if (!tarjeta.createTarjeta(this))
+            {
+                creado = tarjeta.createTarjeta(this);
+            }
+            return creado;
         }
 
         public bool readTarjeta()
         {
             CADTarjeta tarjeta = new CADTarjeta();
-            return tarjeta.readTarjeta();
+            bool read = tarjeta.readTarjeta(this);
+            return read;
         }
 
         public bool updateTarjeta()
         {
+            ENTarjeta aux = new ENTarjeta();
             CADTarjeta tarjeta = new CADTarjeta();
-            return tarjeta.updateTarjeta();
+
+            bool actualizado = false;
+            aux._usuario = this._usuario;
+            aux._num = this._num;
+            aux._diaFecha = this._diaFecha;
+            aux._mesFecha = this._mesFecha;
+            aux._cvv = this._cvv;
+
+            if (tarjeta.readTarjeta(this))
+            {
+                this._usuario = aux._usuario;
+                this._num = aux._num;
+                this._diaFecha = aux._diaFecha;
+                this._mesFecha = aux._mesFecha;
+                this._cvv = aux._cvv;
+                actualizado = tarjeta.updateTarjeta(this);
+            }
+
+            return actualizado;
         }
 
         public bool deleteTarjeta()
         {
             CADTarjeta tarjeta = new CADTarjeta();
-            return tarjeta.deleteTarjeta();
+            bool leido = false;
+            if (tarjeta.readTarjeta(this))
+            {
+                leido = tarjeta.deleteTarjeta(this);
+            }
+            return leido;
         }
 
+        public void addTarjeta(string usuario)
+        {
+            CADTarjeta tarjeta = new CADTarjeta();
+            ENTarjeta nuevaTarjeta = new ENTarjeta();
+            tarjeta.addTarjetaUsuario(nuevaTarjeta, usuario);
+        }
 
     }
 }

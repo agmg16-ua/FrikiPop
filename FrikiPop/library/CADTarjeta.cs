@@ -16,24 +16,30 @@ namespace library
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
 
-        //Crea el pais pasado como parametro
+        //Crea la tarjeta pasada como parametro
         public bool createTarjeta(ENTarjeta tarjeta)
         {
 
         }
 
-        //Lee el pais pasado como parametro
+        //Lee la tarjeta pasada como parametro
         public bool readTarjeta(ENTarjeta tarjeta)
         {
 
         }
-        //Actualiza el pais actual por el pasado por parametro
+        //Actualiza la tarjeta actual por la pasada por parametro
         public bool updateTarjeta(ENTarjeta tarjeta)
         {
 
         }
-        //Borra el pais pasado como parametro si existe
+        //Borra la tarjeta pasada como parametro si existe
         public bool deleteTarjeta(ENTarjeta tarjeta)
+        {
+
+        }
+        
+        //Añade una tarjeta pasado como parámetro a un usuario
+        public bool addTarjetaUsuario(ENTarjeta tarjeta, string usuario)
         {
 
         }
