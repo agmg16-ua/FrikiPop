@@ -11,8 +11,10 @@ namespace library
         private string _codigo;
         private string _nombre;
         private string _descripcion;
-        private float _precio;
-        private string _imagen;
+        private double _precio;
+        private string _urlImagen;
+        private ENTipoArticulo _tipoArticulo;
+        private ENUsuario _usuario;
 
         public string codigo
         {
@@ -50,7 +52,7 @@ namespace library
             }
         }
 
-        public float precio
+        public double precio
         {
             get 
             {
@@ -62,16 +64,88 @@ namespace library
             }
         }
 
-        public string imagen
+        public string urlImagen
         {
             get
             {
-                return _imagen;
+                return _urlImagen;
             }
             set
             {
-                _imagen = value;
+                _urlImagen = value;
             }
+        }
+
+        public ENTipoArticulo tipoArticulo
+        {
+            get
+            {
+                return _tipoArticulo;
+            }
+            set
+            {
+                _tipoArticulo = value;
+            }
+        }
+
+        public ENUsuario usuario
+        {
+            get
+            {
+                return _usuario;
+            }
+            set
+            {
+                _usuario = value;
+            }
+        }
+
+        public ENArticulo()
+        {
+            codigo = null;
+            nombre = null;
+            descripcion = null;
+            precio = 0.0;
+            urlImagen = null;
+            tipoArticulo = null;
+            usuario = null;
+
+        }
+
+        public bool createArticulo()
+        {
+            CADArticulo articulo = new CADArticulo();
+            if (!articulo.readArticulo(this))
+            {
+                return articulo.createArticulo(this);
+            }
+            return false;
+        }
+
+        public bool deleteArticulo()
+        {
+            CADArticulo articulo = new CADArticulo();
+            if (articulo.readArticulo(this))
+            {
+                return articulo.deleteArticulo(this);
+            }
+            return false;
+        }
+
+        public bool readArticulo()
+        {
+            CADArticulo articulo = new CADArticulo();
+            return articulo.readArticulo(this);
+        }
+
+        public bool updateArticulo()
+        {
+            CADArticulo articulo = new CADArticulo();
+            if (articulo.readArticulo(this))
+            {
+                return articulo.updateArticulo(this);
+            }
+            return false;
         }
     }
 }
