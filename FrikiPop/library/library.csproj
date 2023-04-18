@@ -43,9 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CADCarrito.cs" />
+    <Compile Include="CADLineaCarrito.cs" />
     <Compile Include="CADPais.cs" />
     <Compile Include="CADLocalidad.cs" />
     <Compile Include="CADProvincia.cs" />
+    <Compile Include="ENLineaCarrito.cs" />
     <Compile Include="ENProvincia.cs" />
     <Compile Include="ENLocalidad.cs" />
     <Compile Include="ENPais.cs" />
