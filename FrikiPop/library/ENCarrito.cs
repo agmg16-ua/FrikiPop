@@ -15,7 +15,6 @@ namespace library{
 
 		private string estadoCarrito_;
 
-
 		public int numeroCarrito{
 			get{ return numeroCarrito_;}
 			set{ numeroCarrito_=value;}
