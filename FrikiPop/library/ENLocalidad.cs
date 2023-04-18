@@ -9,12 +9,28 @@ namespace library {
 
         private string _localidad;
 
+        private string _provincia;
+
+        private string _pais;
+
         public string localidad {
             get { return _localidad; }
             set { _localidad = value; }
         }
 
+        public string provincia {
+            get { return _provincia; }
+            set { _provincia = value; }
+        }
+
+        public string pais {
+            get { return _pais; }
+            set { _pais = value; }
+        }
+
         public ENLocalidad() {
+            localidad = null;
+            provincia = null;
             localidad = null;
         }
 
@@ -40,8 +56,18 @@ namespace library {
         }
 
         public bool updateLocalidad() {
+            ENLocalidad aux = new ENLocalidad();
             CADLocalidad localidad = new CADLocalidad();
-            if(!localidad.readLocalidad(this)) {
+
+            aux.localidad = this.localidad;
+            aux.provincia = this.provincia;
+            aux.pais = this.pais;
+
+            if(localidad.readLocalidad(this)) {
+                this.localidad = aux.localidad;
+                this.provincia = aux.provincia;
+                this.pais = aux.pais;
+
                 return localidad.updateLocalidad(this);
             }
             return false;
