@@ -42,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CADArticulo.cs" />
     <Compile Include="CADPais.cs" />
     <Compile Include="CADLocalidad.cs" />
     <Compile Include="CADProvincia.cs" />
+    <Compile Include="ENArticulo.cs" />
     <Compile Include="ENProvincia.cs" />
     <Compile Include="ENLocalidad.cs" />
     <Compile Include="ENPais.cs" />
