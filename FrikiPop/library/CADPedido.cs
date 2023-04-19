@@ -20,7 +20,7 @@ namespace library {
         public bool readPedido(ENPedido en) {
 
         }
-        public int obtenerId() {
+        public int getId() {
 
         }
         
@@ -34,7 +34,7 @@ namespace library {
         public bool deletePedido(ENPedido en) {
 
         }
-        public DataSet listarPedidos(string en) {
+        public DataSet listPedidos(string en) {
 
         }
     }

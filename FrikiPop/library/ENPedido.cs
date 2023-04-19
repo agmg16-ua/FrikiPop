@@ -50,14 +50,14 @@ namespace library {
             CADPedido pedido = new CADPedido();
             return pedido.deletePedido(this);
         }
-        public static DataSet listarPedidos(string mail) {
+        public static DataSet listPedidos(string mail) {
             CADPedido pedidos = new CADPedido();
-            return pedidos.listarPedidos(mail);
+            return pedidos.listPedidos(mail);
         }
 
-        internal void obtenerId() {
+        internal void getId() {
             CADPedido pedido = new CADPedido();
-            this.idPedido = pedido.obtenerId();
+            this.idPedido = pedido.getId();
         }
 
     }
