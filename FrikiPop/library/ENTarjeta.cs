@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -157,6 +158,13 @@ namespace library
             CADTarjeta tarjeta = new CADTarjeta();
             ENTarjeta nuevaTarjeta = new ENTarjeta();
             tarjeta.addTarjetaUsuario(nuevaTarjeta, usuario);
+        }
+
+        //lista las tarjetas del usuario pasado como parámetro
+        public static DataSet listarTarjetas(string usuario)
+        {
+            CADTarjeta tarjeta = new CADTarjeta();
+            return tarjeta.listarTarjetas(usuario);
         }
 
     }
