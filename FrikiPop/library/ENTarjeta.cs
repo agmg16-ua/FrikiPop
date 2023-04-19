@@ -72,6 +72,8 @@ namespace library
                 _usuario = value;
             }
         }
+
+        //Constructor por defecto
         public ENTarjeta()
         {
             num = 0;
@@ -81,6 +83,7 @@ namespace library
             usuario = "";
         }
 
+        //constructor de copia
         public ENTarjeta(int num, int diaFecha, int mesFecha, int cvv, string usuario)
         {
             this.num = num;
@@ -90,6 +93,7 @@ namespace library
             this.usuario = usuario;
         }
 
+        //crea la tarjeta
         public bool createTarjeta()
         {
             CADTarjeta tarjeta = new CADTarjeta();
@@ -101,6 +105,7 @@ namespace library
             return creado;
         }
 
+        //lee la tarjeta
         public bool readTarjeta()
         {
             CADTarjeta tarjeta = new CADTarjeta();
@@ -108,6 +113,7 @@ namespace library
             return read;
         }
 
+        //actualiza la tarjeta
         public bool updateTarjeta()
         {
             ENTarjeta aux = new ENTarjeta();
@@ -133,6 +139,7 @@ namespace library
             return actualizado;
         }
 
+        //borra la tarjeta
         public bool deleteTarjeta()
         {
             CADTarjeta tarjeta = new CADTarjeta();
@@ -144,6 +151,7 @@ namespace library
             return leido;
         }
 
+        //añade una tarjeta al usuario pasado como parámetro
         public void addTarjeta(string usuario)
         {
             CADTarjeta tarjeta = new CADTarjeta();

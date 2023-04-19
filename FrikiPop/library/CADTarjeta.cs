@@ -19,27 +19,27 @@ namespace library
         //Crea la tarjeta pasada como parametro
         public bool createTarjeta(ENTarjeta tarjeta)
         {
-
+            return true;
         }
 
         //Lee la tarjeta pasada como parametro
         public bool readTarjeta(ENTarjeta tarjeta)
         {
-
+            return true;
         }
         //Actualiza la tarjeta actual por la pasada por parametro
         public bool updateTarjeta(ENTarjeta tarjeta)
         {
-
+            return true;
         }
         //Borra la tarjeta pasada como parametro si existe
         public bool deleteTarjeta(ENTarjeta tarjeta)
         {
-
+            return true;
         }
         
         //Añade una tarjeta pasado como parámetro a un usuario
-        public bool addTarjetaUsuario(ENTarjeta tarjeta, string usuario)
+        public void addTarjetaUsuario(ENTarjeta tarjeta, string usuario)
         {
 
         }
