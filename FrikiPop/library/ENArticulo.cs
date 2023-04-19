@@ -147,5 +147,15 @@ namespace library
             }
             return false;
         }
+
+        public bool usuarioArticulo()
+        {
+            CADArticulo articulo = new CADArticulo();
+            if (articulo.readArticulo(this))
+            {
+                return articulo.usuarioArticulo(this);
+            }
+            return false;
+        }
     }
 }
