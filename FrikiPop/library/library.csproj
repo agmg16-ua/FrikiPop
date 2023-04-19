@@ -45,10 +45,12 @@
     <Compile Include="CADPais.cs" />
     <Compile Include="CADLocalidad.cs" />
     <Compile Include="CADProvincia.cs" />
+    <Compile Include="CADPublicidad.cs" />
     <Compile Include="ENProvincia.cs" />
     <Compile Include="ENLocalidad.cs" />
     <Compile Include="ENPais.cs" />
-	<Compile Include="CADTarjeta.cs" />
+    <Compile Include="CADTarjeta.cs" />
+    <Compile Include="ENPublicidad.cs" />
     <Compile Include="ENTarjeta.cs" />
     <Compile Include="ENUsuarios.cs" />
     <Compile Include="CADUsuarios.cs" />
