@@ -71,7 +71,6 @@ namespace library
 
                 if (dr.Read())
                 {
-                    en.nick = dr["nick"].ToString();
                     en.nombre = dr["nombre"].ToString();
                     en.apellidos = dr["apellidos"].ToString();
                     en.edad = int.Parse(dr["edad"].ToString());
@@ -81,6 +80,7 @@ namespace library
                     dr.Close();
                     return true;
                 }
+
                 dr.Close();
                 return false;
             }
@@ -179,6 +179,180 @@ namespace library
                 if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
             }
         }
-        
+
+        //Devuelve solo el usuario indicado leído de la BD.
+        public bool filtrarPorLocalidad(ENUsuario en)
+        {
+            bool hay = false;
+            SqlConnection conn = null;
+            // Encapsula todo el acceso a datos dentro del try
+            String comando = "Select * from [dbo].[Usuarios] where localidad = '" + en.localidad + "'";
+            try
+            {
+                conn = new SqlConnection(constring);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(comando, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    en.nick = dr["nick"].ToString();
+                    en.nombre = dr["nombre"].ToString();
+                    en.apellidos = dr["apellidos"].ToString();
+                    en.edad = int.Parse(dr["edad"].ToString());
+                    en.contrasenya = dr["contrasenya"].ToString();
+                    en.imagen = dr["imagen"].ToString();
+                    hay = true;
+                }
+                dr.Close();
+                return hay;
+            }
+            catch (SqlException sqlex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
+            }
+        }
+
+        public bool filtrarPorEdad(ENUsuario en)
+        {
+            bool hay = false;
+            SqlConnection conn = null;
+            // Encapsula todo el acceso a datos dentro del try
+            String comando = "Select * from [dbo].[Usuarios] where edad = '" + en.edad + "'";
+            try
+            {
+                conn = new SqlConnection(constring);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(comando, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    en.nick = dr["nick"].ToString();
+                    en.nombre = dr["nombre"].ToString();
+                    en.apellidos = dr["apellidos"].ToString();
+                    en.contrasenya = dr["contrasenya"].ToString();
+                    en.imagen = dr["imagen"].ToString();
+                    en.localidad = dr["localidad"].ToString();
+                    hay = true;
+                }
+                dr.Close();
+                return hay;
+            }
+            catch (SqlException sqlex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
+            }
+        }
+        public bool filtrarPorNombre(ENUsuario en)
+        {
+            bool hay = false;
+            SqlConnection conn = null;
+            // Encapsula todo el acceso a datos dentro del try
+            String comando = "Select * from [dbo].[Usuarios] where nombre = '" + en.nombre + "'";
+            try
+            {
+                conn = new SqlConnection(constring);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(comando, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    en.nick = dr["nick"].ToString();
+                    en.apellidos = dr["apellidos"].ToString();
+                    en.contrasenya = dr["contrasenya"].ToString();
+                    en.edad = int.Parse(dr["edad"].ToString());
+                    en.imagen = dr["imagen"].ToString();
+                    en.localidad = dr["localidad"].ToString();
+                    hay = true;
+                }
+                dr.Close();
+                return hay;
+            }
+            catch (SqlException sqlex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
+            }
+        }
+        public bool filtrarPorApellidos(ENUsuario en)
+        {
+            bool hay = false;
+            SqlConnection conn = null;
+            // Encapsula todo el acceso a datos dentro del try
+            String comando = "Select * from [dbo].[Usuarios] where apellidos like '" + en.apellidos + "%'";
+            try
+            {
+                conn = new SqlConnection(constring);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(comando, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    en.nick = dr["nick"].ToString();
+                    en.nombre = dr["nombre"].ToString();
+                    en.apellidos = dr["apellidos"].ToString();
+                    en.contrasenya = dr["contrasenya"].ToString();
+                    en.edad = int.Parse(dr["edad"].ToString());
+                    en.imagen = dr["imagen"].ToString();
+                    en.localidad = dr["localidad"].ToString();
+                    hay = true;
+                }
+                dr.Close();
+                return hay;
+            }
+            catch (SqlException sqlex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
+            }
+        }
     }
 }

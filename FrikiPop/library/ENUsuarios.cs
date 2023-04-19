@@ -114,6 +114,8 @@ namespace library
             this.localidad = localidad;
             this.edad = edad;
         }
+
+        //Comandos CRUD
         public bool createUsuario()
         {
             CADUsuario cADUsuario = new CADUsuario();
@@ -135,6 +137,27 @@ namespace library
             return cADUsuario.deleteUsuario(this);
         }
 
+        //FILTROS DE LOS USUARIOS SEGUN SUS ATRIBUTOS(No filtro por contraseña porque no tiene sentido, se supone que es privada para nosotros)
+        public bool filtrarPorLocalidad()
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.filtrarPorLocalidad(this);
+        }
+        public bool filtrarPorNombre()
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.filtrarPorNombre(this);
+        }
+        public bool filtrarPorApellidos()
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.filtrarPorApellidos(this);
+        }
+        public bool filtrarPorEdad()
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.filtrarPorEdad(this);
+        }
     }
 }
 
