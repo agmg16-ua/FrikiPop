@@ -33,6 +33,11 @@ namespace library{
 			estadoCarrito=null;
 			usuario=null;
 		}
+		public ENCarrito(string usuario_, int numeroCarrito_, string estadoCarrito_) {
+			usuario = usuario_;
+			numeroCarrito = numeroCarrito_;
+			estadoCarrito = estadoCarrito_;
+        }
 		
 		public bool createCarrito(){
 			bool creado;
@@ -48,6 +53,13 @@ namespace library{
 			leido = carri.readCarrito(this);
 			return leido;
 		}
+
+		public bool updateCarrito() {
+			bool actualizado;
+			CADCarrito carri = new CADCarrito();
+			actualizado = carri.updateCarrito(this);
+			return actualizado;
+        }
 
 		public DataTable unirCarrito(){
 
@@ -65,14 +77,6 @@ namespace library{
 			return realizado;
 
 		}
-
-		public void getId(){
-			int id;
-			CADCarrito carri = new CADCarrito();
-			id = carri.getId();
-			this.numeroCarrito_=id;
-		}
-
 		public bool vaciarCarrito(){
 			bool vaciado;
 			CADCarrito carri = new CADCarrito();

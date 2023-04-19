@@ -20,13 +20,14 @@ namespace library
 		public bool createCarrito(ENCarrito carrito){
 			return false;
 		}
+
+		public bool updateCarrito(ENCarrito carrito) {
+			return false;
+        }
 		public DataTable unirCarrito(ENCarrito carrito){
 			return new DataTable();
 		}
 
-		public int getId(){
-			return 1;
-		}
 		public bool borrarArticulo(ENCarrito carrito, int linea){
 			return false;
 		}
