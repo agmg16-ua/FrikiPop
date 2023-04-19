@@ -25,9 +25,9 @@ namespace library
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
 
-            String comando = "Insert into [dbo].[Usuarios] (nick,nombre,apellidos,edad,contrasenya,imagen,localidad)" +
+            String comando = "Insert into [dbo].[Usuarios] (nick_name,nombre,apellidos,edad,contrasenya,url_imagen,admin)" +
                 "                            VALUES('" + en.nick + "','" + en.nombre + "','" + en.apellidos + "'," + en.edad +
-                                                    ",'" + en.contrasenya + "','" + en.imagen + "','" + en.localidad + ")";
+                                                    ",'" + en.contrasenya + "','" + en.imagen + "'," + en.admin + ")";
             try
             {
                 conn = new SqlConnection(constring);
@@ -76,7 +76,7 @@ namespace library
                     en.edad = int.Parse(dr["edad"].ToString());
                     en.contrasenya = dr["contrasenya"].ToString();
                     en.imagen = dr["imagen"].ToString();
-                    en.localidad = dr["localidad"].ToString();
+                    en.admin = int.Parse(dr["admin"].ToString());
                     dr.Close();
                     return true;
                 }
@@ -110,7 +110,7 @@ namespace library
             // Encapsula todo el acceso a datos dentro del try
             String comando = "UPDATE [dbo].[Usuarios] SET edad = " + en.edad + ",nombre = '" + en.nombre + 
                                         "',apellidos = '" + en.apellidos + "',contrasenya = '" + en.contrasenya +
-                                        "', imagen = '" + en.imagen + "', localidad = '" + en.localidad + "' where nick = '" + en.nick + "'";
+                                        "', url_imagen = '" + en.imagen + "', admin = " + en.admin + " where nick_name = '" + en.nick + "'";
 
             try
             {
@@ -148,7 +148,7 @@ namespace library
         {
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
-            String comando = "DELETE FROM [dbo].[Usuarios] WHERE nick = '" + en.nick + "'";
+            String comando = "DELETE FROM [dbo].[Usuarios] WHERE nick_name = '" + en.nick + "'";
 
             try
             {
@@ -180,6 +180,7 @@ namespace library
             }
         }
 
+        /*
         //Devuelve solo el usuario indicado leído de la BD.
         public bool filtrarPorLocalidad(ENUsuario en)
         {
@@ -196,12 +197,12 @@ namespace library
 
                 if (dr.Read())
                 {
-                    en.nick = dr["nick"].ToString();
+                    en.nick = dr["nick_name"].ToString();
                     en.nombre = dr["nombre"].ToString();
                     en.apellidos = dr["apellidos"].ToString();
                     en.edad = int.Parse(dr["edad"].ToString());
                     en.contrasenya = dr["contrasenya"].ToString();
-                    en.imagen = dr["imagen"].ToString();
+                    en.imagen = dr["utl_imagen"].ToString();
                     hay = true;
                 }
                 dr.Close();
@@ -223,7 +224,7 @@ namespace library
                 if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
             }
         }
-
+        */
         public bool filtrarPorEdad(ENUsuario en)
         {
             bool hay = false;
@@ -239,12 +240,12 @@ namespace library
 
                 if (dr.Read())
                 {
-                    en.nick = dr["nick"].ToString();
+                    en.nick = dr["nick_name"].ToString();
                     en.nombre = dr["nombre"].ToString();
                     en.apellidos = dr["apellidos"].ToString();
                     en.contrasenya = dr["contrasenya"].ToString();
-                    en.imagen = dr["imagen"].ToString();
-                    en.localidad = dr["localidad"].ToString();
+                    en.imagen = dr["utl_imagen"].ToString();
+                    en.admin = int.Parse(dr["admin"].ToString());
                     hay = true;
                 }
                 dr.Close();
@@ -282,12 +283,12 @@ namespace library
 
                 if (dr.Read())
                 {
-                    en.nick = dr["nick"].ToString();
+                    en.nick = dr["nick_name"].ToString();
                     en.apellidos = dr["apellidos"].ToString();
                     en.contrasenya = dr["contrasenya"].ToString();
+                    en.imagen = dr["utl_imagen"].ToString();
+                    en.admin = int.Parse(dr["admin"].ToString());
                     en.edad = int.Parse(dr["edad"].ToString());
-                    en.imagen = dr["imagen"].ToString();
-                    en.localidad = dr["localidad"].ToString();
                     hay = true;
                 }
                 dr.Close();
@@ -325,13 +326,13 @@ namespace library
 
                 if (dr.Read())
                 {
-                    en.nick = dr["nick"].ToString();
+                    en.nick = dr["nick_name"].ToString();
                     en.nombre = dr["nombre"].ToString();
                     en.apellidos = dr["apellidos"].ToString();
                     en.contrasenya = dr["contrasenya"].ToString();
+                    en.imagen = dr["utl_imagen"].ToString();
+                    en.admin = int.Parse(dr["admin"].ToString());
                     en.edad = int.Parse(dr["edad"].ToString());
-                    en.imagen = dr["imagen"].ToString();
-                    en.localidad = dr["localidad"].ToString();
                     hay = true;
                 }
                 dr.Close();

@@ -14,7 +14,7 @@ namespace library
         private int _edad;
         private string _contrasenya;
         private string _imagen;
-        private string _localidad;
+        private int _admin;
 
         public string nick
         {
@@ -82,15 +82,15 @@ namespace library
                 _imagen = value;
             }
         }
-        public string localidad
+        public int admin
         {
             get
             {
-                return _localidad;
+                return _admin;
             }
             set
             {
-                _localidad = value;
+                _admin = value;
             }
         }
         
@@ -104,9 +104,9 @@ namespace library
             localidad = null;
             edad = 0;
         }
-        public ENUsuario(string nif, string nombre,string apellidos,string contrasenya,string localidad, int edad)
+        public ENUsuario(string nick, string nombre,string apellidos,string contrasenya,string localidad, int edad)
         {
-            this.nick = nif;
+            this.nick = nick;
             this.nombre = nombre;
             this.apellidos = apellidos;
             this.contrasenya = contrasenya;
