@@ -8,25 +8,25 @@ using System.Data;
 
 namespace library {
     class ENPedido {
-        private int idPedido;
-        private string user;
-        private string date;
-        private string address;
-        public int _idPedido {
-            get { return idPedido; }
-            set { idPedido = value; }
+        private int _idPedido;
+        private string _user;
+        private string _date;
+        private string _address;
+        public int idPedido {
+            get { return _idPedido; }
+            set { _idPedido = value; }
         }
-        public string _user {
-            get { return user; }
-            set { user = value; }
+        public string user {
+            get { return _user; }
+            set { _user = value; }
         }
-        public string _date {
-            get { return date; }
-            set { date = value; }
+        public string date {
+            get { return _date; }
+            set { _date = value; }
         }
-        public string _address {
-            get { return address; }
-            set { address = value; }
+        public string address {
+            get { return _address; }
+            set { _address = value; }
         }
         public DataTable joinPedido() {
             CADPedido pedido = new CADPedido();
