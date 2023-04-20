@@ -17,19 +17,19 @@ namespace library {
         }
 
         public bool createTipoArticulo(ENTipoArticulo tipoArticulo) {
-
+            return true;
         }
 
         public bool deleteTipoArticulo(ENTipoArticulo tipoArticulo) {
-
+            return true;
         }
 
         public bool readTipoArticulo(ENTipoArticulo tipoArticulo) {
-
+            return true;
         }
 
         public bool updateTipoArticulo(ENTipoArticulo tipoArticulo) {
-
+            return true;
         }
     }
 }

@@ -12,30 +12,31 @@ namespace library {
     class CADPedido {
         private string constring;
         public CADPedido() {
-            constring = ConfigurationManager.ConnectionStrings["Database1"].ToString()
+            constring = ConfigurationManager.ConnectionStrings["Database1"].ToString();
         }
         public bool createPedido(ENPedido en) {
             SqlConnection connection = new SqlConnection(constring);
+            return true;
         }
         public bool readPedido(ENPedido en) {
-
+            return true;
         }
         public int getId() {
+            return 1;
 
         }
         
-        public DataTable joinPedido(ENPedido en) {
-
-        }
+       /*public DataTable joinPedido(ENPedido en) {
+       }*/
         public bool devolucionPedido(ENPedido en) {
-
+            return true;
         }
 
         public bool deletePedido(ENPedido en) {
-
+            return true;
         }
-        public DataSet listPedidos(string en) {
-
-        }
+        /*public DataSet listPedidos(string en) {
+            
+        }*/
     }
 }

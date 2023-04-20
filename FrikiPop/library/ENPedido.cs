@@ -28,10 +28,10 @@ namespace library {
             get { return _address; }
             set { _address = value; }
         }
-        public DataTable joinPedido() {
+       /* public DataTable joinPedido() {
             CADPedido pedido = new CADPedido();
             return pedido.joinPedido(this);
-        }
+        }*/
 
         public ENPedido() {
             idPedido = 0;
@@ -50,10 +50,10 @@ namespace library {
             CADPedido pedido = new CADPedido();
             return pedido.deletePedido(this);
         }
-        public static DataSet listPedidos(string mail) {
+       /* public static DataSet listPedidos(string mail) {
             CADPedido pedidos = new CADPedido();
             return pedidos.listPedidos(mail);
-        }
+        }*/
 
         internal void getId() {
             CADPedido pedido = new CADPedido();
