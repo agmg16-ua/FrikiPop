@@ -111,17 +111,17 @@ namespace library
 
             bool actualizado = false;
 
-            aux._id = this.id;
-            aux._imagen = this.imagen;
-            aux._empresa = this.empresa;
-            aux._url_empresa = this.url_empresa;
+            aux.id = this.id;
+            aux.imagen = this.imagen;
+            aux.empresa = this.empresa;
+            aux.url_empresa = this.url_empresa;
 
             if (publicidad.readPublicidad(this))
             {
-                this._id = aux.id;
-                this._imagen = aux.imagen;
-                this._url_empresa = aux.url_empresa;
-                this._empresa = aux.empresa;
+                this.id = aux.id;
+                this.imagen = aux.imagen;
+                this.url_empresa = aux.url_empresa;
+                this.empresa = aux.empresa;
                 actualizado = publicidad.updatePublicidad(this);
             }
 
