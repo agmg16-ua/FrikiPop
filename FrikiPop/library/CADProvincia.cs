@@ -15,19 +15,19 @@ namespace library {
         }
 
         public bool createProvincia(ENProvincia provincia) {
-
+            return true;
         }
 
         public bool deleteProvincia(ENProvincia provincia) {
-
+            return true;
         }
 
         public bool readProvincia(ENProvincia provincia) {
-
+            return true;
         }
 
         public bool updateProvincia(ENProvincia provincia) {
-
+            return true;
         }
     }
 }
