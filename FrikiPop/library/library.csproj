@@ -45,12 +45,23 @@
     <Compile Include="CADCarrito.cs" />
     <Compile Include="CADLineaCarrito.cs" />
     <Compile Include="CADPais.cs" />
+    <Compile Include="CADPedido.cs" />
+    <Compile Include="CADTipoArticulo.cs" />
+    <Compile Include="ENPedido.cs" />
     <Compile Include="CADLocalidad.cs" />
     <Compile Include="CADProvincia.cs" />
+<<<<<<< HEAD
     <Compile Include="ENLineaCarrito.cs" />
+=======
+    <Compile Include="CADPublicidad.cs" />
+>>>>>>> develop
     <Compile Include="ENProvincia.cs" />
     <Compile Include="ENLocalidad.cs" />
     <Compile Include="ENPais.cs" />
+	<Compile Include="ENTipoArticulo.cs" />
+    <Compile Include="CADTarjeta.cs" />
+    <Compile Include="ENPublicidad.cs" />
+    <Compile Include="ENTarjeta.cs" />
     <Compile Include="ENUsuarios.cs" />
     <Compile Include="ENCarrito.cs" />
     <Compile Include="CADUsuarios.cs" />
