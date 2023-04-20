@@ -10,7 +10,7 @@ namespace library
     class ENTarjeta
     {
         private int _num;
-        private int _diaFecha;
+        private int _anyoFecha;
         private int _mesFecha;
         private int _cvv;
         private string _usuario;
@@ -26,15 +26,15 @@ namespace library
             }
         }
 
-        public int diaFecha
+        public int anyoFecha
         {
             get
             {
-                return _diaFecha;
+                return _anyoFecha;
             }
             set
             {
-                _diaFecha = value;
+                _anyoFecha = value;
             }
         }
 
@@ -78,17 +78,17 @@ namespace library
         public ENTarjeta()
         {
             num = 0;
-            diaFecha = 0;
+            anyoFecha = 0;
             mesFecha = 0;
             cvv = 0;
             usuario = "";
         }
 
         //constructor de copia
-        public ENTarjeta(int num, int diaFecha, int mesFecha, int cvv, string usuario)
+        public ENTarjeta(int num, int anyoFecha, int mesFecha, int cvv, string usuario)
         {
             this.num = num;
-            this.diaFecha = diaFecha;
+            this.anyoFecha = anyoFecha;
             this.mesFecha = mesFecha;
             this.cvv = cvv;
             this.usuario = usuario;
@@ -121,19 +121,19 @@ namespace library
             CADTarjeta tarjeta = new CADTarjeta();
 
             bool actualizado = false;
-            aux._usuario = this._usuario;
-            aux._num = this._num;
-            aux._diaFecha = this._diaFecha;
-            aux._mesFecha = this._mesFecha;
-            aux._cvv = this._cvv;
+            aux.usuario = this.usuario;
+            aux.num = this.num;
+            aux.anyoFecha = this.anyoFecha;
+            aux.mesFecha = this.mesFecha;
+            aux.cvv = this.cvv;
 
             if (tarjeta.readTarjeta(this))
             {
-                this._usuario = aux._usuario;
-                this._num = aux._num;
-                this._diaFecha = aux._diaFecha;
-                this._mesFecha = aux._mesFecha;
-                this._cvv = aux._cvv;
+                this.usuario = aux.usuario;
+                this.num = aux.num;
+                this.anyoFecha = aux.anyoFecha;
+                this.mesFecha = aux.mesFecha;
+                this.cvv = aux.cvv;
                 actualizado = tarjeta.updateTarjeta(this);
             }
 
