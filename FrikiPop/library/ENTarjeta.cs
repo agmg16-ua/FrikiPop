@@ -14,7 +14,6 @@ namespace library
         private int _mesFecha;
         private int _cvv;
         private string _usuario;
-
         public int num
         {
             get
