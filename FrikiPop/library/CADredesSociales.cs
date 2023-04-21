@@ -5,28 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 
-namespace library {
-    class CADProvincia {
-
+namespace library
+{
+    class CADredesSociales
+    {
         private String constring;
 
-        public CADProvincia() {
+        public CADredesSociales()
+        {
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
 
-        public bool createProvincia(ENProvincia provincia) {
+        public bool createRedesSociales(ENredesSociales redesSociales)
+        {
             return true;
         }
 
-        public bool deleteProvincia(ENProvincia provincia) {
+        public bool deleteRedesSociales(ENredesSociales redesSociales)
+        {
             return true;
         }
 
-        public bool readProvincia(ENProvincia provincia) {
+        public bool readRedesSociales(ENredesSociales redesSociales)
+        {
             return true;
         }
 
-        public bool updateProvincia(ENProvincia provincia) {
+        public bool updateRedesSociales(ENredesSociales redesSociales)
+        {
             return true;
         }
     }

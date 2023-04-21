@@ -9,9 +9,21 @@ namespace library {
 
         private string _provincia;
 
+        private string _pais;
+
         public string provincia {
             set { _provincia = value; }
             get { return _provincia; }
+        }
+
+        public string pais {
+            set { _pais = value; }
+            get { return _pais; }
+        }
+
+        public ENProvincia() {
+            provincia = null;
+            pais = null;
         }
 
         public bool createProvincia() {
@@ -38,8 +50,15 @@ namespace library {
         }
 
         public bool updateProvincia() {
+            ENProvincia aux = new ENProvincia();
             CADProvincia provincia = new CADProvincia();
+
+            aux.provincia = this.provincia;
+            aux.pais = this.pais;
+
             if(provincia.readProvincia(this)) {
+                this.provincia = aux.provincia;
+                this.pais = aux.pais;
                 return provincia.updateProvincia(this);
             }
 

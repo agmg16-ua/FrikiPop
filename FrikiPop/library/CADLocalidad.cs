@@ -15,19 +15,19 @@ namespace library {
         }
 
         public bool createLocalidad(ENLocalidad localidad) {
-
+            return true;
         }
 
         public bool deleteLocalidad(ENLocalidad localidad) {
-
+            return true;
         }
 
         public bool readLocalidad(ENLocalidad localidad) {
-
+            return true;
         }
 
         public bool updateLocalidad(ENLocalidad localidad) {
-
+            return true;
         }
 
 
