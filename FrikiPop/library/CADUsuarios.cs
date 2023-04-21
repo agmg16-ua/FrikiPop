@@ -49,7 +49,17 @@ namespace library
         {
             return true;
         }
-    
+
+        public bool filtrarPorProvincia(ENUsuario en)
+        {
+            return true;
+        }
+
+        public bool filtrarPorPais(ENUsuario en)
+        {
+            return true;
+        }
+
         public bool filtrarPorEdad(ENUsuario en)
         {
             return true;

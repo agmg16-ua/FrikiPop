@@ -15,6 +15,45 @@ namespace library
         private string _contrasenya;
         private string _imagen;
         private int _admin;
+        private string _localidad;
+        private string _provincia;
+        private string _pais;
+
+        public string localidad
+        {
+            get 
+            {
+                return _localidad;
+            }
+            set 
+            {
+                _localidad = value; 
+            }
+        }
+
+        public string provincia
+        {
+            get 
+            {
+                return _provincia; 
+            }
+            set 
+            {
+                _provincia = value; 
+            }
+        }
+
+        public string pais
+        {
+            get 
+            { 
+                return _pais;
+            }
+            set 
+            {
+                _pais = value; 
+            }
+        }
 
         public string nick
         {
@@ -94,6 +133,8 @@ namespace library
             }
         }
         
+
+
         public ENUsuario()
         {
             nick = null;
@@ -102,9 +143,14 @@ namespace library
             contrasenya = null;
             imagen = null;
             localidad = null;
+            provincia = null;
+            localidad = null;
+            admin = 0;
             edad = 0;
         }
-        public ENUsuario(string nick, string nombre,string apellidos,string contrasenya,string localidad, int edad)
+        public ENUsuario(string nick, string nombre,string apellidos,
+                        string contrasenya,string localidad, string provincia,
+                        string pais, string imagen, int edad, int admin)
         {
             this.nick = nick;
             this.nombre = nombre;
@@ -112,14 +158,21 @@ namespace library
             this.contrasenya = contrasenya;
             this.imagen = imagen;
             this.localidad = localidad;
+            this.provincia = provincia;
+            this.pais = pais;
             this.edad = edad;
+            this.admin = admin;
         }
 
         //Comandos CRUD
         public bool createUsuario()
         {
             CADUsuario cADUsuario = new CADUsuario();
-            return cADUsuario.createUsuario(this);
+            if (cADUsuario.readUsuario(this) == false)
+            {
+                return cADUsuario.createUsuario(this);
+            }
+            return false;
         }
         public bool readUsuario()
         {
@@ -129,11 +182,19 @@ namespace library
         public bool updateUsuario()
         {
             CADUsuario cADUsuario = new CADUsuario();
+            if(cADUsuario.readUsuario(this) == false)
+            {
+                return false;
+            }
             return cADUsuario.updateUsuario(this);
         }
         public bool deleteUsuario()
         {
             CADUsuario cADUsuario = new CADUsuario();
+            if (cADUsuario.readUsuario(this) == false)
+            {
+                return false;
+            }
             return cADUsuario.deleteUsuario(this);
         }
 
@@ -142,6 +203,16 @@ namespace library
         {
             CADUsuario cADUsuario = new CADUsuario();
             return cADUsuario.filtrarPorLocalidad(this);
+        }
+        public bool filtrarPorProvincia()
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.filtrarPorProvincia(this);
+        }
+        public bool filtrarPorPais()
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.filtrarPorPais(this);
         }
         public bool filtrarPorNombre()
         {

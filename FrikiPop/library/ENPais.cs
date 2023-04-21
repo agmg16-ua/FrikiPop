@@ -35,6 +35,10 @@ namespace library
         public bool createPais()
         {
             CADPais pais = new CADPais();
+            if(pais.readPais(this) == true)
+            {
+                return false;
+            }
             return pais.createPais(this);
         }
 
@@ -48,12 +52,20 @@ namespace library
         public bool updatePais()
         {
             CADPais pais = new CADPais();
+            if (pais.readPais(this) == false)
+            {
+                return false;
+            }
             return pais.updatePais(this);
         }
         //Borra el pais pasado como parametro si existe
         public bool deletePais()
         {
             CADPais pais = new CADPais();
+            if (pais.readPais(this) == false)
+            {
+                return false;
+            }
             return pais.deletePais(this);
         }
     }
