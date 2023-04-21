@@ -18,22 +18,22 @@ namespace library
 
         public bool createRedesSociales(ENredesSociales redesSociales)
         {
-
+            return true;
         }
 
         public bool deleteRedesSociales(ENredesSociales redesSociales)
         {
-
+            return true;
         }
 
         public bool readRedesSociales(ENredesSociales redesSociales)
         {
-
+            return true;
         }
 
         public bool updateRedesSociales(ENredesSociales redesSociales)
         {
-
+            return true;
         }
     }
 }

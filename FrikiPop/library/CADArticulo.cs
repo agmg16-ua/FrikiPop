@@ -19,27 +19,27 @@ namespace library
 
         public bool createArticulo(ENArticulo articulo)
         {
-
+            return true;
         }
 
         public bool deleteArticulo(ENArticulo articulo)
         {
-
+            return true;
         }
 
         public bool readArticulo(ENArticulo articulo)
         {
-
+            return true;
         }
 
         public bool updateArticulo(ENArticulo articulo)
         {
-
+            return true;
         }
 
         public bool usuarioArticulo(ENArticulo articulo)
         {
-
+            return true;
         }
     }
 }
