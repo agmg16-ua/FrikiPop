@@ -1,0 +1,134 @@
+create table Pais (
+	pais varchar(25) PRIMARY key
+);
+
+create table Provincia (
+	provincia varchar(25) not null,
+  	pais varchar(25) not null,
+  	CONSTRAINT PK_PROVINCIA PRIMARY KEY (provincia, pais),
+  	CONSTRAINT FK_PROVINCIA_PAIS FOREIGN key (pais) REFERENCES Pais (pais)
+  		ON DELETE CASCADE
+  		on update cascade
+);
+
+create table Localidad (
+	localidad varchar(25) not null,
+  	provincia varchar(25) not null,
+  	pais varchar(25) not null,
+  	CONSTRAINT PK_LOCALIDAD PRIMARY KEY (localidad, provincia, pais),
+  	CONSTRAINT FK_LOCALIDAD_PROVINCIA FOREIGN KEY (provincia, pais) REFERENCES Provincia (provincia, pais) 
+  		on delete cascade 
+  		on update cascade
+);
+
+create table Usuario (
+	nick_name varchar(20) PRIMARY key,
+  	nombre varchar(15) not null,
+  	apellidos varchar(40) not null,
+  	edad int not null,
+  	contrasenya varchar(50) not null,
+  	url_imagen varchar(100),
+  	admin int not null,
+	localidad varchar(25) not null,
+	provincia varchar(25) not null,
+	pais varchar(25) not null,
+	CONSTRAINT FK_USUARIO_PROVINCIA FOREIGN KEY (localidad, provincia, pais) REFERENCES Localidad (localidad, provincia, pais)
+		on delete cascade
+		on update cascade
+);
+
+create table Tarjeta (
+	numTarjeta int PRIMARY key,
+  	cvv int not null,
+  	mes_cad int not null,
+  	anyo_cad int not null,
+  	usuario varchar(20) not null,
+  	CONSTRAINT FK_TARJETA_USUARIO FOREIGN key (usuario) references Usuario (nick_name)
+  		on delete CASCADE
+  		on update cascade
+);
+
+create table TipoArticulo (
+	tipo varchar(15) PRIMARY key
+);
+
+create table Articulo (
+	codigo varchar(25) PRIMARY key,
+  	nombre varchar(50) not null,
+  	descripcion varchar(150) not null,
+  	precio decimal(7,2) not null,
+  	url_imagen varchar(100),
+	usuario varchar(20) not null,
+  	tipo varchar(15) not null,
+  	constraint FK_ARTICULO_TIPOARTICULO FOREIGN key (tipo) references TipoArticulo (tipo)
+  		on delete CASCADE
+  		on update cascade,
+	constraint FK_ARTICULO_USUARIO Foreign key (usuario) references Usuario (nick_name)
+		on delete cascade
+		on update cascade
+);
+
+create table Carrito (
+	num_carrito int primary key,
+  	usuario varchar(20) unique,
+  	estado_carrito varchar(10) not null,
+  	CONSTRAINT FK_CARRITO_USUARIO FOREIGN key (usuario) references Usuario (nick_name)
+  		on delete CASCADE
+  		on update cascade
+);
+
+create table LinCarrito (
+	linea int not null,
+  	id_carrito int not null,
+  	importe decimal(7,2) not null,
+  	usuario varchar(20) not null,
+  	articulo varchar(25) not null,
+  	CONSTRAINT PK_LINCARRITO PRIMARY key (linea, id_carrito),
+  	CONSTRAINT FK_LINCARRITO_CARRITO FOREIGN key (id_carrito) references Carrito (num_carrito)
+  		on delete CASCADE
+  		on update cascade,
+  	CONSTRAINT FK_LINCARRITO_ARTICULO FOREIGN key (articulo) references Articulo (codigo)
+  		on update CASCADE		
+  		on delete cascade
+);
+
+create table Pedido (
+	num_pedido int primary key,
+  	usuario varchar(20) not null,
+  	estado_carrito varchar(10) not null,
+  	CONSTRAINT FK_PEDIDO_USUARIO FOREIGN key (usuario) references Usuario (nick_name)
+  		on delete CASCADE
+  		on update cascade
+);
+
+create table LinPedido (
+	linea int not null,
+  	id_pedido int not null,
+  	importe decimal(7,2) not null,
+  	usuario varchar(20) not null,
+  	articulo varchar(25) not null,
+  	CONSTRAINT PK_LINPEDIDO PRIMARY key (linea, id_pedido),
+  	CONSTRAINT FK_LINPEDIDO_PEDIDO FOREIGN key (id_pedido) references Pedido (num_pedido)
+  		on delete CASCADE
+  		on update cascade,
+  	CONSTRAINT FK_LINPEDIDO_ARTICULO FOREIGN key (articulo) references Articulo (codigo)
+  		on update CASCADE		
+  		on delete cascade
+);
+
+create table Publicidad (
+  id_publi varchar(20) PRIMARY key,
+  id_empresa varchar(20) not null,
+  url_imagen varchar(100) not null,
+  link_empresa varchar(100) not null
+);
+
+create table RedesSociales (
+	red varchar(20) PRIMARY key,
+  	url_logo varchar(100) not null,
+  	link_red varchar(100) not null
+)
+
+
+
+

@@ -94,4 +94,5 @@ no se podrá comprar. Además, se mostrarán las redes sociales de la web y una zon
 		
 ## Base de Datos
 
-El archivo de la Base de Datos se encuentra en el directorio principal del repositorio. Su nombre es FrikiPopBD.jpeg
+El archivo de la Base de Datos se encuentra en el directorio principal del repositorio. Su nombre es "FrikiPopBD.pdf".
+Además, se ha incluido un archivo llamado "scriptBD.txt" para que quien lo necesite pueda crear la BD directamente.
