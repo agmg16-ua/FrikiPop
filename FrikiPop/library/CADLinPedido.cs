@@ -16,19 +16,19 @@ namespace library
         }
         public bool createLinPedido(ENLinPedido en)
         {
-           
+            return true;
         }
         public bool readLinPedido(ENLinPedido en)
         {
-            
+            return true;
         }
         public bool updateLinPedido(ENLinPedido en)
         {
-
+            return true;
         }
         public bool deleteLinPedido(ENLinPedido en)
         {
-
+            return true;
         }
     }
 }

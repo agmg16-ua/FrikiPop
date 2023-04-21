@@ -51,15 +51,12 @@
     <Compile Include="ENPedido.cs" />
     <Compile Include="CADLocalidad.cs" />
     <Compile Include="CADProvincia.cs" />
-<<<<<<< HEAD
-    <Compile Include="CADLinPedido.cs" />
-    <Compile Include="ENLinPedido.cs" />
-=======
     <Compile Include="CADredesSociales.cs" />
 	<Compile Include="CADPublicidad.cs" />
     <Compile Include="ENArticulo.cs" />
->>>>>>> develop
-    <Compile Include="ENProvincia.cs" />
+	<Compile Include="CADLinPedido.cs" />
+	<Compile Include="ENLinPedido.cs" />
+	<Compile Include="ENProvincia.cs" />
     <Compile Include="ENLocalidad.cs" />
     <Compile Include="ENPais.cs" />
 	<Compile Include="ENTipoArticulo.cs" />
