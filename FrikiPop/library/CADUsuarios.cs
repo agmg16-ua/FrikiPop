@@ -180,51 +180,6 @@ namespace library
             }
         }
 
-        /*
-        //Devuelve solo el usuario indicado leído de la BD.
-        public bool filtrarPorLocalidad(ENUsuario en)
-        {
-            bool hay = false;
-            SqlConnection conn = null;
-            // Encapsula todo el acceso a datos dentro del try
-            String comando = "Select * from [dbo].[Usuarios] where localidad = '" + en.localidad + "'";
-            try
-            {
-                conn = new SqlConnection(constring);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(comando, conn);
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                if (dr.Read())
-                {
-                    en.nick = dr["nick_name"].ToString();
-                    en.nombre = dr["nombre"].ToString();
-                    en.apellidos = dr["apellidos"].ToString();
-                    en.edad = int.Parse(dr["edad"].ToString());
-                    en.contrasenya = dr["contrasenya"].ToString();
-                    en.imagen = dr["utl_imagen"].ToString();
-                    hay = true;
-                }
-                dr.Close();
-                return hay;
-            }
-            catch (SqlException sqlex)
-            {
-
-                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("User operation has failed.Error: " + ex.Message);
-                return false;
-            }
-            finally
-            {
-                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
-            }
-        }
-        */
         public bool filtrarPorEdad(ENUsuario en)
         {
             bool hay = false;
@@ -245,6 +200,9 @@ namespace library
                     en.apellidos = dr["apellidos"].ToString();
                     en.contrasenya = dr["contrasenya"].ToString();
                     en.imagen = dr["utl_imagen"].ToString();
+                    en.localidad = dr["localidad"].ToString();
+                    en.provincia = dr["provincia"].ToString();
+                    en.pais = dr["pais"].ToString();
                     en.admin = int.Parse(dr["admin"].ToString());
                     hay = true;
                 }
@@ -287,6 +245,9 @@ namespace library
                     en.apellidos = dr["apellidos"].ToString();
                     en.contrasenya = dr["contrasenya"].ToString();
                     en.imagen = dr["utl_imagen"].ToString();
+                    en.localidad = dr["localidad"].ToString();
+                    en.provincia = dr["provincia"].ToString();
+                    en.pais = dr["pais"].ToString();
                     en.admin = int.Parse(dr["admin"].ToString());
                     en.edad = int.Parse(dr["edad"].ToString());
                     hay = true;
@@ -331,6 +292,147 @@ namespace library
                     en.apellidos = dr["apellidos"].ToString();
                     en.contrasenya = dr["contrasenya"].ToString();
                     en.imagen = dr["utl_imagen"].ToString();
+                    en.localidad = dr["localidad"].ToString();
+                    en.provincia = dr["provincia"].ToString();
+                    en.pais = dr["pais"].ToString();
+                    en.admin = int.Parse(dr["admin"].ToString());
+                    en.edad = int.Parse(dr["edad"].ToString());
+                    hay = true;
+                }
+                dr.Close();
+                return hay;
+            }
+            catch (SqlException sqlex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
+            }
+        }
+        public bool filtrarPorLocalidad(ENUsuario en)
+        {
+            bool hay = false;
+            SqlConnection conn = null;
+            // Encapsula todo el acceso a datos dentro del try
+            String comando = "Select * from [dbo].[Usuarios] where localidad = '" + en.localidad + "'";
+            try
+            {
+                conn = new SqlConnection(constring);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(comando, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    en.nick = dr["nick_name"].ToString();
+                    en.nombre = dr["nombre"].ToString();
+                    en.apellidos = dr["apellidos"].ToString();
+                    en.edad = int.Parse(dr["edad"].ToString());
+                    en.contrasenya = dr["contrasenya"].ToString();
+                    en.imagen = dr["utl_imagen"].ToString();
+                    en.provincia = dr["provincia"].ToString();
+                    en.pais = dr["pais"].ToString();
+                    en.admin = int.Parse(dr["admin"].ToString());
+                    en.edad = int.Parse(dr["edad"].ToString());
+                    hay = true;
+                }
+                dr.Close();
+                return hay;
+            }
+            catch (SqlException sqlex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
+            }
+        }
+        public bool filtrarPorProvincia(ENUsuario en)
+        {
+            bool hay = false;
+            SqlConnection conn = null;
+            // Encapsula todo el acceso a datos dentro del try
+            String comando = "Select * from [dbo].[Usuarios] where provincia = '" + en.provincia + "'";
+            try
+            {
+                conn = new SqlConnection(constring);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(comando, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    en.nick = dr["nick_name"].ToString();
+                    en.nombre = dr["nombre"].ToString();
+                    en.apellidos = dr["apellidos"].ToString();
+                    en.contrasenya = dr["contrasenya"].ToString();
+                    en.imagen = dr["utl_imagen"].ToString();
+                    en.localidad = dr["localidad"].ToString();
+                    en.pais = dr["pais"].ToString();
+                    en.admin = int.Parse(dr["admin"].ToString());
+                    en.edad = int.Parse(dr["edad"].ToString());
+                    hay = true;
+                }
+                dr.Close();
+                return hay;
+            }
+            catch (SqlException sqlex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
+            }
+        }
+        public bool filtrarPorPais(ENUsuario en)
+        {
+            bool hay = false;
+            SqlConnection conn = null;
+            // Encapsula todo el acceso a datos dentro del try
+            String comando = "Select * from [dbo].[Usuarios] where pais = '" + en.pais + "'";
+            try
+            {
+                conn = new SqlConnection(constring);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(comando, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    en.nick = dr["nick_name"].ToString();
+                    en.nombre = dr["nombre"].ToString();
+                    en.apellidos = dr["apellidos"].ToString();
+                    en.contrasenya = dr["contrasenya"].ToString();
+                    en.imagen = dr["utl_imagen"].ToString();
+                    en.localidad = dr["localidad"].ToString();
+                    en.provincia = dr["provincia"].ToString();
                     en.admin = int.Parse(dr["admin"].ToString());
                     en.edad = int.Parse(dr["edad"].ToString());
                     hay = true;
