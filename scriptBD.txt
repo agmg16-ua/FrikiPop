@@ -96,6 +96,8 @@ create table Pedido (
 	num_pedido int primary key,
   	usuario varchar(20) not null,
   	estado_carrito varchar(10) not null,
+	fecha date not null,
+	total decimal(7,2) not null,
   	CONSTRAINT FK_PEDIDO_USUARIO FOREIGN key (usuario) references Usuario (nick_name)
   		on delete CASCADE
   		on update cascade
