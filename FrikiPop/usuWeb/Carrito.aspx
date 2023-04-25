@@ -2,4 +2,14 @@
 <asp:Content ID="Carrito1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Carrito2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+      <div class="carrito">
+            
+
+        </div>
+
+
+
+
 </asp:Content>
+  
