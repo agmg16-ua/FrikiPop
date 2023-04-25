@@ -25,9 +25,10 @@ namespace library
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
 
-            String comando = "Insert into [dbo].[Usuarios] (nick_name,nombre,apellidos,edad,contrasenya,url_imagen,admin)" +
+            String comando = "Insert into [dbo].[Usuarios] (nick_name,nombre,apellidos,edad,contrasenya,url_imagen,admin,localidad,provincia,pais)" +
                 "                            VALUES('" + en.nick + "','" + en.nombre + "','" + en.apellidos + "'," + en.edad +
-                                                    ",'" + en.contrasenya + "','" + en.imagen + "'," + en.admin + ")";
+                                                    ",'" + en.contrasenya + "','" + en.imagen + "'," + en.admin + "," +
+                                                    "'" + en.localidad + "','" + en.provincia + "','" + en.pais + "')";
             try
             {
                 conn = new SqlConnection(constring);
@@ -110,6 +111,7 @@ namespace library
             // Encapsula todo el acceso a datos dentro del try
             String comando = "UPDATE [dbo].[Usuarios] SET edad = " + en.edad + ",nombre = '" + en.nombre +
                                         "',apellidos = '" + en.apellidos + "',contrasenya = '" + en.contrasenya +
+                                        "',localidad = '" + en.localidad + "',provincia = '" + en.provincia + "',pais = '" + en.pais +
                                         "', url_imagen = '" + en.imagen + "', admin = " + en.admin + " where nick_name = '" + en.nick + "'";
 
             try
@@ -180,12 +182,46 @@ namespace library
             }
         }
 
+        public bool esAdmin(ENUsuario en)
+        {
+            SqlConnection conn = null;
+            // Encapsula todo el acceso a datos dentro del try
+            String comando = "SELECT FROM [dbo].[Usuarios] WHERE nick_name = '" + en.nick + "'";
+
+            try
+            {
+                conn = new SqlConnection(constring);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(comando, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                return (int.Parse(dr["admin"].ToString()) == 1);
+            }
+            catch (SqlException sqlex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("User operation has failed.Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
+            }
+        }
+
+        //FILTROS A LA BASE DE DATOS PARA LOS ADMINS
         public bool filtrarPorEdad(ENUsuario en)
         {
             bool hay = false;
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
-            String comando = "Select * from [dbo].[Usuarios] where edad = '" + en.edad + "'";
+            String comando = "Select * from [dbo].[Usuarios] where edad = " + en.edad;
             try
             {
                 conn = new SqlConnection(constring);

@@ -198,6 +198,12 @@ namespace library
             return cADUsuario.deleteUsuario(this);
         }
 
+        public bool esAdmin()
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.esAdmin(this);
+        }
+
         //FILTROS DE LOS USUARIOS SEGUN SUS ATRIBUTOS(No filtro por contraseña porque no tiene sentido, se supone que es privada para nosotros)
         public bool filtrarPorLocalidad()
         {
