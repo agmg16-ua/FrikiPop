@@ -22,7 +22,18 @@ namespace library
         //Crea la tarjeta pasada como parámetro
         public bool createTarjeta(ENTarjeta tarjeta)
         {
-            return true;
+            SqlConnection connection = new SqlConnection(constring);
+
+            try {
+                connection.Open();
+                SqlCommand com = new SqlCommand("Insert INTO[dbo].[TARJETA](numTarjeta, cvv, mes_cad, anyo_cad, usuario) VALUES()");
+            }
+            catch(SqlException e) {
+                return false;
+            }
+            finally {
+                connection.close();
+            }
         }
 
         //Lee la tarjeta pasada como parámetro
@@ -51,9 +62,9 @@ namespace library
         public DataSet listarTarjetas(string usuario)
         {
             DataSet bdvirtual = new DataSet();
-            /*SqlConnection connection = new SqlConnection(constring);
+            SqlConnection connection = new SqlConnection(constring);
             SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[TARJETA] where usuario= '" + usuario + "'", connection);
-            da.Fill(bdvirtual, "TARJETA");*/
+            da.Fill(bdvirtual, "TARJETA");
             return bdvirtual;
         }
     }
