@@ -15,6 +15,14 @@ namespace library
 			constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
 		}
 		public bool readCarrito(ENCarrito carrito){
+
+			/*SqlConnection conex;
+			conex = new SqlConnection(constring);
+
+            try {
+				conex.Open();
+            }*/
+
 			return false;
 		}
 		public bool createCarrito(ENCarrito carrito){
