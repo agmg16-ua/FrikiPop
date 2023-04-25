@@ -88,8 +88,8 @@ create table LinCarrito (
   		on delete CASCADE
   		on update cascade,
   	CONSTRAINT FK_LINCARRITO_ARTICULO FOREIGN key (articulo) references Articulo (codigo)
-  		on update CASCADE		
-  		on delete cascade
+  		on update no action
+  		on delete no action
 );
 
 create table Pedido (
@@ -112,8 +112,8 @@ create table LinPedido (
   		on delete CASCADE
   		on update cascade,
   	CONSTRAINT FK_LINPEDIDO_ARTICULO FOREIGN key (articulo) references Articulo (codigo)
-  		on update CASCADE		
-  		on delete cascade
+  		on update no action
+  		on delete no action
 );
 
 create table Publicidad (
