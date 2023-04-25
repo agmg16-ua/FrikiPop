@@ -13,7 +13,7 @@ namespace library {
         private String constring;
 
         public CADTipoArticulo() {
-            constring = ConfigurationManager.ConnectionStrings["Database1"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
 
         public bool createTipoArticulo(ENTipoArticulo tipoArticulo) {

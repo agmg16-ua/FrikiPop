@@ -12,7 +12,7 @@ namespace library {
     class CADPedido {
         private string constring;
         public CADPedido() {
-            constring = ConfigurationManager.ConnectionStrings["Database1"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
         public bool createPedido(ENPedido en) {
             SqlConnection connection = new SqlConnection(constring);
