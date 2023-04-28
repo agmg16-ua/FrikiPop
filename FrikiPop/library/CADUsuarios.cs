@@ -25,7 +25,7 @@ namespace library
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
 
-            String comando = "Insert into [dbo].[Usuarios] (nick_name,nombre,apellidos,edad,contrasenya,url_imagen,admin,localidad,provincia,pais)" +
+            String comando = "Insert into [dbo].[Usuario] (nick_name,nombre,apellidos,edad,contrasenya,url_imagen,admin,localidad,provincia,pais)" +
                 "                            VALUES('" + en.nick + "','" + en.nombre + "','" + en.apellidos + "'," + en.edad +
                                                     ",'" + en.contrasenya + "','" + en.imagen + "'," + en.admin + "," +
                                                     "'" + en.localidad + "','" + en.provincia + "','" + en.pais + "')";
@@ -62,7 +62,7 @@ namespace library
         {
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
-            String comando = "Select * from [dbo].[Usuarios] where nick = '" + en.nick + "'";
+            String comando = "Select * from [dbo].[Usuario] where nick = '" + en.nick + "'";
             try
             {
                 conn = new SqlConnection(constring);
@@ -109,7 +109,7 @@ namespace library
         {
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
-            String comando = "UPDATE [dbo].[Usuarios] SET edad = " + en.edad + ",nombre = '" + en.nombre +
+            String comando = "UPDATE [dbo].[Usuario] SET edad = " + en.edad + ",nombre = '" + en.nombre +
                                         "',apellidos = '" + en.apellidos + "',contrasenya = '" + en.contrasenya +
                                         "',localidad = '" + en.localidad + "',provincia = '" + en.provincia + "',pais = '" + en.pais +
                                         "', url_imagen = '" + en.imagen + "', admin = " + en.admin + " where nick_name = '" + en.nick + "'";
@@ -150,7 +150,7 @@ namespace library
         {
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
-            String comando = "DELETE FROM [dbo].[Usuarios] WHERE nick_name = '" + en.nick + "'";
+            String comando = "DELETE FROM [dbo].[Usuario] WHERE nick_name = '" + en.nick + "'";
 
             try
             {
@@ -186,7 +186,7 @@ namespace library
         {
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
-            String comando = "SELECT FROM [dbo].[Usuarios] WHERE nick_name = '" + en.nick + "'";
+            String comando = "SELECT FROM [dbo].[Usuario] WHERE nick_name = '" + en.nick + "'";
 
             try
             {
@@ -216,282 +216,76 @@ namespace library
         }
 
         //FILTROS A LA BASE DE DATOS PARA LOS ADMINS
-        public bool filtrarPorEdad(ENUsuario en)
+        public DataSet mostrarTodosLosUsuarios()
         {
-            bool hay = false;
-            SqlConnection conn = null;
-            // Encapsula todo el acceso a datos dentro del try
-            String comando = "Select * from [dbo].[Usuarios] where edad = " + en.edad;
-            try
-            {
-                conn = new SqlConnection(constring);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(comando, conn);
-                SqlDataReader dr = cmd.ExecuteReader();
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
 
-                if (dr.Read())
-                {
-                    en.nick = dr["nick_name"].ToString();
-                    en.nombre = dr["nombre"].ToString();
-                    en.apellidos = dr["apellidos"].ToString();
-                    en.contrasenya = dr["contrasenya"].ToString();
-                    en.imagen = dr["utl_imagen"].ToString();
-                    en.localidad = dr["localidad"].ToString();
-                    en.provincia = dr["provincia"].ToString();
-                    en.pais = dr["pais"].ToString();
-                    en.admin = int.Parse(dr["admin"].ToString());
-                    hay = true;
-                }
-                dr.Close();
-                return hay;
-            }
-            catch (SqlException sqlex)
-            {
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario]", c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
 
-                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine("User operation has failed.Error: " + ex.Message);
-                return false;
-            }
-            finally
-            {
-                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
-            }
+            return bdvirtual;
         }
-        public bool filtrarPorNombre(ENUsuario en)
+
+        public DataSet filtrarPorEdad(ENUsuario en)
         {
-            bool hay = false;
-            SqlConnection conn = null;
-            // Encapsula todo el acceso a datos dentro del try
-            String comando = "Select * from [dbo].[Usuarios] where nombre = '" + en.nombre + "'";
-            try
-            {
-                conn = new SqlConnection(constring);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(comando, conn);
-                SqlDataReader dr = cmd.ExecuteReader();
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
 
-                if (dr.Read())
-                {
-                    en.nick = dr["nick_name"].ToString();
-                    en.apellidos = dr["apellidos"].ToString();
-                    en.contrasenya = dr["contrasenya"].ToString();
-                    en.imagen = dr["utl_imagen"].ToString();
-                    en.localidad = dr["localidad"].ToString();
-                    en.provincia = dr["provincia"].ToString();
-                    en.pais = dr["pais"].ToString();
-                    en.admin = int.Parse(dr["admin"].ToString());
-                    en.edad = int.Parse(dr["edad"].ToString());
-                    hay = true;
-                }
-                dr.Close();
-                return hay;
-            }
-            catch (SqlException sqlex)
-            {
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where edad = " + en.edad, c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
 
-                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine("User operation has failed.Error: " + ex.Message);
-                return false;
-            }
-            finally
-            {
-                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
-            }
+            return bdvirtual;
         }
-        public bool filtrarPorApellidos(ENUsuario en)
+        public DataSet filtrarPorNombre(ENUsuario en)
         {
-            bool hay = false;
-            SqlConnection conn = null;
-            // Encapsula todo el acceso a datos dentro del try
-            String comando = "Select * from [dbo].[Usuarios] where apellidos like '" + en.apellidos + "%'";
-            try
-            {
-                conn = new SqlConnection(constring);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(comando, conn);
-                SqlDataReader dr = cmd.ExecuteReader();
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
 
-                if (dr.Read())
-                {
-                    en.nick = dr["nick_name"].ToString();
-                    en.nombre = dr["nombre"].ToString();
-                    en.apellidos = dr["apellidos"].ToString();
-                    en.contrasenya = dr["contrasenya"].ToString();
-                    en.imagen = dr["utl_imagen"].ToString();
-                    en.localidad = dr["localidad"].ToString();
-                    en.provincia = dr["provincia"].ToString();
-                    en.pais = dr["pais"].ToString();
-                    en.admin = int.Parse(dr["admin"].ToString());
-                    en.edad = int.Parse(dr["edad"].ToString());
-                    hay = true;
-                }
-                dr.Close();
-                return hay;
-            }
-            catch (SqlException sqlex)
-            {
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where nombre = '" + en.nombre + "'", c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
 
-                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine("User operation has failed.Error: " + ex.Message);
-                return false;
-            }
-            finally
-            {
-                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
-            }
+            return bdvirtual;
         }
-        public bool filtrarPorLocalidad(ENUsuario en)
+        public DataSet filtrarPorApellidos(ENUsuario en)
         {
-            bool hay = false;
-            SqlConnection conn = null;
-            // Encapsula todo el acceso a datos dentro del try
-            String comando = "Select * from [dbo].[Usuarios] where localidad = '" + en.localidad + "'";
-            try
-            {
-                conn = new SqlConnection(constring);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(comando, conn);
-                SqlDataReader dr = cmd.ExecuteReader();
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
 
-                if (dr.Read())
-                {
-                    en.nick = dr["nick_name"].ToString();
-                    en.nombre = dr["nombre"].ToString();
-                    en.apellidos = dr["apellidos"].ToString();
-                    en.edad = int.Parse(dr["edad"].ToString());
-                    en.contrasenya = dr["contrasenya"].ToString();
-                    en.imagen = dr["utl_imagen"].ToString();
-                    en.provincia = dr["provincia"].ToString();
-                    en.pais = dr["pais"].ToString();
-                    en.admin = int.Parse(dr["admin"].ToString());
-                    en.edad = int.Parse(dr["edad"].ToString());
-                    hay = true;
-                }
-                dr.Close();
-                return hay;
-            }
-            catch (SqlException sqlex)
-            {
+            SqlDataAdapter da = new SqlDataAdapter("Select * from [dbo].[Usuario] where apellidos like '" + en.apellidos + "%'", c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
 
-                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("User operation has failed.Error: " + ex.Message);
-                return false;
-            }
-            finally
-            {
-                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
-            }
+            return bdvirtual;
         }
-        public bool filtrarPorProvincia(ENUsuario en)
+        public DataSet filtrarPorLocalidad(ENUsuario en)
         {
-            bool hay = false;
-            SqlConnection conn = null;
-            // Encapsula todo el acceso a datos dentro del try
-            String comando = "Select * from [dbo].[Usuarios] where provincia = '" + en.provincia + "'";
-            try
-            {
-                conn = new SqlConnection(constring);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(comando, conn);
-                SqlDataReader dr = cmd.ExecuteReader();
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
 
-                if (dr.Read())
-                {
-                    en.nick = dr["nick_name"].ToString();
-                    en.nombre = dr["nombre"].ToString();
-                    en.apellidos = dr["apellidos"].ToString();
-                    en.contrasenya = dr["contrasenya"].ToString();
-                    en.imagen = dr["utl_imagen"].ToString();
-                    en.localidad = dr["localidad"].ToString();
-                    en.pais = dr["pais"].ToString();
-                    en.admin = int.Parse(dr["admin"].ToString());
-                    en.edad = int.Parse(dr["edad"].ToString());
-                    hay = true;
-                }
-                dr.Close();
-                return hay;
-            }
-            catch (SqlException sqlex)
-            {
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where localidad = '" + en.localidad + "'", c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
 
-                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine("User operation has failed.Error: " + ex.Message);
-                return false;
-            }
-            finally
-            {
-                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
-            }
+            return bdvirtual;
         }
-        public bool filtrarPorPais(ENUsuario en)
+        public DataSet filtrarPorProvincia(ENUsuario en)
         {
-            bool hay = false;
-            SqlConnection conn = null;
-            // Encapsula todo el acceso a datos dentro del try
-            String comando = "Select * from [dbo].[Usuarios] where pais = '" + en.pais + "'";
-            try
-            {
-                conn = new SqlConnection(constring);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(comando, conn);
-                SqlDataReader dr = cmd.ExecuteReader();
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring); 
 
-                if (dr.Read())
-                {
-                    en.nick = dr["nick_name"].ToString();
-                    en.nombre = dr["nombre"].ToString();
-                    en.apellidos = dr["apellidos"].ToString();
-                    en.contrasenya = dr["contrasenya"].ToString();
-                    en.imagen = dr["utl_imagen"].ToString();
-                    en.localidad = dr["localidad"].ToString();
-                    en.provincia = dr["provincia"].ToString();
-                    en.admin = int.Parse(dr["admin"].ToString());
-                    en.edad = int.Parse(dr["edad"].ToString());
-                    hay = true;
-                }
-                dr.Close();
-                return hay;
-            }
-            catch (SqlException sqlex)
-            {
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where provincia = '" + en.provincia + "'", c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
 
-                Console.WriteLine("User operation has failed.Error: " + sqlex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
+            return bdvirtual;
+        }
+        public DataSet filtrarPorPais(ENUsuario en)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
 
-                Console.WriteLine("User operation has failed.Error: " + ex.Message);
-                return false;
-            }
-            finally
-            {
-                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
-            }
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where pais = '" + en.pais + "'", c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
+
+            return bdvirtual;
         }
     }
 }

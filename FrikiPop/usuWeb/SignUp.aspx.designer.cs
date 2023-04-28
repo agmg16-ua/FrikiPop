@@ -11,7 +11,7 @@ namespace usuWeb
 {
 
 
-    public partial class Site1
+    public partial class Formulario_web1
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace usuWeb
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control InsertarImagen.
+        /// Control Imagen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button InsertarImagen;
+        protected global::System.Web.UI.WebControls.Button Imagen;
 
         /// <summary>
         /// Control Nick1.
@@ -103,5 +103,23 @@ namespace usuWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Contrasenya1;
+
+        /// <summary>
+        /// Control Crear.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Crear;
+
+        /// <summary>
+        /// Control LabelError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelError;
     }
 }

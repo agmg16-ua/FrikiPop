@@ -30,9 +30,5 @@ namespace usuWeb
                 LabelError.Text = "No apareces en nuestra base de datos";
             }
         }
-        protected void SignIn(object sender, EventArgs e)
-        {
-            //Lo mando a otra pagina donde pueda crearse una cuenta
-        }
     }
 }
