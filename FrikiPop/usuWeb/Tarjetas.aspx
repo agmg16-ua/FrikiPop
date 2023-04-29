@@ -4,7 +4,7 @@
     <section id="modTarjeta">
         <section ID="modTarjetaLabels">
             <div>
-                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="numTarjeta" CssClass="Gridview" DataSourceID="SqlDataSource1">
+                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="numTarjeta" CssClass="Gridview" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="numTarjeta" HeaderText="Número Tarjeta" SortExpression="numTarjeta" ReadOnly="True" />
