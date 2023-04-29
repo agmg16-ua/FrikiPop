@@ -17,7 +17,7 @@
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Database" SelectCommand="SELECT * FROM [Tarjeta]"></asp:SqlDataSource>
             </div>
             <asp:Label runat="server" for="num" Text="Número de tarjeta: "></asp:Label>
-            <asp:TextBox runat="server" id="num" name="num" placeholder="Número de tarjeta"/>
+            <asp:TextBox runat="server" id="num" name="num" placeholder="Número de tarjeta" OnTextChanged="num_TextChanged"/>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Display="Dynamic" runat="server" ControlToValidate="num" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
             <br>
             <asp:Label runat="server" for="usuario" Text="Usuario: "></asp:Label>
