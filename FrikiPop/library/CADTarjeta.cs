@@ -27,12 +27,13 @@ namespace library
             try {
                 connection.Open();
                 SqlCommand com = new SqlCommand("Insert INTO[dbo].[TARJETA](numTarjeta, cvv, mes_cad, anyo_cad, usuario) VALUES()");
+                return true;
             }
             catch(SqlException e) {
                 return false;
             }
             finally {
-                connection.close();
+                connection.Close();
             }
         }
 

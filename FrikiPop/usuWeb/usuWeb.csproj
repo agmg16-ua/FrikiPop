@@ -68,11 +68,19 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="Publicidad.aspx" />
     <Content Include="Tarjetas.aspx" />
     <Content Include="paginaPrincipal.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Publicidad.aspx.cs">
+      <DependentUpon>Publicidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publicidad.aspx.designer.cs">
+      <DependentUpon>Publicidad.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tarjetas.aspx.cs">
       <DependentUpon>Tarjetas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
