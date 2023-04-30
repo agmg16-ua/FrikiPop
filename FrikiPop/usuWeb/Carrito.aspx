@@ -4,6 +4,12 @@
 <asp:Content ID="Carrito2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
       <div class="carrito">
+          <div class="topBar">
+              <h3 id="carritoFrikiPop">Carrito FrikiPop</h3>
+               <h3 id="BorrarTodoCarrito"> 
+                   <asp:LinkButton ID = "BorrarCarrito" Text= "Borrar todo el carrito" runat="server" OnClick="eliminarCarritoCompra"/>
+               </h3>
+          </div>
             
 
         </div>
