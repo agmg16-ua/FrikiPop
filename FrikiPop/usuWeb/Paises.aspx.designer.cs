@@ -10,51 +10,51 @@
 namespace usuWeb {
 
 
-    public partial class localidadProvinciaPais {
+    public partial class Formulario_web1 {
 
         /// <summary>
-        /// Control GridViewPaises.
+        /// Control GridView.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewPaises;
+        protected global::System.Web.UI.WebControls.GridView GridView;
 
         /// <summary>
-        /// Control DropDownListPaises.
+        /// Control pais.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListPaises;
+        protected global::System.Web.UI.WebControls.TextBox pais;
 
         /// <summary>
-        /// Control ButtonModPais.
+        /// Control RequiredFieldValidator3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonModPais;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
-        /// Control ButtonElPais.
+        /// Control anyadir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonElPais;
+        protected global::System.Web.UI.WebControls.Button anyadir;
 
         /// <summary>
-        /// Control LinkButtonLocalidad.
+        /// Control borrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonLocalidad;
+        protected global::System.Web.UI.WebControls.Button borrar;
     }
 }

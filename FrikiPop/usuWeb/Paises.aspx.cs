@@ -10,17 +10,5 @@ namespace usuWeb {
         protected void Page_Load(object sender, EventArgs e) {
 
         }
-
-        protected void ButtonModPais_Click(Object sender, EventArgs e) {
-
-        }
-
-        protected void ButtonElPais_Click(object sender, EventArgs e) {
-
-        }
-
-        protected void LinkButtonLocalidad_Click(object sender, EventArgs e) {
-
-        }
     }
 }

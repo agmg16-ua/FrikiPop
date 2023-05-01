@@ -10,7 +10,7 @@
 namespace usuWeb {
 
 
-    public partial class Formulario_web3 {
+    public partial class Formulario_web2 {
 
         /// <summary>
         /// Control GridView.

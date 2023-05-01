@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Provincias.aspx.cs" Inherits="usuWeb.Formulario_web2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Paises.aspx.cs" Inherits="usuWeb.Formulario_web1" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <section id="modLocalidad">
+    <section id="modPais">
             <div>
-                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="localidad, provincia, pais" CssClass="Gridview" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
+                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="pais" CssClass="Gridview" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="pais" HeaderText="Pais" SortExpression="pais" ReadOnly="true" />
