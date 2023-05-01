@@ -4,15 +4,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="modPublicidad">
             <div>
-                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="id_publi" CssClass="Gridview" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
+                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="id_publi" CssClass="Gridview" OnSelectedIndexChanged="GridView_SelectedIndexChanged" DataSourceID="SqlDataSource1">
                     <Columns>
-                        <asp:CommandField ShowSelectButton="True" />
-                        <asp:BoundField DataField="id_publi" HeaderText="ID Publicidad" SortExpression="id_publi" ReadOnly="True" />
-                        <asp:BoundField DataField="id_empresa" HeaderText="ID Empresa" SortExpression="id_empresa" />
-                        <asp:BoundField DataField="link_empresa" HeaderText="Link Empresa" SortExpression="link_empresa" />
-                        <asp:BoundField DataField="url_imagen" HeaderText="Imagen" SortExpression="url_imagen" />
+                        <asp:BoundField DataField="id_publi" HeaderText="id_publi" SortExpression="id_publi" ReadOnly="True" />
+                        <asp:BoundField DataField="id_empresa" HeaderText="id_empresa" SortExpression="id_empresa" />
+                        <asp:BoundField DataField="url_imagen" HeaderText="url_imagen" SortExpression="url_imagen" />
+                        <asp:BoundField DataField="link_empresa" HeaderText="link_empresa" SortExpression="link_empresa" />
                     </Columns>
                 </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Publicidad]"></asp:SqlDataSource>
             </div>
             <asp:Label runat="server" for="id_p" Text="ID Publicidad: "></asp:Label>
             <asp:TextBox runat="server" id="id_p" name="id_p" placeholder="ID Publicidad"/>

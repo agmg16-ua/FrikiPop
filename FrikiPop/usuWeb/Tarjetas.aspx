@@ -15,7 +15,7 @@
                 </asp:GridView>
             </div>
             <asp:Label runat="server" for="num" Text="Número de tarjeta: "></asp:Label>
-            <asp:TextBox runat="server" id="num" name="num" placeholder="Número de tarjeta" OnTextChanged="num_TextChanged"/>
+            <asp:TextBox runat="server" id="num" name="num" placeholder="Número de tarjeta"/>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Display="Dynamic" runat="server" ControlToValidate="num" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
             <br>
             <asp:Label runat="server" for="usuario" Text="Usuario: "></asp:Label>
