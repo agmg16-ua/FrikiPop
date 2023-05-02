@@ -69,7 +69,7 @@ namespace library
         }
         
         //Añade una tarjeta pasada como parámetro al usuario pasado como parámetro
-        public void addTarjetaUsuario(ENTarjeta tarjeta, string usuario)
+        public void addTarjetaUsuario(ENTarjeta tarjeta)
         {
 
         }

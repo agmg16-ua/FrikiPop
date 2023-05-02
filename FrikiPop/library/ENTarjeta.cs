@@ -153,11 +153,11 @@ namespace library
         }
 
         //añade una tarjeta al usuario pasado como parámetro
-        public void addTarjeta(string usuario)
+        public void addTarjeta()
         {
             CADTarjeta tarjeta = new CADTarjeta();
             ENTarjeta nuevaTarjeta = new ENTarjeta();
-            tarjeta.addTarjetaUsuario(nuevaTarjeta, usuario);
+            tarjeta.addTarjetaUsuario(nuevaTarjeta);
         }
 
         //lista las tarjetas del usuario pasado como parámetro
