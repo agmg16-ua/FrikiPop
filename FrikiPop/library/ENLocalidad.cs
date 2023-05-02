@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using library;
 
 namespace library {
-    class ENLocalidad {
+    public class ENLocalidad {
 
         private string _localidad;
 
@@ -31,7 +33,7 @@ namespace library {
         public ENLocalidad() {
             localidad = null;
             provincia = null;
-            localidad = null;
+            pais = null;
         }
 
         public bool createLocalidad() {
@@ -55,22 +57,10 @@ namespace library {
             return localidad.readLocalidad(this);
         }
 
-        public bool updateLocalidad() {
-            ENLocalidad aux = new ENLocalidad();
+        public DataTable listarLocalidad() {
             CADLocalidad localidad = new CADLocalidad();
-
-            aux.localidad = this.localidad;
-            aux.provincia = this.provincia;
-            aux.pais = this.pais;
-
-            if(localidad.readLocalidad(this)) {
-                this.localidad = aux.localidad;
-                this.provincia = aux.provincia;
-                this.pais = aux.pais;
-
-                return localidad.updateLocalidad(this);
-            }
-            return false;
+            DataTable tabla = localidad.listarLocalidad();
+            return tabla;
         }
 
     }
