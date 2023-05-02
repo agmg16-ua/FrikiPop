@@ -71,26 +71,43 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
-    <Content Include="VerPedido.aspx" />
-    <Content Include="Pedido.aspx" />
+    <Content Include="Paises.aspx" />
+    <Content Include="Localidades.aspx" />
+	<Content Include="VerPedido.aspx" />
+	<Content Include="Pedido.aspx" />
     <Content Include="paginaPrincipal.aspx" />
+    <Content Include="Provincias.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VerPedido.aspx.cs">
-      <DependentUpon>VerPedido.aspx</DependentUpon>
+    <Compile Include="Paises.aspx.cs">
+      <DependentUpon>Paises.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VerPedido.aspx.designer.cs">
-      <DependentUpon>VerPedido.aspx</DependentUpon>
+    <Compile Include="Paises.aspx.designer.cs">
+      <DependentUpon>Paises.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pedido.aspx.cs">
-      <DependentUpon>Pedido.aspx</DependentUpon>
+    <Compile Include="Localidades.aspx.cs">
+      <DependentUpon>Localidades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pedido.aspx.designer.cs">
-      <DependentUpon>Pedido.aspx</DependentUpon>
+    <Compile Include="Localidades.aspx.designer.cs">
+      <DependentUpon>Localidades.aspx</DependentUpon>
     </Compile>
+	  <Compile Include="VerPedido.aspx.cs">
+		  <DependentUpon>VerPedido.aspx</DependentUpon>
+		  <SubType>ASPXCodeBehind</SubType>
+	  </Compile>
+	  <Compile Include="VerPedido.aspx.designer.cs">
+		  <DependentUpon>VerPedido.aspx</DependentUpon>
+	  </Compile>
+	  <Compile Include="Pedido.aspx.cs">
+		  <DependentUpon>Pedido.aspx</DependentUpon>
+		  <SubType>ASPXCodeBehind</SubType>
+	  </Compile>
+	  <Compile Include="Pedido.aspx.designer.cs">
+		  <DependentUpon>Pedido.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="paginaPrincipal.aspx.cs">
       <DependentUpon>paginaPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -99,6 +116,13 @@
       <DependentUpon>paginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provincias.aspx.cs">
+      <DependentUpon>Provincias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Provincias.aspx.designer.cs">
+      <DependentUpon>Provincias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
