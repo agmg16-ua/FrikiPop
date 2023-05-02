@@ -38,7 +38,11 @@ namespace library
             }
             finally
             {
-                connection.Close();
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+               
             }
         }
         public bool readLinPedido(ENLinPedido en)
@@ -74,17 +78,20 @@ namespace library
             }
             finally
             {
-                connection.Close();
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
         }
         public bool updateLinPedido(ENLinPedido en)
         {
-            SqlConnection conexion = new SqlConnection(constring);
+            SqlConnection connection = new SqlConnection(constring);
             try
             {
-                conexion.Open();
+                connection.Open();
                 SqlCommand comando = new SqlCommand("Update [dbo].[Articulo] set numPedido= '" + en._pedido + "' ,linea=" + en._linea
-                    + " ,articulo='" + en._articulo + "' ,importe='" + en._importe  , conexion);
+                    + " ,articulo='" + en._articulo + "' ,importe='" + en._importe  , connection);
                 comando.ExecuteNonQuery();
             }
             catch (SqlException ex)
@@ -99,18 +106,21 @@ namespace library
             }
             finally
             {
-                conexion.Close();
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
 
             return true;
         }
         public bool deleteLinPedido(ENLinPedido en)
         {
-            SqlConnection conexion = new SqlConnection(constring);
+            SqlConnection connection = new SqlConnection(constring);
             try
             {
-                conexion.Open();
-                SqlCommand comando = new SqlCommand("Delete * from [dbo].[Articulo] where numPedido= " + en._pedido, conexion);
+                connection.Open();
+                SqlCommand comando = new SqlCommand("Delete * from [dbo].[Articulo] where numPedido= " + en._pedido, connection);
                 comando.ExecuteNonQuery();
             }
             catch (SqlException ex)
@@ -125,7 +135,10 @@ namespace library
             }
             finally
             {
-                conexion.Close();
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
 
             return true;
