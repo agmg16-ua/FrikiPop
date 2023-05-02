@@ -108,7 +108,39 @@ namespace library {
         }
 
         public bool updateProvincia(ENProvincia provincia) {
-            return true;
+            bool actualizado = false;
+            SqlConnection conexion = null;
+
+            try {
+                conexion = new SqlConnection(constring);
+                conexion.Open();
+
+                string consulta = "Select * from Provincia where provincia = '" + provincia.provincia + "' and pais = '" + provincia.pais + "'";
+                SqlCommand command = new SqlCommand(consulta, conexion);
+
+                SqlDataReader busqueda = command.ExecuteReader();
+                busqueda.Read();
+
+                if (busqueda["provincia"].ToString() == provincia.provincia &&
+                    busqueda["pais"].ToString() == provincia.pais) {
+                    provincia.provincia = busqueda["provincia"].ToString();
+                    provincia.pais = busqueda["pais"].ToString();
+                    actualizado = true;
+                }
+
+                busqueda.Close();
+
+            } catch (SqlException e) {
+                Console.WriteLine("User operation has failed. Error: {0}", e.Message);
+            } catch (Exception e) {
+                Console.WriteLine("User operation has failed. Error: {0}", e.Message);
+            } finally {
+                if (conexion.State == ConnectionState.Open) {
+                    conexion.Close();
+                }
+            }
+
+            return actualizado;
         }
     }
 }
