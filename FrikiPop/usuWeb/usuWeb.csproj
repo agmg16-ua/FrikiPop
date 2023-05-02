@@ -71,26 +71,26 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-    <Content Include="Localidades.aspx" />
     <Content Include="Paises.aspx" />
+    <Content Include="Localidades.aspx" />
     <Content Include="paginaPrincipal.aspx" />
     <Content Include="Provincias.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Localidades.aspx.cs">
-      <DependentUpon>Localidades.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Localidades.aspx.designer.cs">
-      <DependentUpon>Localidades.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Paises.aspx.cs">
       <DependentUpon>Paises.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Paises.aspx.designer.cs">
       <DependentUpon>Paises.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Localidades.aspx.cs">
+      <DependentUpon>Localidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Localidades.aspx.designer.cs">
+      <DependentUpon>Localidades.aspx</DependentUpon>
     </Compile>
     <Compile Include="paginaPrincipal.aspx.cs">
       <DependentUpon>paginaPrincipal.aspx</DependentUpon>

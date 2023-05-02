@@ -8,7 +8,23 @@ using System.Web.UI.WebControls;
 namespace usuWeb {
     public partial class Localidades : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
+            string provincia = Request.QueryString["provincia"];
+        }
 
+        protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
+
+        protected void añadir_Click(object sender, EventArgs e) {
+
+        }
+
+        protected void borrar_Click(object sender, EventArgs e) {
+
+        }
+
+        protected void Volver_Click(object sender, EventArgs e) {
+            Response.Redirect("~/Provincias.aspx");
         }
     }
 }
