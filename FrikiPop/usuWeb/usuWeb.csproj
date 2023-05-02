@@ -72,7 +72,9 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="paginaPrincipal.aspx" />
+    <Content Include="redesSociales.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Articulos.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="paginaPrincipal.aspx.cs">
@@ -83,12 +85,26 @@
       <DependentUpon>paginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="redesSociales.aspx.cs">
+      <DependentUpon>redesSociales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="redesSociales.aspx.designer.cs">
+      <DependentUpon>redesSociales.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Articulos.aspx.cs">
+      <DependentUpon>Articulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulos.aspx.designer.cs">
+      <DependentUpon>Articulos.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
