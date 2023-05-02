@@ -31,13 +31,13 @@ namespace usuWeb {
         protected global::System.Web.UI.WebControls.TextBox num;
 
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control RequiredFieldValidatorNumTarj.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorNumTarj;
 
         /// <summary>
         /// Control usuario.
@@ -49,13 +49,13 @@ namespace usuWeb {
         protected global::System.Web.UI.WebControls.TextBox usuario;
 
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control RequiredFieldValidatorUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorUsuario;
 
         /// <summary>
         /// Control fechaMes.
@@ -67,13 +67,13 @@ namespace usuWeb {
         protected global::System.Web.UI.WebControls.TextBox fechaMes;
 
         /// <summary>
-        /// Control RequiredFieldValidator3.
+        /// Control RequiredFieldValidatorFechaMes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorFechaMes;
 
         /// <summary>
         /// Control fechaAnyo.
@@ -85,13 +85,13 @@ namespace usuWeb {
         protected global::System.Web.UI.WebControls.TextBox fechaAnyo;
 
         /// <summary>
-        /// Control RequiredFieldValidator5.
+        /// Control RequiredFieldValidatorFechaAnyo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorFechaAnyo;
 
         /// <summary>
         /// Control cvvTarj.
@@ -103,22 +103,22 @@ namespace usuWeb {
         protected global::System.Web.UI.WebControls.TextBox cvvTarj;
 
         /// <summary>
-        /// Control RequiredFieldValidator4.
+        /// Control RequiredFieldValidatorCVV.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCVV;
 
         /// <summary>
-        /// Control añadir.
+        /// Control anyadir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button añadir;
+        protected global::System.Web.UI.WebControls.Button anyadir;
 
         /// <summary>
         /// Control borrar.

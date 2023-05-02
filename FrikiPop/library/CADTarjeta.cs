@@ -26,10 +26,12 @@ namespace library
 
             try {
                 connection.Open();
-                SqlCommand com = new SqlCommand("Insert INTO[dbo].[TARJETA](numTarjeta, cvv, mes_cad, anyo_cad, usuario) VALUES()");
+                SqlCommand command = new SqlCommand("Insert INTO [dbo].[TARJETA](numTarjeta, cvv, mes_cad, anyo_cad, usuario) VALUES(" + tarjeta.num + ", " + tarjeta.cvv + ", " + tarjeta.mesFecha + ", " + tarjeta.anyoFecha + ", '" + tarjeta.usuario + "')");
+                command.ExecuteNonQuery();
                 return true;
             }
-            catch(SqlException e) {
+            catch(Exception e) {
+                Console.WriteLine("Create TARJETA has failed. Error: {0}", e.Message);
                 return false;
             }
             finally {
@@ -40,7 +42,20 @@ namespace library
         //Lee la tarjeta pasada como parámetro
         public bool readTarjeta(ENTarjeta tarjeta)
         {
-            return true;
+            SqlConnection connection = new SqlConnection(constring);
+            try {
+                connection.Open();
+                SqlCommand command = new SqlCommand("Select * FROM [dbo].[TARJETA] where numTarjeta= " + tarjeta.num, connection);
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e) {
+                Console.WriteLine("Reading TARJETA table has failed. Error: {0}", e.Message);
+                return false;
+            }
+            finally {
+                connection.Close();
+            }
         }
         //Actualiza la tarjeta actual por la pasada por parámetro
         public bool updateTarjeta(ENTarjeta tarjeta)

@@ -94,13 +94,13 @@ namespace usuWeb {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
-        /// Control añadir.
+        /// Control anyadir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button añadir;
+        protected global::System.Web.UI.WebControls.Button anyadir;
 
         /// <summary>
         /// Control borrar.

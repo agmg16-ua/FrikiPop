@@ -11,7 +11,8 @@ namespace usuWeb {
 
         }
 
-        protected void añadir_Click(object sender, EventArgs e) {
+        protected void anyadir_Click(object sender, EventArgs e) {
+
 
         }
 

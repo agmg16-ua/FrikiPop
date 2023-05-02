@@ -15,22 +15,22 @@
             </div>
             <asp:Label runat="server" for="id_p" Text="ID Publicidad: "></asp:Label>
             <asp:TextBox runat="server" id="id_p" name="id_p" placeholder="ID Publicidad"/>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Display="Dynamic" runat="server" ControlToValidate="id_p" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="id_p" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
             <br>
             <asp:Label runat="server" for="id_e" Text="ID Empresa: "></asp:Label>
             <asp:TextBox runat="server" id="id_e" name="id_e" placeholder="ID Empresa"/>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Display="Dynamic" runat="server" ControlToValidate="id_e" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="id_e" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
             <br>
             <asp:Label runat="server" for="link_e" Text="Link Empresa: " />
             <asp:TextBox runat="server" id="link_e" name="link_e" placeholder="Link Empresa"/>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" Display="Dynamic" runat="server" ControlToValidate="link_e" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="link_e" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
             <br>
             <asp:Label runat="server" for="imagen" Text="Imagen: " />
             <asp:TextBox runat="server" id="imagen" name="imagen" placeholder="Imagen"/>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" Display="Dynamic" runat="server" ControlToValidate="imagen" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="imagen" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
             <br>
         <section ID="botonesPublicidad">
-            <asp:Button runat="server" ID="añadir" type="submit" Text="Añadir Publicidad" OnClick="añadir_Click" />
+            <asp:Button runat="server" ID="anyadir" type="submit" Text="Añadir Publicidad" OnClick="anyadir_Click" />
             <asp:Button runat="server" ID="borrar" type="submit" Text="Eliminar Publicidad" OnClick="borrar_Click" />
             <asp:Button runat="server" Text="Volver" CausesValidation="false" OnClick="Volver_Click" />
         </section>
