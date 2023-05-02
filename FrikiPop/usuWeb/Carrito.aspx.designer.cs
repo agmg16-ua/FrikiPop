@@ -10,7 +10,7 @@
 namespace usuWeb {
 
 
-    public partial class Formulario_web11 {
+    public partial class Carrito {
 
         /// <summary>
         /// Control BorrarCarrito.

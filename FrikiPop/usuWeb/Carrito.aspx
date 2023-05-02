@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="usuWeb.Formulario_web11" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="usuWeb.Carrito" %>
 <asp:Content ID="Carrito1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Carrito2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -25,24 +25,23 @@
 
                             <div class = "Image">
 
-                                <asp:ImageButton PostBackUrl='<%#"~/PaginaProducto.aspx?nombre="+ Eval("nombre") + "&urlimagen=" + Eval("urlimagen") + "&pvp=" + Eval("pvp") + "&cod=" + Eval("cod")%>'
-                                    runat="server" ImageUrl='<%#Eval("urlimagen")%>' style="max-height:100%; max-width:100%; display: block; margin: auto; "/>
+                                <asp:ImageButton PostBackUrl = '<%#"~/Articulos.aspx?nombre = "+ Eval("nombre") + "&url_imagen=" + Eval("url_imagen") + 
+                               "&precio = " + Eval("precio") + "&codigo=" + Eval("codigo")%>' runat = "server" ImageUrl = '<%#Eval("url_imagen")%>'/>
+
                             </div>
 
                             <div  class = "Info" >
 
-                               <h3> <asp:Literal runat = "server" Text='<%# Eval("Nombre") %>'/> </h3>
+                               <h3> <asp:Literal runat = "server" Text='<%# Eval("nombre") %>'/> </h3>
 
-                                <h3> <asp:Literal runat = "server" Text='<%# Eval("Marca") %>'/> </h3> <br/>
-
-                                <asp:GridView runat="server" AutoGenerateColumns="false">
+                                <asp:GridView runat= "server" AutoGenerateColumns= "false">
                                     <Columns>
-                                         <asp:BoundField DataField= "PVP" DataFormatString="{0:C}" HeaderText="Precio" />
+                                         <asp:BoundField DataField= "precio" DataFormatString="{0:C}" HeaderText="Precio" />
                                     </Columns>
                                 </asp:GridView>
 
                                <strong>ID del Articulo: </strong> 
-                               <span> <%= string.Format("{0:D6}", Eval("articulo")) %> </span>
+                               <span> <%= string.Format("{0:C2}", Eval("articulo")) %> </span>
                                <br/>
 
                             
@@ -50,10 +49,10 @@
 
                             <div class = "PrecioFinal">
 
-                                <asp:Button ID = "Button1" Text = "Borrar" runat="server" OnClick="deleteArticulo" CommandArgument='<%# Eval("Articulo") %>' CssClass="Borrar" />
+                                <asp:Button ID = "Button1" Text = "Borrar" runat="server" OnClick="deleteArticulo" CommandArgument='<%# Eval("articulo") %>' CssClass="Borrar" />
 
                                 <h3>
-                                    <strong> <asp:Label runat = "server" Text='<%# Eval("Importe") %>' />€ </strong>
+                                    <strong> <asp:Label runat = "server" Text='<%# Eval("importe") %>' />€ </strong>
 
                                 </h3>
 
