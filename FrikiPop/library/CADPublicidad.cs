@@ -24,7 +24,7 @@ namespace library
             SqlConnection connection = new SqlConnection(constring);
             try {
                 connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Publicidad](id_publi, id_empresa, url_imagen, link_empresa) VALUES(" + publicidad.id + ", " + publicidad.empresa + ", "+ publicidad.imagen+ ", "+ publicidad.url_empresa+ ")", connection);
+                SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Publicidad](id_publi, id_empresa, url_imagen, link_empresa) VALUES('" + publicidad.id + "', '" + publicidad.empresa + "', '"+ publicidad.imagen+ "', '"+ publicidad.url_empresa+ "')", connection);
                 command.ExecuteNonQuery();
                 return true;
             }
@@ -43,7 +43,7 @@ namespace library
             SqlConnection connection = new SqlConnection(constring);
             try {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Publicidad] where id_publi= "+ publicidad.id, connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Publicidad] where id_publi= '"+ publicidad.id+ "'", connection);
                 command.ExecuteNonQuery();
                 return true;
             }
@@ -61,7 +61,7 @@ namespace library
             SqlConnection connection = new SqlConnection(constring);
             try {
                 connection.Open();
-                SqlCommand command = new SqlCommand("UPDATE [dbo].[Publicidad] set id_publi= " + publicidad.id + ", id_empresa= " + publicidad.empresa + ", url_imagen= " + publicidad.imagen + ", link_empresa= " + publicidad.url_empresa+ "where id_publi= "+ publicidad.id, connection);
+                SqlCommand command = new SqlCommand("UPDATE [dbo].[Publicidad] set id_publi= '" + publicidad.id + "', id_empresa= '" + publicidad.empresa + "', url_imagen= '" + publicidad.imagen + "', link_empresa= '" + publicidad.url_empresa+ "' where id_publi= '"+ publicidad.id+"'", connection);
                 command.ExecuteNonQuery();
                 return true;
             }
@@ -79,7 +79,7 @@ namespace library
             SqlConnection connection = new SqlConnection(constring);
             try {
                 connection.Open();
-                SqlCommand command = new SqlCommand("DELETE FROM [dbo].[Publicidad] where id_publi= " + publicidad.id, connection);
+                SqlCommand command = new SqlCommand("DELETE FROM [dbo].[Publicidad] where id_publi= '" + publicidad.id+ "'", connection);
                 command.ExecuteNonQuery();
                 return true;
             }
