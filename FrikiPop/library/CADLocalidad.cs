@@ -112,14 +112,21 @@ namespace library {
             return leido;
         }
 
-        public DataTable listarLocalidad() {
+        public DataTable listarLocalidad(string provincia, string pais) {
             DataTable tabla = new DataTable();
             SqlConnection conexion = null;
 
             try {
                 conexion = new SqlConnection(constring);
+                string consulta = "";
+                
+                if(provincia == "" && pais == "") {
+                    consulta = "Select * from Localidad";
+                } else {
+                    consulta = "Select * from Localidad where provincia = '" + provincia + "' and pais = '" + pais + "'";
+                }
 
-                SqlDataAdapter data = new SqlDataAdapter("Select * from Localidad", conexion);
+                SqlDataAdapter data = new SqlDataAdapter(consulta, conexion);
                 data.Fill(tabla);
 
             }catch(SqlException e) {

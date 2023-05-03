@@ -57,9 +57,9 @@ namespace library {
             return localidad.readLocalidad(this);
         }
 
-        public DataTable listarLocalidad() {
+        public DataTable listarLocalidad(string provincia, string pais) {
             CADLocalidad localidad = new CADLocalidad();
-            DataTable tabla = localidad.listarLocalidad();
+            DataTable tabla = localidad.listarLocalidad(provincia, pais);
             return tabla;
         }
 

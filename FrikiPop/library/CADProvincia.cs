@@ -85,11 +85,13 @@ namespace library {
                 SqlDataReader busqueda = command.ExecuteReader();
                 busqueda.Read();
 
-                if(busqueda["provincia"].ToString() == provincia.provincia &&
-                    busqueda["pais"].ToString() == provincia.pais) {
-                    provincia.provincia = busqueda["provincia"].ToString();
-                    provincia.pais = busqueda["pais"].ToString();
-                    leido = true;
+                if (busqueda.HasRows) {
+                    if (busqueda["provincia"].ToString() == provincia.provincia &&
+                        busqueda["pais"].ToString() == provincia.pais) {
+                        provincia.provincia = busqueda["provincia"].ToString();
+                        provincia.pais = busqueda["pais"].ToString();
+                        leido = true;
+                    }
                 }
 
                 busqueda.Close();
@@ -107,14 +109,19 @@ namespace library {
             return leido;
         }
 
-        public DataTable listarProvincias() {
+        public DataTable listarProvincias(string pais) {
             DataTable tabla = new DataTable();
             SqlConnection conexion = null;
 
             try {
                 conexion = new SqlConnection(constring);
-
-                SqlDataAdapter data = new SqlDataAdapter("Select * from Provincia", conexion);
+                string consulta = null;
+                if(pais == "") {
+                    consulta = "Select * from Provincia";
+                } else {
+                    consulta = "Select * from Provincia where pais = '" + pais + "'";
+                }
+                SqlDataAdapter data = new SqlDataAdapter(consulta, conexion);
                 data.Fill(tabla);
 
             } catch (SqlException e) {

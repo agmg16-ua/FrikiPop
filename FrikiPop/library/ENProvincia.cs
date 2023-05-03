@@ -51,9 +51,9 @@ namespace library {
             return provincia.readProvincia(this);
         }
 
-        public DataTable listarProvincias() {
+        public DataTable listarProvincias(string pais) {
             CADProvincia provincia = new CADProvincia();
-            DataTable tabla = provincia.listarProvincias();
+            DataTable tabla = provincia.listarProvincias(pais);
             return tabla;
 
         }

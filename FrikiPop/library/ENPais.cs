@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENPais
+     public class ENPais
     {
         private string _pais;
 
