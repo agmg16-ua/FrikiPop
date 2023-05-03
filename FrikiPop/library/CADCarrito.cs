@@ -16,18 +16,23 @@ namespace library
 		}
 		public bool readCarrito(ENCarrito carrito){
 			bool leido;
-			leido = false;
 			SqlConnection conex;
 			conex = new SqlConnection(constring);
+			leido = false;
 
-            try {
-				conex.Open();
+			try {
 				SqlCommand comandoSQL;
 				string consultaSQL;
+
+				conex.Open();
+
 				consultaSQL= "Select * from Carrito where usuario = '" + carrito.usuario + "'";
+				
 				comandoSQL = new SqlCommand(consultaSQL, conex);
+
 				SqlDataReader readerSQL;
 				readerSQL = comandoSQL.ExecuteReader();
+
 				readerSQL.Read();
 
                 if (readerSQL["usuario"].ToString() == "Vacio") {
@@ -37,7 +42,9 @@ namespace library
                     else {
 						carrito.estadoCarrito = "Vacio";
                     }
+
 					leido = true;
+
 					carrito.numeroCarrito = int.Parse(readerSQL["num_carrito"].ToString());
 				}
 
@@ -104,27 +111,123 @@ namespace library
 			return true; //?????
         }
 		public DataTable unirCarrito(ENCarrito carrito){
-			string consultaSQL;
-			consultaSQL = "Select * from LinCarrito l, Articulo a where l.articulo = a.codigo  and l.id_carrito = '"+carrito.numeroCarrito+"'";
+
+			DataTable datatable = new DataTable();	
 			SqlConnection conex;
-			DataSet dataset;
-			dataset = new DataSet();
-			conex = new SqlConnection(constring);
-			SqlDataAdapter dataAdapter;
-			dataAdapter = new SqlDataAdapter(consultaSQL, conex);
-			dataAdapter.Fill(dataset);
-			return new DataTable();
+			conex = null;
+
+            try {
+				string consultaSQL;
+				consultaSQL = "Select * from LinCarrito l, Articulo a where l.articulo = a.codigo  and l.id_carrito = '"+carrito.numeroCarrito+ "'";
+
+				conex = new SqlConnection(constring);
+
+				SqlDataAdapter dataAdapter;
+				dataAdapter = new SqlDataAdapter(consultaSQL, conex);
+				dataAdapter.Fill(datatable);
+
+			}
+
+			catch (SqlException exception) {
+				Console.WriteLine("The operation has failed.Error: {0}", exception.Message);
+			}
+
+			catch (Exception exception) {
+				Console.WriteLine("The operation has failed.Error: {0}", exception.Message);
+			}
+
+			finally {
+
+				if (conex.State == ConnectionState.Open) {
+					conex.Close();
+				}
+			}
+
+			return datatable;
+			
 		}
 
-		public bool borrarArticulo(ENCarrito carrito, int linea){
-			return false;
+		public bool deleteArticulo(ENCarrito carrito, int linea){
+			bool borradoArticulo;
+			borradoArticulo = false;
+			SqlConnection conex;
+			conex = null;
+
+			try {
+				string consultaSQL;
+				consultaSQL = "Delete from LinCarrito l where l.id_carrito = '" + carrito.numeroCarrito+"' and articulo = '"+linea+"'";
+				SqlCommand comandoSQL;
+
+				conex = new SqlConnection(constring);
+
+				conex.Open();
+
+				comandoSQL = new SqlCommand(consultaSQL, conex);
+				comandoSQL.ExecuteNonQuery();
+
+				borradoArticulo = true;
+            }
+
+			catch (SqlException exception) {
+				Console.WriteLine("The operation has failed.Error: {0}", exception.Message);
+			}
+
+			catch (Exception exception) {
+				Console.WriteLine("The operation has failed.Error: {0}", exception.Message);
+			}
+
+			finally {
+
+				if (conex.State == ConnectionState.Open) {
+					conex.Close();
+				}
+			}
+
+			return borradoArticulo;
 		}
-		public bool makePedido(ENCarrito carrito)
-		{
+		public bool makePedido(ENCarrito carrito){
+			DataSet dataset;
+			dataset = new DataSet();
 			return false;
 		}
 		public bool vaciarCarrito(ENCarrito carrito){
-			return false;
+			bool borrado;
+			borrado = false;
+			SqlConnection conex;
+			conex = null;
+
+            try {
+				string consultaSQL;
+				consultaSQL = "Delete from LinCarrito l where l.id_carrito = '"+carrito.numeroCarrito+"'";
+				SqlCommand comandoSQL;
+
+				conex = new SqlConnection(constring);
+
+				conex.Open();
+
+				comandoSQL = new SqlCommand(consultaSQL, conex);
+
+				comandoSQL.ExecuteNonQuery();
+
+				borrado = true;
+			}
+
+			catch (SqlException exception) {
+				Console.WriteLine("The operation has failed.Error: {0}", exception.Message);
+			}
+
+			catch (Exception exception) {
+				Console.WriteLine("The operation has failed.Error: {0}", exception.Message);
+			}
+
+			finally {
+
+				if (conex.State == ConnectionState.Open) {
+					conex.Close();
+				}
+			}
+
+			return borrado;
 		}
 
 	}
