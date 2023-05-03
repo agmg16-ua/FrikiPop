@@ -12,12 +12,17 @@ using library;
 namespace usuWeb {
     public partial class Localidades : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            /*string provincia = Request.QueryString["provincia"];
-            string pais = Request.QueryString["pais"];*/
-            ENLocalidad localidad = new ENLocalidad();
-            GridView.DataSource = localidad.listarLocalidad("", "");
-            GridView.DataBind();
-            //Response.Redirect("~/paginaPrincipal.aspx");
+            string provincia = Request.QueryString["provincia"];
+            string pais = Request.QueryString["pais"];
+            if(pais == null || provincia == null) {
+                ENLocalidad localidad = new ENLocalidad();
+                GridView.DataSource = localidad.listarLocalidad("", "");
+                GridView.DataBind();
+            } else {
+                ENLocalidad localidad = new ENLocalidad();
+                GridView.DataSource = localidad.listarLocalidad(provincia, pais);
+                GridView.DataBind();
+            }
         }
 
         protected void añadir_Click(object sender, EventArgs e) {

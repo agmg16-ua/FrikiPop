@@ -24,22 +24,12 @@ namespace usuWeb {
             GridView.DataBind();
         }
 
+        
+
         protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
-
-        }
-
-        protected void GridView_RowCommand(object sender, GridViewCommandEventArgs e) {
-            /*if(e.CommandName == "VerProvincias") {
-                string pais = e.CommandArgument.ToString();
-                Session["PaisSeleccionado"] = pais;
-                Response.Redirect("~/Provincias.aspx");
-            }
-            Button button = (Button)sender;
-            GridViewRow row = (GridViewRow)button.NamingContainer;
-            string pais = row.Cells[0].Text;
-
-            //redirect to the provincias.aspx page with the province name as a query string parameter
-            Response.Redirect("provincias.aspx?pais=" + pais);*/
+            GridViewRow row = GridView.SelectedRow;
+            string paisName = row.Cells[1].Text;
+            Response.Redirect("~/Provincias.aspx?pais=" + paisName);
         }
 
         protected void añadir_Click(object sender, EventArgs e) {

@@ -8,11 +8,6 @@
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="provincia" HeaderText="Provincia" SortExpression="provincia" ReadOnly="true" />
                         <asp:BoundField DataField="pais" HeaderText="Pais" SortExpression="pais" />
-                        <asp:TemplateField HeaderText="Ver Localidades">
-                            <ItemTemplate>
-                                <asp:Button ID="verLocalidadesButton" runat="server" Text="Ver Localidades" OnClick="verLocalidadesButton_Click" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
             </div>

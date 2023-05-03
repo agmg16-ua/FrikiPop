@@ -9,29 +9,16 @@ using library;
 namespace usuWeb {
     public partial class Provincias : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            /*if(!IsPostBack) {
-                string pais = Session["PaisSeleccionado"].ToString();
+            string pais = Request.QueryString["pais"];
+            if (pais == null) {
+                ENProvincia provincia = new ENProvincia();
+                GridView.DataSource = provincia.listarProvincias("");
+                GridView.DataBind();
+            } else {
                 ENProvincia provincia = new ENProvincia();
                 GridView.DataSource = provincia.listarProvincias(pais);
                 GridView.DataBind();
-            } else {
-                Response.Redirect("~/Paises.aspx");
-            }*/
-            
-            //string pais = Request.QueryString["pais"];
-            ENProvincia provincia = new ENProvincia();
-            GridView.DataSource = provincia.listarProvincias("");
-            GridView.DataBind();
-        }
-
-        protected void verLocalidadesButton_Click(object sender, EventArgs e) {
-            /*Button button = (Button)sender;
-            GridViewRow row = (GridViewRow)button.NamingContainer;
-            string provincia = row.Cells[0].Text;
-            string pais = row.Cells[1].Text;
-
-            // redirect to the provincias.aspx page with the province name as a query string parameter
-            Response.Redirect("localidades.aspx?provincia=" + provincia + "?pais=" + pais);*/
+            }
         }
 
         protected void añadir_Click(object sender, EventArgs e) {
@@ -55,7 +42,10 @@ namespace usuWeb {
         }
 
         protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
-
+            GridViewRow row = GridView.SelectedRow;
+            string paisName = row.Cells[2].Text;
+            string provinciaName = row.Cells[1].Text;
+            Response.Redirect("~/Localidades.aspx?provincia=" + provinciaName + "&pais=" + paisName);
         }
     }
 }
