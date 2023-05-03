@@ -68,12 +68,19 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+<<<<<<< HEAD
     <Content Include="Publicidad.aspx" />
     <Content Include="Tarjetas.aspx" />
+=======
+    <Content Include="Paises.aspx" />
+    <Content Include="Localidades.aspx" />
+>>>>>>> develop
     <Content Include="paginaPrincipal.aspx" />
+    <Content Include="Provincias.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Publicidad.aspx.cs">
       <DependentUpon>Publicidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -87,6 +94,21 @@
     </Compile>
     <Compile Include="Tarjetas.aspx.designer.cs">
       <DependentUpon>Tarjetas.aspx</DependentUpon>
+=======
+    <Compile Include="Paises.aspx.cs">
+      <DependentUpon>Paises.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paises.aspx.designer.cs">
+      <DependentUpon>Paises.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Localidades.aspx.cs">
+      <DependentUpon>Localidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Localidades.aspx.designer.cs">
+      <DependentUpon>Localidades.aspx</DependentUpon>
+>>>>>>> develop
     </Compile>
     <Compile Include="paginaPrincipal.aspx.cs">
       <DependentUpon>paginaPrincipal.aspx</DependentUpon>
@@ -96,6 +118,13 @@
       <DependentUpon>paginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provincias.aspx.cs">
+      <DependentUpon>Provincias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Provincias.aspx.designer.cs">
+      <DependentUpon>Provincias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
