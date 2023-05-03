@@ -19,7 +19,6 @@
         <section ID="botonesPaises">
             <asp:Button runat="server" ID="anyadir" type="submit" Text="Añadir pais" OnClick="añadir_Click"></asp:Button>
             <asp:Button runat="server" ID="borrar" type="submit" Text="Eliminar pais" OnClick="borrar_Click"></asp:Button>
-            <asp:Button runat="server" Text="Volver" CausesValidation="false" OnClick="Volver_Click" />
         </section>
     </section>
 </asp:Content>
