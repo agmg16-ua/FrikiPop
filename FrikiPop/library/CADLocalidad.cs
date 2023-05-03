@@ -120,7 +120,7 @@ namespace library {
                 conexion = new SqlConnection(constring);
                 string consulta = "";
                 
-                if(provincia == "" && pais == "") {
+                if(provincia == "" || pais == "") {
                     consulta = "Select * from Localidad";
                 } else {
                     consulta = "Select * from Localidad where provincia = '" + provincia + "' and pais = '" + pais + "'";
