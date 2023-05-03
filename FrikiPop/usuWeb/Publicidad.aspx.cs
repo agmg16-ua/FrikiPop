@@ -26,5 +26,21 @@ namespace usuWeb {
         protected void Volver_Click(object sender, EventArgs e) {
 
         }
+
+        protected void id_p_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        protected void id_e_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        protected void link_e_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        protected void imagen_TextChanged(object sender, EventArgs e) {
+
+        }
     }
 }
