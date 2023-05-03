@@ -10,7 +10,7 @@
 namespace usuWeb {
 
 
-    public partial class Formulario_web12 {
+    public partial class Publicidad {
 
         /// <summary>
         /// Control GridView.
