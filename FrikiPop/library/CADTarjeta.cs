@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class CADTarjeta
+    public class CADTarjeta
     {
         private string constring;
 
