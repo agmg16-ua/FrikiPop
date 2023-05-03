@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class CADPublicidad
+    public class CADPublicidad
     {
         private string constring;
 

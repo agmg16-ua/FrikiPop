@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace library {
-    class ENTipoArticulo {
+    public class ENTipoArticulo {
 
         private string _tipoArticulo;
 

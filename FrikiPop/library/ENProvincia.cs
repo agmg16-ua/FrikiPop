@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using library;
 
 namespace library {
-    class ENProvincia {
+    public class ENProvincia {
 
         private string _provincia;
 
@@ -49,20 +51,11 @@ namespace library {
             return provincia.readProvincia(this);
         }
 
-        public bool updateProvincia() {
-            ENProvincia aux = new ENProvincia();
+        public DataTable listarProvincias(string pais) {
             CADProvincia provincia = new CADProvincia();
+            DataTable tabla = provincia.listarProvincias(pais);
+            return tabla;
 
-            aux.provincia = this.provincia;
-            aux.pais = this.pais;
-
-            if(provincia.readProvincia(this)) {
-                this.provincia = aux.provincia;
-                this.pais = aux.pais;
-                return provincia.updateProvincia(this);
-            }
-
-            return false;
         }
         
     }

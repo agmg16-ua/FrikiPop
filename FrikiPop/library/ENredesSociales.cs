@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENredesSociales
+    public class ENredesSociales
     {
         private string _red;
         private string _urlLogo;

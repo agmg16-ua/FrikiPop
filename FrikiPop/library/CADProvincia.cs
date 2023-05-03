@@ -10,7 +10,7 @@ using System.Data.Common;
 using System.Data;
 
 namespace library {
-    class CADProvincia {
+    public class CADProvincia {
 
         private String constring;
 
@@ -85,11 +85,13 @@ namespace library {
                 SqlDataReader busqueda = command.ExecuteReader();
                 busqueda.Read();
 
-                if(busqueda["provincia"].ToString() == provincia.provincia &&
-                    busqueda["pais"].ToString() == provincia.pais) {
-                    provincia.provincia = busqueda["provincia"].ToString();
-                    provincia.pais = busqueda["pais"].ToString();
-                    leido = true;
+                if (busqueda.HasRows) {
+                    if (busqueda["provincia"].ToString() == provincia.provincia &&
+                        busqueda["pais"].ToString() == provincia.pais) {
+                        provincia.provincia = busqueda["provincia"].ToString();
+                        provincia.pais = busqueda["pais"].ToString();
+                        leido = true;
+                    }
                 }
 
                 busqueda.Close();
@@ -107,40 +109,31 @@ namespace library {
             return leido;
         }
 
-        public bool updateProvincia(ENProvincia provincia) {
-            bool actualizado = false;
+        public DataTable listarProvincias(string pais) {
+            DataTable tabla = new DataTable();
             SqlConnection conexion = null;
 
             try {
                 conexion = new SqlConnection(constring);
-                conexion.Open();
-
-                string consulta = "Select * from Provincia where provincia = '" + provincia.provincia + "' and pais = '" + provincia.pais + "'";
-                SqlCommand command = new SqlCommand(consulta, conexion);
-
-                SqlDataReader busqueda = command.ExecuteReader();
-                busqueda.Read();
-
-                if (busqueda["provincia"].ToString() == provincia.provincia &&
-                    busqueda["pais"].ToString() == provincia.pais) {
-                    provincia.provincia = busqueda["provincia"].ToString();
-                    provincia.pais = busqueda["pais"].ToString();
-                    actualizado = true;
+                string consulta = null;
+                if(pais == "") {
+                    consulta = "Select * from Provincia";
+                } else {
+                    consulta = "Select * from Provincia where pais = '" + pais + "'";
                 }
-
-                busqueda.Close();
+                SqlDataAdapter data = new SqlDataAdapter(consulta, conexion);
+                data.Fill(tabla);
 
             } catch (SqlException e) {
-                Console.WriteLine("User operation has failed. Error: {0}", e.Message);
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
             } catch (Exception e) {
-                Console.WriteLine("User operation has failed. Error: {0}", e.Message);
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
             } finally {
                 if (conexion.State == ConnectionState.Open) {
                     conexion.Close();
                 }
             }
-
-            return actualizado;
+            return tabla;
         }
     }
 }
