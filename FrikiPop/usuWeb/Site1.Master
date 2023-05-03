@@ -21,8 +21,12 @@
                     <asp:MenuItem Text="Consolas" NavigateUrl="~/paginaPrincipal.aspx?param=Consolas"></asp:MenuItem>
                     <asp:MenuItem Text="Merchan" NavigateUrl="~/paginaPrincipal.aspx?param=Merchan"></asp:MenuItem>
                     <asp:MenuItem Text="Ubicaciones" NavigateUrl="~/Paises.aspx"></asp:MenuItem>
+<<<<<<< HEAD
                     <asp:MenuItem Text="Tarjetas" NavigateUrl="~/Tarjetas.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Publicidad" NavigateUrl="~/Publicidad.aspx"></asp:MenuItem>
+=======
+                    <asp:MenuItem Text="Administrador" NavigateUrl="~/Admin.aspx"></asp:MenuItem>
+>>>>>>> develop
                 </Items>
             </asp:Menu>
         </div>
