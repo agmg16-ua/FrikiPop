@@ -67,13 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database.mdf" />
-    <Content Include="App_Data\Database_log.ldf">
-      <DependentUpon>Database.mdf</DependentUpon>
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="Paises.aspx" />
     <Content Include="Localidades.aspx" />
-	  <Content Include="Carrito.aspx" />
+    <Content Include="Carrito.aspx" />
     <Content Include="paginaPrincipal.aspx" />
     <Content Include="Provincias.aspx" />
     <Content Include="Web.config" />
@@ -93,13 +93,13 @@
     <Compile Include="Localidades.aspx.designer.cs">
       <DependentUpon>Localidades.aspx</DependentUpon>
     </Compile>
-	  <Compile Include="Carrito.aspx.cs">
-		  <DependentUpon>Carrito.aspx</DependentUpon>
-		  <SubType>ASPXCodeBehind</SubType>
-	  </Compile>
-	  <Compile Include="Carrito.aspx.designer.cs">
-		  <DependentUpon>Carrito.aspx</DependentUpon>
-	  </Compile>
+    <Compile Include="Carrito.aspx.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrito.aspx.designer.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
     <Compile Include="paginaPrincipal.aspx.cs">
       <DependentUpon>paginaPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
