@@ -12,18 +12,12 @@ using library;
 namespace usuWeb {
     public partial class Localidades : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            string provincia = Request.QueryString["provincia"];
-            if (provincia == null) {
-                ENLocalidad localidad = new ENLocalidad();
-                GridView.DataSource = localidad.listarLocalidad();
-                GridView.DataBind();
-            } else if (provincia != null) {
-                ENLocalidad localidad = new ENLocalidad();
-                GridView.DataSource = localidad.listarLocalidad();
-                GridView.DataBind();
-            } else {
-                Response.Redirect("~/paginaPrincial.aspx");
-            }
+            /*string provincia = Request.QueryString["provincia"];
+            string pais = Request.QueryString["pais"];*/
+            ENLocalidad localidad = new ENLocalidad();
+            GridView.DataSource = localidad.listarLocalidad("", "");
+            GridView.DataBind();
+            //Response.Redirect("~/paginaPrincipal.aspx");
         }
 
         protected void añadir_Click(object sender, EventArgs e) {
@@ -32,6 +26,7 @@ namespace usuWeb {
             localidad.provincia = provincia_text.Text;
             localidad.pais = pais_text.Text;
             localidad.createLocalidad();
+            Response.Redirect("~/Localidades.aspx");
         }
 
         protected void borrar_Click(object sender, EventArgs e) {
@@ -40,6 +35,7 @@ namespace usuWeb {
             localidad.provincia = provincia_text.Text;
             localidad.pais = pais_text.Text;
             localidad.deleteLocalidad();
+            Response.Redirect("~/Localidades.aspx");
         }
 
         protected void Provincias_Click(object sender, EventArgs e) {

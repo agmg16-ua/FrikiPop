@@ -8,6 +8,11 @@
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="pais" HeaderText="Pais" SortExpression="pais" ReadOnly="true" />
+                        <asp:TemplateField HeaderText="Ver Provincias">
+                            <ItemTemplate>
+                                <asp:Button ID="verProvinciasButton" runat="server" Text="Ver Provincias" CommandName="VerProvincias" CommandArgument='<%# Eval("pais") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
             </div>
@@ -15,7 +20,6 @@
             <br />Si quiere añadir o eliminar un pais, escribalo a continuación: <br />
             <asp:Label runat="server" for="pais" Text="Pais: "></asp:Label>
             <asp:TextBox runat="server" id="pais" name="pais" placeholder="Pais"/>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" Display="Dynamic" runat="server" ControlToValidate="pais" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
             <br>
         <section ID="botonesPaises">
             <asp:Button runat="server" ID="anyadir" type="submit" Text="Añadir pais" OnClick="añadir_Click"></asp:Button>

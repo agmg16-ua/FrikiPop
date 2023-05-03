@@ -9,10 +9,29 @@ using library;
 namespace usuWeb {
     public partial class Provincias : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            string pais = Request.QueryString["pais"];
+            /*if(!IsPostBack) {
+                string pais = Session["PaisSeleccionado"].ToString();
+                ENProvincia provincia = new ENProvincia();
+                GridView.DataSource = provincia.listarProvincias(pais);
+                GridView.DataBind();
+            } else {
+                Response.Redirect("~/Paises.aspx");
+            }*/
+            
+            //string pais = Request.QueryString["pais"];
             ENProvincia provincia = new ENProvincia();
-            GridView.DataSource = provincia.listarProvincias();
+            GridView.DataSource = provincia.listarProvincias("");
             GridView.DataBind();
+        }
+
+        protected void verLocalidadesButton_Click(object sender, EventArgs e) {
+            /*Button button = (Button)sender;
+            GridViewRow row = (GridViewRow)button.NamingContainer;
+            string provincia = row.Cells[0].Text;
+            string pais = row.Cells[1].Text;
+
+            // redirect to the provincias.aspx page with the province name as a query string parameter
+            Response.Redirect("localidades.aspx?provincia=" + provincia + "?pais=" + pais);*/
         }
 
         protected void añadir_Click(object sender, EventArgs e) {
