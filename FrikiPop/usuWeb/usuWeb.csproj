@@ -73,7 +73,7 @@
     </Content>
     <Content Include="Paises.aspx" />
     <Content Include="Localidades.aspx" />
-	  <Content Include="Carrito.aspx" /
+	  <Content Include="Carrito.aspx" />
     <Content Include="paginaPrincipal.aspx" />
     <Content Include="Provincias.aspx" />
     <Content Include="Web.config" />

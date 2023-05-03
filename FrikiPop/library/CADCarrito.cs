@@ -15,13 +15,16 @@ namespace library
 			constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
 		}
 		public bool readCarrito(ENCarrito carrito){
-
-			/*SqlConnection conex;
+			bool leido;
+			SqlConnection conex;
 			conex = new SqlConnection(constring);
 
             try {
 				conex.Open();
-            }*/
+				SqlCommand comandoSQL;
+				string consultaSQL = "Select * from [dbo].[CARRITO] WHERE usuario = '" + carrito.usuario + "'";
+				comandoSQL = new SqlCommand(consultaSQL, conex);
+			}
 
 			return false;
 		}
