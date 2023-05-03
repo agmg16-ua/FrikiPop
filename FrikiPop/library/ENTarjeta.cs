@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENTarjeta
+    public class ENTarjeta
     {
         private int _num;
         private int _anyoFecha;

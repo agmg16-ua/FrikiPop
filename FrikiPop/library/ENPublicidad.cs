@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENPublicidad
+    public class ENPublicidad
     {
         private string _id;
         private string _empresa;
