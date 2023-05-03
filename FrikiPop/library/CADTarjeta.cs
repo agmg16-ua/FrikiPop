@@ -60,20 +60,41 @@ namespace library
         //Actualiza la tarjeta actual por la pasada por parámetro
         public bool updateTarjeta(ENTarjeta tarjeta)
         {
-            return true;
+            SqlConnection connection = new SqlConnection(constring);
+
+            try {
+                connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE [dbo].[TARJETA] set numTarjeta= " + tarjeta.num + ", cvv= " + tarjeta.cvv + ", mes_cad= " + tarjeta.mesFecha + ", anyo_cad= " + tarjeta.anyoFecha + ", usuario= '" + tarjeta.usuario + "' where numTarjeta= " + tarjeta.num + ")", connection);
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e) {
+                Console.WriteLine("Updating table TARJETA has failed. Error: {0}", e.Message);
+                return false;
+            }
+            finally {
+                connection.Close();
+            }
         }
         //Borra la tarjeta pasada como parámetro si existe
         public bool deleteTarjeta(ENTarjeta tarjeta)
         {
-            return true;
+            SqlConnection connection = new SqlConnection(constring);
+
+            try {
+                SqlCommand command = new SqlCommand("DELETE FROM [dbo].[TARJETA] where numTarjeta= " + tarjeta.num, connection);
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e) {
+                Console.WriteLine("Deleting table TARJETA has failed. Error: {0}", e.Message);
+                return false;
+            }
+            finally {
+                connection.Close();
+            }
         }
         
-        //Añade una tarjeta pasada como parámetro al usuario pasado como parámetro
-        public void addTarjetaUsuario(ENTarjeta tarjeta)
-        {
-
-        }
-
         //Lista las tarjetas del usuario pasado como parámetro
         public DataSet listarTarjetas(string usuario)
         {

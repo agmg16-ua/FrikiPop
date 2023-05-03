@@ -152,14 +152,6 @@ namespace library
             return leido;
         }
 
-        //añade una tarjeta al usuario pasado como parámetro
-        public void addTarjeta()
-        {
-            CADTarjeta tarjeta = new CADTarjeta();
-            ENTarjeta nuevaTarjeta = new ENTarjeta();
-            tarjeta.addTarjetaUsuario(nuevaTarjeta);
-        }
-
         //lista las tarjetas del usuario pasado como parámetro
         public static DataSet listarTarjetas(string usuario)
         {
