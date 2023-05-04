@@ -49,7 +49,7 @@
 
                             <div class = "PrecioFinal">
 
-                                <asp:Button ID = "Button1" Text = "Borrar" runat="server" OnClick="deleteArticulo" CommandArgument='<%# Eval("articulo") %>' CssClass="Borrar" />
+                                <<asp:Button ID = "Button1" Text = "Borrar" runat="server" OnClick="deleteArticulo" CommandArgument='<%# Eval("articulo") %>' CssClass="Borrar" />
 
                                 <h3>
                                     <strong> <asp:Label runat = "server" Text='<%# Eval("importe") %>' />€ </strong>
