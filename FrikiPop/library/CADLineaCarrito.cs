@@ -47,6 +47,7 @@ namespace library
 					lincarrito.importe = float.Parse(readerSQL["importe"].ToString());
 					lincarrito.articulo = readerSQL["articulo"].ToString();
 
+
 					leido = true;
 				}
 
