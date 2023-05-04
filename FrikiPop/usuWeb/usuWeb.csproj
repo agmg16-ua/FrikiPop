@@ -71,6 +71,7 @@
     <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="Admin.aspx" />
+    <Content Include="App_Style\masterStyle.css" />
     <Content Include="Paises.aspx" />
     <Content Include="Localidades.aspx" />
     <Content Include="Publicidad.aspx" />
