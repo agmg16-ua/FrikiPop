@@ -186,9 +186,57 @@ namespace library
 			return borradoArticulo;
 		}
 		public bool makePedido(ENCarrito carrito){
-			DataSet dataset;
-			dataset = new DataSet();
-			return false;
+			bool realizado;
+			realizado = false;
+			SqlConnection conex;
+			conex = null;
+			try {
+				DataSet dataset;
+				SqlDataAdapter dataAdapter;
+				string consultaSQL;
+
+				consultaSQL = "Select * from linCarrito l where l.id_carrito= '" + carrito.numeroCarrito + "'";
+				dataset = new DataSet();
+
+				conex = new SqlConnection(constring);
+
+				dataAdapter = new SqlDataAdapter(consultaSQL, conex);
+
+				dataAdapter.Fill(dataset,"LinCarrito");
+				ENUsuario usu;
+				usu = new ENUsuario();
+				usu.nick = carrito.usuario;
+				usu.readUsuario();
+
+				ENPedido ped;
+				ped = new ENPedido();
+				ped.idPedido = 1;
+				ped.user = carrito.usuario;
+
+
+
+			}
+
+			catch (SqlException exception) {
+				Console.WriteLine("The operation has failed.Error: {0}", exception.Message);
+			}
+
+			catch (Exception exception) {
+				Console.WriteLine("The operation has failed.Error: {0}", exception.Message);
+			}
+
+			finally {
+
+				if (conex.State == ConnectionState.Open) {
+					conex.Close();
+				}
+			}
+
+
+
+
+
+			return realizado;
 		}
 		public bool vaciarCarrito(ENCarrito carrito){
 			bool borrado;
