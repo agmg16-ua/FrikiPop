@@ -3,12 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderUsuario" runat="server">
     <p>
-        Nombre de usuario: <asp:TextBox runat="server" ID="Nick"></asp:TextBox>
+        Nombre de usuario: <asp:TextBox runat="server" ID="Nick" Width="226px"></asp:TextBox>
     </p>
     <p>
-        Contraseña: <asp:TextBox runat="server" ID="Contraseña"></asp:TextBox>
+        Contraseña: <asp:TextBox runat="server" ID="Contraseña" Width="298px"></asp:TextBox>
     </p>
-    <asp:Button runat="server" Text="Log In"  ID="Login" OnClick="LogIn"/>
+    <asp:Button runat="server" Text="Log In"  ID="Login" OnClick="LogIn" Height="51px" Width="194px"/>
     <asp:Label runat ="server" ID = "LabelError"></asp:Label>
     <br />
     ¿No tiene una cuenta todavía?:

@@ -22,7 +22,7 @@ namespace usuWeb
                 }
                 else
                 {
-                    //Se mete normalmente
+                    Response.Redirect("/~paginaPrincipal.aspx");
                 }
             }
             else

@@ -62,7 +62,7 @@ namespace library
         {
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
-            String comando = "Select * from [dbo].[Usuario] where nick = '" + en.nick + "'";
+            String comando = "Select * from [dbo].[Usuario] where nick_name = '" + en.nick + "'";
             try
             {
                 conn = new SqlConnection(constring);
@@ -76,7 +76,7 @@ namespace library
                     en.apellidos = dr["apellidos"].ToString();
                     en.edad = int.Parse(dr["edad"].ToString());
                     en.contrasenya = dr["contrasenya"].ToString();
-                    en.imagen = dr["imagen"].ToString();
+                    en.imagen = dr["url_imagen"].ToString();
                     en.admin = int.Parse(dr["admin"].ToString());
                     dr.Close();
                     return true;
@@ -186,7 +186,7 @@ namespace library
         {
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
-            String comando = "SELECT FROM [dbo].[Usuario] WHERE nick_name = '" + en.nick + "'";
+            String comando = "SELECT * FROM [dbo].[Usuario] WHERE nick_name = '" + en.nick + "'";
 
             try
             {
