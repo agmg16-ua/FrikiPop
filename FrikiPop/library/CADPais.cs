@@ -168,5 +168,15 @@ namespace library
                 if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
             }
         }
+        public DataSet listarPaises()
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+
+            SqlDataAdapter da = new SqlDataAdapter("select pais from [dbo].[Usuario]",c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
+            
+            return bdvirtual;
+        }
     }
 }
