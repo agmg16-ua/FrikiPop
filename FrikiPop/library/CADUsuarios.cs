@@ -287,5 +287,17 @@ namespace library
 
             return bdvirtual;
         }
+
+        public DataTable listarUsuarios()
+        {
+            DataTable usuarios = new DataTable();
+            SqlConnection c = new SqlConnection(constring);
+
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario]", c);
+            da.Fill(usuarios);
+
+            return usuarios;
+        }
+
     }
 }

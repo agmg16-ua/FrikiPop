@@ -245,6 +245,12 @@ namespace library
             CADUsuario cADUsuario = new CADUsuario();
             return cADUsuario.filtrarPorEdad(this);
         }
+
+        public DataTable listarUsuarios()
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.listarUsuarios();
+        }
     }
 }
 

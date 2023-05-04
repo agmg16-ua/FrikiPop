@@ -18,11 +18,11 @@ namespace usuWeb
             {
                 if (en.esAdmin() == true)
                 {
-                    //Se mete en la pagina de admins.
+                    Response.Redirect("~/Admin.aspx");
                 }
                 else
                 {
-                    Response.Redirect("/~paginaPrincipal.aspx");
+                    Response.Redirect("~/paginaPrincipal.aspx");
                 }
             }
             else
@@ -31,19 +31,27 @@ namespace usuWeb
             }
         }
 
-        protected void GridView_SelectedIndexChanged(object sender, EventArgs e)
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            GridViewRow row = GridView1.SelectedRow;
 
+            string nick = row.Cells[0].Text;
+            string nombre = row.Cells[1].Text;
+            string apellidos = row.Cells[2].Text;
+            string edad = row.Cells[3].Text;
+            string contrasenya = row.Cells[4].Text;
+            string imagen = row.Cells[5].Text;
+            string admin = row.Cells[6].Text;
+            string localidad = row.Cells[7].Text;
+            string provincia = row.Cells[8].Text;
+            string pais = row.Cells[9].Text;
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            ENUsuario usuario = new ENUsuario();
+            GridView1.DataSource = usuario.listarUsuarios();
+            GridView1.DataBind();
         }
     }
 }
