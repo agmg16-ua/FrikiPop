@@ -14,9 +14,9 @@ namespace usuWeb
         {
             ENUsuario en = new ENUsuario();
             en.nick = Nick.Text;
-            if(en.readUsuario() == true && en.contrasenya == Contraseña.Text)
+            if (en.readUsuario() == true && en.contrasenya == Contrasenya.Text)
             {
-                if(en.esAdmin() == true)
+                if (en.esAdmin() == true)
                 {
                     //Se mete en la pagina de admins.
                 }
