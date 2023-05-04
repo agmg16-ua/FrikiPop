@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENArticulo
+    public class ENArticulo
     {
         private string _codigo;
         private string _nombre;
