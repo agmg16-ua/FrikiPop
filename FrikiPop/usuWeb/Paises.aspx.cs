@@ -25,11 +25,17 @@ namespace usuWeb {
         }
 
         protected void añadir_Click(object sender, EventArgs e) {
-
+            ENPais pais = new ENPais();
+            pais.pais = pais_text.Text;
+            pais.createPais();
+            Response.Redirect("~/Paises.aspx");
         }
 
         protected void borrar_Click(object sender, EventArgs e) {
-
+            ENPais pais = new ENPais();
+            pais.pais = pais_text.Text;
+            pais.deletePais();
+            Response.Redirect("~/Paises.aspx");
         }
     }
 }
