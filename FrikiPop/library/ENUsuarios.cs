@@ -209,12 +209,6 @@ namespace library
         }
 
         //FILTROS DE LOS USUARIOS SEGUN SUS ATRIBUTOS(No filtro por contraseña porque no tiene sentido, se supone que es privada para nosotros)
-        public DataSet mostrarTodosLosUsuarios()
-        {
-            CADUsuario cADUsuario = new CADUsuario();
-            return cADUsuario.mostrarTodosLosUsuarios();
-        }
-
         public DataSet filtrarPorLocalidad()
         {
             CADUsuario cADUsuario = new CADUsuario();

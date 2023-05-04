@@ -173,7 +173,7 @@ namespace library
             DataSet bdvirtual = new DataSet();
             SqlConnection c = new SqlConnection(constring);
 
-            SqlDataAdapter da = new SqlDataAdapter("select pais from [dbo].[Usuario]",c);
+            SqlDataAdapter da = new SqlDataAdapter("select pais from [dbo].[Pais]",c);
             da.Fill(bdvirtual, "[dbo].[Usuario]");
             
             return bdvirtual;

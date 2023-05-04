@@ -216,17 +216,6 @@ namespace library
         }
 
         //FILTROS A LA BASE DE DATOS PARA LOS ADMINS
-        public DataSet mostrarTodosLosUsuarios()
-        {
-            DataSet bdvirtual = new DataSet();
-            SqlConnection c = new SqlConnection(constring);
-
-            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario]", c);
-            da.Fill(bdvirtual, "[dbo].[Usuario]");
-
-            return bdvirtual;
-        }
-
         public DataSet filtrarPorEdad(ENUsuario en)
         {
             DataSet bdvirtual = new DataSet();
