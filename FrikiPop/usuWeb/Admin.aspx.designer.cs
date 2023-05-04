@@ -10,51 +10,42 @@
 namespace usuWeb {
 
 
-    public partial class Provincias {
+    public partial class Admin {
 
         /// <summary>
-        /// Control GridView.
+        /// Control usuariosAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView;
+        protected global::System.Web.UI.WebControls.Button usuariosAdmin;
 
         /// <summary>
-        /// Control provincia_text.
+        /// Control estadisticasAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox provincia_text;
+        protected global::System.Web.UI.WebControls.Button estadisticasAdmin;
 
         /// <summary>
-        /// Control pais_text.
+        /// Control ubicacionesAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pais_text;
+        protected global::System.Web.UI.WebControls.Button ubicacionesAdmin;
 
         /// <summary>
-        /// Control anyadir.
+        /// Control redesSocialesAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button anyadir;
-
-        /// <summary>
-        /// Control borrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button borrar;
+        protected global::System.Web.UI.WebControls.Button redesSocialesAdmin;
     }
 }

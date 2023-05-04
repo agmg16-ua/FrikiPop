@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 
 namespace library {
-    class CADPedido {
+    public class CADPedido {
         private string constring;
         public CADPedido() {
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();

@@ -7,7 +7,7 @@ using library;
 using System.Data;
 
 namespace library {
-    class ENPedido {
+    public class ENPedido {
         private int _idPedido;
         private string _user;
         private string _date;

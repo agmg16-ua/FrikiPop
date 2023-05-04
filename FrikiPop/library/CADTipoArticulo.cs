@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace library {
-    class CADTipoArticulo {
+    public class CADTipoArticulo {
 
         private String constring;
 

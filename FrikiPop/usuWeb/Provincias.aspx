@@ -12,17 +12,16 @@
                 </asp:GridView>
             </div>
             <asp:Label runat="server" for="provincia" Text="Provincia: : "></asp:Label>
-            <asp:TextBox runat="server" id="provincia" name="provincia" placeholder="Provincia"/>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Display="Dynamic" runat="server" ControlToValidate="provincia" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
+            <asp:TextBox runat="server" id="provincia_text" name="provincia" placeholder="Provincia"/>
+            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" Display="Dynamic" runat="server" ControlToValidate="provincia" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>--%>
             <br>
             <asp:Label runat="server" for="pais" Text="Pais: "></asp:Label>
-            <asp:TextBox runat="server" id="pais" name="pais" placeholder="Pais"/>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" Display="Dynamic" runat="server" ControlToValidate="pais" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
+            <asp:TextBox runat="server" id="pais_text" name="pais" placeholder="Pais"/>
             <br>
         <section ID="botonesLocalidad">
             <asp:Button runat="server" ID="anyadir" type="submit" Text="Añadir provincia" OnClick="añadir_Click"></asp:Button>
             <asp:Button runat="server" ID="borrar" type="submit" Text="Eliminar provincia" OnClick="borrar_Click"></asp:Button>
-            <asp:Button runat="server" Text="Volver" CausesValidation="false" OnClick="Volver_Click" />
+            <asp:Button runat="server" Text="Ver Paises" CausesValidation="false" OnClick="Paises_Click" />
         </section>
     </section>
 </asp:Content>
