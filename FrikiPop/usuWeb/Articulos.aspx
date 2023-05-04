@@ -11,7 +11,7 @@
                         <asp:BoundField DataField="nombre" HeaderText="Nombre" SortExpression="nombre" />
                         <asp:BoundField DataField="descripcion" HeaderText="Descripcion" SortExpression="descripcion" />
                         <asp:BoundField DataField="precio" HeaderText="Precio" SortExpression="precio" />
-                        <asp:ImageField DataImageUrlField="url_imagen" HeaderText="Url_imagen" SortExpression="url_imagen" />
+                        <asp:ImageField DataImageUrlField="url_imagen" HeaderText="Url imagen" SortExpression="url_imagen" />
                         <asp:BoundField DataField="usuario" HeaderText="Usuario" SortExpression="usuario" />
                         <asp:BoundField DataField="tipo" HeaderText="Tipo" SortExpression="tipo" />
                     </Columns>

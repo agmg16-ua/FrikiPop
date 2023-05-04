@@ -11,26 +11,44 @@ namespace usuWeb
 {
 
 
-    public partial class redesSociales
+    public partial class añadirArticulo
     {
 
         /// <summary>
-        /// GridView control.
+        /// codigo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView;
+        protected global::System.Web.UI.WebControls.TextBox codigo;
 
         /// <summary>
-        /// red control.
+        /// nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox red;
+        protected global::System.Web.UI.WebControls.TextBox nombre;
+
+        /// <summary>
+        /// descripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox descripcion;
+
+        /// <summary>
+        /// precio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox precio;
 
         /// <summary>
         /// url_imagen control.
@@ -42,13 +60,22 @@ namespace usuWeb
         protected global::System.Web.UI.WebControls.TextBox url_imagen;
 
         /// <summary>
-        /// link_red control.
+        /// usuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox link_red;
+        protected global::System.Web.UI.WebControls.TextBox usuario;
+
+        /// <summary>
+        /// tipo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tipo;
 
         /// <summary>
         /// anyadir control.

@@ -11,26 +11,8 @@ namespace usuWeb
 {
 
 
-    public partial class redesSociales
+    public partial class verArticulo
     {
-
-        /// <summary>
-        /// GridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView;
-
-        /// <summary>
-        /// red control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox red;
 
         /// <summary>
         /// url_imagen control.
@@ -39,33 +21,69 @@ namespace usuWeb
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox url_imagen;
+        protected global::System.Web.UI.WebControls.Image url_imagen;
 
         /// <summary>
-        /// link_red control.
+        /// nompre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox link_red;
+        protected global::System.Web.UI.WebControls.Label nompre;
 
         /// <summary>
-        /// anyadir control.
+        /// precio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button anyadir;
+        protected global::System.Web.UI.WebControls.Label precio;
 
         /// <summary>
-        /// borrar control.
+        /// descripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button borrar;
+        protected global::System.Web.UI.WebControls.Label descripcion;
+
+        /// <summary>
+        /// añadirCesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button añadirCesta;
+
+        /// <summary>
+        /// outputMessageAñadir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label outputMessageAñadir;
+
+        /// <summary>
+        /// comprarAhora control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button comprarAhora;
+
+        /// <summary>
+        /// outputMessageComprar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label outputMessageComprar;
     }
 }
