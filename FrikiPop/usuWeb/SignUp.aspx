@@ -29,7 +29,7 @@
                 Localidad: <asp:TextBox runat="server" ID="Localidad1" Width="218px"></asp:TextBox>
             </p>
             <p>
-                Contrasenya: <asp:TextBox runat="server" ID="Contrasenya1" Width="192px"></asp:TextBox>
+                Contrasenya: <asp:TextBox TextMode="Password" runat="server" ID="Contrasenya1" Width="192px"></asp:TextBox>
             </p>
 
             <asp:Button runat="server" Text="Sign Up"  ID="Crear" OnClick="createUsuario" Height="31px" Width="188px"/>
