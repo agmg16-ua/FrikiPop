@@ -1,6 +1,5 @@
 ﻿html {
     font-family: Arial;
-    font
 }
 
 body {
@@ -15,10 +14,11 @@ body {
 
     .menu > ul {
         display: flex;
+        justify-content: space-between;
     }
 
         .menu > ul > li {
-            margin: 1% 7%;
+            margin: 0.5em 0.9em;
         }
 
             .menu > ul > li > a {
