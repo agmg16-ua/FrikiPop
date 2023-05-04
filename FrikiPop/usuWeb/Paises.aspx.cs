@@ -14,17 +14,9 @@ namespace usuWeb {
     public partial class Paises : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
             ENPais pais = new ENPais();
-            DataTable data = new DataTable();
-            ENPais paisaux = new ENPais();
-            SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ToString());
-            SqlDataAdapter sqldata = new SqlDataAdapter("Select * from Pais", conexion);
-            sqldata.Fill(data);
-            //GridView.DataSource = pais.listarPaises();
-            GridView.DataSource = data;
+            GridView.DataSource = pais.listarPaises();
             GridView.DataBind();
         }
-
-        
 
         protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
             GridViewRow row = GridView.SelectedRow;
@@ -33,11 +25,17 @@ namespace usuWeb {
         }
 
         protected void añadir_Click(object sender, EventArgs e) {
-
+            ENPais pais = new ENPais();
+            pais.pais = pais_text.Text;
+            pais.createPais();
+            Response.Redirect("~/Paises.aspx");
         }
 
         protected void borrar_Click(object sender, EventArgs e) {
-
+            ENPais pais = new ENPais();
+            pais.pais = pais_text.Text;
+            pais.deletePais();
+            Response.Redirect("~/Paises.aspx");
         }
     }
 }

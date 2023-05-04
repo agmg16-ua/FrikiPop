@@ -11,11 +11,11 @@
             </h2>
 
             <section id="opcionesAdmin">
-                <asp:Button runat="server" ID="usuariosAdmin" Text="Gestion de Usuarios"/>
+                <asp:Button runat="server" ID="usuariosAdmin" Text="Gestion de Usuarios" PostBackUrl="~/VerUsuarios.aspx"/>
                 <asp:Button runat="server" ID="estadisticasAdmin" Text="Ver Estadisticas" />
                 <asp:Button runat="server" ID="ubicacionesAdmin" Text="Gestion de Ubicaciones" PostBackUrl="~/Paises.aspx" />
                 <asp:Button runat="server" ID="redesSocialesAdmin" Text="Gestion de Redes Sociales" />
-
+                <asp:Button runat="server" ID="publicidadAdmin" Text="Gestion de Publicidad" PostBackUrl="~/Publicidad.aspx" />
             </section>
         </div>
     </section>

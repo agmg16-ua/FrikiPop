@@ -7,10 +7,12 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace usuWeb {
+namespace usuWeb
+{
 
 
-    public partial class Site1 {
+    public partial class Site1
+    {
 
         /// <summary>
         /// Control head.

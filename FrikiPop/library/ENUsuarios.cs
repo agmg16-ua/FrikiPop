@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+
 
 namespace library
 {
@@ -148,6 +150,9 @@ namespace library
             admin = 0;
             edad = 0;
         }
+        /// <summary>
+        ///  nick,  nombre, apellidos, contrasenya, localidad,  provincia, pais,  imagen,  edad,  admin
+        /// </summary>
         public ENUsuario(string nick, string nombre,string apellidos,
                         string contrasenya,string localidad, string provincia,
                         string pais, string imagen, int edad, int admin)
@@ -165,14 +170,13 @@ namespace library
         }
 
         //Comandos CRUD
+        /// <summary>
+        /// Meter en el orden: nick_name,nombre,apellidos,edad,contrasenya,imagen,localidad,provincia,pais
+        /// </summary>
         public bool createUsuario()
         {
             CADUsuario cADUsuario = new CADUsuario();
-            if (cADUsuario.readUsuario(this) == false)
-            {
-                return cADUsuario.createUsuario(this);
-            }
-            return false;
+            return cADUsuario.createUsuario(this);
         }
         public bool readUsuario()
         {
@@ -198,36 +202,48 @@ namespace library
             return cADUsuario.deleteUsuario(this);
         }
 
+        public bool esAdmin()
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.esAdmin(this);
+        }
+
         //FILTROS DE LOS USUARIOS SEGUN SUS ATRIBUTOS(No filtro por contraseña porque no tiene sentido, se supone que es privada para nosotros)
-        public bool filtrarPorLocalidad()
+        public DataSet filtrarPorLocalidad()
         {
             CADUsuario cADUsuario = new CADUsuario();
             return cADUsuario.filtrarPorLocalidad(this);
         }
-        public bool filtrarPorProvincia()
+        public DataSet filtrarPorProvincia()
         {
             CADUsuario cADUsuario = new CADUsuario();
             return cADUsuario.filtrarPorProvincia(this);
         }
-        public bool filtrarPorPais()
+        public DataSet filtrarPorPais()
         {
             CADUsuario cADUsuario = new CADUsuario();
             return cADUsuario.filtrarPorPais(this);
         }
-        public bool filtrarPorNombre()
+        public DataSet filtrarPorNombre()
         {
             CADUsuario cADUsuario = new CADUsuario();
             return cADUsuario.filtrarPorNombre(this);
         }
-        public bool filtrarPorApellidos()
+        public DataSet filtrarPorApellidos()
         {
             CADUsuario cADUsuario = new CADUsuario();
             return cADUsuario.filtrarPorApellidos(this);
         }
-        public bool filtrarPorEdad()
+        public DataSet filtrarPorEdad()
         {
             CADUsuario cADUsuario = new CADUsuario();
             return cADUsuario.filtrarPorEdad(this);
+        }
+
+        public DataTable listarUsuarios()
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.listarUsuarios();
         }
     }
 }
