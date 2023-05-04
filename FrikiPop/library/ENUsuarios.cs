@@ -98,7 +98,7 @@ namespace library
             }
             set
             {
-                _edad = edad;
+                _edad = value;
             }
         }
         public string contrasenya
