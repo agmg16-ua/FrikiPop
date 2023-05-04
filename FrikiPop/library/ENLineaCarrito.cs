@@ -109,13 +109,5 @@ namespace library
             dataSet = lineaCarri.enlistarLineaCarrito(this);
             return dataSet;
         }
-
-        public bool updateLineaCarrito() {
-            bool actualizado;
-            CADLineaCarrito lineaCarri;
-            lineaCarri = new CADLineaCarrito();
-            actualizado = lineaCarri.updateLineaCarrito(this);
-            return actualizado;
-        }
     }
  }
