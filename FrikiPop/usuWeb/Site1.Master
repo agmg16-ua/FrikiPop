@@ -12,7 +12,9 @@
 <body>
     <form runat="server">
     <header>
-        <div>FrikiPop</div>
+        <div>
+            <h1>FrikiPop</h1>
+        </div>
         <div>
             <asp:Menu ID="Menu" runat="server" Orientation="Horizontal">
                 <Items>
