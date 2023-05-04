@@ -7,54 +7,65 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace usuWeb {
+namespace usuWeb
+{
 
 
-    public partial class Admin {
+    public partial class Formulario_web11
+    {
 
         /// <summary>
-        /// Control usuariosAdmin.
+        /// Control Database1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button usuariosAdmin;
+        protected global::System.Web.UI.WebControls.SqlDataSource Database1;
 
         /// <summary>
-        /// Control estadisticasAdmin.
+        /// Control Nick.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button estadisticasAdmin;
+        protected global::System.Web.UI.WebControls.TextBox Nick;
 
         /// <summary>
-        /// Control ubicacionesAdmin.
+        /// Control Contrasenya.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ubicacionesAdmin;
+        protected global::System.Web.UI.WebControls.TextBox Contrasenya;
 
         /// <summary>
-        /// Control redesSocialesAdmin.
+        /// Control Login.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button redesSocialesAdmin;
+        protected global::System.Web.UI.WebControls.Button Login;
 
         /// <summary>
-        /// Control publicidadAdmin.
+        /// Control LabelError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button publicidadAdmin;
+        protected global::System.Web.UI.WebControls.Label LabelError;
+
+        /// <summary>
+        /// Control HyperLink1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
     }
 }
