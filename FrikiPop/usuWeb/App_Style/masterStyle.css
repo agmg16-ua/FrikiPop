@@ -10,20 +10,20 @@ body {
 
 .menu {
     width: 100%;
-    display: grid;
     background-color: #442768;
-    display: flex;
-    justify-content: space-between;
 }
-    .menu > ul > li {
-        flex-basis: 0;
-        flex-grow: 1;
+
+    .menu > ul {
+        display: flex;
     }
 
-        .menu > ul > li > a {
-            font-weight: bold;
-            color: white;
-            display: block;
-            width: 100%;
-            text-align: center;
+        .menu > ul > li {
+            margin: 1% 7%;
         }
+
+            .menu > ul > li > a {
+                font-weight: bold;
+                color: white;
+                width: 100%;
+                text-align: center;
+            }
