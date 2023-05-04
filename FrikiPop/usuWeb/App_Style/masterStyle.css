@@ -10,6 +10,8 @@ body {
 .menu {
     width: 100%;
     background-color: #442768;
+    display: grid;
+    place-content: center;
 }
 
     .menu > ul {
@@ -19,6 +21,7 @@ body {
 
         .menu > ul > li {
             margin: 0.5em 0.9em;
+            
         }
 
             .menu > ul > li > a {
