@@ -68,13 +68,10 @@
     <Content Include="Admin.aspx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
+    <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-<<<<<<< HEAD
     <Content Include="Admin.aspx" />
     <Content Include="App_Style\masterStyle.css" />
-=======
->>>>>>> develop
     <Content Include="Paises.aspx" />
     <Content Include="Localidades.aspx" />
     <Content Include="Publicidad.aspx" />
