@@ -30,5 +30,20 @@ namespace usuWeb
                 LabelError.Text = "No apareces en nuestra base de datos";
             }
         }
+
+        protected void GridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

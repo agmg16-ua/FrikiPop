@@ -37,5 +37,10 @@ namespace usuWeb
                 LabelError.Text = "El nick_name ya existe, por favor elija otro";
             }
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
