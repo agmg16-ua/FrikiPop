@@ -35,8 +35,9 @@ namespace library
 				readerSQL = comandoSQL.ExecuteReader();
 
 				readerSQL.Read();
-
-                if (readerSQL["usuario"].ToString() == "Vacio") {
+				bool condicion;
+				condicion = (readerSQL["usuario"].ToString() == carrito.usuario);
+                if (condicion==true) {
                     if (readerSQL["estado_carrito"].ToString() == "Comprando") {
 						carrito.estadoCarrito = "Comprando";
                     }
