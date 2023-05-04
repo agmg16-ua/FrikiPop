@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Globalization;
 
 namespace library
 {
@@ -207,14 +208,36 @@ namespace library
 				usu = new ENUsuario();
 				usu.nick = carrito.usuario;
 				usu.readUsuario();
-
 				ENPedido ped;
 				ped = new ENPedido();
+
 				ped.idPedido = 1;
 				ped.user = carrito.usuario;
+				ped.date= DateTime.Now.ToString("d", DateTimeFormatInfo.InvariantInfo);
+				// me falta el del estado carrito y el total, para cuando lo haga aurelio lo añado aqui tmb
 
+				ped.createPedido();
 
+				int iter;
+				iter = 1;
+				string lincarrito = "LinCarrito";
+				string importe = "importe";
+				string articulo = "articulo";
+				foreach(DataRow dataRow in dataset.Tables[lincarrito].Rows) {
+					ENLinPedido linped;
+					float importeF;
+					importeF = float.Parse(dataRow[importe].ToString());
+					int articuloI = int.Parse(dataRow[articulo].ToString());
 
+					linped = new ENLinPedido(ped.idPedido,iter,articuloI,importeF);
+
+					linped.createLinPedido();
+
+					++iter;
+
+                }
+				vaciarCarrito(carrito);
+				realizado = true;
 			}
 
 			catch (SqlException exception) {
@@ -231,10 +254,6 @@ namespace library
 					conex.Close();
 				}
 			}
-
-
-
-
 
 			return realizado;
 		}
