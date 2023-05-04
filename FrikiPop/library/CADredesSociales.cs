@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace library
 {
-    class CADredesSociales
+    public class CADredesSociales
     {
         private String constring;
 

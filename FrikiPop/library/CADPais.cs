@@ -11,7 +11,7 @@ using System.Data.SqlTypes;
 
 namespace library
 {
-    class CADPais
+    public class CADPais
     {
         private string constring;
 

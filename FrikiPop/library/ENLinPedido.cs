@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENLinPedido
+    public class ENLinPedido
     {
         private int pedido;
         private int linea;

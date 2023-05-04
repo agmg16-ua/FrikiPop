@@ -7,101 +7,126 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace usuWeb
-{
+namespace usuWeb {
 
 
-    public partial class Site1
-    {
+    public partial class Tarjeta {
 
         /// <summary>
-        /// Control Menu.
+        /// Control GridView.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu;
+        protected global::System.Web.UI.WebControls.GridView GridView;
 
         /// <summary>
-        /// Control InsertarImagen.
+        /// Control num.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button InsertarImagen;
+        protected global::System.Web.UI.WebControls.TextBox num;
 
         /// <summary>
-        /// Control Nick1.
+        /// Control RequiredFieldValidatorNumTarj.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Nick1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorNumTarj;
 
         /// <summary>
-        /// Control Nombre1.
+        /// Control usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Nombre1;
+        protected global::System.Web.UI.WebControls.TextBox usuario;
 
         /// <summary>
-        /// Control Apellidos1.
+        /// Control RequiredFieldValidatorUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Apellidos1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorUsuario;
 
         /// <summary>
-        /// Control Edad1.
+        /// Control fechaMes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Edad1;
+        protected global::System.Web.UI.WebControls.TextBox fechaMes;
 
         /// <summary>
-        /// Control Pais1.
+        /// Control RequiredFieldValidatorFechaMes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Pais1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorFechaMes;
 
         /// <summary>
-        /// Control Provincia1.
+        /// Control fechaAnyo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Provincia1;
+        protected global::System.Web.UI.WebControls.TextBox fechaAnyo;
 
         /// <summary>
-        /// Control Localidad1.
+        /// Control RequiredFieldValidatorFechaAnyo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Localidad1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorFechaAnyo;
 
         /// <summary>
-        /// Control Contrasenya1.
+        /// Control cvvTarj.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Contrasenya1;
+        protected global::System.Web.UI.WebControls.TextBox cvvTarj;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorCVV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCVV;
+
+        /// <summary>
+        /// Control anyadir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button anyadir;
+
+        /// <summary>
+        /// Control borrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button borrar;
     }
 }
