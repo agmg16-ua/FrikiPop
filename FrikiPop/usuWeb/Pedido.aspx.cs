@@ -13,7 +13,7 @@ namespace usuWeb {
         private DataTable joinPedido;
 
         protected void Page_Load(object sender, EventArgs e) {
-            pedido = new ENPedido();
+            /*pedido = new ENPedido();
 
             if (Request.QueryString.Count != 0) {
                 pedido.idPedido = int.Parse(Request.QueryString["num_pedido"].ToString());
@@ -37,7 +37,7 @@ namespace usuWeb {
                 ListView1.DataBind();
             }else {
                 Response.Redirect("paginaPrincipal.aspx");
-            }
+            }*/
         }
     }
 }
