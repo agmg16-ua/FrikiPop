@@ -12,31 +12,124 @@ namespace library {
     public class CADPedido {
         private string constring;
         public CADPedido() {
-            constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["Database1"].ToString();
         }
         public bool createPedido(ENPedido en) {
+            bool creado = false; //ME FALTA CALLE HABLARÉ CON EL ENCARGADO
+            string consulta = "INSERT INTO [dbo].[Pedido] (numPedido, usuario, fecha, calle) " + "VALUES (" + en.idPedido + ", '" + en.user + "', '" + en.date + "', '" + en.address + "')";
             SqlConnection connection = new SqlConnection(constring);
-            return true;
+
+            try {
+                connection.Open();
+                SqlCommand command = new SqlCommand(consulta, connection);
+                command.ExecuteNonQuery();
+
+                creado= true;
+
+            }
+            catch (SqlException e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            catch (Exception e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            finally {
+                if (connection.State == ConnectionState.Open) {
+                    connection.Close();
+                }
+            }
+            return creado;
         }
         public bool readPedido(ENPedido en) {
-            return true;
+            bool read = false;
+            string consulta = "SELECT * FROM [dbo].[Pedido] " + "WHERE num_pedido = '" + en.idPedido + "'";
+
+            SqlConnection connection = new SqlConnection(constring);
+            try {
+                connection.Open();
+                SqlCommand command = new SqlCommand(consulta, connection);
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+
+                if (int.Parse(reader["num_pedido"].ToString()) == en.idPedido) {
+                    en.user = reader["usuario"].ToString();
+                    en.date = String.Format("{0:mm/dd/yyyy}", reader["fecha"]);
+                    en.address = reader["calle"].ToString();
+                    reader.Close();
+                    read= true;
+                }else {
+                    reader.Close();
+                    read= false;
+                }
+            }
+            catch (SqlException e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            catch (Exception e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            finally {
+                if (connection.State == ConnectionState.Open) {
+                    connection.Close();
+                }
+            }
+            return read;
         }
+
         public int getId() {
-            return 1;
 
-        }
-        
-       /*public DataTable joinPedido(ENPedido en) {
-       }*/
-        public bool devolucionPedido(ENPedido en) {
-            return true;
+            int newId = 1;
+            string consulta= "Select max(num_pedido) max from[dbo].[Pedido]";
+            SqlConnection connection = new SqlConnection(constring);
+
+            try {
+                connection.Open();
+                SqlCommand command = new SqlCommand(consulta, connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read()) {
+                    newId = int.Parse(reader["max"].ToString()) + 1;
+                    reader.Close();
+                }
+            }
+            catch (SqlException e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            catch (Exception e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            finally {
+                if (connection.State == ConnectionState.Open) {
+                    connection.Close();
+                }
+            }
+
+            return newId;
         }
 
+        public DataTable joinPedido(ENPedido en) {
+            string consulta = "SELECT * FROM LinPedido LEFT JOIN Articulo ON LinPedido.articulo = Articulo.codigo  WHERE num_pedido= '" + en.idPedido + "'";
+            DataSet dbVirtual = new DataSet();
+            SqlConnection connection = new SqlConnection(constring);
+            SqlDataAdapter adap = new SqlDataAdapter(consulta, connection);
+            adap.Fill(dbVirtual, "LINPED");
+
+            return dbVirtual.Tables["LINPED"];
+        }
         public bool deletePedido(ENPedido en) {
-            return true;
+            return false;
         }
-        /*public DataSet listPedidos(string en) {
-            
-        }*/
+
+        public DataSet listPedidos(string en) {
+            string consulta = "select * from [dbo].[Pedido] where usuario= '" + en + "'";
+            DataSet dbVirtual = new DataSet();
+            SqlConnection connection = new SqlConnection(constring);
+            SqlDataAdapter adap = new SqlDataAdapter(consulta, connection);
+            adap.Fill(dbVirtual, "Pedido");
+
+            return dbVirtual;
+        }
     }
 }
+

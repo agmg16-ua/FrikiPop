@@ -31,13 +31,13 @@ namespace usuWeb {
         protected global::System.Web.UI.WebControls.Label id;
 
         /// <summary>
-        /// Control valor.
+        /// Control price.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label valor;
+        protected global::System.Web.UI.WebControls.Label price;
 
         /// <summary>
         /// Control total.
@@ -49,21 +49,21 @@ namespace usuWeb {
         protected global::System.Web.UI.WebControls.Label total;
 
         /// <summary>
-        /// Control fecha.
+        /// Control date.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fecha;
+        protected global::System.Web.UI.WebControls.Label date;
 
         /// <summary>
-        /// Control direccion.
+        /// Control address.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label direccion;
+        protected global::System.Web.UI.WebControls.Label address;
     }
 }

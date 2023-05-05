@@ -14,15 +14,15 @@
                     <ItemTemplate>
                         <div class="producto">
                             <div class="imagen">
-                               <!-- <asp:ImageButton PostBackUrl='<%#"~/Articulos.aspx?nombre="+ Eval("nombre") + "&urlimagen=" + Eval("urlimagen") + "&precio=" + Eval("precio") + "&cod=" + Eval("num_pedido")%>'
-                                    runat="server" ImageUrl='<%#Eval("urlimagen")%>' style="max-height:100%; max-width:100%; display: block; margin: auto; "/>-->
+                               <!-- <asp:ImageButton PostBackUrl='<%#"~/Articulos.aspx?nombre="+ Eval("nombre") + "&url_imagen=" + Eval("url_imagen") + "&precio=" + Eval("precio") + "&num_pedido=" + Eval("num_pedido")%>'
+                                    runat="server" ImageUrl='<%#Eval("url_imagen")%>' style="max-height:100%; max-width:100%; display: block; margin: auto; "/>-->
                             </div>
                             <div class="info">
                                 <h2><asp:Label runat="server" Text='<%# Eval("nombre") %>' /></h2>
                                 <h3><asp:Label runat="server" Text='<%# Eval("tipo") %>' /></h3>
                                 <br />
                                 <h4><asp:Label runat="server" Text='<%# string.Format("{0:C}", Eval("precio")) %>' /></h4>
-                                <b>Id Artículo: </b><asp:Label runat="server" Text='<%# string.Format("{0:D6}", Eval("articulo")) %>' /><br />
+                                <b>ID ARTÍCULO: </b><asp:Label runat="server" Text='<%# string.Format("{0:D9}", Eval("nombre")) %>' /><br />
                                 <div class="informacionProducto">
                                     <br />
                                     <b>Estado:</b><asp:Label runat="server" Text='<%# Eval("estado_carrito") %>' />
@@ -39,7 +39,7 @@
                     <h2>ID: #<asp:Label ID="id" runat="server"></asp:Label></h2>
                         <div class="Sup">
                             <div class="contenedorIzq">Precio del Pedido:</div>
-                            <div class="contenedorDer"><asp:Label ID="valor" runat="server"></asp:Label></div>
+                            <div class="contenedorDer"><asp:Label ID="price" runat="server"></asp:Label></div>
                         </div>
                         <div class="Sup">
                             <div class="contenedorIzq">Envío:</div>
@@ -49,7 +49,6 @@
                             <div class="contenedorIzq"><h4>Total:</h4></div>
                             <div class="contenedorDer"><h4><asp:Label ID="total" runat="server"></asp:Label></h4></div>
                         </div>
-
                     <br /><br />
                     <h3>DATOS DEL PEDIDO: </h3>
                         <div class="Sup">
@@ -58,11 +57,11 @@
                         </div>
                         <div class="Sup">
                             <div class="contenedorIzq">Fecha:</div>
-                            <div class="contenedorDer"><asp:Label ID="fecha" runat="server"></asp:Label></div>
+                            <div class="contenedorDer"><asp:Label ID="date" runat="server"></asp:Label></div>
                         </div>
                         <div class="Sup"> 
                             <div class="contenedorIzq">Dirección:</div>
-                            <div class="contenedorDer"><asp:Label ID="direccion" runat="server"></asp:Label></div>
+                            <div class="contenedorDer"><asp:Label ID="address" runat="server"></asp:Label></div>
                         </div>
                         <div id="devolucion">DEVOLUCIÓN</div>
                 </div>

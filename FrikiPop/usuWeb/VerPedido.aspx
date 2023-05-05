@@ -8,9 +8,9 @@
             <Columns>
                 <asp:TemplateField ItemStyle-HorizontalAlign="center" ItemStyle-VerticalAlign="Middle"></asp:TemplateField>
                 <asp:BoundField DataField="numPedido" HeaderText="numPedido" ReadOnly="True" SortExpression="numPedido" />
-                <asp:BoundField DataField="fecha" HeaderText="Fecha" SortExpression="fecha" />
                 <asp:BoundField DataField="calle" HeaderText="Calle" SortExpression="calle" />
-                <asp:TemplateField HeaderText="pedido"><ItemTemplate><asp:Button runat="server" Text="Pedido" PostBackUrl='<%#"~/Pedido.aspx?idPedido="+ Eval("numPedido")%>'/></ItemTemplate></asp:TemplateField>
+                <asp:BoundField DataField="fecha" HeaderText="Fecha" SortExpression="fecha" />
+                <asp:TemplateField HeaderText="Pedido"><ItemTemplate><asp:Button runat="server" Text="Pedido" PostBackUrl='<%#"~/Pedido.aspx?idPedido="+ Eval("num_pedido")%>'/></ItemTemplate></asp:TemplateField>
             </Columns>
         </asp:GridView>
         <section ID="botonesPedidos">
