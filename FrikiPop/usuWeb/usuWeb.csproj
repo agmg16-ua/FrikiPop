@@ -80,12 +80,9 @@
     <Content Include="Localidades.aspx" />
     <Content Include="Publicidad.aspx" />
     <Content Include="Tarjetas.aspx" />
-<<<<<<< HEAD
 	<Content Include="VerPedido.aspx" />
 	<Content Include="Pedido.aspx" />
-=======
     <Content Include="Carrito.aspx" />
->>>>>>> develop
     <Content Include="paginaPrincipal.aspx" />
     <Content Include="Provincias.aspx" />
     <Content Include="Web.config" />
@@ -129,7 +126,6 @@
     <Compile Include="Tarjetas.aspx.designer.cs">
       <DependentUpon>Tarjetas.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
 	  <Compile Include="VerPedido.aspx.cs">
 		  <DependentUpon>VerPedido.aspx</DependentUpon>
 		  <SubType>ASPXCodeBehind</SubType>
@@ -144,7 +140,6 @@
 	  <Compile Include="Pedido.aspx.designer.cs">
 		  <DependentUpon>Pedido.aspx</DependentUpon>
 	  </Compile>
-=======
     <Compile Include="Carrito.aspx.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -152,7 +147,6 @@
     <Compile Include="Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
     </Compile>
->>>>>>> develop
     <Compile Include="paginaPrincipal.aspx.cs">
       <DependentUpon>paginaPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
