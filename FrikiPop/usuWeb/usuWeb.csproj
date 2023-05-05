@@ -65,8 +65,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="Admin.aspx" />
     <Content Include="App_Data\Database1.mdf" />
+=======
+	  <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+		  <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+	  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+	 <Content Include="App_Data\Database1.mdf" />
+>>>>>>> develop
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
@@ -76,6 +85,8 @@
     <Content Include="Localidades.aspx" />
     <Content Include="Publicidad.aspx" />
     <Content Include="Tarjetas.aspx" />
+	<Content Include="VerPedido.aspx" />
+	<Content Include="Pedido.aspx" />
     <Content Include="Carrito.aspx" />
     <Content Include="paginaPrincipal.aspx" />
     <Content Include="Provincias.aspx" />
@@ -120,6 +131,20 @@
     <Compile Include="Tarjetas.aspx.designer.cs">
       <DependentUpon>Tarjetas.aspx</DependentUpon>
     </Compile>
+	  <Compile Include="VerPedido.aspx.cs">
+		  <DependentUpon>VerPedido.aspx</DependentUpon>
+		  <SubType>ASPXCodeBehind</SubType>
+	  </Compile>
+	  <Compile Include="VerPedido.aspx.designer.cs">
+		  <DependentUpon>VerPedido.aspx</DependentUpon>
+	  </Compile>
+	  <Compile Include="Pedido.aspx.cs">
+		  <DependentUpon>Pedido.aspx</DependentUpon>
+		  <SubType>ASPXCodeBehind</SubType>
+	  </Compile>
+	  <Compile Include="Pedido.aspx.designer.cs">
+		  <DependentUpon>Pedido.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="Carrito.aspx.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
