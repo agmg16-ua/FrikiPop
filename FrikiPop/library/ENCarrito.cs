@@ -41,47 +41,60 @@ namespace library{
 		
 		public bool createCarrito(){
 			bool creado;
-			CADCarrito carri = new CADCarrito();
+			CADCarrito carri;
+			carri= new CADCarrito();
 			creado = carri.createCarrito(this);
 			return creado;
 		}
 
-		public bool readCarrito()
-		{
+		public bool readCarrito(){
 			bool leido;
-			CADCarrito carri = new CADCarrito();
+			CADCarrito carri;
+			carri= new CADCarrito();
 			leido = carri.readCarrito(this);
 			return leido;
 		}
 
 		public bool updateCarrito() {
 			bool actualizado;
-			CADCarrito carri = new CADCarrito();
+			CADCarrito carri;
+			carri= new CADCarrito();
 			actualizado = carri.updateCarrito(this);
 			return actualizado;
         }
 
 		public DataTable unirCarrito(){
 
-			CADCarrito carri = new CADCarrito();
-			DataTable dataTable = new DataTable();
+			CADCarrito carri;
+			carri= new CADCarrito();
+			DataTable dataTable;
+			dataTable= new DataTable();
 			dataTable = carri.unirCarrito(this);
 			return dataTable;
 		}
 
-		public bool makePedido()
-		{
+		public bool makePedido(){
 			bool realizado;
-			CADCarrito carri = new CADCarrito();
+			CADCarrito carri;
+			carri= new CADCarrito();
 			realizado = carri.makePedido(this);
 			return realizado;
 
 		}
 		public bool vaciarCarrito(){
 			bool vaciado;
-			CADCarrito carri = new CADCarrito();
+			CADCarrito carri;
+			carri= new CADCarrito();
 			vaciado = carri.vaciarCarrito(this);
 			return vaciado;
+		}
+
+		public bool deleteArticulo(int linea) {
+			bool borradoArticulo;
+			CADCarrito carri;
+			carri= new CADCarrito();
+			borradoArticulo= carri.deleteArticulo(this, linea);
+			return borradoArticulo;
 		}
 	}
 }

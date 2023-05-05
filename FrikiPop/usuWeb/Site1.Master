@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link rel="stylesheet" href="..\App_Style\masterStyle.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -16,8 +17,8 @@
             <h1>FrikiPop</h1>
         </div>
         <div>
-            <asp:Menu ID="Menu" runat="server" Orientation="Horizontal">
-                <Items>
+            <asp:Menu ID="Menu" runat="server" CssClass="menu" Orientation="Horizontal">
+                <Items >
                     <asp:MenuItem Text="Home" NavigateUrl="~/paginaPrincipal.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Videojuegos" NavigateUrl="~/paginaPrincipal.aspx?param=Videojuegos"></asp:MenuItem>
                     <asp:MenuItem Text="Consolas" NavigateUrl="~/paginaPrincipal.aspx?param=Consolas"></asp:MenuItem>
@@ -25,6 +26,9 @@
                     <asp:MenuItem Text="Ubicaciones" NavigateUrl="~/Paises.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Tarjetas" NavigateUrl="~/Tarjetas.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Publicidad" NavigateUrl="~/Publicidad.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Iniciar Sesión" NavigateUrl="~/Usuario.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Carrito" NavigateUrl="~/Carrito.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Pedido" NavigateUrl="~/Pedido.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Administrador" NavigateUrl="~/Admin.aspx"></asp:MenuItem>
                 </Items>
             </asp:Menu>

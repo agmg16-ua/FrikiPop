@@ -10,51 +10,60 @@
 namespace usuWeb {
 
 
-    public partial class Admin {
+    public partial class Pedido {
 
         /// <summary>
-        /// Control usuariosAdmin.
+        /// Control ListView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button usuariosAdmin;
+        protected global::System.Web.UI.WebControls.ListView ListView1;
 
         /// <summary>
-        /// Control estadisticasAdmin.
+        /// Control id.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button estadisticasAdmin;
+        protected global::System.Web.UI.WebControls.Label id;
 
         /// <summary>
-        /// Control ubicacionesAdmin.
+        /// Control price.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ubicacionesAdmin;
+        protected global::System.Web.UI.WebControls.Label price;
 
         /// <summary>
-        /// Control redesSocialesAdmin.
+        /// Control total.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button redesSocialesAdmin;
+        protected global::System.Web.UI.WebControls.Label total;
 
         /// <summary>
-        /// Control publicidadAdmin.
+        /// Control date.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button publicidadAdmin;
+        protected global::System.Web.UI.WebControls.Label date;
+
+        /// <summary>
+        /// Control address.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label address;
     }
 }

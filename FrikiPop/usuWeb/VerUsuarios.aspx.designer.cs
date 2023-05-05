@@ -7,18 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace usuWeb {
+namespace usuWeb
+{
 
 
-    public partial class Formulario_web1 {
+    public partial class WebForm1
+    {
 
         /// <summary>
-        /// Control Repeater-PaginaPrincipal.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater-PaginaPrincipal;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

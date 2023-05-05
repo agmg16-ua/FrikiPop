@@ -10,51 +10,51 @@
 namespace usuWeb {
 
 
-    public partial class Admin {
+    public partial class Carrito {
 
         /// <summary>
-        /// Control usuariosAdmin.
+        /// Control BorrarCarrito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button usuariosAdmin;
+        protected global::System.Web.UI.WebControls.LinkButton BorrarCarrito;
 
         /// <summary>
-        /// Control estadisticasAdmin.
+        /// Control Repeater1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button estadisticasAdmin;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
 
         /// <summary>
-        /// Control ubicacionesAdmin.
+        /// Control value.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ubicacionesAdmin;
+        protected global::System.Web.UI.WebControls.Label value;
 
         /// <summary>
-        /// Control redesSocialesAdmin.
+        /// Control TotalPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button redesSocialesAdmin;
+        protected global::System.Web.UI.WebControls.Label TotalPrecio;
 
         /// <summary>
-        /// Control publicidadAdmin.
+        /// Control Button2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button publicidadAdmin;
+        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace library
 {
@@ -67,6 +68,12 @@ namespace library
                 return false;
             }
             return pais.deletePais(this);
+        }
+        //Un dataSet que solo contiene los paises
+        public DataSet listarPaises()
+        {
+            CADPais pais = new CADPais();
+            return pais.listarPaises();
         }
     }
 }
