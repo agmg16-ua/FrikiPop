@@ -1,0 +1,42 @@
+﻿html {
+    font-family: Arial;
+}
+
+h1 {
+    font-size: 36px; /* Tamaño de la fuente */
+    font-weight: bold; /* Grosor de la fuente */
+    text-align: left; /* Alineación horizontal del texto */
+    margin: 1em;
+    text-transform: uppercase; /* Convertir el texto a mayúsculas */
+    color: #ff9900; /* Color del texto */
+    text-shadow: 1px 1px 2px #333; /* Sombra del texto */
+    margin-top: 20px; /* Espacio superior */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    width: 100%;
+    background-color: #442768;
+}
+
+    .menu > ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .menu > ul > li {
+            margin: 0.5em 0.9em;
+        }
+
+            .menu > ul > li > a {
+                font-weight: bold;
+                color: white;
+                width: 100%;
+                text-align: center;
+            }
