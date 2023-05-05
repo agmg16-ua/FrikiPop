@@ -12,7 +12,7 @@ using library;
 
 namespace library
 {
-    class CADLinPedido
+    public class CADLinPedido
     {
         private string constring;
         public CADLinPedido()

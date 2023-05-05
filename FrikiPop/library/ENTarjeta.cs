@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENTarjeta
+    public class ENTarjeta
     {
         private int _num;
         private int _anyoFecha;
@@ -150,14 +150,6 @@ namespace library
                 leido = tarjeta.deleteTarjeta(this);
             }
             return leido;
-        }
-
-        //añade una tarjeta al usuario pasado como parámetro
-        public void addTarjeta(string usuario)
-        {
-            CADTarjeta tarjeta = new CADTarjeta();
-            ENTarjeta nuevaTarjeta = new ENTarjeta();
-            tarjeta.addTarjetaUsuario(nuevaTarjeta, usuario);
         }
 
         //lista las tarjetas del usuario pasado como parámetro
