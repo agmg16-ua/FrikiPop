@@ -4,9 +4,11 @@
     <p>
         <asp:SqlDataSource ID="Database1" runat="server"></asp:SqlDataSource>
         Nombre de usuario: <asp:TextBox  runat="server" ID="Nick" Width="226px" ></asp:TextBox>
+        <asp:RequiredFieldValidator runat="server" ControlToValidate="Nick" ErrorMessage="Tiene que introducir su nombre de usuario obligatoriamente"></asp:RequiredFieldValidator>
     </p>
     <p>
         Contraseña: <asp:TextBox TextMode="Password" runat="server" ID="Contrasenya" Width="217px"></asp:TextBox>
+        <asp:RequiredFieldValidator runat="server" ControlToValidate="Contrasenya" ErrorMessage="Tiene que introducir su contraseña obligatoriamente"></asp:RequiredFieldValidator>
     </p>
     <asp:Button runat="server" Text="Log In"  ID="Login" OnClick="LogIn" Height="31px" Width="170px"/>
     <asp:Label runat ="server" ID = "LabelError"></asp:Label>
