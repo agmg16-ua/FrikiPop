@@ -1,0 +1,32 @@
+﻿html {
+    font-family: Arial;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    width: 100%;
+    background-color: #442768;
+    display: grid;
+    place-content: center;
+}
+
+    .menu > ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .menu > ul > li {
+            margin: 0.5em 0.9em;
+            
+        }
+
+            .menu > ul > li > a {
+                font-weight: bold;
+                color: white;
+                width: 100%;
+                text-align: center;
+            }
