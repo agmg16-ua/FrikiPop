@@ -64,31 +64,22 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
+	  <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+		  <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+	  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database.mdf" />
-    <Content Include="App_Data\Database_log.ldf">
-      <DependentUpon>Database.mdf</DependentUpon>
-=======
-    <Content Include="App_Data\Database1.mdf" />
+	 <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
->>>>>>> develop
     </Content>
     <Content Include="Admin.aspx" />
     <Content Include="Paises.aspx" />
     <Content Include="Localidades.aspx" />
-<<<<<<< HEAD
-	<Content Include="VerPedido.aspx" />
-	<Content Include="Pedido.aspx" />
-=======
     <Content Include="Publicidad.aspx" />
     <Content Include="Tarjetas.aspx" />
->>>>>>> develop
+	<Content Include="VerPedido.aspx" />
+	<Content Include="Pedido.aspx" />
     <Content Include="paginaPrincipal.aspx" />
     <Content Include="Provincias.aspx" />
     <Content Include="Web.config" />
@@ -115,22 +106,6 @@
     <Compile Include="Localidades.aspx.designer.cs">
       <DependentUpon>Localidades.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-	  <Compile Include="VerPedido.aspx.cs">
-		  <DependentUpon>VerPedido.aspx</DependentUpon>
-		  <SubType>ASPXCodeBehind</SubType>
-	  </Compile>
-	  <Compile Include="VerPedido.aspx.designer.cs">
-		  <DependentUpon>VerPedido.aspx</DependentUpon>
-	  </Compile>
-	  <Compile Include="Pedido.aspx.cs">
-		  <DependentUpon>Pedido.aspx</DependentUpon>
-		  <SubType>ASPXCodeBehind</SubType>
-	  </Compile>
-	  <Compile Include="Pedido.aspx.designer.cs">
-		  <DependentUpon>Pedido.aspx</DependentUpon>
-	  </Compile>
-=======
     <Compile Include="Publicidad.aspx.cs">
       <DependentUpon>Publicidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -145,7 +120,20 @@
     <Compile Include="Tarjetas.aspx.designer.cs">
       <DependentUpon>Tarjetas.aspx</DependentUpon>
     </Compile>
->>>>>>> develop
+	  <Compile Include="VerPedido.aspx.cs">
+		  <DependentUpon>VerPedido.aspx</DependentUpon>
+		  <SubType>ASPXCodeBehind</SubType>
+	  </Compile>
+	  <Compile Include="VerPedido.aspx.designer.cs">
+		  <DependentUpon>VerPedido.aspx</DependentUpon>
+	  </Compile>
+	  <Compile Include="Pedido.aspx.cs">
+		  <DependentUpon>Pedido.aspx</DependentUpon>
+		  <SubType>ASPXCodeBehind</SubType>
+	  </Compile>
+	  <Compile Include="Pedido.aspx.designer.cs">
+		  <DependentUpon>Pedido.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="paginaPrincipal.aspx.cs">
       <DependentUpon>paginaPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
