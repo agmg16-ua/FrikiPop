@@ -14,7 +14,7 @@
     <form runat="server">
     <header>
         <div>
-            <h1>FrikiPop</h1>
+            <asp:Image runat="server" ImageUrl="~/App_Images/logo.png" />
         </div>
         <div>
             <asp:Menu ID="Menu" runat="server" CssClass="menu" Orientation="Horizontal">
