@@ -10,5 +10,21 @@ namespace usuWeb {
         protected void Page_Load(object sender, EventArgs e) {
 
         }
+
+        protected void eliminarCarritoCompra(object sender, EventArgs e) {
+
+        }
+
+        protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e) {
+
+        }
+
+        protected void deleteArticulo(object sender, EventArgs e) {
+
+        }
+
+        protected void tramitarPedido(object sender, EventArgs e) {
+
+        }
     }
 }

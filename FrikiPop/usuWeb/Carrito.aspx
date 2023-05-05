@@ -17,7 +17,7 @@
 
                 <div class= "EnlistarArticulos">
 
-                  <asp:Repeater ID = "Repeater1" runat="server">
+                  <asp:Repeater ID = "Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
 
                     <ItemTemplate>
 
