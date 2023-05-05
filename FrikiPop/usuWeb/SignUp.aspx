@@ -38,7 +38,6 @@
             </p>
             <p>
                 Contraseña:&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox TextMode="Password" runat="server" ID="Contrasenya1" Width="192px"></asp:TextBox>
-                <asp:RegularExpressionValidator runat="server" ControlToValidate="contrasenya1"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator  runat="server" ControlToValidate="Contrasenya1" ErrorMessage="Tiene que introducir una contraseña obligatoriamente"></asp:RequiredFieldValidator>
             </p>
 
