@@ -1,5 +1,6 @@
 ﻿html {
     font-family: Arial;
+    color: whitesmoke;
 }
 
 h1 {
@@ -18,11 +19,12 @@ h1 {
 body {
     margin: 0;
     padding: 0;
+    background-color: #442768;
 }
 
 .menu {
     width: 100%;
-    background-color: #442768;
+    background-color: #272760;
     display: grid;
     place-content: center;
 }
