@@ -2,21 +2,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:repeater runat="server" ID="Repeater-PaginaPrincipal">
+    <asp:Repeater runat="server" ID="PrincipalRepeater">
         <ItemTemplate>
             <div class="articulo-card">
-                <!-- imagen-->
+                <asp:Image runat="server" ImageUrl= '<%#Eval("url_imagen")%>'/>
                     <figcaption class="articulo-card__caption">
                         <header class="articulo-card__header">
-                            <h2 class="articulo-card__nombre"></h2>
+                            <h2 class="articulo-card__nombre"><asp:Literal runat = "server" Text='<%# Eval("nombre") %>'/></h2>
                         </header>
                         <footer class="articulo-card__footer">
-                            <span class="articulo-card__precio"> =///articulo.precio /span>
+                            <span class="articulo-card__precio"> <%# Eval("precio") %> </span>
                             <asp:Button runat="server" class="articulo-card__button"/>
                             <i class="articulo-card__icon ri-add-line"></i>
                         </footer>
                    </figcaption>
             </div>
         </ItemTemplate>
-    </asp:repeater>
+    </asp:Repeater>
 </asp:Content>
