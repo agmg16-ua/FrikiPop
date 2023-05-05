@@ -46,5 +46,9 @@ namespace usuWeb {
         protected void Provincias_Click(object sender, EventArgs e) {
             Response.Redirect("~/Provincias.aspx");
         }
+
+        protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
     }
 }
