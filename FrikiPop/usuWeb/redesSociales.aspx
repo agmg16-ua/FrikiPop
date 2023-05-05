@@ -4,11 +4,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="modRedesSociales">
             <div>
-                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="codigo,nombre,descripcion,precio,url_imagen,usuario,tipo" CssClass="Gridview" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
+                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="red,url_logo,link_red" CssClass="Gridview" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="red" HeaderText="Red" SortExpression="red" />
-                        <asp:ImageField DataImageUrlField="url_imagen" HeaderText="Url imagen" SortExpression="url_imagen" />
+                        <asp:ImageField DataImageUrlField="url_logo" HeaderText="Url logo" SortExpression="url_logo" />
                         <asp:BoundField DataField="link_red" HeaderText="Link red" SortExpression="link_red" />
                     </Columns>
                 </asp:GridView>
@@ -16,8 +16,8 @@
             <asp:Label runat="server" for="red" Text="Red: "></asp:Label>
             <asp:TextBox runat="server" id="red" name="red" placeholder="Red"/>
             <br>
-            <asp:Label runat="server" for="url_imagen" Text="Url imagen: : "></asp:Label>
-            <asp:TextBox runat="server" id="url_imagen" name="url_imagen" placeholder="Url imagen"/>
+            <asp:Label runat="server" for="url_logo" Text="Url log: : "></asp:Label>
+            <asp:TextBox runat="server" id="url_logo" name="url_logo" placeholder="Url logo"/>
             <br>
             <asp:Label runat="server" for="link_red" Text="Link red: "></asp:Label>
             <asp:TextBox runat="server" id="link_red" name="link_red" placeholder="Link red"/>

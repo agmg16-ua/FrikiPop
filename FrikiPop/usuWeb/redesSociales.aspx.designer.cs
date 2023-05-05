@@ -33,13 +33,13 @@ namespace usuWeb
         protected global::System.Web.UI.WebControls.TextBox red;
 
         /// <summary>
-        /// url_imagen control.
+        /// url_logo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox url_imagen;
+        protected global::System.Web.UI.WebControls.TextBox url_logo;
 
         /// <summary>
         /// link_red control.
