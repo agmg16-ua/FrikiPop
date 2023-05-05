@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace library
 {
@@ -148,14 +149,14 @@ namespace library
             return false;
         }
 
-        public bool usuarioArticulo()
+        public DataTable usuarioArticulo()
         {
             CADArticulo articulo = new CADArticulo();
             if (articulo.readArticulo(this))
             {
-                return articulo.usuarioArticulo(this);
+                return articulo.usuarioArticulo(this.usuario);
             }
-            return false;
+            return new DataTable();
         }
     }
 }
