@@ -65,15 +65,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Content Include="Admin.aspx" />
-    <Content Include="Admin.aspx" />
-=======
->>>>>>> develop
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="Admin.aspx" />
     <Content Include="App_Style\masterStyle.css" />
     <Content Include="Paises.aspx" />
     <Content Include="Localidades.aspx" />
