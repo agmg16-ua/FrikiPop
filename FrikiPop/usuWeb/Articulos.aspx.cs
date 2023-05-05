@@ -13,5 +13,9 @@ namespace usuWeb
         {
 
         }
+
+        protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
     }
 }

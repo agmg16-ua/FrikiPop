@@ -23,13 +23,13 @@
                     <asp:MenuItem Text="Videojuegos" NavigateUrl="~/paginaPrincipal.aspx?param=Videojuegos"></asp:MenuItem>
                     <asp:MenuItem Text="Consolas" NavigateUrl="~/paginaPrincipal.aspx?param=Consolas"></asp:MenuItem>
                     <asp:MenuItem Text="Merchan" NavigateUrl="~/paginaPrincipal.aspx?param=Merchan"></asp:MenuItem>
-                    <asp:MenuItem Text="Ubicaciones" NavigateUrl="~/Paises.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Articulos" NavigateUrl="~/MenuArticulo.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Ver Pedido" NavigateUrl="~/verPedido.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Tarjetas" NavigateUrl="~/Tarjetas.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Publicidad" NavigateUrl="~/Publicidad.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Iniciar Sesión" NavigateUrl="~/Usuario.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Carrito" NavigateUrl="~/Carrito.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Pedido" NavigateUrl="~/Pedido.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Administrador" NavigateUrl="~/Admin.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Iniciar Sesión" NavigateUrl="~/Usuario.aspx"></asp:MenuItem>
                 </Items>
             </asp:Menu>
         </div>
@@ -43,8 +43,8 @@
             <h6><b>Redes sociales</b>
             <ul>
                 <li><a href="www.instagram.com"><img src="" alt="instagram" typeof="png"/></a></li>
-                <li><a href="www.facebook.com"><img src="" alt="facebook" typeof="png"</a></li>
-                <li><a href="www.twitter.com"><img src="" alt="twitter" typeof="png"</a></li>
+                <li><a href="www.facebook.com"><img src="" alt="facebook" typeof="png" /></a></li>
+                <li><a href="www.twitter.com"><img src="" alt="twitter" typeof="png" /></a></li>
             </ul></h6>
         </div>
         <div class="links"><h6>

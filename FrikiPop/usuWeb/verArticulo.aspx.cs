@@ -13,5 +13,13 @@ namespace usuWeb
         {
 
         }
+
+        protected void añadirCestaClick(object sender, EventArgs e) {
+
+        }
+
+        protected void comprarAhoraClick(object sender, EventArgs e) {
+
+        }
     }
 }

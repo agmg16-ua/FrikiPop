@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="#" rel="stylesheet" />
     <section id="Pedidos">
         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="numPedido" GridLines="None" CssClass="Gridview2">
             <Columns>

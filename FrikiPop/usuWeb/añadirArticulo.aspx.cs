@@ -13,5 +13,17 @@ namespace usuWeb
         {
 
         }
+
+        protected void añadir_Click(object sender, EventArgs e) {
+
+        }
+
+        protected void borrar_Click(object sender, EventArgs e) {
+
+        }
+
+        protected void Volver_Click(object sender, EventArgs e) {
+
+        }
     }
 }
