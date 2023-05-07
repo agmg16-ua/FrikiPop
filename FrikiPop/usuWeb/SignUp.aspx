@@ -2,46 +2,48 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+    <link rel="stylesheet" href="..\App_Style\usuarioStyle.css" />
+    <div id="seccionUsuario">
+            <h1 style="margin-left:75px">Nueva cuenta</h1>
             <p>
-                Subir imagen:&nbsp;&nbsp;&nbsp;&nbsp;  
+                Subir imagen:&nbsp;&nbsp;  
                 <asp:FileUpload ID="FileUpload1" runat="server" Width="437px" />
             </p>
             <p>
-                Nick_name:&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox runat="server" ID="Nick1" Width="216px"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Nick1" ErrorMessage="Tiene que introducir un nombre de usuario obligatoriamente"></asp:RequiredFieldValidator>
+                <asp:TextBox placeholder="Nombre de usuario" class ="cuadroDeTexto" runat="server" ID="Nick1"></asp:TextBox>
+                <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Nick1" ErrorMessage="Falta introducir un nombre de usuario"></asp:RequiredFieldValidator>
             </p>
             <p>
-                Nombre:&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox runat="server" ID="Nombre1" Width="246px"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Nombre1" ErrorMessage="Tiene que introducir su nombre obligatoriamente"></asp:RequiredFieldValidator>
+                <asp:TextBox placeholder="Nombre" class ="cuadroDeTexto"  runat="server" ID="Nombre1"></asp:TextBox>
+                <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Nombre1" ErrorMessage="Falta introducir su nombre"></asp:RequiredFieldValidator>
 
             </p>
             <p>
-                Apellidos:&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox runat="server" ID="Apellidos1" Width="230px"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Apellidos1" ErrorMessage="Tiene que introducir sus apellidos obligatoriamente"></asp:RequiredFieldValidator>
+                <asp:TextBox placeholder="Apellidos" class ="cuadroDeTexto" runat="server" ID="Apellidos1"></asp:TextBox>
+                <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Apellidos1" ErrorMessage="Falta introducir sus apellidos"></asp:RequiredFieldValidator>
             </p>
             <p>
-                Edad:&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox runat="server" ID="Edad1" Width="268px"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Edad1" ErrorMessage="Tiene que introducir su edad obligatoriamente"></asp:RequiredFieldValidator>
+                <asp:TextBox placeholder="Edad" class ="cuadroDeTexto" runat="server" ID="Edad1"></asp:TextBox>
+                <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Edad1" ErrorMessage="Falta introducir su edad"></asp:RequiredFieldValidator>
             </p>
             <p>
-                Pais:&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox runat="server" ID="Pais1" Width="277px"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Pais1" ErrorMessage="Tiene que introducir su pais de nacimiento obligatoriamente"></asp:RequiredFieldValidator>
+                <asp:TextBox placeholder="Pais" class ="cuadroDeTexto" runat="server" ID="Pais1"></asp:TextBox>
+                <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Pais1" ErrorMessage="Falta introducir su pais de nacimiento"></asp:RequiredFieldValidator>
             </p>
             <p>
-                Provincia:&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox runat="server" ID="Provincia1" Width="222px"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Provincia1" ErrorMessage="Tiene que introducir su provincia de nacimiento obligatoriamente"></asp:RequiredFieldValidator>
+                <asp:TextBox placeholder="Provincia" class ="cuadroDeTexto" runat="server" ID="Provincia1"></asp:TextBox>
+                <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Provincia1" ErrorMessage="Falta introducir su provincia de nacimiento"></asp:RequiredFieldValidator>
             </p>
             <p>
-                Localidad:&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox runat="server" ID="Localidad1" Width="218px"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Localidad1" ErrorMessage="Tiene que introducir su localidad de nacimiento obligatoriamente"></asp:RequiredFieldValidator>
+                <asp:TextBox placeholder="Localidad" class ="cuadroDeTexto" runat="server" ID="Localidad1"></asp:TextBox>
+                <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Localidad1" ErrorMessage="Falta introducir su localidad de nacimiento"></asp:RequiredFieldValidator>
             </p>
             <p>
-                Contraseña:&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox TextMode="Password" runat="server" ID="Contrasenya1" Width="192px"></asp:TextBox>
-                <asp:RequiredFieldValidator  runat="server" ControlToValidate="Contrasenya1" ErrorMessage="Tiene que introducir una contraseña obligatoriamente"></asp:RequiredFieldValidator>
+                <asp:TextBox placeholder="Contraseña" class ="cuadroDeTexto" TextMode="Password" runat="server" ID="Contrasenya1"></asp:TextBox>
+                <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Contrasenya1" ErrorMessage="Falta introducir una contraseña"></asp:RequiredFieldValidator>
             </p>
 
-            <asp:Button runat="server" Text="Sign Up"  ID="Crear" OnClick="createUsuario" Height="31px" Width="188px"/>
+            <asp:Button CssClass="boton" runat="server" Text="Sign Up"  ID="Crear" OnClick="createUsuario"/>
             <asp:Label runat ="server" ID = "LabelError"></asp:Label>
         </div>
 </asp:Content>

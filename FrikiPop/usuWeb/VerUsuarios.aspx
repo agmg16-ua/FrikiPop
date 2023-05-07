@@ -27,7 +27,7 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <asp:Button runat="server" Text="Añadir nuevo usuario" OnClick="CrearUsuario" /><br />
-    Nombre de usuario:&nbsp&nbsp<asp:TextBox runat="server" ID="eliminar" placeholder="Nick_name"></asp:TextBox><br />
-    <asp:Button runat="server" Text="Eliminar usuario" OnClick="EliminarUsuario" />
+    <asp:Button class="boton" runat="server" Text="Añadir nuevo usuario" OnClick="CrearUsuario" /><br />
+    <asp:TextBox placeHolder="Nombre de usuario" runat="server" ID="eliminar"></asp:TextBox><br />
+    <asp:Button class="boton" runat="server" Text="Eliminar usuario" OnClick="EliminarUsuario" />
 </asp:Content>
