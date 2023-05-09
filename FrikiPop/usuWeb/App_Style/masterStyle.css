@@ -3,6 +3,12 @@
     /*color: whitesmoke;*/
 }
 
+.logo{
+    width: 150px;
+    height: 45px;
+    aspect-ratio: 16/9;
+}
+
 h1 {
     font-size: 36px; /* Tamaño de la fuente */
     font-weight: bold; /* Grosor de la fuente */
@@ -23,29 +29,46 @@ body {
 }
 
 .menu {
-    width: 100%;
-    background-color: #272760;
     display: grid;
     place-content: center;
+    border-radius: 5px;
+    justify-content: center;
 }
 
     .menu > ul {
         display: flex;
         justify-content: space-between;
-
+        background-color: #272760;
     }
 
-        .menu > ul > li {
+        .menu > ul > li > a {
+            color: white;
             margin: 0.5em 0.9em;
-            
+            position: relative;
+            width: 100%;
+            display: block;
+            transition: .5s;
         }
 
-            .menu > ul > li > a {
+            .menu > ul > li > a::after {
+                position: relative;
                 font-weight: bold;
-                color: white;
                 width: 100%;
                 text-align: center;
+                display: block;
+                transition: .5s;
             }
+
+            .menu > ul > li > a:hover{
+                color: deeppink;
+            }
+
+            .menu > ul > li > a:hover::after{
+                transform: scaleX(1);
+                transform-origin: left;
+            }    
+
+            
 
 .footer_master {
     position: absolute;
@@ -53,3 +76,4 @@ body {
     width: 100%;
     height: 40px;
 }
+
