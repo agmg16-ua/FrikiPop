@@ -4,11 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+
+using library;
 
 namespace usuWeb {
     public partial class Carrito : System.Web.UI.Page {
-        protected void Page_Load(object sender, EventArgs e) {
 
+        private DataTable unirCarrito;
+
+        private ENCarrito carroCompra;
+        protected void Page_Load(object sender, EventArgs e) {
+            carroCompra = new ENCarrito();
         }
 
         protected void eliminarCarritoCompra(object sender, EventArgs e) {
