@@ -40,3 +40,14 @@
     color: red;
     font-size: medium;
 }
+
+.listas {
+    text-align: center;
+    color: black;
+    background-color: #c3bdbd;
+    border: unset;
+    font-size: medium;
+    Width: 410px;
+    Height: 30px;
+    border-radius: 25px;
+}

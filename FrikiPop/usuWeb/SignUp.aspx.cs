@@ -20,7 +20,7 @@ namespace usuWeb
                 //FileUpload1.FileName = 
             }
 
-            ENUsuario usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidad1.Text, Provincia1.Text, Pais1.Text, FileUpload1.FileName, int.Parse(Edad1.Text), 0);
+            ENUsuario usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidades.SelectedValue, Provincias.SelectedValue, Paises.SelectedValue, FileUpload1.FileName, int.Parse(Edad1.Text), 0);
             if (usur.readUsuario() == false)
             {
                 if (usur.createUsuario() == false)

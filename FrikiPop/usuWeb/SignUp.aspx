@@ -27,16 +27,22 @@
                 <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Edad1" ErrorMessage="Falta introducir su edad"></asp:RequiredFieldValidator>
             </p>
             <p>
-                <asp:TextBox placeholder="Pais" class ="cuadroDeTexto" runat="server" ID="Pais1"></asp:TextBox>
-                <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Pais1" ErrorMessage="Falta introducir su pais de nacimiento"></asp:RequiredFieldValidator>
+                <asp:DropDownList ID="Paises" runat="server" CssClass="listas" DataSourceID="Database1" DataTextField="pais" DataValueField="pais">
+                    <asp:ListItem Text="Seleccione un pais"></asp:ListItem>
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="Database1" runat="server" ConnectionString="<%$ ConnectionStrings:Database %>" SelectCommand="SELECT [pais] FROM [Pais]"></asp:SqlDataSource>
             </p>
             <p>
-                <asp:TextBox placeholder="Provincia" class ="cuadroDeTexto" runat="server" ID="Provincia1"></asp:TextBox>
-                <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Provincia1" ErrorMessage="Falta introducir su provincia de nacimiento"></asp:RequiredFieldValidator>
+                <asp:DropDownList ID="Provincias" runat="server" CssClass="listas" DataSourceID="SqlDatabase" DataTextField="provincia" DataValueField="provincia">
+                    <asp:ListItem Text="Seleccione una provincia"></asp:ListItem>
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:Database %>" SelectCommand="SELECT [provincia] FROM [Provincia]"></asp:SqlDataSource>
             </p>
             <p>
-                <asp:TextBox placeholder="Localidad" class ="cuadroDeTexto" runat="server" ID="Localidad1"></asp:TextBox>
-                <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Localidad1" ErrorMessage="Falta introducir su localidad de nacimiento"></asp:RequiredFieldValidator>
+                <asp:DropDownList ID="Localidades" runat="server" CssClass="listas" DataSourceID="SqlDataSource1" DataTextField="localidad" DataValueField="localidad">
+                    <asp:ListItem Text="Seleccione una localidad"></asp:ListItem>
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Database %>" SelectCommand="SELECT [localidad] FROM [Localidad]"></asp:SqlDataSource>
             </p>
             <p>
                 <asp:TextBox placeholder="Contraseña" class ="cuadroDeTexto" TextMode="Password" runat="server" ID="Contrasenya1"></asp:TextBox>
