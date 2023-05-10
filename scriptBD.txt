@@ -80,8 +80,8 @@ create table Carrito (
 create table LinCarrito (
 	linea int not null,
   	id_carrito int not null,
+	usuario varchar(20) not null,
   	importe decimal(7,2) not null,
-  	usuario varchar(20) not null,
   	articulo varchar(25) not null,
   	CONSTRAINT PK_LINCARRITO PRIMARY key (linea, id_carrito),
   	CONSTRAINT FK_LINCARRITO_CARRITO FOREIGN key (id_carrito) references Carrito (num_carrito)
@@ -130,6 +130,269 @@ create table RedesSociales (
   	url_logo varchar(100) not null,
   	link_red varchar(100) not null
 )
+
+--Insercion de datos--
+
+INSERT INTO Pais VALUES 
+	('Spain'), 
+	('Portugal'),
+	('France');
+
+INSERT INTO Provincia VALUES
+	('Alicante', 'Spain'),
+	('Valencia', 'Spain'),
+	('Castellon', 'Spain'),
+	('Murcia', 'Spain'),
+	('Almeria', 'Spain'),
+	('Granada', 'Spain'),
+	('Jaen', 'Spain'),
+	('Cordoba', 'Spain'),
+	('Malaga', 'Spain'),
+	('Sevilla', 'Spain'),
+	('Cadiz', 'Spain'),
+	('Huelva', 'Spain'),
+	('Albacete', 'Spain'),
+	('Ciudad Real', 'Spain'),
+	('Toledo', 'Spain'),
+	('Cuenca', 'Spain'),
+	('Guadalajara', 'Spain'),
+	('Madrid', 'Spain'),
+	('Badajoz', 'Spain'),
+	('Caceres', 'Spain'),
+	('Teruel', 'Spain'),
+	('Zaragoza', 'Spain'),
+	('Huesca', 'Spain'),
+	('Tarragona', 'Spain'),
+	('Lleida', 'Spain'),
+	('Barcelona', 'Spain'),
+	('Gerona', 'Spain'),
+	('Navarra', 'Spain'),
+	('La Rioja', 'Spain'),
+	('Vizcaya', 'Spain'),
+	('Alava', 'Spain'),
+	('Guipuzcoa', 'Spain'),
+	('Cantabria', 'Spain'),
+	('Asturias', 'Spain'),
+	('Lugo', 'Spain'),
+	('La Corunya', 'Spain'),
+	('Pontevedra', 'Spain'),
+	('Orense', 'Spain'),
+	('Leon', 'Spain'),
+	('Zamora', 'Spain'),
+	('Salamanca', 'Spain'),
+	('Avila', 'Spain'),
+	('Segovia', 'Spain'),
+	('Valladolid', 'Spain'),
+	('Palencia', 'Spain'),
+	('Burgos', 'Spain'),
+	('Soria', 'Spain'),
+	('Baleares', 'Spain'),
+	('Canarias', 'Spain'),
+	('Viana do Castelo', 'Portugal'),
+	('Braga', 'Portugal'),
+	('Vila Real', 'Portugal'),
+	('Braganza', 'Portugal'),
+	('Porto', 'Portugal'),
+	('Aveiro', 'Portugal'),
+	('Viseu', 'Portugal'),
+	('Guarda', 'Portugal'),
+	('Coimbra', 'Portugal'),
+	('Castelo Branco', 'Portugal'),
+	('Leiria', 'Portugal'),
+	('Santarem', 'Portugal'),
+	('Portalegre', 'Portugal'),
+	('Lisboa', 'Portugal'),
+	('Evora', 'Portugal'),
+	('Setubal', 'Portugal'),
+	('Beja', 'Portugal'),
+	('Faro', 'Portugal'),
+	('Horta', 'Portugal'),
+	('Angra do Heroismo', 'Portugal'),
+	('Ponta Delgada', 'Portugal'),
+	('Funchal', 'Portugal'),
+	('Norte', 'France'),
+	('Picardie', 'France'),
+	('Alta Normandia', 'France'),
+	('Baja Normandia', 'France'),
+	('Champanya Ardennes', 'France'),
+	('Lorena', 'France'),
+	('Alsacia', 'France'),
+	('Paris', 'France'),
+	('Centro', 'France'),
+	('Paris del Loire', 'France'),
+	('Bretanya', 'France'),
+	('Borgonya', 'France'),
+	('Franche Comte', 'France'),
+	('El Lemosin', 'France'),
+	('Poitou Charentes', 'France'),
+	('Auvernia', 'France'),
+	('Rhone Alpes', 'France'),
+	('Provenza Alpes', 'France'),
+	('Languedoc Roussillon', 'France'),
+	('Midi Pirineos', 'France'),
+	('Aquitania', 'France'),
+	('Corcega', 'France'),
+	('Islas Tropicales', 'France');
+
+INSERT INTO Localidad VALUES
+	('Alicante', 'Alicante', 'Spain'),
+	('Benidorm', 'Alicante', 'Spain'),
+	('Calpe', 'Alicante', 'Spain'),
+	('Elche', 'Alicante', 'Spain'),
+	('Santa Pola', 'Alicante', 'Spain'),
+	('Javea', 'Alicante', 'Spain'),
+	('Monovar', 'Alicante', 'Spain'),
+	('El Campello', 'Alicante', 'Spain'),
+	('San Vicente', 'Alicante', 'Spain'),
+	('San Juan', 'Alicante', 'Spain'),
+	('Muchamiel', 'Alicante', 'Spain'),
+	('Alcoy', 'Alicante', 'Spain'),
+	('Ibi', 'Alicante', 'Spain'),
+	('Torrevieja', 'Alicante', 'Spain'),
+	('Valencia', 'Valencia', 'Spain'),
+	('Santiago de Compostela', 'La Corunya', 'Spain'),
+	('Lugo', 'Lugo', 'Spain'),
+	('Pontevedra', 'Pontevedra', 'Spain'),
+	('Ourense', 'Orense', 'Spain'),
+	('Oviedo', 'Asturias', 'Spain'),
+	('Santander', 'Cantabria', 'Spain'),
+	('Bilbao', 'Vizcaya', 'Spain'),
+	('San Sebastian', 'Guipuzcoa', 'Spain'),
+	('Vitoria', 'Alava', 'Spain'),
+	('Pamplona', 'Navarra', 'Spain'),
+	('Huesca', 'Huesca', 'Spain'),
+	('Zaragoza', 'Zaragoza', 'Spain'),
+	('Teruel', 'Teruel', 'Spain'),
+	('Lleida', 'Lleida', 'Spain'),
+	('Barcelona', 'Barcelona', 'Spain'),
+	('Tarragona', 'Tarragona', 'Spain'),
+	('Gerona', 'Gerona', 'Spain'),
+	('Castellon', 'Castellon', 'Spain'),
+	('Madrid', 'Madrid', 'Spain'),
+	('Murcia', 'Murcia', 'Spain'),
+	('Palma', 'Baleares', 'Spain'),
+	('Almeria', 'Almeria', 'Spain'),
+	('Granada', 'Granada', 'Spain'),
+	('Jaen', 'Jaen', 'Spain'),
+	('Malaga', 'Malaga', 'Spain'),
+	('Cordoba', 'Cordoba', 'Spain'),
+	('Cadiz', 'Cadiz', 'Spain'),
+	('Sevilla', 'Sevilla', 'Spain'),
+	('Huelva', 'Huelva', 'Spain'),
+	('Burgos', 'Burgos', 'Spain'),
+	('Leon', 'Leon', 'Spain'),
+	('Zamora', 'Zamora', 'Spain'),
+	('Salamanca', 'Salamanca', 'Spain'),
+	('Avila', 'Avila', 'Spain'),
+	('Segovia', 'Segovia', 'Spain'),
+	('Valladolid', 'Valladolid', 'Spain'),
+	('Soria', 'Soria', 'Spain'),
+	('Palencia', 'Palencia', 'Spain'),
+	('Caceres', 'Caceres', 'Spain'),
+	('Badajoz', 'Badajoz', 'Spain'),
+	('Toledo', 'Toledo', 'Spain'),
+	('Guadalajara', 'Guadalajara', 'Spain'),
+	('Cuenca', 'Cuenca', 'Spain'),
+	('Albacete', 'Albacete', 'Spain'),
+	('Ciudad Real', 'Ciudad Real', 'Spain'),
+	('Las Palmas', 'Canarias', 'Spain');
+
+INSERT INTO Usuario VALUES (
+	'TuAdminDeConfianza',
+	'Admin',
+	'De Confianza',
+	99,
+	'Eladmin03',
+	'Sin Imagen',
+	1,
+	'Alicante',
+	'Alicante',
+	'Spain'),
+
+('Usuario_Promedio',
+	'Mario',
+	'Skywalker Bolson',
+	30,
+	'Contrasenya123',
+	'Sin Imagen',
+	0,
+	'Madrid',
+	'Madrid',
+	'Spain'
+);
+
+INSERT INTO Carrito values
+	(1, 'TuAdminDeConfianza', 'Vacio'),
+	(2, 'Usuario_Promedio', 'Vacio');
+
+INSERT INTO TipoArticulo VALUES
+	('Videojuego'),
+	('Merchan'),
+	('Consola');
+
+INSERT INTO Articulo VALUES (
+	1,
+	'GTAV',
+	'Videojuego de accion y disparos por la ciudad de Los Santos',
+	9.99,
+	'Sin Imagen',
+	'TuAdminDeConfianza',
+	'Videojuego'
+),
+(
+	2,
+	'Nintendo WII',
+	'Consola WII en perfecto estado y condicion',
+	75,
+	'SIN IMAGEN',
+	'Usuario_Promedio',
+	'Consola'
+);
+
+INSERT INTO LinCarrito VALUES (
+	1,
+	1,
+	'TuAdminDeConfianza',
+	75,
+	2
+),
+(
+	1,
+	2,
+	'Usuario_Promedio',
+	9.99,
+	1
+);
+
+INSERT INTO RedesSociales VALUES
+	('Instagram', 'SIN FOTO', 'www.instagram.com'),
+	('Twitter', 'SIN FOTO', 'www.twitter.com'),
+	('Facebook', 'SIN FOTO', 'www.facebook.com');
+
+INSERT INTO Publicidad VALUES
+	('Game0523', 'GAME S.L.', 'SIN FOTO', 'www.game.com'),
+	('Steam0523', 'STEAM S.L.', 'SIN FOTO', 'www.steam.com');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

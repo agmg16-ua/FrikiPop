@@ -76,6 +76,7 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Style\gridViewStyle.css" />
     <Content Include="App_Style\masterStyle.css" />
     <Content Include="App_Style\usuarioStyle.css" />
     <Content Include="añadirArticulo.aspx" />
