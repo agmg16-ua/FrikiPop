@@ -7,12 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace usuWeb
-{
+namespace usuWeb {
 
 
-    public partial class WebForm1
-    {
+    public partial class WebForm1 {
 
         /// <summary>
         /// Control GridView1.
