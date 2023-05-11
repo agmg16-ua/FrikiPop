@@ -8,6 +8,7 @@
     <title></title>
     <link rel="stylesheet" href="..\App_Style\masterStyle.css" />
     <link rel="stylesheet" href="..\App_Style\gridViewStyle.css" />
+    <link rel="stylesheet" href="..\App_Style\usuarioStyle.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
