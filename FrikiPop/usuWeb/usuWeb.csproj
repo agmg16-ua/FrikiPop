@@ -78,6 +78,7 @@
     <Content Include="App_Style\gridViewStyle.css" />
     <Content Include="Admin.aspx" />
     <Content Include="App_Style\masterStyle.css" />
+    <Content Include="App_Style\usuarioStyle.css" />
     <Content Include="añadirArticulo.aspx" />
     <Content Include="MenuArticulo.aspx" />
     <Content Include="Paises.aspx" />

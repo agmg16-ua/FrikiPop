@@ -32,5 +32,16 @@ namespace usuWeb
             GridView1.DataSource = usuario.listarUsuarios();
             GridView1.DataBind();
         }
+        protected void CrearUsuario(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SignUp.aspx");
+        }
+
+        protected void EliminarUsuario(object sender, EventArgs e)
+        {
+            ENUsuario usur = new ENUsuario();
+            usur.nick = eliminar.Text;
+            usur.deleteUsuario();
+        }
     }
 }
