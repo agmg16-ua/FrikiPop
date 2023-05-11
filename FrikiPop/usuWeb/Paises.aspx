@@ -1,12 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Paises.aspx.cs" Inherits="usuWeb.Paises" %>
 
+<asp:Content runat="server" ID="Content1" ContentPlaceHolderID="head" >
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="modPais">
             <div>
                 Seleccione el Pais que desea ver las Provincias: <br />
-                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="pais" OnSelectedIndexChanged="GridView_SelectedIndexChanged" >
+                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="pais" CssClass="gridView" OnSelectedIndexChanged="GridView_SelectedIndexChanged" >
                     <Columns>
-                        <asp:CommandField ShowSelectButton="True" />
+                        <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="selectButton" />
                         <asp:BoundField DataField="pais" HeaderText="Pais" SortExpression="pais" ReadOnly="true" />
                     </Columns>
                 </asp:GridView>

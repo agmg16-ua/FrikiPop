@@ -3,49 +3,73 @@
     /*color: whitesmoke;*/
 }
 
-h1 {
-    font-size: 36px; /* Tamaño de la fuente */
-    font-weight: bold; /* Grosor de la fuente */
-    text-align: left; /* Alineación horizontal del texto */
-    margin: 1em;
-    text-transform: uppercase; /* Convertir el texto a mayúsculas */
-    color: #ff9900; /* Color del texto */
-    text-shadow: 1px 1px 2px #333; /* Sombra del texto */
-    margin-top: 20px; /* Espacio superior */
-    margin-bottom: 20px; /* Espacio inferior */
-}
-
-
 body {
     margin: 0;
     padding: 0;
-    /*background-color: #442768;*/
+    background-color: #0f1618;
+    color: white;
+}
+
+.logo {
+    width: 150px;
+    height: 45px;
 }
 
 .menu {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    background-color: #272760;
-    display: grid;
-    place-content: center;
 }
 
     .menu > ul {
         display: flex;
-        justify-content: space-between;
-
+        border-radius: 10px;
+        height: 50px;
+        background-color: #a70084;
+        align-items: center;
     }
 
-        .menu > ul > li {
+        .menu > ul > li > a {
+            color: white;
             margin: 0.5em 0.9em;
-            
+            font-weight: bold;
+            position: relative;
+            width: 100%;
+            display: block;
+            transition: .5s;
         }
 
-            .menu > ul > li > a {
-                font-weight: bold;
-                color: white;
-                width: 100%;
-                text-align: center;
+            .menu > ul > li > a:hover {
+                color: #2A0021;
             }
+
+.cuadroDeTexto {
+    text-align: center;
+    color: black;
+    background-color: #c3bdbd;
+    border: unset;
+    font-size: medium;
+    Width: 410px;
+    Height: 30px;
+    border-radius: 25px;
+}
+
+.boton {
+    height: 50px;
+    background-color: antiquewhite;
+    border-radius: 25px;
+    margin-left: 100px;
+    Height: 43px;
+    Width: 218px;
+    border: unset;
+}
+
+    .boton:hover {
+        color: white;
+        background-color: #a70084;
+        transform: scale(1.2);
+        transition: 1s;
+    }
 
 .footer_master {
     position: absolute;
