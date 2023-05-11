@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Paises.aspx.cs" Inherits="usuWeb.Paises" %>
 
+<asp:Content runat="server" ID="Content1" ContentPlaceHolderID="head" >
+    <link rel="stylesheet" href="..\App_Style\gridViewStyle.css" />
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="modPais">
             <div>

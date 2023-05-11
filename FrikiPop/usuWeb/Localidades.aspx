@@ -3,9 +3,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="modLocalidad">
             <div>
-                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="localidad" CssClass="Gridview" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
+                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="localidad" CssClass="gridView" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
                     <Columns>
-                        <asp:CommandField ShowSelectButton="False" />
+                        <asp:CommandField ShowSelectButton="False" ControlStyle-CssClass="selectButton" />
                         <asp:BoundField DataField="localidad" HeaderText="Localidad" SortExpression="localidad" ReadOnly="True" />
                         <asp:BoundField DataField="provincia" HeaderText="Provincia" SortExpression="provincia" />
                         <asp:BoundField DataField="pais" HeaderText="Pais" SortExpression="pais" />
