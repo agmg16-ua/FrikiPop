@@ -15,10 +15,9 @@
     <form runat="server">
     <header>
         <div>
-            <asp:Image runat="server" ImageUrl="~/App_Images/logo.png" />
+            <asp:Image runat="server" ImageUrl="~/App_Images/logo.png" CssClass="logo" />
         </div>
-        <div>
-            <asp:Menu ID="Menu" runat="server" CssClass="menu" Orientation="Horizontal">
+            <asp:Menu ID="Menu" runat="server" CssClass="menu">
                 <Items >
                     <asp:MenuItem Text="Home" NavigateUrl="~/paginaPrincipal.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Videojuegos" NavigateUrl="~/paginaPrincipal.aspx?param=Videojuegos"></asp:MenuItem>
@@ -33,7 +32,6 @@
                     <asp:MenuItem Text="Iniciar Sesión" NavigateUrl="~/Usuario.aspx"></asp:MenuItem>
                 </Items>
             </asp:Menu>
-        </div>
     </header>
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
