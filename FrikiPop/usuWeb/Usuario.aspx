@@ -15,7 +15,7 @@
         <asp:Button class="boton"  id="Login" runat="server" Text="Log In" OnClick="LogIn"/>
         <asp:Label runat ="server" ID = "LabelError"></asp:Label>
         <br /><br />
-        ¿No tiene una cuenta todavía?:
+        ¿No tiene una cuenta todavía?
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SignUp.aspx">Regístrate aquí</asp:HyperLink>
     </div>
 </asp:Content>

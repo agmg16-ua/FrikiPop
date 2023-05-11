@@ -33,16 +33,18 @@
                 <asp:SqlDataSource ID="Database1" runat="server" ConnectionString="<%$ ConnectionStrings:Database %>" SelectCommand="SELECT [pais] FROM [Pais]"></asp:SqlDataSource>
             </p>
             <p>
-                <asp:DropDownList ID="Provincias" runat="server" CssClass="listas" DataSourceID="SqlDatabase" DataTextField="provincia" DataValueField="provincia">
+                <asp:DropDownList ID="Provincias" runat="server" CssClass="listas" DataSourceID="SqlDatabase" DataTextField="provincia" DataValueField="provincia" OnSelectedIndexChanged="Provincias_SelectedIndexChanged">
                     <asp:ListItem Text="Seleccione una provincia"></asp:ListItem>
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:Database %>" SelectCommand="SELECT [provincia] FROM [Provincia]"></asp:SqlDataSource>
+                <asp:Label CssClass="labelsDeError" runat ="server" ID = "LabelErrorProvincia"></asp:Label>
             </p>
             <p>
-                <asp:DropDownList ID="Localidades" runat="server" CssClass="listas" DataSourceID="SqlDataSource1" DataTextField="localidad" DataValueField="localidad">
+                <asp:DropDownList ID="Localidades" runat="server" CssClass="listas" DataSourceID="SqlDataSource1" DataTextField="localidad" DataValueField="localidad" OnSelectedIndexChanged="Localidades_SelectedIndexChanged">
                     <asp:ListItem Text="Seleccione una localidad"></asp:ListItem>
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Database %>" SelectCommand="SELECT [localidad] FROM [Localidad]"></asp:SqlDataSource>
+                <asp:Label CssClass="labelsDeError" runat ="server" ID = "LabelErrorLocalidad"></asp:Label>
             </p>
             <p>
                 <asp:TextBox placeholder="Contraseña" class ="cuadroDeTexto" TextMode="Password" runat="server" ID="Contrasenya1"></asp:TextBox>
@@ -50,6 +52,6 @@
             </p>
 
             <asp:Button CssClass="boton" runat="server" Text="Sign Up"  ID="Crear" OnClick="createUsuario"/>
-            <asp:Label runat ="server" ID = "LabelError"></asp:Label>
+            <asp:Label CssClass="labelsDeError" runat ="server" ID = "LabelError"></asp:Label>
         </div>
 </asp:Content>

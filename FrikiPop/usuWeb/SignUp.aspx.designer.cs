@@ -96,6 +96,15 @@ namespace usuWeb
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDatabase;
 
         /// <summary>
+        /// Control LabelErrorProvincia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelErrorProvincia;
+
+        /// <summary>
         /// Control Localidades.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace usuWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// Control LabelErrorLocalidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelErrorLocalidad;
 
         /// <summary>
         /// Control Contrasenya1.

@@ -37,5 +37,38 @@ namespace usuWeb
                 LabelError.Text = "El Nick Name ya existe, por favor elija otro";
             }
         }
+
+        protected void Provincias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ENProvincia provincia = new ENProvincia();
+            provincia.provincia = Provincias.SelectedValue;
+            provincia.pais = Paises.SelectedValue;
+
+            if (provincia.readProvincia() == false)
+            {
+                LabelErrorProvincia.Text = "La provincia seleccionada es incorrecta";
+            }
+            else
+            {
+                LabelErrorProvincia.Text = " ";
+            }
+        }
+
+        protected void Localidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ENLocalidad localidad = new ENLocalidad();
+            localidad.localidad = Localidades.SelectedValue;
+            localidad.provincia = Provincias.SelectedValue;
+            localidad.pais = Paises.SelectedValue;
+
+            if (localidad.readLocalidad() == false)
+            {
+                LabelErrorLocalidad.Text = "La localidad seleccionada es incorrecta";
+            }
+            else
+            {
+                LabelErrorLocalidad.Text = " ";
+            }
+        }
     }
 }

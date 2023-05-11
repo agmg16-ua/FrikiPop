@@ -36,7 +36,7 @@
     font-size:medium;
 }
 
-#LabelError {
+.labelsDeError {
     color: red;
     font-size: medium;
 }
