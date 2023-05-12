@@ -7,7 +7,8 @@
             <h1 style="margin-left:75px">Nueva cuenta</h1>
             <p>
                 Subir imagen:&nbsp;&nbsp;  
-                <asp:FileUpload ID="FileUpload1" runat="server" Width="437px" />
+                <asp:FileUpload ID="FileUpload1" runat="server" Width="437px"/>
+                <asp:Label runat="server" ID="Prueba" CssClass="labelsDeError"></asp:Label>
             </p>
             <p>
                 <asp:TextBox placeholder="Nombre de usuario" class ="cuadroDeTexto" runat="server" ID="Nick1"></asp:TextBox>

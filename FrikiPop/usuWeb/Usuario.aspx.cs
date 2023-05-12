@@ -16,6 +16,8 @@ namespace usuWeb
             en.nick = Nick.Text;
             if (en.readUsuario() == true && en.contrasenya == Contrasenya.Text)
             {
+                Session.Add("imagen", en.imagen);
+                Session.Add("nick", en.nick);
                 if (en.esAdmin() == true)
                 {
                     Response.Redirect("~/paginaPrincipal.aspx");
