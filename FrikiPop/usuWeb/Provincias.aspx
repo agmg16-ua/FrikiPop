@@ -9,7 +9,7 @@
             <div>
                 <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="provincia" CssClass="gridView" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
                     <Columns>
-                        <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="selectButton" />
+                        <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="selectButton" HeaderText="Ver Localidades:" />
                         <asp:BoundField DataField="provincia" HeaderText="Provincia" SortExpression="provincia" ReadOnly="true" />
                         <asp:BoundField DataField="pais" HeaderText="Pais" SortExpression="pais" />
                     </Columns>

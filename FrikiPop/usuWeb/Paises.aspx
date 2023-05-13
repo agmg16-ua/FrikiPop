@@ -7,17 +7,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="modPais">
             <div>
-                Seleccione el Pais que desea ver las Provincias: <br />
+                <br />
                 <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="pais" CssClass="gridView" OnSelectedIndexChanged="GridView_SelectedIndexChanged" >
                     <Columns>
-                        <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="selectButton" />
+                        <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="selectButton" HeaderText="Ver Provincias:" />
                         <asp:BoundField DataField="pais" HeaderText="Pais" SortExpression="pais" ReadOnly="true" />
                     </Columns>
                 </asp:GridView>
             </div>
             
        <section id="textoPaises">
-            <br />Si quiere añadir o eliminar un pais, escribalo a continuación: <br />
+            <br /><br />
             <asp:TextBox runat="server" id="pais_text" CssClass="cuadroDeTexto" name="pais" placeholder="Pais"/>
             <br>
        </section>
