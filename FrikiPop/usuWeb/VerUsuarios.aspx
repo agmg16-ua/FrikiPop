@@ -21,47 +21,21 @@
     </p>
     <asp:GridView CssClass="gridView" ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False">
         <Columns>
-            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Nick_name" DataField="nick_name" SortExpression="nick_name">
-                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-            </asp:BoundField>
-            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Nombre" DataField="nombre" SortExpression="nombre">
-                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-            </asp:BoundField>
-            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Apellidos" DataField="apellidos" SortExpression="apellidos">
-                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-            </asp:BoundField>
-            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Edad" DataField="edad" SortExpression="edad">
-                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-            </asp:BoundField>
-            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Contraseña" DataField="contrasenya" SortExpression="contrasenya">
-                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-            </asp:BoundField>
-            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Imagen" DataField="url_imagen" SortExpression="url_imagen">
-                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-            </asp:BoundField>
-            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Administrador?" DataField="admin" SortExpression="admin">
-                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-            </asp:BoundField>
-            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Localidad" DataField="localidad" SortExpression="localidad">
-                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-            </asp:BoundField>
-            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Provincia" DataField="provincia" SortExpression="provincia">
-                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-            </asp:BoundField>
-            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Pais" DataField="pais" SortExpression="pais">
-                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-            </asp:BoundField>
+            <asp:BoundField HeaderText="Nick_name" DataField="nick_name" SortExpression="nick_name"/>
+            <asp:BoundField HeaderText="Nombre" DataField="nombre" SortExpression="nombre"/>
+            <asp:BoundField HeaderText="Apellidos" DataField="apellidos" SortExpression="apellidos"/>
+            <asp:BoundField HeaderText="Edad" DataField="edad" SortExpression="edad"/>
+            <asp:BoundField HeaderText="Contraseña" DataField="contrasenya" SortExpression="contrasenya"/>
+            <asp:BoundField HeaderText="Imagen" DataField="url_imagen" SortExpression="url_imagen"/>
+            <asp:BoundField HeaderText="Administrador?" DataField="admin" SortExpression="admin"/>
+            <asp:BoundField HeaderText="Localidad" DataField="localidad" SortExpression="localidad"/>
+            <asp:BoundField HeaderText="Provincia" DataField="provincia" SortExpression="provincia"/>
+            <asp:BoundField HeaderText="Pais" DataField="pais" SortExpression="pais"/>
         </Columns>
     </asp:GridView>
-    <div class="SeccionUsuarios">
-        <p>
-            <asp:Button class="boton" runat="server" Text="Añadir nuevo usuario" OnClick="CrearUsuario" /><br />
-        </p>
-        <p>
-            <asp:TextBox CssClass="cuadroDeTexto" placeHolder="Nombre de usuario" runat="server" ID="eliminar"></asp:TextBox><br />
-        </p>
-        <p>
-            <asp:Button class="boton" runat="server" Text="Eliminar usuario" OnClick="EliminarUsuario" />
-        </p>
-    </div>
+    <section id="botonesVerUsuarios">
+        <asp:Button class="boton" runat="server" Text="Añadir nuevo usuario" OnClick="CrearUsuario" /><br /><br />
+        <asp:TextBox placeHolder="Nombre de usuario" CssClass="cuadroDeTexto" runat="server" ID="eliminar"></asp:TextBox><br /><br />
+        <asp:Button class="boton" runat="server" Text="Eliminar usuario" OnClick="EliminarUsuario" />
+    </section>
 </asp:Content>

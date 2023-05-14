@@ -7,12 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace usuWeb
-{
+namespace usuWeb {
 
 
-    public partial class Formulario_web2
-    {
+    public partial class Formulario_web2 {
 
         /// <summary>
         /// Control FileUpload1.
