@@ -1,0 +1,14 @@
+﻿#seccionUsuario {
+    margin-left: 520px;
+    font-size:medium;
+}
+
+.validator{
+    color:red;
+    font-size:medium;
+}
+
+#LabelError {
+    color: red;
+    font-size: medium;
+}

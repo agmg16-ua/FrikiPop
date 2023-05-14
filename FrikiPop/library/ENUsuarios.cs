@@ -98,7 +98,7 @@ namespace library
             }
             set
             {
-                _edad = edad;
+                _edad = value;
             }
         }
         public string contrasenya
@@ -209,35 +209,35 @@ namespace library
         }
 
         //FILTROS DE LOS USUARIOS SEGUN SUS ATRIBUTOS(No filtro por contraseña porque no tiene sentido, se supone que es privada para nosotros)
-        public DataSet filtrarPorLocalidad()
+        public DataSet filtrarPorLocalidad(string localidad)
         {
             CADUsuario cADUsuario = new CADUsuario();
-            return cADUsuario.filtrarPorLocalidad(this);
+            return cADUsuario.filtrarPorLocalidad(localidad);
         }
-        public DataSet filtrarPorProvincia()
+        public DataSet filtrarPorProvincia(string provincia)
         {
             CADUsuario cADUsuario = new CADUsuario();
-            return cADUsuario.filtrarPorProvincia(this);
+            return cADUsuario.filtrarPorProvincia(provincia);
         }
-        public DataSet filtrarPorPais()
+        public DataSet filtrarPorPais(string pais)
         {
             CADUsuario cADUsuario = new CADUsuario();
-            return cADUsuario.filtrarPorPais(this);
+            return cADUsuario.filtrarPorPais(pais);
         }
-        public DataSet filtrarPorNombre()
+        public DataSet filtrarPorNombre(string nombre)
         {
             CADUsuario cADUsuario = new CADUsuario();
-            return cADUsuario.filtrarPorNombre(this);
+            return cADUsuario.filtrarPorNombre(nombre);
         }
-        public DataSet filtrarPorApellidos()
+        public DataSet filtrarPorApellidos(string apellidos)
         {
             CADUsuario cADUsuario = new CADUsuario();
-            return cADUsuario.filtrarPorApellidos(this);
+            return cADUsuario.filtrarPorApellidos(apellidos);
         }
-        public DataSet filtrarPorEdad()
+        public DataSet filtrarPorEdad(int edad)
         {
             CADUsuario cADUsuario = new CADUsuario();
-            return cADUsuario.filtrarPorEdad(this);
+            return cADUsuario.filtrarPorEdad(edad);
         }
 
         public DataTable listarUsuarios()
