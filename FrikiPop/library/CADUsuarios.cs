@@ -216,6 +216,28 @@ namespace library
         }
 
         //FILTROS A LA BASE DE DATOS PARA LOS ADMINS
+        public DataSet filtrarPorAdministrador(int admin)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where admin = " + admin, c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
+
+            return bdvirtual;
+        }
+
+        public DataSet filtrarPorNick(string nick)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where nick_name = '" + nick + "'", c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
+
+            return bdvirtual;
+        }
+
         public DataSet filtrarPorEdad(int edad)
         {
             DataSet bdvirtual = new DataSet();

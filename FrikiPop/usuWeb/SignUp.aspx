@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="..\App_Style\usuarioStyle.css" />
-    <div id="seccionUsuario">
+    <div class="SeccionUsuario">
             <h1 style="margin-left:75px">Nueva cuenta</h1>
             <p>
                 Subir imagen:&nbsp;&nbsp;  

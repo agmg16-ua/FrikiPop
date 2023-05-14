@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="..\App_Style\usuarioStyle.css" />
-    <div id="seccionUsuario">
+    <div class="SeccionUsuario">
         <h1 style="margin-left:50px; margin-top:200px">Inicio de sesión</h1>
         <p>
             <asp:TextBox class ="cuadroDeTexto" placeholder="Nombre de usuario" runat="server" ID="Nick" ></asp:TextBox>

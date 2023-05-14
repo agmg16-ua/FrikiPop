@@ -209,6 +209,18 @@ namespace library
         }
 
         //FILTROS DE LOS USUARIOS SEGUN SUS ATRIBUTOS(No filtro por contraseña porque no tiene sentido, se supone que es privada para nosotros)
+        public DataSet filtrarPorAdministrador(int admin)
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.filtrarPorAdministrador(admin);
+        }
+
+        public DataSet filtrarPorNick(string nick)
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.filtrarPorNick(nick);
+        }
+
         public DataSet filtrarPorLocalidad(string localidad)
         {
             CADUsuario cADUsuario = new CADUsuario();
