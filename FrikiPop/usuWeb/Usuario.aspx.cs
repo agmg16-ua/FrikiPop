@@ -18,7 +18,7 @@ namespace usuWeb
             {
                 Session.Add("imagen", en.imagen);
                 Session.Add("nick", en.nick);
-                Session.Add("nick", en.admin);
+                Session.Add("admin", en.admin);
                 if (en.esAdmin() == true)
                 {
                     Response.Redirect("~/paginaPrincipal.aspx");

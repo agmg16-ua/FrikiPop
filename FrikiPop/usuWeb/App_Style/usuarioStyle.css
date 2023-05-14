@@ -9,6 +9,22 @@
     height: 50px;
 }
 
+.listas {
+    text-align: center;
+    color: black;
+    background-color: #c3bdbd;
+    border: unset;
+    font-size: medium;
+    Width: 410px;
+    Height: 30px;
+    border-radius: 25px;
+    display: block;
+    margin: 0 auto;
+    width: 25em;
+    height: 50px;
+    margin-bottom: 25px;
+}
+
 #botonesUsuario .boton {
     display: block;
     margin: 0 auto;
@@ -37,13 +53,3 @@
     font-size: medium;
 }
 
-.listas {
-    text-align: center;
-    color: black;
-    background-color: #c3bdbd;
-    border: unset;
-    font-size: medium;
-    Width: 410px;
-    Height: 30px;
-    border-radius: 25px;
-}
