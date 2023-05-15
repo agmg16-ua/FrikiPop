@@ -309,7 +309,8 @@ INSERT INTO Usuario VALUES (
 	1,
 	'Alicante',
 	'Alicante',
-	'Spain'),
+	'Spain', 
+	0),
 
 ('Usuario_Promedio',
 	'Mario',
@@ -320,7 +321,8 @@ INSERT INTO Usuario VALUES (
 	0,
 	'Madrid',
 	'Madrid',
-	'Spain'
+	'Spain', 
+	0
 );
 
 INSERT INTO Carrito values
@@ -328,9 +330,9 @@ INSERT INTO Carrito values
 	(2, 'Usuario_Promedio', 'Vacio');
 
 INSERT INTO TipoArticulo VALUES
-	('Videojuego'),
-	('Merchan'),
-	('Consola');
+	('Videojuego', 0),
+	('Merchan', 0),
+	('Consola', 0);
 
 INSERT INTO Articulo VALUES (
 	1,
