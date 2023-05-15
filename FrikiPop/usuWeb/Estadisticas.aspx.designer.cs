@@ -9,8 +9,6 @@
 
 namespace usuWeb
 {
-
-
     public partial class Formulario_web12
     {
 
