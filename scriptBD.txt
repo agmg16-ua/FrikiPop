@@ -32,6 +32,7 @@ create table Usuario (
 	localidad varchar(25) not null,
 	provincia varchar(25) not null,
 	pais varchar(25) not null,
+	numVentas int not null,
 	CONSTRAINT FK_USUARIO_PROVINCIA FOREIGN KEY (localidad, provincia, pais) REFERENCES Localidad (localidad, provincia, pais)
 		on delete cascade
 		on update cascade
@@ -49,7 +50,8 @@ create table Tarjeta (
 );
 
 create table TipoArticulo (
-	tipo varchar(15) PRIMARY key
+	tipo varchar(15) PRIMARY key,
+	numVentas int not null
 );
 
 create table Articulo (
