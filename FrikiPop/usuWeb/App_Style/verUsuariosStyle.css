@@ -32,3 +32,30 @@
     width: 200px;
     height: 50px;
 }
+
+#filtradoDelGrid {
+    margin-top:25px;
+    text-align:center;
+}
+
+.filtros {
+    text-align: center;
+    color: black;
+    background-color: lightsteelblue;
+    border: unset;
+    font-size: medium;
+    Width: 410px;
+    Height: 30px;
+    border-radius: 25px;
+}
+
+#valorParaFiltrar {
+    text-align: center;
+    color: black;
+    background-color: lightsteelblue;
+    border: unset;
+    font-size: medium;
+    Width: 410px;
+    Height: 30px;
+    border-radius: 25px;
+}

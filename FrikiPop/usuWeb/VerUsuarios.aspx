@@ -3,23 +3,23 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="..\App_Style\verUsuariosStyle.css" />
-    <p>
-        <asp:Button runat="server" Text="Filtrar" OnClick="Filtrar_Valores"></asp:Button>
-        <asp:DropDownList runat="server" id="filtros">
-            <asp:ListItem Text="(Seleccione una columna para filtrar)" id="valorInicial"></asp:ListItem>
-            <asp:ListItem Text="Nick_name" id="nick"></asp:ListItem>
-            <asp:ListItem Text="Nombre" id="nombre"></asp:ListItem>
-            <asp:ListItem Text="Apellidos" id="apellidos"></asp:ListItem>
-            <asp:ListItem Text="Edad" id="edad"></asp:ListItem>
-            <asp:ListItem Text="Administrador" id="administrador"></asp:ListItem>
-            <asp:ListItem Text="Localidad" id="localidad"></asp:ListItem>
-            <asp:ListItem Text="Provincia" id="provincia"></asp:ListItem>
-            <asp:ListItem Text="Pais" id="pais"></asp:ListItem>
+    <section id="filtradoDelGrid">
+        <asp:Button CssClass="boton" runat="server" Text="Filtrar" OnClick="Filtrar_Valores"></asp:Button>
+        <asp:DropDownList CssClass="filtros" runat="server">
+            <asp:ListItem CssClass="filtros" Text="(Seleccione una columna para filtrar)" id="valorInicial"></asp:ListItem>
+            <asp:ListItem CssClass="filtros" Text="Nick_name" id="nick"></asp:ListItem>
+            <asp:ListItem CssClass="filtros" Text="Nombre" id="nombre"></asp:ListItem>
+            <asp:ListItem CssClass="filtros" Text="Apellidos" id="apellidos"></asp:ListItem>
+            <asp:ListItem CssClass="filtros" Text="Edad" id="edad"></asp:ListItem>
+            <asp:ListItem CssClass="filtros" Text="Administrador" id="administrador"></asp:ListItem>
+            <asp:ListItem CssClass="filtros" Text="Localidad" id="localidad"></asp:ListItem>
+            <asp:ListItem CssClass="filtros" Text="Provincia" id="provincia"></asp:ListItem>
+            <asp:ListItem CssClass="filtros" Text="Pais" id="pais"></asp:ListItem>
         </asp:DropDownList>
-        <asp:TextBox runat="server" placeHolder="Introduzca el valor por el que quiera filtrar" id="valorParaFiltrar"></asp:TextBox><br />
+        <asp:TextBox id="valorParaFiltrar" runat="server" placeHolder="Introduzca el valor por el que quiera filtrar"></asp:TextBox><br />
         <asp:label runat="server" id="faltaLista"></asp:label>
         <asp:label runat="server" id="faltaValorParaFiltrar"></asp:label>
-    </p>
+    </section>
     <asp:GridView CssClass="gridViewUsuarios" ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False">
         <Columns>
             <asp:BoundField HeaderText="Nick_name" DataField="nick_name" SortExpression="nick_name"/>
