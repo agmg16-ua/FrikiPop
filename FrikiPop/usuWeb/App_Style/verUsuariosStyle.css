@@ -49,7 +49,7 @@
     border-radius: 25px;
 }
 
-#valorParaFiltrar {
+.valorParaFiltrar {
     text-align: center;
     color: black;
     background-color: lightsteelblue;
@@ -58,4 +58,8 @@
     Width: 410px;
     Height: 30px;
     border-radius: 25px;
+}
+
+.botonParaFiltrar{
+
 }

@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="..\App_Style\verUsuariosStyle.css" />
     <section id="filtradoDelGrid">
-        <asp:Button CssClass="boton" runat="server" Text="Filtrar" OnClick="Filtrar_Valores"></asp:Button>
+        <asp:Button CssClass="botonParaFiltrar" runat="server" Text="Filtrar" OnClick="Filtrar_Valores"></asp:Button>
         <asp:DropDownList ID="filtros" CssClass="filtros"  runat="server">
             <asp:ListItem CssClass="filtros" Text="(Seleccione una columna para filtrar)" id="valorInicial"></asp:ListItem>
             <asp:ListItem CssClass="filtros" Text="Nick_name" id="nick"></asp:ListItem>
@@ -16,7 +16,7 @@
             <asp:ListItem CssClass="filtros" Text="Provincia" id="provincia"></asp:ListItem>
             <asp:ListItem CssClass="filtros" Text="Pais" id="pais"></asp:ListItem>
         </asp:DropDownList>
-        <asp:TextBox id="valorParaFiltrar" runat="server" placeHolder="Introduzca el valor por el que quiera filtrar"></asp:TextBox><br />
+        <asp:TextBox id="valorParaFiltrar" CssClass="valorParaFiltrar" runat="server" placeHolder="Introduzca el valor por el que quiera filtrar"></asp:TextBox><br />
         <asp:label runat="server" id="faltaLista"></asp:label>
         <asp:label runat="server" id="faltaValorParaFiltrar"></asp:label>
     </section>
