@@ -32,6 +32,7 @@
             <asp:BoundField HeaderText="Localidad" DataField="localidad" SortExpression="localidad"/>
             <asp:BoundField HeaderText="Provincia" DataField="provincia" SortExpression="provincia"/>
             <asp:BoundField HeaderText="Pais" DataField="pais" SortExpression="pais"/>
+            <asp:BoundField HeaderText="Numero de ventas" DataField="numVentas" SortExpression="numVentas"/>
         </Columns>
     </asp:GridView>
     <section id="botonesVerUsuarios">

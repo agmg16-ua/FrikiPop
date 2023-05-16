@@ -28,7 +28,7 @@ namespace library
             String comando = "Insert into [dbo].[Usuario] (nick_name,nombre,apellidos,edad,contrasenya,url_imagen,admin,localidad,provincia,pais)" +
                 "                            VALUES('" + en.nick + "','" + en.nombre + "','" + en.apellidos + "'," + en.edad +
                                                     ",'" + en.contrasenya + "','" + en.imagen + "'," + en.admin + "," +
-                                                    "'" + en.localidad + "','" + en.provincia + "','" + en.pais + "')";
+                                                    "'" + en.localidad + "','" + en.provincia + "','" + en.pais + "'," + en.numVentas + ")";
             try
             {
                 conn = new SqlConnection(constring);
@@ -78,6 +78,7 @@ namespace library
                     en.contrasenya = dr["contrasenya"].ToString();
                     en.imagen = dr["url_imagen"].ToString();
                     en.admin = int.Parse(dr["admin"].ToString());
+                    en.numVentas = int.Parse(dr["numVentas"].ToString());
                     dr.Close();
                     return true;
                 }
@@ -112,7 +113,7 @@ namespace library
             String comando = "UPDATE [dbo].[Usuario] SET edad = " + en.edad + ",nombre = '" + en.nombre +
                                         "',apellidos = '" + en.apellidos + "',contrasenya = '" + en.contrasenya +
                                         "',localidad = '" + en.localidad + "',provincia = '" + en.provincia + "',pais = '" + en.pais +
-                                        "', url_imagen = '" + en.imagen + "', admin = " + en.admin + " where nick_name = '" + en.nick + "'";
+                                        "', url_imagen = '" + en.imagen + "', admin = " + en.admin + "," + en.numVentas + " where nick_name = '" + en.nick + "'";
 
             try
             {

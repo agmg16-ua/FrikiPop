@@ -19,11 +19,11 @@ namespace usuWeb
 
             if (FileUpload1.FileName == "")
             {
-                usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidades.SelectedValue, Provincias.SelectedValue, Paises.SelectedValue, "DefaultUser.png", int.Parse(Edad1.Text), 0); 
+                usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidades.SelectedValue, Provincias.SelectedValue, Paises.SelectedValue, "DefaultUser.png", int.Parse(Edad1.Text), 0, 0); 
             }
             else
             {
-                usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidades.SelectedValue, Provincias.SelectedValue, Paises.SelectedValue, FileUpload1.FileName, int.Parse(Edad1.Text), 0);
+                usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidades.SelectedValue, Provincias.SelectedValue, Paises.SelectedValue, FileUpload1.FileName, int.Parse(Edad1.Text), 0, 0);
             }
 
             
