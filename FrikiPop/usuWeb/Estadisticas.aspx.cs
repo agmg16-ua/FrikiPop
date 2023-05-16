@@ -17,14 +17,16 @@ namespace usuWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["usuario"].ToString() == "Admin")
+            int pos;
+            pos = int.Parse(Session["admin"].ToString());
+            if (pos == 1)
             {
                 string s = ConfigurationManager.ConnectionStrings["Database"].ToString();
                 DataSet bdvirtual = new DataSet();
                 SqlConnection c = new SqlConnection(s);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT [nick_name], [nombre], [apellidos],[numVentas] FROM [Usuario] ORDER BY [numVentas] desc", c);
 
-                da.Fill(bdvirtual, 0, 10, "USUARIO");
+                da.Fill(bdvirtual, 0, 10, "Usuario");
 
                 Grafica1.DataSource = bdvirtual;
                 Grafica1.DataBind();
@@ -37,7 +39,7 @@ namespace usuWeb
                 SqlConnection c2 = new SqlConnection(s2);
                 SqlDataAdapter da2 = new SqlDataAdapter("SELECT [tipo][numVentas] FROM [TipoArticulo] order by [numVentas] DESC ", c2);
 
-                da2.Fill(bdvirtual2, 0, 10, "TIPOARTICULO");
+                da2.Fill(bdvirtual2, 0, 10, "TipoArticulo");
 
                 Grafica2.DataSource = bdvirtual;
                 Grafica2.DataBind();
@@ -49,6 +51,5 @@ namespace usuWeb
             else
                 Response.Redirect("paginaPrincipal.aspx");
         }
-    }
     }
 }
