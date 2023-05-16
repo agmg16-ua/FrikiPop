@@ -25,7 +25,7 @@ namespace library
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
 
-            String comando = "Insert into [dbo].[Usuario] (nick_name,nombre,apellidos,edad,contrasenya,url_imagen,admin,localidad,provincia,pais)" +
+            String comando = "Insert into [dbo].[Usuario] (nick_name,nombre,apellidos,edad,contrasenya,url_imagen,admin,localidad,provincia,pais,numVentas)" +
                 "                            VALUES('" + en.nick + "','" + en.nombre + "','" + en.apellidos + "'," + en.edad +
                                                     ",'" + en.contrasenya + "','" + en.imagen + "'," + en.admin + "," +
                                                     "'" + en.localidad + "','" + en.provincia + "','" + en.pais + "'," + en.numVentas + ")";
