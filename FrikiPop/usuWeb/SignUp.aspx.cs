@@ -35,7 +35,14 @@ namespace usuWeb
                 }
                 else
                 {
-                    Response.Redirect("~/paginaPrincipal.aspx");
+                    if (Request.QueryString["desde"] == "admin")
+                    {
+                        Response.Redirect("~/VerUsuarios.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("~/paginaPrincipal.aspx");
+                    }
                 }
             }
             else
