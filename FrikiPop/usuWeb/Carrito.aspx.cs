@@ -38,6 +38,23 @@ namespace usuWeb {
 
         protected void LoadCarroCompra() {
             unirCarrito = carroCompra.unirCarrito();
+            string importeS = "importe", formatoString = "D2";
+            double importeTotal;
+            double importe;
+            importeTotal = 0;
+
+            foreach(DataRow lineaCarri in unirCarrito.Rows) {
+                importe = double.Parse(lineaCarri[importeS].ToString());
+                importeTotal = importeTotal + importe;
+            }
+
+            TotalPrecio.Text = (importeTotal + 5.49).ToString(formatoString);
+
+            value.Text = importeTotal.ToString(formatoString);
+
+            Repeater1.DataSource = unirCarrito;
+
+            Repeater1.DataBind();
         }
 
         protected void deleteArticulo(object sender, EventArgs e) {

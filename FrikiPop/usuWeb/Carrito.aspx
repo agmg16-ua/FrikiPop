@@ -41,7 +41,7 @@
                                 </asp:GridView>
 
                                <strong>ID del Articulo: </strong> 
-                               <span> <%= string.Format("{0:C2}", Eval("articulo")) %> </span>
+                               <span> <%= string.Format("{0:D2}", Eval("articulo")) %> </span>
                                <br/>
 
                             
