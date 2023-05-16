@@ -12,10 +12,10 @@ namespace library {
     public class CADPedido {
         private string constring;
         public CADPedido() {
-            constring = ConfigurationManager.ConnectionStrings["Database1"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
         public bool createPedido(ENPedido en) {
-            bool creado = false; //ME FALTA CALLE HABLARÉ CON EL ENCARGADO
+            bool creado = false; //ME FALTA CALLE HABLARÉ CON EL ENCARGADO, actualizo no se sabe aún si habrá calle 
             string consulta = "INSERT INTO [dbo].[Pedido] (numPedido, usuario, fecha, calle) " + "VALUES (" + en.idPedido + ", '" + en.user + "', '" + en.date + "', '" + en.address + "')";
             SqlConnection connection = new SqlConnection(constring);
 

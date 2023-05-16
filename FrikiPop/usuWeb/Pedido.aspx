@@ -10,12 +10,12 @@
             </div>
             <div class="PedidoContenido">
                 <div class="listadoProductos">
-                    <asp:ListView ID="ListView1" runat="server">
+                    <asp:ListView ID="ListView1" runat="server" OnSelectedIndexChanged="ListView1_SelectedIndexChanged">
                     <ItemTemplate>
                         <div class="producto">
                             <div class="imagen">
-                               <!-- <asp:ImageButton PostBackUrl='<%#"~/Articulos.aspx?nombre="+ Eval("nombre") + "&url_imagen=" + Eval("url_imagen") + "&precio=" + Eval("precio") + "&num_pedido=" + Eval("num_pedido")%>'
-                                    runat="server" ImageUrl='<%#Eval("url_imagen")%>' style="max-height:100%; max-width:100%; display: block; margin: auto; "/>-->
+                               <<asp:ImageButton PostBackUrl='<%#"~/Articulos.aspx?nombre="+ Eval("nombre") + "&url_imagen=" + Eval("url_imagen") + "&precio=" + Eval("precio") + "&num_pedido=" + Eval("num_pedido")%>'
+                                    runat="server" ImageUrl='<%#Eval("url_imagen")%>' style="max-height:100%; max-width:100%; display: block; margin: auto; "/>
                             </div>
                             <div class="info">
                                 <h2><asp:Label runat="server" Text='<%# Eval("nombre") %>' /></h2>

@@ -10,14 +10,14 @@ using library;
 namespace usuWeb {
     public partial class VerPedido : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            /*if (Session["usuario"].ToString() == "invitado") { //Hablaré con el encargado para añadir invitado
-                Response.Redirect("InicioSesion.aspx"); //Posiblemente haya que cambiar el aspx
+            if (Session["nick"].ToString() == "invitado") { //Hablaré con el encargado para añadir invitado, está en proceso
+                Response.Redirect("Usuario.aspx");
             }
 
             DataSet auxiliar = new DataSet();
-            auxiliar = ENPedido.listPedidos(Session["usuario"].ToString());
+            auxiliar = ENPedido.listPedidos(Session["nick"].ToString());
             GridView2.DataSource = auxiliar;
-            GridView2.DataBind();*/
+            GridView2.DataBind(); 
         }
 
         protected void volverClick(object sender, EventArgs e) {
