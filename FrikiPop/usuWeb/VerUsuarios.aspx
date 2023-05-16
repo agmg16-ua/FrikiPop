@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="..\App_Style\verUsuariosStyle.css" />
     <section id="filtradoDelGrid">
         <asp:Button CssClass="boton" runat="server" Text="Filtrar" OnClick="Filtrar_Valores"></asp:Button>
-        <asp:DropDownList CssClass="filtros" runat="server">
+        <asp:DropDownList ID="filtros" CssClass="filtros"  runat="server">
             <asp:ListItem CssClass="filtros" Text="(Seleccione una columna para filtrar)" id="valorInicial"></asp:ListItem>
             <asp:ListItem CssClass="filtros" Text="Nick_name" id="nick"></asp:ListItem>
             <asp:ListItem CssClass="filtros" Text="Nombre" id="nombre"></asp:ListItem>
