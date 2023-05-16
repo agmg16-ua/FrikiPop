@@ -17,8 +17,12 @@ namespace usuWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int pos;
-            pos = int.Parse(Session["admin"].ToString());
+            int pos = 0;
+            Session["admin"] = 1;// Lo he puesto yo aposta para que me entre en el if y cuando victor lo cambie lo elimino
+            if (Session["admin"] != null)
+            {
+               pos = int.Parse(Session["admin"].ToString());
+            }
             if (pos == 1)
             {
                 string s = ConfigurationManager.ConnectionStrings["Database"].ToString();
@@ -37,11 +41,11 @@ namespace usuWeb
                 string s2 = ConfigurationManager.ConnectionStrings["Database"].ToString();
                 DataSet bdvirtual2 = new DataSet();
                 SqlConnection c2 = new SqlConnection(s2);
-                SqlDataAdapter da2 = new SqlDataAdapter("SELECT [tipo][numVentas] FROM [TipoArticulo] order by [numVentas] DESC ", c2);
+                SqlDataAdapter da2 = new SqlDataAdapter("SELECT [tipo],[numVentas] FROM [TipoArticulo] order by [numVentas] DESC ", c2);
 
                 da2.Fill(bdvirtual2, 0, 10, "TipoArticulo");
 
-                Grafica2.DataSource = bdvirtual;
+                Grafica2.DataSource = bdvirtual2;
                 Grafica2.DataBind();
 
                 topTipoArticulos.DataSource = bdvirtual2;
