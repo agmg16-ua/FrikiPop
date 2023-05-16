@@ -34,14 +34,21 @@ namespace usuWeb
         }
         protected void CrearUsuario(object sender, EventArgs e)
         {
-            Response.Redirect("~/SignUp.aspx");
+            Response.Redirect("~/SignUp.aspx?desde=admin");
         }
 
         protected void EliminarUsuario(object sender, EventArgs e)
         {
             ENUsuario usur = new ENUsuario();
             usur.nick = eliminar.Text;
-            usur.deleteUsuario();
+            if(usur.deleteUsuario() == true)
+            {
+                LabelError.Text = "Se ha eliminado correctamente el usuario: " + eliminar.Text;
+            }
+            else
+            {
+                LabelError.Text = "No se ha podido eliminar el usuario: " + eliminar.Text;
+            }
 
         }
 

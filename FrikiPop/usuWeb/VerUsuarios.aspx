@@ -37,6 +37,7 @@
     <section id="botonesVerUsuarios">
         <asp:Button class="boton" runat="server" Text="Añadir nuevo usuario" OnClick="CrearUsuario" /><br /><br />
         <asp:TextBox placeHolder="Nombre de usuario" CssClass="cuadroDeTexto" runat="server" ID="eliminar"></asp:TextBox><br /><br />
-        <asp:Button class="boton" runat="server" Text="Eliminar usuario" OnClick="EliminarUsuario" />
+        <asp:Button class="boton" runat="server" Text="Eliminar usuario" OnClick="EliminarUsuario" /><br />
+        <asp:Label ID="LabelError" runat="server"></asp:Label>
     </section>
 </asp:Content>
