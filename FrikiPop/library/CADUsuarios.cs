@@ -216,62 +216,62 @@ namespace library
         }
 
         //FILTROS A LA BASE DE DATOS PARA LOS ADMINS
-        public DataSet filtrarPorEdad(ENUsuario en)
+        public DataSet filtrarPorEdad(int edad)
         {
             DataSet bdvirtual = new DataSet();
             SqlConnection c = new SqlConnection(constring);
 
-            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where edad = " + en.edad, c);
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where edad = " + edad, c);
             da.Fill(bdvirtual, "[dbo].[Usuario]");
 
             return bdvirtual;
         }
-        public DataSet filtrarPorNombre(ENUsuario en)
+        public DataSet filtrarPorNombre(string nombre)
         {
             DataSet bdvirtual = new DataSet();
             SqlConnection c = new SqlConnection(constring);
 
-            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where nombre = '" + en.nombre + "'", c);
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where nombre = '" + nombre + "'", c);
             da.Fill(bdvirtual, "[dbo].[Usuario]");
 
             return bdvirtual;
         }
-        public DataSet filtrarPorApellidos(ENUsuario en)
+        public DataSet filtrarPorApellidos(string apellidos)
         {
             DataSet bdvirtual = new DataSet();
             SqlConnection c = new SqlConnection(constring);
 
-            SqlDataAdapter da = new SqlDataAdapter("Select * from [dbo].[Usuario] where apellidos like '" + en.apellidos + "%'", c);
+            SqlDataAdapter da = new SqlDataAdapter("Select * from [dbo].[Usuario] where apellidos like '" + apellidos + "%'", c);
             da.Fill(bdvirtual, "[dbo].[Usuario]");
 
             return bdvirtual;
         }
-        public DataSet filtrarPorLocalidad(ENUsuario en)
+        public DataSet filtrarPorLocalidad(string localidad)
         {
             DataSet bdvirtual = new DataSet();
             SqlConnection c = new SqlConnection(constring);
 
-            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where localidad = '" + en.localidad + "'", c);
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where localidad = '" + localidad + "'", c);
             da.Fill(bdvirtual, "[dbo].[Usuario]");
 
             return bdvirtual;
         }
-        public DataSet filtrarPorProvincia(ENUsuario en)
+        public DataSet filtrarPorProvincia(string provincia)
         {
             DataSet bdvirtual = new DataSet();
             SqlConnection c = new SqlConnection(constring); 
 
-            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where provincia = '" + en.provincia + "'", c);
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where provincia = '" + provincia + "'", c);
             da.Fill(bdvirtual, "[dbo].[Usuario]");
 
             return bdvirtual;
         }
-        public DataSet filtrarPorPais(ENUsuario en)
+        public DataSet filtrarPorPais(string pais)
         {
             DataSet bdvirtual = new DataSet();
             SqlConnection c = new SqlConnection(constring);
 
-            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where pais = '" + en.pais + "'", c);
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where pais = '" + pais + "'", c);
             da.Fill(bdvirtual, "[dbo].[Usuario]");
 
             return bdvirtual;
