@@ -17,7 +17,7 @@ namespace usuWeb {
         protected void Page_Load(object sender, EventArgs e) {
             carroCompra = new ENCarrito();
 
-            carroCompra.usuario = Session["nick"].ToString();
+            carroCompra.usuario = (string)Session["nick"];
             if(!carroCompra.readCarrito() || carroCompra.usuario == "invitado") {
                 Response.Redirect("PaginaPrincipal.aspx");
             }
@@ -30,6 +30,10 @@ namespace usuWeb {
 
             carroCompra.vaciarCarrito();
             LoadCarroCompra();
+        }
+
+        protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e) {
+
         }
 
         protected void LoadCarroCompra() {
