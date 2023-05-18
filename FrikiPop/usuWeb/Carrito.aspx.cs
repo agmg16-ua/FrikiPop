@@ -32,10 +32,6 @@ namespace usuWeb {
             LoadCarroCompra();
         }
 
-        protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e) {
-
-        }
-
         protected void LoadCarroCompra() {
             unirCarrito = carroCompra.unirCarrito();
             string importeS = "importe", formatoString = "D2";
