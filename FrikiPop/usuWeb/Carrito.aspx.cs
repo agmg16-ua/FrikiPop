@@ -22,7 +22,7 @@ namespace usuWeb {
                 Response.Redirect("PaginaPrincipal.aspx");
             }
             else { 
-                LoadCarroCompra();
+                LoadCarroCompra(); 
             }
         }
 
