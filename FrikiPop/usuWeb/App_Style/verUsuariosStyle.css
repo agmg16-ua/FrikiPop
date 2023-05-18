@@ -32,3 +32,46 @@
     width: 200px;
     height: 50px;
 }
+
+#filtradoDelGrid {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.filtros {
+    text-align: center;
+    color: black;
+    background-color: lightsteelblue;
+    border: unset;
+    font-size: medium;
+    Width: 410px;
+    Height: 30px;
+    border-radius: 25px;
+}
+
+.valorParaFiltrar {
+    text-align: center;
+    color: black;
+    background-color: lightsteelblue;
+    border: unset;
+    font-size: medium;
+    Width: 410px;
+    Height: 30px;
+    border-radius: 25px;
+}
+
+.botonParaFiltrar {
+    background-color: lightsteelblue;
+    border-radius: 25px;
+    Height: 43px;
+    Width: 218px;   
+    border: unset;
+}
+    .botonParaFiltrar:hover {
+        transition: 1s;
+        background-color: #a70084;
+        border-radius: 25px;
+        Height: 47px;
+        Width: 225px;
+        border: unset;
+    }
