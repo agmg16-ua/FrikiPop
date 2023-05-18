@@ -7,10 +7,12 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace usuWeb {
+namespace usuWeb
+{
 
 
-    public partial class Formulario_web1 {
+    public partial class Formulario_web1
+    {
 
         /// <summary>
         /// Control PrincipalRepeater.
