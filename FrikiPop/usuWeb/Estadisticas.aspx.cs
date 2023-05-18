@@ -18,7 +18,7 @@ namespace usuWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             int pos = 0;
-            Session["admin"] = 1;// Lo he puesto yo aposta para que me entre en el if y cuando victor lo cambie lo elimino
+            //Session["admin"] = 1;// Lo he puesto yo aposta para que me entre en el if y cuando victor lo cambie lo elimino
             if (Session["admin"] != null)
             {
                pos = int.Parse(Session["admin"].ToString());
