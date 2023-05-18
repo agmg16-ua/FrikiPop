@@ -21,7 +21,7 @@ namespace usuWeb {
             if(!carroCompra.readCarrito() || carroCompra.usuario == "invitado") {
                 Response.Redirect("PaginaPrincipal.aspx");
             }
-            else {
+            else { 
                 LoadCarroCompra();
             }
         }
