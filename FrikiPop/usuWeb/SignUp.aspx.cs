@@ -8,6 +8,9 @@ using System.Windows.Forms;
 using System.Net;
 using System.Drawing;
 using library;
+using System.Data.SqlClient;
+using System.Data.Sql;
+using System.Configuration;
 
 namespace usuWeb
 {
@@ -16,6 +19,7 @@ namespace usuWeb
         protected void createUsuario(object sender, EventArgs e)
         {
             ENUsuario usur;
+            ENCarrito carrito;
 
             if (FileUpload1.FileName == "")
             {
@@ -35,14 +39,37 @@ namespace usuWeb
                 }
                 else
                 {
-                    if (Request.QueryString["desde"] == "admin")
+
+                    string connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+                    SqlConnection conex = new SqlConnection(connection);
+                    conex.Open();
+
+                    carrito = new ENCarrito();
+
+                    string query = "SELECT MAX(num_carrito) AS max_numCarrito FROM Carrito";
+                    SqlCommand command = new SqlCommand(query, conex);
+                    int maxNumCarrito = Convert.ToInt32(command.ExecuteScalar());
+
+                    conex.Close();
+
+                    carrito.numeroCarrito = maxNumCarrito + 1;
+                    carrito.usuario = Nick1.Text;
+                    carrito.estadoCarrito = "Listo";
+
+                    if (carrito.createCarrito() == false) 
                     {
-                        Response.Redirect("~/VerUsuarios.aspx");
-                    }
-                    else
+                        LabelError.Text = "Ha habido un error. Revise sus datos";
+                        usur.deleteUsuario();
+                    } 
+                    else 
                     {
-                        Response.Redirect("~/paginaPrincipal.aspx");
+                        if (Request.QueryString["desde"] == "admin") {
+                            Response.Redirect("~/VerUsuarios.aspx");
+                        } else {
+                            Response.Redirect("~/paginaPrincipal.aspx");
+                        }
                     }
+                    
                 }
             }
             else
