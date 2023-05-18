@@ -81,7 +81,7 @@ namespace library
 				string consultaSQL;
 
 				conex.Open();
-				consultaSQL = "Insert into Carrito (num_carrito, usuario, estado_carrito) values ("+carrito.numeroCarrito+", "+carrito.usuario+", '"+carrito.estadoCarrito+"')";
+				consultaSQL = "Insert into Carrito (num_carrito, usuario, estado_carrito) values ("+carrito.numeroCarrito+", '"+carrito.usuario+"', '"+carrito.estadoCarrito+"')";
 
 				SqlCommand comandoSQL;
 				comandoSQL = new SqlCommand(consultaSQL, conex);
