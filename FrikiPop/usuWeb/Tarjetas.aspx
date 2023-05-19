@@ -3,7 +3,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="modTarjeta">
             <div>
-                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="numTarjeta" CssClass="Gridview" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
+                <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="numTarjeta" CssClass="Gridview">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="numTarjeta" HeaderText="Número Tarjeta" SortExpression="numTarjeta" ReadOnly="True" />
@@ -37,7 +37,6 @@
         <section ID="botonesTarjeta">
             <asp:Button runat="server" ID="anyadir" type="submit" Text="Añadir tarjeta" OnClick="anyadir_Click"></asp:Button>
             <asp:Button runat="server" ID="borrar" type="submit" Text="Eliminar tajeta" OnClick="borrar_Click"></asp:Button>
-            <asp:Button runat="server" Text="Volver" CausesValidation="false" OnClick="Volver_Click" />
         </section>
     </section>
 </asp:Content>
