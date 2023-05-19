@@ -160,9 +160,9 @@ namespace library
         }
 
         //lista las tarjetas dado un usuario
-        public static DataSet listarTarjetas() {
+        public static DataSet listarTarjetas(string usuario) {
             CADTarjeta tarjeta = new CADTarjeta();
-            return tarjeta.listarTarjetas(string usuario);
+            return tarjeta.listarTarjetas(usuario);
         }
 
     }

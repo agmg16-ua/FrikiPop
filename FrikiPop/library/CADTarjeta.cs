@@ -115,5 +115,14 @@ namespace library
 
             return table;
         }
+
+        //Lista las tarjetas del usuario pasado como parámetro
+        public DataSet listarTarjetas(string usuario) {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection connection = new SqlConnection(constring);
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Tarjeta] where usuario= '" + usuario + "'", connection);
+            da.Fill(bdvirtual, "TARJETA");
+            return bdvirtual;
+        }
     }
 }
