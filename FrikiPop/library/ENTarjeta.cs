@@ -152,11 +152,17 @@ namespace library
             return leido;
         }
 
-        //lista las tarjetas del usuario pasado como parámetro
-        public static DataSet listarTarjetas(string usuario)
+        //lista las tarjetas
+        public DataTable listarTarjetas()
         {
             CADTarjeta tarjeta = new CADTarjeta();
-            return tarjeta.listarTarjetas(usuario);
+            return tarjeta.listarTarjetas();
+        }
+
+        //lista las tarjetas dado un usuario
+        public static DataSet listarTarjetas() {
+            CADTarjeta tarjeta = new CADTarjeta();
+            return tarjeta.listarTarjetas(string usuario);
         }
 
     }

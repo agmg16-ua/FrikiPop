@@ -37,6 +37,7 @@
         <section ID="botonesTarjeta">
             <asp:Button runat="server" ID="anyadir" type="submit" Text="Añadir tarjeta" OnClick="anyadir_Click"></asp:Button>
             <asp:Button runat="server" ID="borrar" type="submit" Text="Eliminar tajeta" OnClick="borrar_Click"></asp:Button>
+            <asp:Button runat="server" ID="actualizar" type="submit" Text="Actualizar tajeta" OnClick="actualizar_Click"></asp:Button>
         </section>
     </section>
 </asp:Content>

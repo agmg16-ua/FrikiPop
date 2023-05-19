@@ -94,15 +94,26 @@ namespace library
                 connection.Close();
             }
         }
-        
-        //Lista las tarjetas del usuario pasado como parámetro
-        public DataSet listarTarjetas(string usuario)
-        {
-            DataSet bdvirtual = new DataSet();
+
+        //Lista las tarjetas
+        public DataTable listarTarjetas() {
+            DataTable table = new DataTable();
             SqlConnection connection = new SqlConnection(constring);
-            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Tarjeta] where usuario= '" + usuario + "'", connection);
-            da.Fill(bdvirtual, "TARJETA");
-            return bdvirtual;
+
+            try {
+                SqlDataAdapter data = new SqlDataAdapter("Select * from Tarjeta", connection);
+                data.Fill(table);
+            }
+            catch (Exception e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            finally {
+                if (connection.State == ConnectionState.Open) {
+                    connection.Close();
+                }
+            }
+
+            return table;
         }
     }
 }
