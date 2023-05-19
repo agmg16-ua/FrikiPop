@@ -19,7 +19,7 @@ namespace usuWeb {
 
             carroCompra.usuario = (string)Session["nick"];
             if(!carroCompra.readCarrito() || carroCompra.usuario == "invitado") {
-                Response.Redirect("PaginaPrincipal.aspx");
+                Response.Redirect("paginaPrincipal.aspx");
             }
             else { 
                 LoadCarroCompra(); 
@@ -48,9 +48,9 @@ namespace usuWeb {
                 importeTotal = importeTotal + importe;
             }
 
-            TotalPrecio.Text = (importeTotal + 5.49).ToString(formatoString);
+            TotalPrecio.Text = (importeTotal + 5.49).ToString();
 
-            value.Text = importeTotal.ToString(formatoString);
+            value.Text = importeTotal.ToString();
 
             Repeater1.DataSource = unirCarrito;
 

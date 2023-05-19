@@ -35,8 +35,14 @@ namespace library
 				readerSQL = comandoSQL.ExecuteReader();
 
 				readerSQL.Read();
+				if(readerSQL.HasRows) {
+					Console.WriteLine("ENTRA");
+                } else {
+					Console.WriteLine("No entra");
+                }
+
 				bool condicion;
-				condicion = (readerSQL["usuario"].ToString() == carrito.usuario);
+				condicion = (readerSQL[1].ToString() == carrito.usuario);
                 if (condicion==true) {
                     if (readerSQL["estado_carrito"].ToString() == "Comprando") {
 						carrito.estadoCarrito = "Comprando";
