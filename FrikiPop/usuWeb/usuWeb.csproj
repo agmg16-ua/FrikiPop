@@ -88,6 +88,7 @@
     <Content Include="App_Style\usuarioStyle.css" />
     <Content Include="App_Style\verUsuariosStyle.css" />
     <Content Include="añadirArticulo.aspx" />
+    <Content Include="paginaPrincipal.aspx" />
     <Content Include="PasarelaPago.aspx" />
     <Content Include="MenuArticulo.aspx" />
     <Content Include="Paises.aspx" />
@@ -97,7 +98,6 @@
     <Content Include="VerPedido.aspx" />
     <Content Include="Pedido.aspx" />
     <Content Include="Carrito.aspx" />
-    <Content Include="paginaPrincipal.aspx" />
     <Content Include="Provincias.aspx" />
     <Content Include="redesSociales.aspx" />
     <Content Include="verArticulo.aspx" />
@@ -121,6 +121,13 @@
     </Compile>
     <Compile Include="añadirArticulo.aspx.designer.cs">
       <DependentUpon>añadirArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginaPrincipal.aspx.cs">
+      <DependentUpon>paginaPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginaPrincipal.aspx.designer.cs">
+      <DependentUpon>paginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="PasarelaPago.aspx.cs">
       <DependentUpon>PasarelaPago.aspx</DependentUpon>
@@ -184,13 +191,6 @@
     </Compile>
     <Compile Include="Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario_web1.cs">
-      <DependentUpon>paginaPrincipal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="paginaPrincipal.aspx.designer.cs">
-      <DependentUpon>paginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincias.aspx.cs">
