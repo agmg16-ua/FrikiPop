@@ -5,69 +5,28 @@
 
       <div class="carritoCompra">
 
-          <div class="topBar">
+          <section class="topBar">
 
               <h3 id= "carritoFrikiPop">Carrito FrikiPop </h3>
                <h3 id= "BorrarTodoCarrito"> 
                    <asp:LinkButton ID = "BorrarCarrito" Text= "Borrar todo el carrito" runat="server" OnClick="eliminarCarritoCompra"/>  
                </h3>
-          </div>
+          </section>
           
           <div class="ContentCarrito">
 
                 <div class= "EnlistarArticulos">
 
-                  <asp:Repeater ID = "Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
-
-                    <ItemTemplate>
-
-                        <div class = "Articulo">
-
-                            <div class = "Image">
-
-                                <asp:ImageButton PostBackUrl = '<%#"~/Articulos.aspx?nombre = "+ Eval("nombre") + "&url_imagen=" + Eval("url_imagen") + 
-                               "&precio = " + Eval("precio") + "&codigo=" + Eval("codigo")%>' runat = "server" ImageUrl = '<%#Eval("url_imagen")%>'/>
-
-                            </div>
-
-                            <div  class = "Info" >
-
-                               <h3> <asp:Literal runat = "server" Text='<%# Eval("nombre") %>'/> </h3>
-
-                                <asp:GridView runat= "server" AutoGenerateColumns= "false">
-                                    <Columns>
-                                         <asp:BoundField DataField= "precio" DataFormatString="{0:C}" HeaderText="Precio" />
-                                    </Columns>
-                                </asp:GridView>
-
-                               <strong>ID del Articulo: </strong> 
-                               <span> '<%= string.Format("{0:D2}", Eval("articulo")) %>' </span>
-                               <br/>
-
-                            
-                            </div>
-
-                            <div class = "PrecioFinal">
-
-                                <<asp:Button ID = "Button1" Text = "Borrar" runat="server" OnClick="deleteArticulo" CommandArgument='<%# Eval("articulo") %>' CssClass="Borrar" />
-
-                                <h3>
-                                    <strong> <asp:Label runat = "server" Text='<%# Eval("importe") %>' />€ </strong>
-
-                                </h3>
-
-                            </div>
-
-                        </div>
-
-                    </ItemTemplate>
-
-                   </asp:Repeater>
-
+                    <asp:ListView runat="server" ID="ListView1" GroupItemCount="1" OnSelectedIndexChanged="ListView_SelectedIndexChanged" >
+                        <ItemTemplate>
+                            <img src="~/App_Images/Articulos/'<%# Eval("url_imagen")  %>'" />
+                            <%# Eval("nombre") %> 
+                            <%# Eval("precio") %><br /><br />
+                        </ItemTemplate>
+                    </asp:ListView>
                 </div>
 
                 <div class = "EfectuarPedido">
-
                     <h3> Precio total del pedido </h3>
 
                         <div id = "ValorCarritoContainer">
@@ -75,7 +34,10 @@
                             <div class = "ContainerLeft"> valor del carrito de compra </div>
 
                              <div class = "ContainerRight">
-                                 <asp:Label ID = "value" runat = "server"> </asp:Label>
+                                 <asp:Label ID = "value" runat = "server">
+
+
+                                 </asp:Label>
                              </div>
 
                         </div>

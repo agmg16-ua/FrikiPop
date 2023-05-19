@@ -32,13 +32,9 @@ namespace usuWeb {
             LoadCarroCompra();
         }
 
-        protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e) {
-
-        }
-
         protected void LoadCarroCompra() {
             unirCarrito = carroCompra.unirCarrito();
-            string importeS = "importe", formatoString = "D2";
+            string importeS = "importe";
             double importeTotal;
             double importe;
             importeTotal = 0;
@@ -52,9 +48,8 @@ namespace usuWeb {
 
             value.Text = importeTotal.ToString();
 
-            Repeater1.DataSource = unirCarrito;
-
-            Repeater1.DataBind();
+            ListView1.DataSource = unirCarrito;
+            ListView1.DataBind();
         }
 
         protected void deleteArticulo(object sender, EventArgs e) {
@@ -72,6 +67,10 @@ namespace usuWeb {
 
             carroCompra.makePedido();
             Response.Redirect("PaginaPrincipal.aspx");
+
+        }
+
+        protected void ListView_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
     }
