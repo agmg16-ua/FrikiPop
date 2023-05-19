@@ -19,11 +19,6 @@ namespace usuWeb {
                 GridView.DataSource = data;
                 GridView.DataBind();
             }
-
-        }
-
-        protected void pagar_Click(object sender, EventArgs e) {
-
         }
 
         protected bool DataValidation(ENTarjeta tarjeta) {
@@ -90,7 +85,7 @@ namespace usuWeb {
         }
 
         protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
-
+            Response.Redirect("~/paginaPrincipal.aspx");
         }
     }
 }

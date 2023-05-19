@@ -5,7 +5,7 @@
     <div>
         <asp:GridView ID="GridView" runat="server" GridLines="None" AutoGenerateColumns="False" DataKeyNames="numTarjeta" CssClass="Gridview" OnSelectedIndexChanged="GridView_SelectedIndexChanged">
             <Columns>
-                <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="selectButton" HeaderText="Seleccionar Tarjeta" />
+                <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="selectButton" HeaderText="Pagar con: " />
                 <asp:BoundField DataField="numTarjeta" HeaderText="Número Tarjeta" SortExpression="numTarjeta" ReadOnly="True" />
                 <asp:BoundField DataField="mes_cad" HeaderText="Mes de caducidad" SortExpression="mes_cad" />
                 <asp:BoundField DataField="anyo_cad" HeaderText="Año de caducidad" SortExpression="anyo_cad" />
@@ -41,6 +41,5 @@
      <section ID="botonesTarjeta">
             <asp:Button runat="server" ID="anyadir" type="submit" Text="Añadir tarjeta" OnClick="anyadir_Click"></asp:Button>
             <asp:Button runat="server" ID="borrar" type="submit" Text="Eliminar tajeta" OnClick="borrar_Click"></asp:Button>
-            <asp:Button runat="server" ID="pagar" type="submit" Text="Pagar" OnClick="pagar_Click"></asp:Button>
      </section>
 </asp:Content>
