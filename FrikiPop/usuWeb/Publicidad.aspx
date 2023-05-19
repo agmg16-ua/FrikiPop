@@ -32,7 +32,6 @@
         <section ID="botonesPublicidad">
             <asp:Button runat="server" ID="anyadir" type="submit" Text="Añadir Publicidad" OnClick="anyadir_Click" />
             <asp:Button runat="server" ID="borrar" type="submit" Text="Eliminar Publicidad" OnClick="borrar_Click" />
-            <asp:Button runat="server" Text="Volver" CausesValidation="false" OnClick="Volver_Click" />
         </section>
     </section>
 </asp:Content>

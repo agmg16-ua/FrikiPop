@@ -23,10 +23,6 @@ namespace usuWeb {
 
         }
 
-        protected void Volver_Click(object sender, EventArgs e) {
-
-        }
-
         protected void id_p_TextChanged(object sender, EventArgs e) {
 
         }
