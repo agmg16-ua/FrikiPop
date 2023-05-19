@@ -88,6 +88,7 @@
     <Content Include="App_Style\usuarioStyle.css" />
     <Content Include="App_Style\verUsuariosStyle.css" />
     <Content Include="añadirArticulo.aspx" />
+    <Content Include="PasarelaPago.aspx" />
     <Content Include="MenuArticulo.aspx" />
     <Content Include="Paises.aspx" />
     <Content Include="Localidades.aspx" />
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="añadirArticulo.aspx.designer.cs">
       <DependentUpon>añadirArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasarelaPago.aspx.cs">
+      <DependentUpon>PasarelaPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasarelaPago.aspx.designer.cs">
+      <DependentUpon>PasarelaPago.aspx</DependentUpon>
     </Compile>
     <Compile Include="MenuArticulo.aspx.cs">
       <DependentUpon>MenuArticulo.aspx</DependentUpon>

@@ -10,10 +10,9 @@ using System.Web.UI.WebControls;
 namespace usuWeb {
     public partial class Publicidad : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-           
-            DataSet data = new DataSet();
-            data = ENPublicidad.listarPublicidad();
-            GridView.DataSource = data;
+
+            ENPublicidad publicidad = new ENPublicidad();
+            GridView.DataSource = publicidad.listarPublicidad();
             GridView.DataBind();
         }
 

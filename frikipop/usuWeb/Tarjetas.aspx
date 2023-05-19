@@ -5,7 +5,6 @@
             <div>
                 <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="numTarjeta" CssClass="Gridview">
                     <Columns>
-                        <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="numTarjeta" HeaderText="Número Tarjeta" SortExpression="numTarjeta" ReadOnly="True" />
                         <asp:BoundField DataField="usuario" HeaderText="Usuario" SortExpression="usuario" />
                         <asp:BoundField DataField="cvv" HeaderText="CVV" SortExpression="cvv" />

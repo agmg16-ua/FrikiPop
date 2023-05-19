@@ -10,10 +10,9 @@ using System.Web.UI.WebControls;
 namespace usuWeb {
     public partial class Tarjeta : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
+            ENTarjeta tarjeta = new ENTarjeta();
             
-            DataSet data = new DataSet();
-            data = ENTarjeta.listarTarjetas();
-            GridView.DataSource = data;
+            GridView.DataSource = tarjeta.listarTarjetas();
             GridView.DataBind();
         }
 
