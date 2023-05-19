@@ -185,7 +185,7 @@
     <Compile Include="Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
     </Compile>
-    <Compile Include="paginaPrincipal.aspx.cs">
+    <Compile Include="Formulario_web1.cs">
       <DependentUpon>paginaPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

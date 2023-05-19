@@ -108,6 +108,7 @@ namespace library
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
             }
             finally {
+
                 if (connection.State == ConnectionState.Open) {
                     connection.Close();
                 }
