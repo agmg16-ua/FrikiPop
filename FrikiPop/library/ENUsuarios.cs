@@ -20,6 +20,7 @@ namespace library
         private string _localidad;
         private string _provincia;
         private string _pais;
+        private int _numVentas;
 
         public string localidad
         {
@@ -134,7 +135,19 @@ namespace library
                 _admin = value;
             }
         }
-        
+
+        public int numVentas
+        {
+            get
+            {
+                return _numVentas;
+            }
+            set
+            {
+                _numVentas = value;
+            }
+        }
+
 
 
         public ENUsuario()
@@ -149,13 +162,14 @@ namespace library
             localidad = null;
             admin = 0;
             edad = 0;
+            numVentas = 0;
         }
         /// <summary>
-        ///  nick,  nombre, apellidos, contrasenya, localidad,  provincia, pais,  imagen,  edad,  admin
+        ///  nick,  nombre, apellidos, contrasenya, localidad,  provincia, pais,  imagen,  edad,  admin,numVentas
         /// </summary>
         public ENUsuario(string nick, string nombre,string apellidos,
                         string contrasenya,string localidad, string provincia,
-                        string pais, string imagen, int edad, int admin)
+                        string pais, string imagen, int edad, int admin, int numVentas)
         {
             this.nick = nick;
             this.nombre = nombre;
@@ -167,6 +181,7 @@ namespace library
             this.pais = pais;
             this.edad = edad;
             this.admin = admin;
+            this.numVentas = numVentas;
         }
 
         //Comandos CRUD
@@ -209,6 +224,18 @@ namespace library
         }
 
         //FILTROS DE LOS USUARIOS SEGUN SUS ATRIBUTOS(No filtro por contraseña porque no tiene sentido, se supone que es privada para nosotros)
+        public DataSet filtrarPorAdministrador(int admin)
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.filtrarPorAdministrador(admin);
+        }
+
+        public DataSet filtrarPorNick(string nick)
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+            return cADUsuario.filtrarPorNick(nick);
+        }
+
         public DataSet filtrarPorLocalidad(string localidad)
         {
             CADUsuario cADUsuario = new CADUsuario();
