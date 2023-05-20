@@ -19,7 +19,7 @@
 
                     <asp:ListView runat="server" ID="ListView1" GroupItemCount="1" OnSelectedIndexChanged="ListView_SelectedIndexChanged" >
                         <ItemTemplate>
-                            <img src="~/App_Images/Articulos/'<%# Eval("url_imagen")  %>'" />
+                            <img width="150px" src="<%# Eval("url_imagen")  %>"  />
                             <%# Eval("nombre") %> 
                             <%# Eval("precio") %><br /><br />
                         </ItemTemplate>
