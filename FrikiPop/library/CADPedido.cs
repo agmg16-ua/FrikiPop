@@ -15,8 +15,8 @@ namespace library {
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
         public bool createPedido(ENPedido en) {
-            bool creado = false; //ME FALTA CALLE HABLARÉ CON EL ENCARGADO, actualizo no se sabe aún si habrá calle 
-            string consulta = "INSERT INTO [dbo].[Pedido] (numPedido, usuario, fecha, calle) " + "VALUES (" + en.idPedido + ", '" + en.user + "', '" + en.date + "', '" + en.address + "')";
+            bool creado = false; 
+            string consulta = "INSERT INTO [dbo].[Pedido] (numPedido, usuario, fecha) " + "VALUES (" + en.idPedido + ", '" + en.user + "', '" + en.date + "')";
             SqlConnection connection = new SqlConnection(constring);
 
             try {
@@ -54,7 +54,6 @@ namespace library {
                 if (int.Parse(reader["num_pedido"].ToString()) == en.idPedido) {
                     en.user = reader["usuario"].ToString();
                     en.date = String.Format("{0:mm/dd/yyyy}", reader["fecha"]);
-                    en.address = reader["calle"].ToString();
                     reader.Close();
                     read= true;
                 }else {

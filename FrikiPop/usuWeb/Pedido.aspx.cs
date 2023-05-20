@@ -16,7 +16,7 @@ namespace usuWeb {
             pedido = new ENPedido();
 
             if (Request.QueryString.Count != 0) {
-                pedido.idPedido = int.Parse(Request.QueryString["num_pedido"].ToString());
+                pedido.idPedido = int.Parse(Request.QueryString["num_pedido"]);
             }else {
                 Response.Redirect("paginaPrincipal.aspx");
             }
@@ -32,7 +32,6 @@ namespace usuWeb {
                 price.Text = finalImporte.ToString("C2"); //C2 decimales para los precios
                 total.Text = (finalImporte + 5.00).ToString("C2");
                 date.Text = pedido.date;
-                address.Text = pedido.address;
                 ListView1.DataSource = joinPedido;
                 ListView1.DataBind();
             }else {
