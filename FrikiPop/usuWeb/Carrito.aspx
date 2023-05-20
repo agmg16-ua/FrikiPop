@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="usuWeb.Carrito" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="usuWeb.Carrito" EnableEventValidation="true" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -17,13 +17,24 @@
 
                 <div class= "EnlistarArticulos">
 
-                    <asp:ListView runat="server" ID="ListView1" GroupItemCount="1" OnSelectedIndexChanged="ListView_SelectedIndexChanged" >
+                    <%--<asp:ListView runat="server" ID="ListView1" GroupItemCount="1" OnSelectedIndexChanged="ListView_SelectedIndexChanged" DataKeyNames="linea" >
                         <ItemTemplate>
-                            <img width="150px" src="<%# Eval("url_imagen")  %>"  />
+                            <img width="150px" src="<%# Eval("url_imagen")  %>" />
                             <%# Eval("nombre") %> 
-                            <%# Eval("precio") %><br /><br />
+                            <%# Eval("precio") %> 
+                            <asp:Button runat="server" ShowSelectButton="True" Text="Eliminar Articulo" />
+                            <br /> <br />
                         </ItemTemplate>
-                    </asp:ListView>
+                    </asp:ListView>--%>
+                    <asp:GridView runat="server" ID="GridView" AutoGenerateColumns="false" DataKeyNames="linea" OnSelectedIndexChanged="GridView_SelectedIndexChanged" ShowHeader="false" Width="75%" BorderColor="#0f1618" >
+                        <Columns>
+                            <asp:CommandField ShowSelectButton="True" SelectText="Borrar Articulo" ItemStyle-ForeColor="white" />
+                            <asp:BoundField DataField="linea" />
+                            <asp:ImageField DataImageUrlField="url_imagen" ControlStyle-Width="150px"></asp:ImageField>
+                            <asp:BoundField DataField="nombre" />
+                            <asp:BoundField DataField="precio" />
+                        </Columns>
+                    </asp:GridView>
                 </div>
 
                 <div class = "EfectuarPedido">

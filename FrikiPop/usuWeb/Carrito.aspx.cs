@@ -26,7 +26,7 @@ namespace usuWeb {
             }
         }
 
-        protected void eliminarCarritoCompra(object sender, EventArgs e) {
+        protected void eliminarCarritoCompra(object sender, EventArgs e)    {
 
             carroCompra.vaciarCarrito();
             LoadCarroCompra();
@@ -48,11 +48,11 @@ namespace usuWeb {
 
             value.Text = importeTotal.ToString();
 
-            ListView1.DataSource = unirCarrito;
-            ListView1.DataBind();
+            GridView.DataSource = unirCarrito;
+            GridView.DataBind();
         }
 
-        protected void deleteArticulo(object sender, EventArgs e) {
+        /*protected void deleteArticulo(object sender, EventArgs e) {
             string id_Articulo;
             id_Articulo = ((LinkButton)sender).CommandArgument.ToString();
             int id;
@@ -61,7 +61,7 @@ namespace usuWeb {
             carroCompra.deleteArticulo(id);
 
             LoadCarroCompra();
-        }
+        }*/
 
         protected void tramitarPedido(object sender, EventArgs e) {
 
@@ -70,8 +70,11 @@ namespace usuWeb {
 
         }
 
-        protected void ListView_SelectedIndexChanged(object sender, EventArgs e) {
-
+        protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
+            GridViewRow row = GridView.SelectedRow;
+            int linea = int.Parse(row.Cells[1].Text);
+            carroCompra.deleteArticulo(linea);
+            LoadCarroCompra();
         }
     }
 }

@@ -163,7 +163,7 @@ namespace library
 
 			try {
 				string consultaSQL;
-				consultaSQL = "Delete from LinCarrito l where l.id_carrito = '" + carrito.numeroCarrito+"' and articulo = '"+linea+"'";
+				consultaSQL = "Delete from LinCarrito where id_carrito = " + carrito.numeroCarrito + " and linea = " + linea;
 				SqlCommand comandoSQL;
 
 				conex = new SqlConnection(constring);
@@ -272,7 +272,7 @@ namespace library
 
             try {
 				string consultaSQL;
-				consultaSQL = "Delete from LinCarrito l where l.id_carrito = '"+carrito.numeroCarrito+"'";
+				consultaSQL = "Delete from LinCarrito where id_carrito = "+carrito.numeroCarrito;
 				SqlCommand comandoSQL;
 
 				conex = new SqlConnection(constring);
