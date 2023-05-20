@@ -16,7 +16,7 @@
     <form runat="server">
     <header>
         <div>
-            <asp:Image runat="server" ImageUrl="~/App_Images/logo.png" CssClass="logo" />
+            <asp:Image runat="server" ImageUrl="~/App_Images/Web/logo.png" CssClass="logo" />
             <asp:Image runat="server" ID="imagenUsuario" CssClass="imagenUsuario"/>
             <asp:Label runat="server" ID="nickName" CssClass="nickName"></asp:Label>
         </div>
@@ -44,9 +44,9 @@
         <h6><b>Redes sociales</b></h6>
         <div class="redes">
             <ul>
-                <li><a href="https://www.instagram.com" class="redes" ><img src="/App_Images/instagram.png" alt="INSTAGRAM" typeof="png" style="width: 22px;" /> Instagram </a></li><br />
-                <li><a href="https://www.facebook.com" class="redes" ><img src="/App_Images/facebook.png" alt="FACEBOOK" typeof="png" style="width: 20px;" /> Facebook </a></li><br />
-                <li><a href="https://www.twitter.com" class="redes" ><img src="/App_Images/twitter.png" alt="TWITTER" typeof="png" style="width: 20px;" /> Twitter </a></li><br />
+                <li><a href="https://www.instagram.com" class="redes" ><img src="/App_Images/Web/instagram.png" alt="INSTAGRAM" typeof="png" style="width: 22px;" /> Instagram </a></li><br />
+                <li><a href="https://www.facebook.com" class="redes" ><img src="/App_Images/Web/facebook.png" alt="FACEBOOK" typeof="png" style="width: 20px;" /> Facebook </a></li><br />
+                <li><a href="https://www.twitter.com" class="redes" ><img src="/App_Images/Web/twitter.png" alt="TWITTER" typeof="png" style="width: 20px;" /> Twitter </a></li><br />
             </ul>
         </div>
         <h6><b>Infomacion Importante</b></h6>

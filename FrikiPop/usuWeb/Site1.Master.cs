@@ -12,7 +12,11 @@ namespace usuWeb {
             if (Session["nick"] != null)
             {
                 nickName.Text = (string)Session["nick"];
-                imagenUsuario.ImageUrl = "~/App_Images/" + Session["imagen"];
+                imagenUsuario.ImageUrl = "~/App_Images/Usuarios/" + Session["imagen"];
+            } 
+            else 
+            {
+                imagenUsuario.ImageUrl = "~/App_Images/Usuarios/DefaultUser.png";
             }
         }
     }
