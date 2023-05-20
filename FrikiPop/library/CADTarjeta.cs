@@ -26,7 +26,7 @@ namespace library
 
             try {
                 connection.Open();
-                SqlCommand command = new SqlCommand("Insert INTO [dbo].[Tarjeta](numTarjeta, cvv, mes_cad, anyo_cad, usuario) VALUES(" + tarjeta.num + ", " + tarjeta.cvv + ", " + tarjeta.mesFecha + ", " + tarjeta.anyoFecha + ", '" + tarjeta.usuario + "')", connection);
+                SqlCommand command = new SqlCommand("Insert INTO Tarjeta VALUES('" + tarjeta.num + "', '" + tarjeta.cvv + "', " + tarjeta.mesFecha + ", " + tarjeta.anyoFecha + ", '" + tarjeta.usuario + "')", connection);
                 command.ExecuteNonQuery();
                 return true;
             }
@@ -45,7 +45,7 @@ namespace library
             SqlConnection connection = new SqlConnection(constring);
             try {
                 connection.Open();
-                SqlCommand command = new SqlCommand("Select * FROM [dbo].[Tarjeta] where numTarjeta= " + tarjeta.num, connection);
+                SqlCommand command = new SqlCommand("Select * FROM Tarjeta where numTarjeta= '" + tarjeta.num + "'", connection);
                 command.ExecuteNonQuery();
                 return true;
             }
@@ -64,7 +64,7 @@ namespace library
 
             try {
                 connection.Open();
-                SqlCommand command = new SqlCommand("UPDATE [dbo].[Tarjeta] set numTarjeta= " + tarjeta.num + ", cvv= " + tarjeta.cvv + ", mes_cad= " + tarjeta.mesFecha + ", anyo_cad= " + tarjeta.anyoFecha + ", usuario= '" + tarjeta.usuario + "' where numTarjeta= " + tarjeta.num, connection);
+                SqlCommand command = new SqlCommand("UPDATE [dbo].[Tarjeta] set numTarjeta= '" + tarjeta.num + "', cvv= '" + tarjeta.cvv + "', mes_cad= " + tarjeta.mesFecha + ", anyo_cad= " + tarjeta.anyoFecha + ", usuario= '" + tarjeta.usuario + "' where numTarjeta= " + tarjeta.num, connection);
                 command.ExecuteNonQuery();
                 return true;
             }
@@ -82,7 +82,7 @@ namespace library
             SqlConnection connection = new SqlConnection(constring);
 
             try {
-                SqlCommand command = new SqlCommand("DELETE FROM [dbo].[Tarjeta] where numTarjeta= " + tarjeta.num, connection);
+                SqlCommand command = new SqlCommand("DELETE FROM Tarjeta where numTarjeta= '" + tarjeta.num + "'", connection);
                 command.ExecuteNonQuery();
                 return true;
             }

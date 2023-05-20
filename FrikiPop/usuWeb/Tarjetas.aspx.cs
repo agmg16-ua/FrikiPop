@@ -14,48 +14,45 @@ namespace usuWeb {
             
             GridView.DataSource = tarjeta.listarTarjetas();
             GridView.DataBind();
+            Message.Text = "";
         }
 
         protected bool DataValidation(ENTarjeta tarjeta) {
 
-            if (num.Text.Length != 16 || fechaMes.Text.Length != 2 || fechaAnyo.Text.Length != 4 || cvvTarj.Text.Length != 3) {
-                Message.Text = "Los formatos no son correctos!";
-                return false;
+            if (long.TryParse(num.Text, out long num_tarj) && num.Text.Length == 16) {
+                tarjeta.num = num.Text;
             }
             else {
-
-                if (int.TryParse(num.Text, out int num_tarj) && num.Text.Length == 16) {
-                    tarjeta.num = num_tarj;
-                }
-                else {
-                    Message.Text = "Formato del nº de tarjeta INCORRECTO!";
-                    return false;
-                }
-
-                if (int.TryParse(fechaMes.Text, out int mes_tarj) && (fechaMes.Text.Length == 2 || fechaMes.Text.Length == 1) && mes_tarj > 0 && mes_tarj < 13) {
-                    tarjeta.mesFecha = mes_tarj;
-                }
-                else {
-                    Message.Text = "Formato del mes INCORRECTO!";
-                    return false;
-                }
-
-                if (int.TryParse(fechaAnyo.Text, out int anyo_tarj) && fechaAnyo.Text.Length == 4 && anyo_tarj > 2023 && anyo_tarj < 2030) {
-                    tarjeta.anyoFecha = anyo_tarj;
-                }
-                else {
-                    Message.Text = "Formato del año INCORRECTO!";
-                    return false;
-                }
-
-                if (int.TryParse(cvvTarj.Text, out int cvv) && cvvTarj.Text.Length == 3) {
-                    tarjeta.cvv = cvv;
-                }
-                else {
-                    Message.Text = "Formato del cvv INCORRECTO!";
-                    return false;
-                }
+                Message.Text = "Formato del nº de tarjeta INCORRECTO!";
+                return false;
             }
+
+            if (int.TryParse(fechaMes.Text, out int mes_tarj) && (fechaMes.Text.Length == 2 || fechaMes.Text.Length == 1) && mes_tarj > 0 && mes_tarj < 13) {
+                tarjeta.mesFecha = mes_tarj;
+            }
+            else {
+                Message.Text = "Formato del mes INCORRECTO!";
+                return false;
+            }
+
+            if (int.TryParse(fechaAnyo.Text, out int anyo_tarj) && fechaAnyo.Text.Length == 4 && anyo_tarj > 2023 && anyo_tarj < 2030) {
+                tarjeta.anyoFecha = anyo_tarj;
+            }
+            else {
+                Message.Text = "Formato del año INCORRECTO!";
+                return false;
+            }
+
+            if (int.TryParse(cvvTarj.Text, out int cvv_int) && cvvTarj.Text.Length == 3) {
+                tarjeta.cvv = cvvTarj.Text;
+            }
+            else {
+                Message.Text = "Formato del cvv INCORRECTO!";
+                return false;
+            }
+
+            tarjeta.usuario = usuario.Text;
+
             return true;
         }
 
@@ -65,16 +62,25 @@ namespace usuWeb {
             if (DataValidation(tarjeta)) {
                 tarjeta.createTarjeta();
             }
-
+            
             Response.Redirect("~/Tarjetas.aspx");
 
         }
+
         protected void borrar_Click(object sender, EventArgs e) {
             ENTarjeta tarjeta = new ENTarjeta();
 
-            if (DataValidation(tarjeta)) {
+            tarjeta.num = num.Text;
+            tarjeta.mesFecha = int.Parse(fechaMes.Text);
+            tarjeta.anyoFecha = int.Parse(fechaAnyo.Text);
+            tarjeta.usuario = usuario.Text;
+            tarjeta.cvv = cvvTarj.Text;
+
+            tarjeta.deleteTarjeta();
+
+            /*if(DataValidation(tarjeta)) {
                 tarjeta.deleteTarjeta();
-            }
+            }*/
 
             Response.Redirect("~/Tarjetas.aspx");
         }

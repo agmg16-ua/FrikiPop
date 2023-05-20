@@ -9,13 +9,13 @@ namespace library
 {
     public class ENTarjeta
     {
-        private int _num;
+        private string _num;
         private int _anyoFecha;
         private int _mesFecha;
-        private int _cvv;
+        private string _cvv;
         private string _usuario;
 
-        public int num
+        public string num
         {
             get
             {
@@ -50,7 +50,7 @@ namespace library
             }
         }
 
-        public int cvv
+        public string cvv
         {
             get
             {
@@ -77,15 +77,15 @@ namespace library
         //Constructor por defecto
         public ENTarjeta()
         {
-            num = 0;
+            num = "";
             anyoFecha = 0;
             mesFecha = 0;
-            cvv = 0;
+            cvv = "";
             usuario = "";
         }
 
         //constructor de copia
-        public ENTarjeta(int num, int anyoFecha, int mesFecha, int cvv, string usuario)
+        public ENTarjeta(string num, int anyoFecha, int mesFecha, string cvv, string usuario)
         {
             this.num = num;
             this.anyoFecha = anyoFecha;
@@ -144,12 +144,12 @@ namespace library
         public bool deleteTarjeta()
         {
             CADTarjeta tarjeta = new CADTarjeta();
-            bool leido = false;
-            if (tarjeta.readTarjeta(this))
-            {
-                leido = tarjeta.deleteTarjeta(this);
+            bool borrado = false;
+
+            if (tarjeta.readTarjeta(this)) {
+                borrado = tarjeta.deleteTarjeta(this);
             }
-            return leido;
+            return borrado;
         }
 
         //lista las tarjetas
@@ -164,6 +164,5 @@ namespace library
             CADTarjeta tarjeta = new CADTarjeta();
             return tarjeta.listarTarjetas(usuario);
         }
-
     }
 }
