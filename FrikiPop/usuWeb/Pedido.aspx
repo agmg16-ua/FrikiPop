@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="#" rel="stylesheet" />
+    <link rel="stylesheet" href="..\App_Style\verPedidoStyle.css" />
     <div class="contenedor">
         <div class="pedido">
             <div class="Sup">
@@ -14,7 +14,7 @@
                     <ItemTemplate>
                         <div class="producto">
                             <div class="imagen">
-                               <<asp:ImageButton PostBackUrl='<%#"~/Articulos.aspx?nombre="+ Eval("nombre") + "&url_imagen=" + Eval("url_imagen") + "&precio=" + Eval("precio") + "&num_pedido=" + Eval("num_pedido")%>'
+                               <<asp:ImageButton PostBackUrl='<%#"~/Articulos.aspx?nombre="+ Eval("nombre") + "&url_imagen=" + Eval("url_imagen") + "&precio=" + Eval("precio") %>'
                                     runat="server" ImageUrl='<%#Eval("url_imagen")%>' style="max-height:100%; max-width:100%; display: block; margin: auto; "/>
                             </div>
                             <div class="info">
@@ -25,11 +25,10 @@
                                 <b>ID ARTÍCULO: </b><asp:Label runat="server" Text='<%# string.Format("{0:D9}", Eval("nombre")) %>' /><br />
                                 <div class="informacionProducto">
                                     <br />
-                                    <b>Estado:</b><asp:Label runat="server" Text='<%# Eval("estado_carrito") %>' />
                                 </div>
                             </div>
                             <div class="precioResultante">
-                                <h2><b><asp:Label runat="server" Text='<%# Eval("total") %>' />€</b></h2>
+                                <h2><b><asp:Label runat="server" Text='<%# Eval("precio") %>' />€</b></h2>
                             </div>
                         </div>
                     </ItemTemplate>

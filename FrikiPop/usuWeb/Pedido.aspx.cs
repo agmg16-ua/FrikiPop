@@ -26,7 +26,7 @@ namespace usuWeb {
                 float finalImporte = 0;
 
                 foreach (DataRow linea in joinPedido.Rows) {
-                    finalImporte += float.Parse(linea["total"].ToString());
+                    finalImporte += float.Parse(linea["precio"].ToString());
                 }
 
                 price.Text = finalImporte.ToString("C2"); //C2 decimales para los precios

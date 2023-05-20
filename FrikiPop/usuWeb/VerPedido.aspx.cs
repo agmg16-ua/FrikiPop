@@ -21,7 +21,7 @@ namespace usuWeb {
         }
         protected void GridView2_SelectedIndexChanged(object sender, EventArgs e) {
             GridViewRow row = GridView2.SelectedRow;
-            string pedidos = row.Cells[2].Text;
+            string pedidos = row.Cells[1].Text;
             Response.Redirect("~/Pedido.aspx?num_pedido=" + pedidos);
         }
 
