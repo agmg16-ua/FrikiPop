@@ -9,7 +9,15 @@ using library;
 namespace usuWeb {
     public partial class Site1 : System.Web.UI.MasterPage {
         protected void Page_Load(object sender, EventArgs e) {
-
+            if (Session["nick"] != null)
+            {
+                nickName.Text = (string)Session["nick"];
+                imagenUsuario.ImageUrl = "~/App_Images/Usuarios/" + Session["imagen"];
+            } 
+            else 
+            {
+                imagenUsuario.ImageUrl = "~/App_Images/Usuarios/DefaultUser.png";
+            }
         }
     }
 }

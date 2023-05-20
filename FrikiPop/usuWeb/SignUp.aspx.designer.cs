@@ -7,10 +7,12 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace usuWeb {
+namespace usuWeb
+{
 
 
-    public partial class Formulario_web2 {
+    public partial class Formulario_web2
+    {
 
         /// <summary>
         /// Control FileUpload1.
@@ -20,6 +22,15 @@ namespace usuWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+
+        /// <summary>
+        /// Control Prueba.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Prueba;
 
         /// <summary>
         /// Control Nick1.
@@ -58,31 +69,76 @@ namespace usuWeb {
         protected global::System.Web.UI.WebControls.TextBox Edad1;
 
         /// <summary>
-        /// Control Pais1.
+        /// Control Paises.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Pais1;
+        protected global::System.Web.UI.WebControls.DropDownList Paises;
 
         /// <summary>
-        /// Control Provincia1.
+        /// Control Database1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Provincia1;
+        protected global::System.Web.UI.WebControls.SqlDataSource Database1;
 
         /// <summary>
-        /// Control Localidad1.
+        /// Control Provincias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Localidad1;
+        protected global::System.Web.UI.WebControls.DropDownList Provincias;
+
+        /// <summary>
+        /// Control SqlDatabase.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDatabase;
+
+        /// <summary>
+        /// Control LabelErrorProvincia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelErrorProvincia;
+
+        /// <summary>
+        /// Control Localidades.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Localidades;
+
+        /// <summary>
+        /// Control SqlDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// Control LabelErrorLocalidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelErrorLocalidad;
 
         /// <summary>
         /// Control Contrasenya1.

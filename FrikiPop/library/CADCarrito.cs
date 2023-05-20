@@ -35,8 +35,14 @@ namespace library
 				readerSQL = comandoSQL.ExecuteReader();
 
 				readerSQL.Read();
+				if(readerSQL.HasRows) {
+					Console.WriteLine("ENTRA");
+                } else {
+					Console.WriteLine("No entra");
+                }
+
 				bool condicion;
-				condicion = (readerSQL["usuario"].ToString() == carrito.usuario);
+				condicion = (readerSQL[1].ToString() == carrito.usuario);
                 if (condicion==true) {
                     if (readerSQL["estado_carrito"].ToString() == "Comprando") {
 						carrito.estadoCarrito = "Comprando";
@@ -81,7 +87,7 @@ namespace library
 				string consultaSQL;
 
 				conex.Open();
-				consultaSQL = "Insert into Carrito (num_carrito, usuario, estado_carrito) values ("+carrito.numeroCarrito+", "+carrito.usuario+", '"+carrito.estadoCarrito+"')";
+				consultaSQL = "Insert into Carrito (num_carrito, usuario, estado_carrito) values ("+carrito.numeroCarrito+", '"+carrito.usuario+"', '"+carrito.estadoCarrito+"')";
 
 				SqlCommand comandoSQL;
 				comandoSQL = new SqlCommand(consultaSQL, conex);
@@ -157,7 +163,7 @@ namespace library
 
 			try {
 				string consultaSQL;
-				consultaSQL = "Delete from LinCarrito l where l.id_carrito = '" + carrito.numeroCarrito+"' and articulo = '"+linea+"'";
+				consultaSQL = "Delete from LinCarrito where id_carrito = " + carrito.numeroCarrito + " and linea = " + linea;
 				SqlCommand comandoSQL;
 
 				conex = new SqlConnection(constring);
@@ -266,7 +272,7 @@ namespace library
 
             try {
 				string consultaSQL;
-				consultaSQL = "Delete from LinCarrito l where l.id_carrito = '"+carrito.numeroCarrito+"'";
+				consultaSQL = "Delete from LinCarrito where id_carrito = "+carrito.numeroCarrito;
 				SqlCommand comandoSQL;
 
 				conex = new SqlConnection(constring);

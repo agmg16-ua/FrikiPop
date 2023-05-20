@@ -25,10 +25,10 @@ namespace library
             SqlConnection conn = null;
             // Encapsula todo el acceso a datos dentro del try
 
-            String comando = "Insert into [dbo].[Usuario] (nick_name,nombre,apellidos,edad,contrasenya,url_imagen,admin,localidad,provincia,pais)" +
+            String comando = "Insert into [dbo].[Usuario] (nick_name,nombre,apellidos,edad,contrasenya,url_imagen,admin,localidad,provincia,pais,numVentas)" +
                 "                            VALUES('" + en.nick + "','" + en.nombre + "','" + en.apellidos + "'," + en.edad +
                                                     ",'" + en.contrasenya + "','" + en.imagen + "'," + en.admin + "," +
-                                                    "'" + en.localidad + "','" + en.provincia + "','" + en.pais + "')";
+                                                    "'" + en.localidad + "','" + en.provincia + "','" + en.pais + "'," + en.numVentas + ")";
             try
             {
                 conn = new SqlConnection(constring);
@@ -78,6 +78,7 @@ namespace library
                     en.contrasenya = dr["contrasenya"].ToString();
                     en.imagen = dr["url_imagen"].ToString();
                     en.admin = int.Parse(dr["admin"].ToString());
+                    en.numVentas = int.Parse(dr["numVentas"].ToString());
                     dr.Close();
                     return true;
                 }
@@ -112,7 +113,7 @@ namespace library
             String comando = "UPDATE [dbo].[Usuario] SET edad = " + en.edad + ",nombre = '" + en.nombre +
                                         "',apellidos = '" + en.apellidos + "',contrasenya = '" + en.contrasenya +
                                         "',localidad = '" + en.localidad + "',provincia = '" + en.provincia + "',pais = '" + en.pais +
-                                        "', url_imagen = '" + en.imagen + "', admin = " + en.admin + " where nick_name = '" + en.nick + "'";
+                                        "', url_imagen = '" + en.imagen + "', admin = " + en.admin + "," + en.numVentas + " where nick_name = '" + en.nick + "'";
 
             try
             {
@@ -216,6 +217,28 @@ namespace library
         }
 
         //FILTROS A LA BASE DE DATOS PARA LOS ADMINS
+        public DataSet filtrarPorAdministrador(int admin)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where admin = " + admin, c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
+
+            return bdvirtual;
+        }
+
+        public DataSet filtrarPorNick(string nick)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario] where nick_name = '" + nick + "'", c);
+            da.Fill(bdvirtual, "[dbo].[Usuario]");
+
+            return bdvirtual;
+        }
+
         public DataSet filtrarPorEdad(int edad)
         {
             DataSet bdvirtual = new DataSet();

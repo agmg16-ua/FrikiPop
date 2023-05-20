@@ -16,7 +16,9 @@
     <form runat="server">
     <header>
         <div>
-            <asp:Image runat="server" ImageUrl="~/App_Images/logo.png" CssClass="logo" />
+            <asp:Image runat="server" ImageUrl="~/App_Images/Web/logo.png" CssClass="logo" />
+            <asp:Image runat="server" ID="imagenUsuario" CssClass="imagenUsuario"/>
+            <asp:Label runat="server" ID="nickName" CssClass="nickName"></asp:Label>
         </div>
             <asp:Menu ID="Menu" runat="server" CssClass="menu">
                 <Items >
@@ -34,28 +36,29 @@
                 </Items>
             </asp:Menu>
     </header>
-    <div>
+    <div style="min-height: 500px">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </div>
     <footer class="footer_master">
+        <h6><b>Redes sociales</b></h6>
         <div class="redes">
-            <h6><b>Redes sociales</b>
             <ul>
-                <li><a href="www.instagram.com"><img src="" alt="instagram" typeof="png"/></a></li>
-                <li><a href="www.facebook.com"><img src="" alt="facebook" typeof="png" /></a></li>
-                <li><a href="www.twitter.com"><img src="" alt="twitter" typeof="png" /></a></li>
-            </ul></h6>
+                <li><a href="https://www.instagram.com" class="redes" ><img src="/App_Images/Web/instagram.png" alt="INSTAGRAM" typeof="png" style="width: 22px;" /> Instagram </a></li><br />
+                <li><a href="https://www.facebook.com" class="redes" ><img src="/App_Images/Web/facebook.png" alt="FACEBOOK" typeof="png" style="width: 20px;" /> Facebook </a></li><br />
+                <li><a href="https://www.twitter.com" class="redes" ><img src="/App_Images/Web/twitter.png" alt="TWITTER" typeof="png" style="width: 20px;" /> Twitter </a></li><br />
+            </ul>
         </div>
-        <div class="links"><h6>
+        <h6><b>Infomacion Importante</b></h6>
+        <div class="links">
             <ul>
-                <li><a href="">Trabaja con nosotros</a></li>
-                <li><a href="">Aviso de privacidad</a></li>
-                <li><a href="">Términos y condiciones</a></li>
-            </ul></h6>
+                <li><a href="" class="links" >Trabaja con nosotros</a></li>
+                <li><a href="" class="links" >Aviso de privacidad</a></li>
+                <li><a href="" class="links" >Términos y condiciones</a></li>
+            </ul>
         </div>
         <div class ="copyright">
-            <p><h6>Copyright &copy; 2023 Todos los derechos reservados a FrikiPop S.A</h6></p>
+            <h6>Copyright &copy; 2023 Todos los derechos reservados a FrikiPop S.A</h6>
         </div>
     </footer>
     </form>
