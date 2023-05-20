@@ -52,17 +52,6 @@ namespace usuWeb {
             GridView.DataBind();
         }
 
-        /*protected void deleteArticulo(object sender, EventArgs e) {
-            string id_Articulo;
-            id_Articulo = ((LinkButton)sender).CommandArgument.ToString();
-            int id;
-            id = int.Parse(id_Articulo);
-
-            carroCompra.deleteArticulo(id);
-
-            LoadCarroCompra();
-        }*/
-
         protected void tramitarPedido(object sender, EventArgs e) {
 
             carroCompra.makePedido();

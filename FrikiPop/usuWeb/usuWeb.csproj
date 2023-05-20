@@ -75,6 +75,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="App_Style\adminStyle.css" />
+    <Content Include="App_Style\carritoStyle.css" />
     <Content Include="App_Style\gridViewStyle.css" />
     <Content Include="Admin.aspx" />
     <Content Include="App_Style\masterStyle.css" />
