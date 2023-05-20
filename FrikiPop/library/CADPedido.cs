@@ -108,7 +108,7 @@ namespace library {
         }
 
         public DataTable joinPedido(ENPedido en) {
-            string consulta = "SELECT * FROM LinPedido LEFT JOIN Articulo ON LinPedido.articulo = Articulo.codigo  WHERE num_pedido= '" + en.idPedido + "'";
+            string consulta = "Select * from [dbo].[LinPedido], [dbo].[Articulo] where articulo = codigo  and id_pedido = " + en.idPedido;
             DataSet dbVirtual = new DataSet();
             SqlConnection connection = new SqlConnection(constring);
             SqlDataAdapter adap = new SqlDataAdapter(consulta, connection);

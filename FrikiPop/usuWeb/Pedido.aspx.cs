@@ -20,7 +20,7 @@ namespace usuWeb {
             }else {
                 Response.Redirect("paginaPrincipal.aspx");
             }
-            if ((Session["usuario"].ToString() == pedido.user) && pedido.readPedido()) {
+            if ((Session["nick"].ToString() != null) && pedido.readPedido()) {
                 joinPedido = pedido.joinPedido();
                 id.Text = pedido.idPedido.ToString("D9"); //D9 para que haya 9 dígitos de pedido ya que vamos a ser una tienda famosa jeje
                 float finalImporte = 0;
