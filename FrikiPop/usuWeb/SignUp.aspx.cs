@@ -28,6 +28,10 @@ namespace usuWeb
             else
             {
                 usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidades.SelectedValue, Provincias.SelectedValue, Paises.SelectedValue, FileUpload1.FileName, int.Parse(Edad1.Text), 0, 0);
+                
+                string nombreFoto = Nick1.Text + ".png";
+                string ruta = Server.MapPath("~/App_Images/Usuarios/") + nombreFoto;
+                FileUpload1.SaveAs(ruta);
             }
 
             
