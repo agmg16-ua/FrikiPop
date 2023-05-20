@@ -55,7 +55,7 @@ namespace library
 
         public double precio
         {
-            get 
+            get
             {
                 return _precio;
             }
@@ -149,14 +149,11 @@ namespace library
             return false;
         }
 
-        public DataTable usuarioArticulo()
+        public DataTable usuarioArticulo(string usuario)
         {
             CADArticulo articulo = new CADArticulo();
-            if (articulo.readArticulo(this))
-            {
-                return articulo.usuarioArticulo(this.usuario);
-            }
-            return new DataTable();
+            DataTable tabla = articulo.usuarioArticulo(usuario);
+            return tabla;
         }
     }
 }

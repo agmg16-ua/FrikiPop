@@ -163,5 +163,39 @@ namespace library
                 connection.Close();
             }
         }
+
+        public DataTable listarRedesSociales()
+        {
+            DataTable tabla = new DataTable();
+            SqlConnection conexion = null;
+
+            try
+            {
+                conexion = new SqlConnection(constring);
+                string consulta = "";
+
+                consulta = "Select * from RedesSociales";
+
+                SqlDataAdapter data = new SqlDataAdapter(consulta, conexion);
+                data.Fill(tabla);
+
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+            return tabla;
+        }
     }
 }

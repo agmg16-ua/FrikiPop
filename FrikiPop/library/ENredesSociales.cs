@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using library;
 
 namespace library
 {
@@ -89,6 +91,13 @@ namespace library
                 return redesSociales.updateRedesSociales(this);
             }
             return false;
+        }
+
+        public DataTable listarRedesSociales()
+        {
+            CADredesSociales redesSociales = new CADredesSociales();
+            DataTable tabla = redesSociales.listarRedesSociales();
+            return tabla;
         }
     }
 }
