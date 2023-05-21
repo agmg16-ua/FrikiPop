@@ -70,17 +70,9 @@ namespace usuWeb {
         protected void borrar_Click(object sender, EventArgs e) {
             ENTarjeta tarjeta = new ENTarjeta();
 
-            tarjeta.num = num.Text;
-            tarjeta.mesFecha = int.Parse(fechaMes.Text);
-            tarjeta.anyoFecha = int.Parse(fechaAnyo.Text);
-            tarjeta.usuario = usuario.Text;
-            tarjeta.cvv = cvvTarj.Text;
-
-            tarjeta.deleteTarjeta();
-
-            /*if(DataValidation(tarjeta)) {
+            if(DataValidation(tarjeta)) {
                 tarjeta.deleteTarjeta();
-            }*/
+            }
 
             Response.Redirect("~/Tarjetas.aspx");
         }
