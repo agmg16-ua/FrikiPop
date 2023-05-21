@@ -21,6 +21,11 @@ namespace usuWeb {
                 item.NavigateUrl = "~/paginaPrincipal.aspx?sesion=" + salir;
                 Menu.Items.Add(item);
 
+                MenuItem item2 = new MenuItem();
+                item2.Text = "Menu Usuario";
+                item2.NavigateUrl = "~/MenuUsuario.aspx";
+                Menu.Items.Add(item2);
+
                 if(Menu.FindItem("Iniciar Sesión") != null) {
                     Menu.Items.Remove(Menu.FindItem("Iniciar Sesión"));
                 }

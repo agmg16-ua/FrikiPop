@@ -13,6 +13,9 @@ using System.Configuration;
 namespace usuWeb {
     public partial class Paises : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["admin"] == null || (int)Session["admin"] != 1) {
+                Response.Redirect("~/paginaPrincipal.aspx");
+            }
             ENPais pais = new ENPais();
             GridView.DataSource = pais.listarPaises();
             GridView.DataBind();

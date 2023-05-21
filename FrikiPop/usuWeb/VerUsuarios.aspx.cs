@@ -13,6 +13,9 @@ namespace usuWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null || (int)Session["admin"] != 1) {
+                Response.Redirect("~/paginaPrincipal.aspx");
+            }
             ENUsuario usuario = new ENUsuario();
             GridView1.DataSource = usuario.listarUsuarios();
             GridView1.DataBind();
