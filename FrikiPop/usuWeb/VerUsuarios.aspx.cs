@@ -34,7 +34,7 @@ namespace usuWeb
             {
                 LabelError.Text = "No se ha podido eliminar el usuario: " + eliminar.Text;
             }
-
+            Response.Redirect("~/VerUsuarios.aspx");
         }
 
         protected void Filtrar_Valores(object sender, EventArgs e)
@@ -199,7 +199,7 @@ namespace usuWeb
             {
                 usur.ModificarAdmin(1, GridView1.SelectedIndex);
             }
-
+            Response.Redirect("~/VerUsuarios.aspx");
         }
     }
 }
