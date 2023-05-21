@@ -190,7 +190,7 @@ namespace library
                 }
                 else
                 {
-                    consulta = "Select * from Articulo where codigo = '" + usuarioArticulo + "'";
+                    consulta = "Select * from Articulo where usuario = '" + usuarioArticulo + "'";
                 }
                 SqlDataAdapter data = new SqlDataAdapter(consulta, conexion);
                 data.Fill(tabla);
