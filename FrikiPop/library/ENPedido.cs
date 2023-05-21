@@ -11,7 +11,6 @@ namespace library {
         private int _idPedido;
         private string _user;
         private string _date;
-        private string _address;
         private string _state;
         private float _total;
 
@@ -26,10 +25,6 @@ namespace library {
         public string date {
             get { return _date; }
             set { _date = value; }
-        }
-        public string address {
-            get { return _address; }
-            set { _address = value; }
         }
         public string state {
             get { return _state; }
@@ -47,7 +42,6 @@ namespace library {
         public ENPedido() {
             idPedido = 0;
             date = null;
-            address = null;
             state = null;
             total = 0;
         }

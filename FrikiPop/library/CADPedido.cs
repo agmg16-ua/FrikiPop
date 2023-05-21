@@ -12,11 +12,11 @@ namespace library {
     public class CADPedido {
         private string constring;
         public CADPedido() {
-            constring = ConfigurationManager.ConnectionStrings["Database1"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
         public bool createPedido(ENPedido en) {
-            bool creado = false; //ME FALTA CALLE HABLARÉ CON EL ENCARGADO
-            string consulta = "INSERT INTO [dbo].[Pedido] (numPedido, usuario, fecha, calle) " + "VALUES (" + en.idPedido + ", '" + en.user + "', '" + en.date + "', '" + en.address + "')";
+            bool creado = false; 
+            string consulta = "INSERT INTO [dbo].[Pedido] (numPedido, usuario, fecha) " + "VALUES (" + en.idPedido + ", '" + en.user + "', '" + en.date + "')";
             SqlConnection connection = new SqlConnection(constring);
 
             try {
@@ -54,7 +54,6 @@ namespace library {
                 if (int.Parse(reader["num_pedido"].ToString()) == en.idPedido) {
                     en.user = reader["usuario"].ToString();
                     en.date = String.Format("{0:mm/dd/yyyy}", reader["fecha"]);
-                    en.address = reader["calle"].ToString();
                     reader.Close();
                     read= true;
                 }else {
@@ -109,7 +108,7 @@ namespace library {
         }
 
         public DataTable joinPedido(ENPedido en) {
-            string consulta = "SELECT * FROM LinPedido LEFT JOIN Articulo ON LinPedido.articulo = Articulo.codigo  WHERE num_pedido= '" + en.idPedido + "'";
+            string consulta = "Select * from [dbo].[LinPedido], [dbo].[Articulo] where articulo = codigo  and id_pedido = " + en.idPedido;
             DataSet dbVirtual = new DataSet();
             SqlConnection connection = new SqlConnection(constring);
             SqlDataAdapter adap = new SqlDataAdapter(consulta, connection);
