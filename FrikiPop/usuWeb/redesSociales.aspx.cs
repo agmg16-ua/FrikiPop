@@ -19,6 +19,7 @@ namespace usuWeb
 
         protected void Volver_Click(object sender, EventArgs e)
         {
+            Response.Redirect("~/paginaPrincipal.aspx");
 
         }
 
@@ -44,6 +45,11 @@ namespace usuWeb
 
         protected void GridView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            GridViewRow row = GridView.SelectedRow;
+            string redName = row.Cells[1].Text;
+            string urlLogoName = row.Cells[2].Text;
+            string linkRedName = row.Cells[3].Text;
+            Response.Redirect("~/Articulos.aspx?red =" + redName);
 
         }
     }
