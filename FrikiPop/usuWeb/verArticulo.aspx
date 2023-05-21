@@ -5,7 +5,7 @@
 <section class="modVerArticulo">
                 <asp:Image ID="url_imagen" runat="server"/>
                 <h1>
-                    <asp:Label ID="nompre" runat="server">
+                    <asp:Label ID="nombre" runat="server">
                     </asp:Label>
                 </h1>
                 <h3>
