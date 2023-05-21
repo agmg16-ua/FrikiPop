@@ -184,5 +184,22 @@ namespace usuWeb
                 faltaValorParaFiltrar.Text = "Tiene que escribir una valor que quiera filtrar";
             }
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ENUsuario usur = new ENUsuario();
+            usur.nick = GridView1.Rows[GridView1.SelectedIndex].Cells[1].Text;
+            usur.readUsuario();
+
+            if(int.Parse(GridView1.Rows[GridView1.SelectedIndex].Cells[7].Text) == 1)
+            {
+                usur.ModificarAdmin(0, GridView1.SelectedIndex);
+            }
+            else
+            {
+                usur.ModificarAdmin(1, GridView1.SelectedIndex);
+            }
+
+        }
     }
 }
