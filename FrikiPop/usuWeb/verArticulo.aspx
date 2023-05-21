@@ -2,8 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<section class="modVerArticulo">
-                <asp:Image ID="url_imagen" runat="server"/>
+    <link rel="stylesheet" href="..\App_Style\verArticulosStyle.css" />
+        <section class="modVerArticulo">
+                <br />
+                <div class="imagenArticulo">
+                    <asp:Image ID="url_imagen" runat="server" CssClass="laImagen" />
+                </div>
                 <h1>
                     <asp:Label ID="nombre" runat="server">
                     </asp:Label>
@@ -20,13 +24,13 @@
                 <p>
                     <asp:Label ID="descripcion" runat="server"></asp:Label>
                 </p>
-                <p>     
-                    <asp:Button ID="añadirCesta" runat="server" Text="Añadir al carrito" OnClick="añadirCestaClick">
+                <p class="botonesArticulo">     
+                    <asp:Button ID="añadirCesta" runat="server" Text="Añadir al carrito" OnClick="añadirCestaClick" CssClass="boton">
                     </asp:Button>
                     <asp:Label ID="outputMessageAñadir" runat="server"></asp:Label>
                 </p>
-                <p>     
-                    <asp:Button ID="comprarAhora" runat="server" Text="Comprar ahora" OnClick="comprarAhoraClick">
+                <p class="botonesArticulo">     
+                    <asp:Button ID="comprarAhora" runat="server" Text="Comprar ahora" OnClick="comprarAhoraClick" CssClass="boton">
                     </asp:Button>
                     <asp:Label ID="outputMessageComprar" runat="server"></asp:Label>
                 </p>

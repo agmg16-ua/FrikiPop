@@ -20,7 +20,7 @@
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="selectButton" SelectText="Borrar Articulo" />
                             <asp:BoundField DataField="linea" />
-                            <asp:ImageField DataImageUrlField="url_imagen" ControlStyle-Width="150px"></asp:ImageField>
+                            <asp:ImageField DataImageUrlField="url_imagen" ControlStyle-Width="100px"></asp:ImageField>
                             <asp:BoundField DataField="nombre" />
                             <asp:BoundField DataField="precio" />
                         </Columns>

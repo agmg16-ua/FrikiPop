@@ -75,6 +75,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="App_Style\adminStyle.css" />
+    <Content Include="App_Style\articulosStyle.css" />
     <Content Include="App_Style\carritoStyle.css" />
     <Content Include="App_Style\gridViewStyle.css" />
     <Content Include="Admin.aspx" />
@@ -83,6 +84,7 @@
     <Content Include="App_Style\tarjetasStyle.css" />
     <Content Include="App_Style\ubicacionesStyle.css" />
     <Content Include="App_Style\usuarioStyle.css" />
+    <Content Include="App_Style\verArticulosStyle.css" />
     <Content Include="App_Style\verPedidoStyle.css" />
     <Content Include="App_Style\verUsuariosStyle.css" />
     <Content Include="añadirArticulo.aspx" />

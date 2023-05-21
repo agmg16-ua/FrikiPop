@@ -13,15 +13,6 @@ namespace usuWeb {
     public partial class MenuArticulo {
 
         /// <summary>
-        /// Control articulos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button articulos;
-
-        /// <summary>
         /// Control verArticulo.
         /// </summary>
         /// <remarks>
