@@ -82,6 +82,7 @@ namespace library
             SqlConnection connection = new SqlConnection(constring);
 
             try {
+                connection.Open();
                 SqlCommand command = new SqlCommand("DELETE FROM Tarjeta where numTarjeta= '" + tarjeta.num + "'", connection);
                 command.ExecuteNonQuery();
                 return true;
@@ -108,10 +109,7 @@ namespace library
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
             }
             finally {
-
-                if (connection.State == ConnectionState.Open) {
-                    connection.Close();
-                }
+                connection.Close();
             }
 
             return table;
