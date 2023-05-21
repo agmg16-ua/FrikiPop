@@ -113,7 +113,7 @@ namespace library
             String comando = "UPDATE [dbo].[Usuario] SET edad = " + en.edad + ",nombre = '" + en.nombre +
                                         "',apellidos = '" + en.apellidos + "',contrasenya = '" + en.contrasenya +
                                         "',localidad = '" + en.localidad + "',provincia = '" + en.provincia + "',pais = '" + en.pais +
-                                        "', url_imagen = '" + en.imagen + "', admin = " + en.admin + "," + en.numVentas + " where nick_name = '" + en.nick + "'";
+                                        "', url_imagen = '" + en.imagen + "', admin = " + en.admin + ", numVentas = " + en.numVentas + " where nick_name = '" + en.nick + "'";
 
             try
             {
@@ -309,6 +309,20 @@ namespace library
             da.Fill(usuarios);
 
             return usuarios;
+        }
+
+        public void ModificarAdmin(int admin,int index)
+        {
+            DataTable usuarios = new DataTable();
+            SqlConnection c = new SqlConnection(constring);
+
+            SqlDataAdapter da = new SqlDataAdapter("select * from [dbo].[Usuario]", c);
+            da.Fill(usuarios);
+
+            ENUsuario usur = new ENUsuario(usuarios.Rows[index][0].ToString(), usuarios.Rows[index][1].ToString(), usuarios.Rows[index][2].ToString(), usuarios.Rows[index][4].ToString()
+                                            , usuarios.Rows[index][7].ToString(), usuarios.Rows[index][8].ToString(), usuarios.Rows[index][9].ToString(), usuarios.Rows[index][5].ToString()
+                                            , int.Parse(usuarios.Rows[index][3].ToString()), admin, int.Parse(usuarios.Rows[index][10].ToString()));
+            updateUsuario(usur);
         }
 
     }

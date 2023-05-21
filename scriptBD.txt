@@ -39,8 +39,8 @@ create table Usuario (
 );
 
 create table Tarjeta (
-	numTarjeta int PRIMARY key,
-  	cvv int not null,
+	numTarjeta varchar(16) PRIMARY key,
+  	cvv varchar(3) null,
   	mes_cad int not null,
   	anyo_cad int not null,
   	usuario varchar(20) not null,
@@ -299,105 +299,496 @@ INSERT INTO Localidad VALUES
 	('Ciudad Real', 'Ciudad Real', 'Spain'),
 	('Las Palmas', 'Canarias', 'Spain');
 
-INSERT INTO Usuario VALUES (
-	'TuAdminDeConfianza',
+INSERT INTO TipoArticulo VALUES
+	('Videojuego', 0),
+	('Merchan', 0),
+	('Consola', 0);
+
+INSERT INTO Usuario VALUES 
+('TuAdminDeConfianza',
 	'Admin',
 	'De Confianza',
 	99,
 	'Eladmin03',
-	'Sin Imagen',
+	'TuAdminDeConfianza.png',
 	1,
 	'Alicante',
 	'Alicante',
 	'Spain', 
-	0),
+	10),
 
 ('Usuario_Promedio',
 	'Mario',
 	'Skywalker Bolson',
 	30,
 	'Contrasenya123',
-	'Sin Imagen',
+	'DefaultUser.png',
 	0,
 	'Madrid',
 	'Madrid',
 	'Spain', 
-	0
-);
+	2),
+	
+('alex_gm_03',
+	'Alejandro',
+	'Guillén Merino',
+	19,
+	'Secreto123',
+	'alex_gm_03.png',
+	1,
+	'Alicante',
+	'Alicante',
+	'Spain',
+	5),
+
+('El_Coleccionista',
+	'Alberto',
+	'Rodriguez Martín',
+	32,
+	'MiContrasenya0102',
+	'El_Coleccionista.png',
+	0,
+	'Benidorm',
+	'Alicante',
+	'Spain',
+	4),
+
+('Sauron97',
+	'Richard',
+	'Williams',
+	26,
+	'Infranqueable97',
+	'Sauron97.png',
+	0,
+	'Alicante',
+	'Alicante',
+	'Spain',
+	15
+	),
+
+('frikiman01',
+	'Pablo',
+	'González Pérez',
+	28,
+	'friki1234',
+	'frikiman01.png',
+	0,
+	'Madrid',
+	'Madrid',
+	'Spain',
+	10),
+
+('geekgirl89',
+	'María',
+	'Sánchez López',
+	32,
+	'geeky9876',
+	'geekgirl89.png',
+	0,
+	'Barcelona',
+	'Barcelona',
+	'Spain',
+	15),
+
+('nerdmaster',
+	'Javier',
+	'Martínez García',
+	25,
+	'nerdy4567',
+	'nerdmaster.png',
+	0,
+	'Valencia',
+	'Valencia',
+	'Spain',
+	5),
+
+('cosplayqueen',
+	'Laura',
+	'Ramírez Rodríguez',
+	23,
+	'cosplay123',
+	'cosplayqueen.png',
+	0,
+	'Sevilla',
+	'Sevilla',
+	'Spain',
+	8),
+
+('gamerboy99',
+	'Carlos',
+	'López Fernández',
+	20,
+	'gamer7890',
+	'gamerboy99.png',
+	0,
+	'Malaga',
+	'Malaga',
+	'Spain',
+	12),
+
+('otakufanatic',
+	'Sara', 
+	'Fernández Martínez',
+	27,
+	'otaku5678',
+	'otakufanatic.png',
+	0,
+	'Alicante',
+	'Alicante',
+	'Spain',
+	3),
+
+('trekkie42',
+	'Juan',
+	'Hernández López',
+	30,
+	'trek1234',
+	'trekkie42.png',
+	0,
+	'Bilbao',
+	'Vizcaya',
+	'Spain',
+	18),
+
+('comiclover77',
+	'Ana',
+	'García Ruiz',
+	29,
+	'comic777',
+	'comiclover77.png',
+	0,
+	'Zaragoza',
+	'Zaragoza',
+	'Spain',
+	7),
+
+('boardgamegeek',
+	'Pedro',
+	'Ortega García',
+	26,
+	'boardgame987',
+	'boardgamegeek.png',
+	0,
+	'Granada',
+	'Granada',
+	'Spain',
+	13),
+
+('sciencenerd',
+	'Elena',
+	'Torres López',
+	31,
+	'science321',
+	'sciencenerd.png',
+	0,
+	'Valencia',
+	'Valencia',
+	'Spain',
+	20);
 
 INSERT INTO Carrito values
-	(1, 'TuAdminDeConfianza', 'Vacio'),
-	(2, 'Usuario_Promedio', 'Vacio');
+	(1, 'TuAdminDeConfianza', 'Comprando'),
+	(2, 'Usuario_Promedio', 'Comprando'),
+	(3, 'alex_gm_03', 'Comprando'),
+	(4, 'El_Coleccionista', 'Comprando'),
+	(5, 'Sauron97', 'Comprando'),
+	(6, 'frikiman01', 'Comprando'),
+	(7, 'geekgirl89', 'Comprando'),
+	(8, 'nerdmaster', 'Comprando'),
+	(9, 'cosplayqueen', 'Comprando'),
+	(10, 'gamerboy99', 'Comprando'),
+	(11, 'otakufanatic', 'Comprando'),
+	(12, 'trekkie42', 'Comprando'),
+	(13, 'comiclover77', 'Comprando'),
+	(14, 'boardgamegeek', 'Comprando'),
+	(15, 'sciencenerd', 'Comprando')
+	;
 
-INSERT INTO TipoArticulo VALUES
-	('Videojuego', 0),
-	('Merchan', 0),
-	('Consola', 0);
-
-INSERT INTO Articulo VALUES (
-	1,
+INSERT INTO Articulo VALUES 
+(1,
 	'GTAV',
 	'Videojuego de accion y disparos por la ciudad de Los Santos',
 	9.99,
-	'Sin Imagen',
+	'/App_Images/Articulos/GTAV-TuAdminDeConfianza.png',
 	'TuAdminDeConfianza',
-	'Videojuego'
-),
-(
-	2,
+	'Videojuego'),
+
+(2,
 	'Nintendo WII',
 	'Consola WII en perfecto estado y condicion',
-	75,
-	'SIN IMAGEN',
+	75.00,
+	'/App_Images/Articulos/Nintendo WII-Usuario_Promedio.png',
 	'Usuario_Promedio',
-	'Consola'
-);
+	'Consola'),
 
-INSERT INTO LinCarrito VALUES (
-	1,
+(3,
+	'PlayStation 5',
+	'Consola en excelente estado, incluye control y cables.',
+	499.99,
+	'/App_Images/Articulos/PlayStation 5-frikiman01.png',
+	'frikiman01',
+	'Consola'),
+
+(4,
+	'The Legend of Zelda: Breath of the Wild',
+	'Videojuego para Nintendo Switch, como nuevo.',
+	59.99,
+	'/App_Images/Articulos/The Legend of Zelda Breath of the Wild-frikiman01.png',
+	'frikiman01',
+	'Videojuego'),
+
+(5,
+	'Funko Pop! Darth Vader',
+	'Figura coleccionable de Darth Vader, en caja original.',
+	15.99,
+	'/App_Images/Articulos/Funko Pop! Darth Vader-geekgirl89.png',
+	'geekgirl89',
+	'Merchan'),
+
+(6,
+	'Xbox Series X',
+	'Consola en perfectas condiciones, incluye mando y cables.',
+	549.99,
+	'/App_Images/Articulos/Xbox Series X-nerdmaster.png',
+	'nerdmaster',
+	'Consola'),
+
+(7,
+	'Super Mario Odyssey',
+	'Videojuego para Nintendo Switch, usado pero en buen estado.',
+	49.99,
+	'/App_Images/Articulos/Super Mario Odyssey-cosplayqueen.png',
+	'cosplayqueen',
+	'Videojuego'),
+
+(8,
+	'Funko Pop! Harry Potter',
+	'Figura coleccionable de Harry Potter, en excelente estado.',
+	12.99,
+	'/App_Images/Articulos/Funko Pop! Harry Potter-gamerboy99.png',
+	'gamerboy99',
+	'Merchan'),
+
+(9,
+	'Nintendo Switch',
+	'Consola en buen estado, incluye todos los accesorios.',
+	299.99,
+	'/App_Images/Articulos/Nintendo Switch-otakufanatic.png',
+	'otakufanatic',
+	'Consola'),
+
+(10,
+	'Red Dead Redemption 2',
+	'Videojuego para PlayStation 4, en perfecto estado.',
+	39.99,
+	'/App_Images/Articulos/Red Dead Redemption 2-trekkie42.png',
+	'trekkie42',
+	'Videojuego'),
+
+(11,
+	'Funko Pop! Iron Man',
+	'Figura coleccionable de Iron Man, en caja original.',
+	14.99,
+	'/App_Images/Articulos/Funko Pop! Iron Man-comiclover77.png',
+	'comiclover77',
+	'Merchan'),
+
+(12,
+	'Nintendo 3DS XL',
+	'Consola portátil en excelente estado, color rojo.',
+	149.99,
+	'/App_Images/Articulos/Nintendo 3DS XL-boardgamegeek.png',
+	'boardgamegeek',
+	'Consola'),
+
+(13,
+	'Assassins Creed Valhalla',
+	'Videojuego para Xbox Series X, como nuevo.',
+	54.99,
+	'/App_Images/Articulos/Assassins Creed Valhalla-sciencenerd.png',
+	'sciencenerd',
+	'Videojuego'),
+
+(14,
+	'Funko Pop! Spider-Man',
+	'Figura coleccionable de Spider-Man, en excelente estado.',
+	11.99,
+	'/App_Images/Articulos/Funko Pop! Spider-Man-frikiman01.png',
+	'frikiman01',
+	'Merchan'),
+
+(15,
+	'Nintendo Switch Lite',
+	'Consola portátil en buen estado, color amarillo.',
+	199.99,
+	'/App_Images/Articulos/Nintendo Switch Lite-geekgirl89.png',
+	'geekgirl89',
+	'Consola'),
+
+(16,
+	'Cyberpunk 2077',
+	'Videojuego para PlayStation 4, usado pero en buen estado.',
+	44.99,
+	'/App_Images/Articulos/Cyberpunk 2077-nerdmaster.png',
+	'nerdmaster',
+	'Videojuego'),
+
+(17,
+	'Funko Pop! Batman',
+	'Figura coleccionable de Batman, en caja original.',
+	13.99, '/App_Images/Articulos/Funko Pop! Batman-cosplayqueen.png',
+	'cosplayqueen',
+	'Merchan'),
+
+(18,
+	'Nintendo GameCube',
+	'Consola clásica en buenas condiciones, incluye control y cables.',
+	89.99,
+	'/App_Images/Articulos/Nintendo GameCube-gamerboy99.png',
+	'gamerboy99',
+	'Consola'),
+
+(19,
+	'The Witcher 3: Wild Hunt',
+	'Videojuego para Xbox One, en perfecto estado.',
+	29.99,
+	'/App_Images/Articulos/The Witcher 3: Wild Hunt-otakufanatic.png',
+	'otakufanatic',
+	'Videojuego'),
+
+(20,
+	'Funko Pop! Wonder Woman',
+	'Figura coleccionable de Wonder Woman, en excelente estado.',
+	16.99,
+	'/App_Images/Articulos/Funko Pop! Wonder Woman-trekkie42.png',
+	'trekkie42',
+	'Merchan'),
+
+(21,
+	'PlayStation 4 Pro',
+	'Consola en buen estado, incluye control y cables.',
+	349.99,
+	'/App_Images/Articulos/PlayStation 4 Pro-comiclover77.png',
+	'comiclover77',
+	'Consola'),
+
+(22,
+	'Fallout 4',
+	'Videojuego para PC,
+	como nuevo y con caja original.',
+	24.99,
+	'/App_Images/Articulos/Fallout 4-boardgamegeek.png',
+	'boardgamegeek',
+	'Videojuego'),
+
+(23,
+	'Super Mario Party',
+	'Videojuego para Nintendo Switch,
+	ideal para jugar en familia y amigos.',
+	49.99,
+	'/App_Images/Articulos/Super Mario Party-alex_gm_03.png',
+	'alex_gm_03',
+	'Videojuego'),
+
+(24,
+	'Funko Pop! Captain America',
+	'Figura coleccionable de Captain America, perfecta para los fans de Marvel.',
+	14.99,
+	'/App_Images/Articulos/Funko Pop! Captain America-Usuario_Promedio.png',
+	'Usuario_Promedio',
+	'Merchan'),
+
+(25,
+	'Nintendo Switch Pro Controller',
+	'Controlador adicional para Nintendo Switch, en perfecto estado.',
+	59.99,
+	'/App_Images/Articulos/Nintendo Switch Pro Controller-TuAdminDeConfianza.png',
+	'TuAdminDeConfianza',
+	'Merchan')
+;
+
+INSERT INTO LinCarrito VALUES 
+(1,
 	1,
 	'TuAdminDeConfianza',
-	75,
-	2
-),
-(
+	75.00,
+	2),
+
+(2,
 	1,
+	'TuAdminDeConfianza',
+	14.99,
+	24),
+
+(3,
+	1,
+	'TuAdminDeConfianza',
+	24.99,
+	22),
+
+(1,
+	3,
+	'alex_gm_03',
+	349.99,
+	21),
+
+(2, 
+	3,
+	'alex_gm_03',
+	44.99,
+	16)
+;
+
+INSERT INTO Pedido VALUES
+(1,
+	'TuAdminDeConfianza',
+	'Listo',
+	'2023-03-14',
+	49.99),
+(2,
+	'alex_gm_03',
+	'Listo',
+	'2023-04-10',
+	84.99)	
+;
+
+INSERT INTO LinPedido VALUES 
+(1,
+	1,
+	49.99,
+	'TuAdminDeConfianza',
+	23),
+(1,
 	2,
-	'Usuario_Promedio',
+	75.00,
+	'alex_gm_03',
+	2),
+(2,
+	2,
 	9.99,
-	1
-);
+	'alex_gm_03',
+	1)
+;
+
+INSERT INTO Tarjeta values
+('1478963214789632',
+	'123',
+	06,
+	26,
+	'TuAdminDeConfianza'),
+
+('1596321478954123',
+	'321',
+	09,
+	25,
+	'alex_gm_03')
+;
 
 INSERT INTO RedesSociales VALUES
-	('Instagram', 'SIN FOTO', 'www.instagram.com'),
-	('Twitter', 'SIN FOTO', 'www.twitter.com'),
-	('Facebook', 'SIN FOTO', 'www.facebook.com');
+	('Instagram', '/App_Images/Web/instagram.png', 'https://www.instagram.com'),
+	('Twitter', '/App_Images/Web/twitter.png', 'https://www.twitter.com'),
+	('Facebook', '/App_Images/Web/facebook.png', 'https://www.facebook.com');
 
 INSERT INTO Publicidad VALUES
 	('Game0523', 'GAME S.L.', 'SIN FOTO', 'www.game.com'),
 	('Steam0523', 'STEAM S.L.', 'SIN FOTO', 'www.steam.com');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

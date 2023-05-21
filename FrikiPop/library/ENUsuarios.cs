@@ -272,6 +272,12 @@ namespace library
             CADUsuario cADUsuario = new CADUsuario();
             return cADUsuario.listarUsuarios();
         }
+
+        public void ModificarAdmin(int admin,int index)
+        {
+            CADUsuario cADUsuario = new CADUsuario();
+             cADUsuario.ModificarAdmin(admin,index);
+        }
     }
 }
 

@@ -20,9 +20,9 @@
         <asp:label runat="server" id="faltaLista"></asp:label>
         <asp:label runat="server" id="faltaValorParaFiltrar"></asp:label>
     </section>
-    <asp:GridView CssClass="gridViewUsuarios" ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False">
+    <asp:GridView CssClass="gridViewUsuarios" ID="GridView1" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <Columns>
-            <asp:CommandField  ShowEditButton="True" />
+            <asp:CommandField ShowSelectButton="True" SelectText="Change admin"/>
             <asp:BoundField HeaderText="Nick_name" DataField="nick_name" SortExpression="nick_name"/>
             <asp:BoundField HeaderText="Nombre" DataField="nombre" SortExpression="nombre"/>
             <asp:BoundField HeaderText="Apellidos" DataField="apellidos" SortExpression="apellidos"/>
