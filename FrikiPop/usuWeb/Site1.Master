@@ -31,7 +31,6 @@
                     <asp:MenuItem Text="Tarjetas" NavigateUrl="~/Tarjetas.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Carrito" NavigateUrl="~/Carrito.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Pedido" NavigateUrl="~/Pedido.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Administrador" NavigateUrl="~/Admin.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Iniciar Sesión" NavigateUrl="~/Usuario.aspx"></asp:MenuItem>
                 </Items>
             </asp:Menu>
