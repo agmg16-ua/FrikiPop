@@ -12,6 +12,10 @@ namespace usuWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null || (int)Session["admin"] != 1) {
+                Response.Redirect("~/paginaPrincipal.aspx");
+            }
+
             string usuario = Request.QueryString["nick"];
             if (usuario == null)
             {
@@ -38,7 +42,7 @@ namespace usuWeb
             string urlImagenName = row.Cells[5].Text;
             string usuarioName = row.Cells[6].Text;
             string tipoName = row.Cells[7].Text;
-            Response.Redirect("~/Articulos.aspx?codigo =" + codigoName);
+            Response.Redirect("~/VerArticulo.aspx?codigo=" + codigoName);
 
         }
     }
