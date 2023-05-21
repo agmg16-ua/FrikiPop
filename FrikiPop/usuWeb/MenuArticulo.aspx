@@ -9,7 +9,6 @@
             </h1>
 
             <section id="opcionesArticulo">
-                <asp:Button runat="server" ID="articulos" Text="Articulos para Admin" PostBackUrl="~/Articulos.aspx"/>
                 <asp:Button runat="server" ID="verArticulo" Text="Ver un Articulo concreto" PostBackUrl="~/verArticulo.aspx" />
                 <asp:Button runat="server" ID="anyadirArticulo" Text="Añadir un Articulo" PostBackUrl="~/añadirArticulo.aspx" />
             </section>
