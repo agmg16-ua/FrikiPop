@@ -27,10 +27,7 @@
                     <asp:MenuItem Text="Consolas" NavigateUrl="~/paginaPrincipal.aspx?param=Consolas"></asp:MenuItem>
                     <asp:MenuItem Text="Merchan" NavigateUrl="~/paginaPrincipal.aspx?param=Merchan"></asp:MenuItem>
                     <asp:MenuItem Text="Articulos" NavigateUrl="~/MenuArticulo.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Ver Pedido" NavigateUrl="~/verPedido.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Tarjetas" NavigateUrl="~/Tarjetas.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Carrito" NavigateUrl="~/Carrito.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Pedido" NavigateUrl="~/Pedido.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Iniciar Sesión" NavigateUrl="~/Usuario.aspx"></asp:MenuItem>
                 </Items>
             </asp:Menu>

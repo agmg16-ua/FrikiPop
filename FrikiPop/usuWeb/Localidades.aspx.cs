@@ -12,6 +12,9 @@ using library;
 namespace usuWeb {
     public partial class Localidades : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["admin"] == null || (int)Session["admin"] != 1) {
+                Response.Redirect("~/paginaPrincipal.aspx");
+            }
             string provincia = Request.QueryString["provincia"];
             string pais = Request.QueryString["pais"];
             if(pais == null || provincia == null) {

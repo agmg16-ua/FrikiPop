@@ -9,6 +9,9 @@ using library;
 namespace usuWeb {
     public partial class Provincias : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["admin"] == null || (int)Session["admin"] != 1) {
+                Response.Redirect("~/paginaPrincipal.aspx");
+            }
             string pais = Request.QueryString["pais"];
             if (pais == null) {
                 ENProvincia provincia = new ENProvincia();
