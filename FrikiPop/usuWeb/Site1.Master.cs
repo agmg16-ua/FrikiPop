@@ -20,8 +20,12 @@ namespace usuWeb {
                 item.Text = "Cerrar Sesion";
                 item.NavigateUrl = "~/paginaPrincipal.aspx?sesion=" + salir;
                 Menu.Items.Add(item);
+
+                if(Menu.FindItem("Iniciar Sesión") != null) {
+                    Menu.Items.Remove(Menu.FindItem("Iniciar Sesión"));
+                }
                 
-                Menu.Items.Remove(Menu.FindItem("Iniciar Sesión"));
+                
                 
             } 
             else 
