@@ -12,8 +12,7 @@ namespace usuWeb {
     public partial class paginaPrincipal : System.Web.UI.Page {
 
         protected void Page_Load(object sender, EventArgs e) {
-            if(Request.QueryString["sesion"] == "cerrar")
-            {
+            if (Request.QueryString["sesion"] == "cerrar") {
                 Session.Remove("nick");
                 Session.Remove("imagen");
                 Session.Remove("admin");

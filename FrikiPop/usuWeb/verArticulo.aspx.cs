@@ -19,7 +19,7 @@ namespace usuWeb
         }
 
         protected void comprarAhoraClick(object sender, EventArgs e) {
-
+            /*Response.Redirect("~/PasarelaPago.aspx?codigo=" + articulo.codigo);*/
         }
     }
 }
