@@ -83,7 +83,7 @@ namespace usuWeb {
 
         protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
 
-            string id_articulo = Request.QueryString["articulo"];
+            string id_articulo = Request.QueryString["codigo"];
             string id_carrito = Request.QueryString["carrito"];
 
             ENPedido pedido = new ENPedido();
@@ -104,7 +104,7 @@ namespace usuWeb {
             if (id_articulo != null) {
 
                 SqlCommand sql = new SqlCommand("SELECT precio from Articulo where codigo='" + id_articulo + "'", conex);
-                float precio = (float)command.ExecuteScalar();
+                float precio = float.Parse(sql.ExecuteScalar().ToString());
                 conex.Close();
 
                 pedido.total = precio;
