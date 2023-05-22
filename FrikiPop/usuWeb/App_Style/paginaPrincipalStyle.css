@@ -5,9 +5,11 @@
     margin-top: 2em;
     display:grid;
     grid-template-columns: repeat(4,1fr);
+    justify-content:center;
 }
 
 .articulo-card{
+    align-items: center;
     margin-bottom: 1em;
     display:flex;
     grid-auto-columns:auto;

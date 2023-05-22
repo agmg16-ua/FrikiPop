@@ -76,7 +76,7 @@ namespace usuWeb {
 
                             // Asignar la URL de la imagen y la URL de redirección al control ImageButton
                             publicidad_imagen.ImageUrl = imageUrl;
-                            publicidad_imagen.Attributes["onclick"] = $"window.location='{linkUrl}'";
+                            publicidad_imagen.PostBackUrl = linkUrl;
                         }
 
                         reader.Close();
