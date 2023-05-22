@@ -98,8 +98,8 @@ namespace library{
 		}
 
 		public int obtenerIdCarrito(string nick) {
-			CADArticulo articulo = new CADArticulo();
-			int numero = obtenerIdCarrito(nick);
+			CADCarrito carrito = new CADCarrito();
+			int numero = carrito.obtenerIdCarrito(nick);
 			return numero;
 		}
 	}
