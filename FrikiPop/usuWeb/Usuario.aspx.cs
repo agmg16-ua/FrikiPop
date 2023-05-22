@@ -12,6 +12,12 @@ namespace usuWeb
     {
         protected void LogIn(object sender, EventArgs e)
         {
+
+            if (Session["nick"] != null)
+            {
+                Response.Redirect("~/paginaPrincipal.aspx");
+            }
+
             ENUsuario en = new ENUsuario();
             en.nick = Nick.Text;
             if (en.readUsuario() == true && en.contrasenya == Contrasenya.Text)

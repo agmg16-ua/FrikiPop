@@ -16,14 +16,14 @@ namespace usuWeb
 {
     public partial class Formulario_web2 : System.Web.UI.Page
     {
-        protected void createUsuario(object sender, EventArgs e)
+            protected void createUsuario(object sender, EventArgs e)
         {
             ENUsuario usur;
             ENCarrito carrito;
 
             if (SoyFriki.Checked == true)
             {
-
+                SoyFriki.Text = "Soy friki";
                 if (FileUpload1.FileName == "")
                 {
                     usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidades.SelectedValue, Provincias.SelectedValue, Paises.SelectedValue, "DefaultUser.png", int.Parse(Edad1.Text), 0, 0);
@@ -70,7 +70,7 @@ namespace usuWeb
                         }
                         else
                         {
-                            if (Request.QueryString["desde"] == "admin")
+                            if (Request.QueryString["desde"] == "admin" && Session["admin"] != null)
                             {
                                 Response.Redirect("~/VerUsuarios.aspx");
                             }
@@ -89,7 +89,8 @@ namespace usuWeb
             }
             else
             {
-                SoyFriki.Text = "¿No eres friki?,¿Y entonces que haces aqui?";
+
+                SoyFriki.Text = "¿No eres friki?¿Y entonces que haces aqui?";
             }
         }
 
