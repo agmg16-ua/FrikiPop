@@ -96,5 +96,11 @@ namespace library{
 			borradoArticulo= carri.deleteArticulo(this, linea);
 			return borradoArticulo;
 		}
+
+		public int obtenerIdCarrito(string nick) {
+			CADArticulo articulo = new CADArticulo();
+			int numero = obtenerIdCarrito(nick);
+			return numero;
+		}
 	}
 }
