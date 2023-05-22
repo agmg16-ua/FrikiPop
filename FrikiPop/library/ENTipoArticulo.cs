@@ -14,10 +14,12 @@ namespace library {
             set { _tipoArticulo = value; }
         }
 
+        //Contructor copia
         public ENTipoArticulo() {
             tipoArticulo = null;
         }
 
+        //CRUD (create, read, update, delete)
         public bool createTipoArticulo() {
             CADTipoArticulo tipoArticulo = new CADTipoArticulo();
             if (!tipoArticulo.readTipoArticulo(this)) {
