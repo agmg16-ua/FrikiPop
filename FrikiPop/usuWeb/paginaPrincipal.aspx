@@ -24,7 +24,7 @@
             </asp:Listview>
         </div>
         <div class="publicidad">
-            <asp:ImageButton  runat="server" id="publicidad_imagen"/>
+            <asp:ImageButton  runat="server" id="publicidad_imagen" CssClass="publicidad_imagen"/>
         </div>
     </div>
 </asp:Content>
