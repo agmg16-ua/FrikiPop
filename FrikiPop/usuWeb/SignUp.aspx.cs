@@ -21,64 +21,75 @@ namespace usuWeb
             ENUsuario usur;
             ENCarrito carrito;
 
-            if (FileUpload1.FileName == "")
+            if (SoyFriki.Checked == true)
             {
-                usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidades.SelectedValue, Provincias.SelectedValue, Paises.SelectedValue, "DefaultUser.png", int.Parse(Edad1.Text), 0, 0); 
-            }
-            else
-            {
-                string nombreFoto = Nick1.Text + ".png";
-                usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidades.SelectedValue, Provincias.SelectedValue, Paises.SelectedValue, nombreFoto, int.Parse(Edad1.Text), 0, 0);
-                
-                string ruta = Server.MapPath("~/App_Images/Usuarios/") + nombreFoto;
-                FileUpload1.SaveAs(ruta);
-            }
 
-            
-            if (usur.readUsuario() == false)
-            {
-                if (usur.createUsuario() == false)
+                if (FileUpload1.FileName == "")
                 {
-                    LabelError.Text = "No se ha podido crear el usuario, comprueba bien los datos";
+                    usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidades.SelectedValue, Provincias.SelectedValue, Paises.SelectedValue, "DefaultUser.png", int.Parse(Edad1.Text), 0, 0);
                 }
                 else
                 {
+                    string nombreFoto = Nick1.Text + ".png";
+                    usur = new ENUsuario(Nick1.Text, Nombre1.Text, Apellidos1.Text, Contrasenya1.Text, Localidades.SelectedValue, Provincias.SelectedValue, Paises.SelectedValue, nombreFoto, int.Parse(Edad1.Text), 0, 0);
 
-                    string connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
-                    SqlConnection conex = new SqlConnection(connection);
-                    conex.Open();
+                    string ruta = Server.MapPath("~/App_Images/Usuarios/") + nombreFoto;
+                    FileUpload1.SaveAs(ruta);
+                }
 
-                    carrito = new ENCarrito();
 
-                    string query = "SELECT MAX(num_carrito) AS max_numCarrito FROM Carrito";
-                    SqlCommand command = new SqlCommand(query, conex);
-                    int maxNumCarrito = Convert.ToInt32(command.ExecuteScalar());
-
-                    conex.Close();
-
-                    carrito.numeroCarrito = maxNumCarrito + 1;
-                    carrito.usuario = Nick1.Text;
-                    carrito.estadoCarrito = "Listo";
-
-                    if (carrito.createCarrito() == false) 
+                if (usur.readUsuario() == false)
+                {
+                    if (usur.createUsuario() == false)
                     {
-                        LabelError.Text = "Ha habido un error. Revise sus datos";
-                        usur.deleteUsuario();
-                    } 
-                    else 
-                    {
-                        if (Request.QueryString["desde"] == "admin") {
-                            Response.Redirect("~/VerUsuarios.aspx");
-                        } else {
-                            Response.Redirect("~/paginaPrincipal.aspx");
-                        }
+                        LabelError.Text = "No se ha podido crear el usuario, comprueba bien los datos";
                     }
-                    
+                    else
+                    {
+
+                        string connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+                        SqlConnection conex = new SqlConnection(connection);
+                        conex.Open();
+
+                        carrito = new ENCarrito();
+
+                        string query = "SELECT MAX(num_carrito) AS max_numCarrito FROM Carrito";
+                        SqlCommand command = new SqlCommand(query, conex);
+                        int maxNumCarrito = Convert.ToInt32(command.ExecuteScalar());
+
+                        conex.Close();
+
+                        carrito.numeroCarrito = maxNumCarrito + 1;
+                        carrito.usuario = Nick1.Text;
+                        carrito.estadoCarrito = "Listo";
+
+                        if (carrito.createCarrito() == false)
+                        {
+                            LabelError.Text = "Ha habido un error. Revise sus datos";
+                            usur.deleteUsuario();
+                        }
+                        else
+                        {
+                            if (Request.QueryString["desde"] == "admin")
+                            {
+                                Response.Redirect("~/VerUsuarios.aspx");
+                            }
+                            else
+                            {
+                                Response.Redirect("~/paginaPrincipal.aspx");
+                            }
+                        }
+
+                    }
+                }
+                else
+                {
+                    LabelError.Text = "El Nick Name ya existe, por favor elija otro";
                 }
             }
             else
             {
-                LabelError.Text = "El Nick Name ya existe, por favor elija otro";
+                SoyFriki.Text = "¿No eres friki?,¿Y entonces que haces aqui?";
             }
         }
 
@@ -91,10 +102,12 @@ namespace usuWeb
             if (provincia.readProvincia() == false)
             {
                 LabelErrorProvincia.Text = "La provincia seleccionada es incorrecta";
+                LabelErrorLocalidad.Text = "";
             }
             else
             {
                 LabelErrorProvincia.Text = "";
+                LabelErrorLocalidad.Text = "";
             }
         }
 

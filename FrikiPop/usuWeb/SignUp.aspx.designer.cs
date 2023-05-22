@@ -150,6 +150,24 @@ namespace usuWeb
         protected global::System.Web.UI.WebControls.TextBox Contrasenya1;
 
         /// <summary>
+        /// Control checkBox1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox checkBox1;
+
+        /// <summary>
+        /// Control SoyFriki.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox SoyFriki;
+
+        /// <summary>
         /// Control Crear.
         /// </summary>
         /// <remarks>
