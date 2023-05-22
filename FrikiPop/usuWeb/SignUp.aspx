@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="..\App_Style\usuarioStyle.css" />
+
     <h1 style="margin-left:75px">Nueva cuenta</h1>
     <section id="fotoPerfil">
         Subir imagen:&nbsp;&nbsp;  
@@ -43,8 +44,13 @@
         <asp:TextBox placeholder="Contraseña" class ="cuadroDeTexto" TextMode="Password" runat="server" ID="Contrasenya1"></asp:TextBox>
         <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Contrasenya1" ErrorMessage="Falta introducir una contraseña"></asp:RequiredFieldValidator>
     </section>
+    <section id="CheckBoxes">
+        <asp:CheckBox CssClass="checkBox" id="checkBox1" runat="server"  Text="No soy un robot (Opcional)"></asp:CheckBox><br />
+        <asp:CheckBox CssClass="checkBox" ID="SoyFriki" runat="server" Text="Soy un friki (Obligatorio)"></asp:CheckBox><br />
+     </section>
+    <br />
     <section id="botonesUsuario">
         <asp:Button CssClass="boton" runat="server" Text="Sign Up"  ID="Crear" OnClick="createUsuario"/>
-        <asp:Label CssClass="labelsDeError" runat ="server" ID = "LabelError"></asp:Label>
+        <asp:Label CssClass="labelsDeError" runat="server" ID = "LabelError"></asp:Label>
     </section>
 </asp:Content>

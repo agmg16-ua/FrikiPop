@@ -1,6 +1,10 @@
 ﻿html {
     font-family: Arial;
-    /*color: whitesmoke;*/
+}
+
+.header{
+    width: 100%;
+    height: 110px;
 }
 
 body {
@@ -11,6 +15,7 @@ body {
 }
 
 .logo {
+    margin-top: 1em;
     width: 150px;
     height: 45px;
 }
@@ -70,6 +75,12 @@ body {
         transition: 1s;
     }
 
+
+.principal_container {
+    min-height: calc(100vh - (110px + 40px));
+}
+
+
 .footer_master {
     position: relative;
     bottom: 0;
@@ -79,6 +90,7 @@ body {
 }
 
 .imagenUsuario {
+    margin-top: 1em;
     width: 45px;
     height: 45px;
     border-radius: 25px;

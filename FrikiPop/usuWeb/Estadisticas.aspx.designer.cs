@@ -7,36 +7,45 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace usuWeb {
-
-
-    public partial class MenuArticulo {
+namespace usuWeb
+{
+    public partial class Formulario_web12
+    {
 
         /// <summary>
-        /// Control articulos.
+        /// Control topUsuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button articulos;
+        protected global::System.Web.UI.WebControls.GridView topUsuarios;
 
         /// <summary>
-        /// Control verArticulo.
+        /// Control Grafica1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button verArticulo;
+        protected global::System.Web.UI.DataVisualization.Charting.Chart Grafica1;
 
         /// <summary>
-        /// Control anyadirArticulo.
+        /// Control topTipoArticulos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button anyadirArticulo;
+        protected global::System.Web.UI.WebControls.GridView topTipoArticulos;
+
+        /// <summary>
+        /// Control Grafica2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart Grafica2;
     }
 }

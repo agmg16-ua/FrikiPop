@@ -14,24 +14,19 @@ namespace usuWeb {
                 nickName.Text = (string)Session["nick"];
                 imagenUsuario.ImageUrl = "~/App_Images/Usuarios/" + Session["imagen"];
 
+                if (Menu.FindItem("Cerrar Sesion") == null)
+                {
 
-                string salir = "cerrar";
-                MenuItem item = new MenuItem();
-                item.Text = "Cerrar Sesion";
-                item.NavigateUrl = "~/paginaPrincipal.aspx?sesion=" + salir;
-                Menu.Items.Add(item);
+                    MenuItem item2 = new MenuItem();
+                    item2.Text = "Menu Usuario";
+                    item2.NavigateUrl = "~/MenuUsuario.aspx";
+                    Menu.Items.Add(item2);
 
-                MenuItem item2 = new MenuItem();
-                item2.Text = "Menu Usuario";
-                item2.NavigateUrl = "~/MenuUsuario.aspx";
-                Menu.Items.Add(item2);
-
-                if(Menu.FindItem("Iniciar Sesión") != null) {
-                    Menu.Items.Remove(Menu.FindItem("Iniciar Sesión"));
-                }
-                
-                
-                
+                    if (Menu.FindItem("Iniciar Sesión") != null)
+                    {
+                        Menu.Items.Remove(Menu.FindItem("Iniciar Sesión"));
+                    }
+                }  
             } 
             else 
             {
@@ -40,13 +35,26 @@ namespace usuWeb {
 
             if(Session["admin"] != null)
             {
-                if((int)Session["admin"] == 1)
+                if (Menu.FindItem("Administrador") == null)
                 {
-                    MenuItem item = new MenuItem();
-                    item.Text = "Administrador";
-                    item.NavigateUrl = "~/Admin.aspx";
-                    Menu.Items.Add(item);
+                    if ((int)Session["admin"] == 1)
+                    {
+                        MenuItem item = new MenuItem();
+                        item.Text = "Administrador";
+                        item.NavigateUrl = "~/Admin.aspx";
+                        Menu.Items.Add(item);
+                    }
                 }
+
+                if(Menu.FindItem("Cerrar Sesion") == null) {
+                    string salir = "cerrar";
+                    MenuItem item2 = new MenuItem();
+                    item2.Text = "Cerrar Sesion";
+                    item2.NavigateUrl = "~/paginaPrincipal.aspx?sesion=" + salir;
+                    Menu.Items.Add(item2);
+                }
+
+                
             }
         }
     }

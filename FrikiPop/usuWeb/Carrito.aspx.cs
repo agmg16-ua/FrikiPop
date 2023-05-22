@@ -54,8 +54,7 @@ namespace usuWeb {
 
         protected void tramitarPedido(object sender, EventArgs e) {
 
-            carroCompra.makePedido();
-            Response.Redirect("PaginaPrincipal.aspx");
+            Response.Redirect("~/PasarelaPago.aspx?carrito=" + carroCompra.numeroCarrito);
 
         }
 

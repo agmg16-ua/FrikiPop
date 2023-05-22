@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -90,6 +91,27 @@ namespace library
             finally {
                 connection.Close();
             }
+        }
+
+        //Lista la publicidad
+        public DataTable listarPublicidad() {
+            DataTable table = new DataTable();
+            SqlConnection connection = new SqlConnection(constring);
+
+            try {
+                SqlDataAdapter data = new SqlDataAdapter("Select * from Publicidad", connection);
+                data.Fill(table);
+            }
+            catch (Exception e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            finally {
+                if (connection.State == ConnectionState.Open) {
+                    connection.Close();
+                }
+            }
+
+            return table;
         }
     }
 }

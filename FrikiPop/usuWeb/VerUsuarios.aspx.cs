@@ -42,7 +42,17 @@ namespace usuWeb
 
         protected void Filtrar_Valores(object sender, EventArgs e)
         {
-            if (filtros.SelectedItem == nick)
+            if (filtros.SelectedItem == valorInicial)
+            {
+                faltaLista.Text = "Tiene que seleccionar antes un valor de la lista";
+                faltaValorParaFiltrar.Text = "";
+            }
+            else if (valorParaFiltrar.Text == "")
+            {
+                faltaLista.Text = "";
+                faltaValorParaFiltrar.Text = "Tiene que escribir una valor que quiera filtrar";
+            }
+            else if (filtros.SelectedItem == nick)
             {
                 ENUsuario usuario = new ENUsuario();
                 GridView1.DataSource = usuario.filtrarPorNick(valorParaFiltrar.Text);
@@ -177,14 +187,6 @@ namespace usuWeb
                     faltaValorParaFiltrar.Text = "";
                 }
 
-            }
-            else if(filtros.SelectedItem == valorInicial)
-            {
-                faltaLista.Text = "Tiene que seleccionar antes un valor de la lista";
-            }
-            else if(valorParaFiltrar.Text == "")
-            {
-                faltaValorParaFiltrar.Text = "Tiene que escribir una valor que quiera filtrar";
             }
         }
 
