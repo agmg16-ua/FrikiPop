@@ -76,7 +76,7 @@ namespace library
                 {
                     en._pedido = (int)reader["numPedido"];
                     en._linea = (int)reader["linea"];
-                    en._articulo = (int)reader["articulo"];
+                    en._articulo = reader["articulo"].ToString();
                     en._importe = (float)reader["importe"];
                     //cierro el lector de datos
                     reader.Close();

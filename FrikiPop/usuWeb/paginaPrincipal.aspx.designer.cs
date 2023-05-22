@@ -22,15 +22,6 @@ namespace usuWeb {
         protected global::System.Web.UI.WebControls.ListView PrincipalListView;
 
         /// <summary>
-        /// Control dsArticulos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dsArticulos;
-
-        /// <summary>
         /// Control publicidad_imagen.
         /// </summary>
         /// <remarks>

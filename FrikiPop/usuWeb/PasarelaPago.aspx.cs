@@ -83,7 +83,8 @@ namespace usuWeb {
 
         protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
 
-            string id_articulo = Request.QueryString["articulo"];
+            string id_articulo = Request.QueryString["codigo"];
+            string id_carrito = Request.QueryString["carrito"];
 
             ENPedido pedido = new ENPedido();
 
@@ -97,20 +98,21 @@ namespace usuWeb {
             pedido.idPedido = maxNumPedido + 1;
             pedido.user = (string)Session["nick"];
             DateTime now = DateTime.Now;
-            pedido.date = now.ToString("yyy-MM-dd");
+            pedido.date = now.ToString();
             pedido.state = "listo";
 
             if (id_articulo != null) {
 
                 SqlCommand sql = new SqlCommand("SELECT precio from Articulo where codigo='" + id_articulo + "'", conex);
-                float precio = (float)command.ExecuteScalar();
+                float precio = float.Parse(sql.ExecuteScalar().ToString());
                 conex.Close();
 
                 pedido.total = precio;
             }
-            else {
+            
+            if(id_carrito != null) {
                 ENCarrito carroCompra = new ENCarrito();
-                carroCompra.usuario = (string)Session["nick"];
+                carroCompra.numeroCarrito = int.Parse(id_carrito);
                 DataTable unirCarrito;
 
                 unirCarrito = carroCompra.unirCarrito();
@@ -125,8 +127,10 @@ namespace usuWeb {
                 }
 
                 pedido.total = ((float)(importeTotal + 5.49));
+
+                carroCompra.vaciarCarrito();
             }
-            
+            ENLinPedido linped = new ENLinPedido(1, pedido.idPedido, id_articulo, pedido.total);
             pedido.createPedido();
             Response.Redirect("~/paginaPrincipal.aspx");
         }
