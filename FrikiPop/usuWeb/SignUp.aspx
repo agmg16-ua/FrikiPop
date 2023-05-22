@@ -48,6 +48,7 @@
         <asp:CheckBox CssClass="checkBox" id="checkBox1" runat="server"  Text="No soy un robot (Opcional)"></asp:CheckBox><br />
         <asp:CheckBox CssClass="checkBox" ID="SoyFriki" runat="server" Text="Soy un friki (Obligatorio)"></asp:CheckBox><br />
      </section>
+    <br />
     <section id="botonesUsuario">
         <asp:Button CssClass="boton" runat="server" Text="Sign Up"  ID="Crear" OnClick="createUsuario"/>
         <asp:Label CssClass="labelsDeError" runat="server" ID = "LabelError"></asp:Label>
