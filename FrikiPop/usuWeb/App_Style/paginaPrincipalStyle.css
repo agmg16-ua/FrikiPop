@@ -5,12 +5,10 @@
     margin-top: 2em;
     display:grid;
     grid-template-columns: repeat(4,1fr);
-    gap:1em;
 }
 
 .articulo-card{
     margin-bottom: 1em;
-    margin-left: 1em;
     display:flex;
     grid-auto-columns:auto;
     grid-auto-rows: auto;   
@@ -25,9 +23,14 @@
 
 .imagen_articulo {
     display: block;
-    max-width: 70%;
+    max-width: 100%;
     animation: fadeIn .5s;
-    width: 200px;
+    width: auto;
+}
+
+.imagen{
+    min-width: 150px;
+    min-height: 200px;
 }
 
 .articulo-card__caption{
