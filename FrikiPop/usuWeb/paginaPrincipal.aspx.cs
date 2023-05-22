@@ -11,6 +11,8 @@ using System.Web.UI.WebControls;
 namespace usuWeb {
     public partial class paginaPrincipal : System.Web.UI.Page {
 
+        private ENArticulo articulo = new ENArticulo();
+
         protected void Page_Load(object sender, EventArgs e) {
             if (Request.QueryString["sesion"] == "cerrar") {
                 Session.Remove("nick");
@@ -19,10 +21,8 @@ namespace usuWeb {
                 Response.Redirect("~/paginaPrincipal.aspx");
             }
 
-            /*ENArticulo articulo = new ENArticulo();
-
-            PrincipalListView.DataSource = articulo.usuarioArticulo();
-            PrincipalListView.DataBind();*/
+            PrincipalListView.DataSource = articulo.usuarioArticulo("");
+            PrincipalListView.DataBind();
 
             if (!IsPostBack) {
                 string connectionString = ConfigurationManager.ConnectionStrings["Database"].ToString(); ;
@@ -72,9 +72,6 @@ namespace usuWeb {
                 }
             }
 
-        }
-
-        protected void Publicidad_OnClick(object sender, ImageClickEventArgs e) {
         }
     }
 }
