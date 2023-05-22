@@ -234,9 +234,9 @@ namespace library
 					ENLinPedido linped;
 					float importeF;
 					importeF = float.Parse(dataRow[importe].ToString());
-					int articuloI = int.Parse(dataRow[articulo].ToString());
+					string articuloI = dataRow[articulo].ToString();
 
-					linped = new ENLinPedido(ped.idPedido,iter,articuloI,importeF);
+					linped = new ENLinPedido(iter, ped.idPedido,articuloI,importeF);
 
 					linped.createLinPedido();
 

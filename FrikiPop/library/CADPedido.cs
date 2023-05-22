@@ -16,7 +16,7 @@ namespace library {
         }
         public bool createPedido(ENPedido en) {
             bool creado = false; 
-            string consulta = "INSERT INTO [dbo].[Pedido] (numPedido, usuario, fecha) " + "VALUES (" + en.idPedido + ", '" + en.user + "', '" + en.date + "')";
+            string consulta = "INSERT INTO [dbo].[Pedido] (num_Pedido, usuario, fecha) " + "VALUES (" + en.idPedido + ", '" + en.user + "', '" + en.date + "')";
             SqlConnection connection = new SqlConnection(constring);
 
             try {

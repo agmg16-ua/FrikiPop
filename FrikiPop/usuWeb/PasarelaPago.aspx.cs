@@ -98,7 +98,7 @@ namespace usuWeb {
             pedido.idPedido = maxNumPedido + 1;
             pedido.user = (string)Session["nick"];
             DateTime now = DateTime.Now;
-            pedido.date = now.ToString();
+            pedido.date = now.ToString("yyyy-MM-dd");
             pedido.state = "listo";
 
             if (id_articulo != null) {
@@ -129,7 +129,7 @@ namespace usuWeb {
 
                 carroCompra.vaciarCarrito();
             }
-            
+            ENLinPedido linped = new ENLinPedido(1, pedido.idPedido, id_articulo, pedido.total);
             pedido.createPedido();
             Response.Redirect("~/paginaPrincipal.aspx");
         }

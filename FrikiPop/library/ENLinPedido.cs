@@ -10,7 +10,7 @@ namespace library
     {
         private int pedido;
         private int linea;
-        private int articulo;
+        private string articulo;
         private float importe;
         public int _pedido
         {
@@ -22,7 +22,7 @@ namespace library
             get { return linea; }
             set { linea = value; }
         }
-        public int _articulo
+        public string _articulo
         {
             get { return articulo; }
             set { articulo = value; }
@@ -33,7 +33,7 @@ namespace library
             set { importe = value; }
         }
  
-        public ENLinPedido(int pedido, int linea, int articulo, float importe)
+        public ENLinPedido(int linea, int pedido, string articulo, float importe)
         {
             this.pedido = pedido;
             this.linea = linea;
