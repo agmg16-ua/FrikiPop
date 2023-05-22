@@ -13,8 +13,9 @@
 
             <section id="opcionesAdmin">
                 <asp:Button runat="server" ID="usuariosAdmin" CssClass="boton" Text="Gestion de Usuarios" PostBackUrl="~/VerUsuarios.aspx"/><br /><br />
+                <asp:Button runat="server" ID="tarjetasAdmin" CssClass="boton" Text="Gestion de Tarjetas" PostBackUrl="~/Tarjetas.aspx" /><br /><br />
                 <asp:Button runat="server" ID="articulosAdmin" CssClass="boton" Text="Gestion de Articulos" PostBackUrl="~/Articulos.aspx"/><br /><br />
-                <asp:Button runat="server" ID="estadisticasAdmin" CssClass="boton" Text="Ver Estadisticas" /><br /><br />
+                <asp:Button runat="server" ID="estadisticasAdmin" CssClass="boton" Text="Ver Estadisticas" PostBackUrl="~/Estadisticas.aspx" /><br /><br />
                 <asp:Button runat="server" ID="ubicacionesAdmin" CssClass="boton" Text="Gestion de Ubicaciones" PostBackUrl="~/Paises.aspx" /><br /><br />
                 <asp:Button runat="server" ID="redesSocialesAdmin" CssClass="boton" Text="Gestion de Redes Sociales" PostBackUrl="~/redesSociales.aspx" /><br /><br />
                 <asp:Button runat="server" ID="publicidadAdmin" CssClass="boton" Text="Gestion de Publicidad" PostBackUrl="~/Publicidad.aspx" /><br /><br />

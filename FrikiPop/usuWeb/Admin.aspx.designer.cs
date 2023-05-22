@@ -22,6 +22,15 @@ namespace usuWeb {
         protected global::System.Web.UI.WebControls.Button usuariosAdmin;
 
         /// <summary>
+        /// Control tarjetasAdmin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button tarjetasAdmin;
+
+        /// <summary>
         /// Control articulosAdmin.
         /// </summary>
         /// <remarks>
