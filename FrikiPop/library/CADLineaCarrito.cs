@@ -206,6 +206,8 @@ namespace library
                     }
                 }
 
+				readerSQL.Close();
+
 			} catch (SqlException exception) {
 				Console.WriteLine("User operation has failed. Error: {0}", exception.Message);
 			} catch (Exception exception) {
