@@ -16,11 +16,6 @@ namespace usuWeb {
 
                 if (Menu.FindItem("Cerrar Sesion") == null)
                 {
-                    string salir = "cerrar";
-                    MenuItem item = new MenuItem();
-                    item.Text = "Cerrar Sesion";
-                    item.NavigateUrl = "~/paginaPrincipal.aspx?sesion=" + salir;
-                    Menu.Items.Add(item);
 
                     MenuItem item2 = new MenuItem();
                     item2.Text = "Menu Usuario";
@@ -50,6 +45,12 @@ namespace usuWeb {
                         Menu.Items.Add(item);
                     }
                 }
+
+                string salir = "cerrar";
+                MenuItem item2 = new MenuItem();
+                item2.Text = "Cerrar Sesion";
+                item2.NavigateUrl = "~/paginaPrincipal.aspx?sesion=" + salir;
+                Menu.Items.Add(item2);
             }
         }
     }
