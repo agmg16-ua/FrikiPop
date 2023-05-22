@@ -126,9 +126,11 @@ namespace library
 
             try {
 				string consultaSQL;
-				consultaSQL = "Select * from LinCarrito l, Articulo a where l.articulo = a.codigo  and l.id_carrito = '"+carrito.numeroCarrito+ "'";
+				consultaSQL = "Select * from LinCarrito, Articulo where articulo = codigo and id_carrito = "+carrito.numeroCarrito;
 
 				conex = new SqlConnection(constring);
+
+				conex.Open();
 
 				SqlDataAdapter dataAdapter;
 				dataAdapter = new SqlDataAdapter(consultaSQL, conex);
@@ -236,7 +238,7 @@ namespace library
 					importeF = float.Parse(dataRow[importe].ToString());
 					string articuloI = dataRow[articulo].ToString();
 
-					linped = new ENLinPedido(iter, ped.idPedido,articuloI,importeF);
+					linped = new ENLinPedido(iter, ped.idPedido,articuloI,importeF,carrito.usuario);
 
 					linped.createLinPedido();
 

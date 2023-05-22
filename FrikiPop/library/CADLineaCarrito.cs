@@ -7,6 +7,7 @@ using library;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace library
 {
@@ -81,8 +82,9 @@ namespace library
 				conex = new SqlConnection(constring);
 				conex.Open();
 				string consultaSQL;
-
-				consultaSQL = "Insert into LinCarrito (linea, id_carrito, importe, usuario, articulo) VALUES ("+lincarrito.linea+", "+lincarrito.id_carrito+", "+lincarrito.importe+", "+lincarrito.usuario+ ", "+ lincarrito.articulo+ ", '" + "')";
+				CultureInfo culture = new CultureInfo("en-US");
+				string resultado = lincarrito.importe.ToString("0.00", culture);
+				consultaSQL = "Insert into LinCarrito (linea, id_carrito, importe, usuario, articulo) VALUES ("+lincarrito.linea+", "+lincarrito.id_carrito+", "+resultado+", '"+lincarrito.usuario+ "', '"+ lincarrito.articulo+ "')";
 				SqlCommand comandoSQL;
 				comandoSQL = new SqlCommand(consultaSQL, conex);
 
