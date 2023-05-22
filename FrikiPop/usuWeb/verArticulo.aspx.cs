@@ -37,12 +37,10 @@ namespace usuWeb
             ENLineaCarrito lincar = new ENLineaCarrito();
             lincar.id_carrito = carrito.numeroCarrito;
             lincar.importe = (float)articulo.precio;
-            lincar.linea = carrito.obtenerMaxLineaCarrito(carrito.numeroCarrito);
+            lincar.linea = lincar.obtenerMaxLineaCarrito(carrito.numeroCarrito)+1;
             lincar.usuario = (string)Session["nick"];
-            lincar.createLineaCarrito();
             lincar.articulo = articulo.codigo;
-
-            carrito.updateCarrito();
+            lincar.createLineaCarrito();
             Response.Redirect("~/verArticulo.aspx?codigo=" + articulo.codigo);
         }
 
