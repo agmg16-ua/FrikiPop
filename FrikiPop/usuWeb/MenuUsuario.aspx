@@ -12,6 +12,7 @@
             <section id="opcionesUsuario">
                 <asp:Button runat="server" ID="carritoUsuario" CssClass="boton" Text="Ver Carrito" PostBackUrl="~/Carrito.aspx"/><br /><br />
                 <asp:Button runat="server" ID="pedidosUsuario" CssClass="boton" Text="Ver Pedidos" PostBackUrl="~/VerPedido.aspx" /><br /><br />
+                <asp:Button runat="server" ID="anyadirArticuloUsuario" CssClass="boton" Text="Añadir Articulo" PostBackUrl="~/añadirArticulo.aspx" /><br /><br />
             </section>
         </div>
     </section>

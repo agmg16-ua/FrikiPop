@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 
 
 namespace library {
@@ -15,8 +16,10 @@ namespace library {
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
         public bool createPedido(ENPedido en) {
-            bool creado = false; 
-            string consulta = "INSERT INTO [dbo].[Pedido] (num_Pedido, usuario, fecha) " + "VALUES (" + en.idPedido + ", '" + en.user + "', '" + en.date + "')";
+            bool creado = false;
+            CultureInfo culture = new CultureInfo("en-US");
+            string resultado = en.total.ToString("0.00", culture);
+            string consulta = "INSERT INTO [dbo].[Pedido] (num_pedido, usuario, estado_carrito, fecha, total) VALUES (" + en.idPedido + ", '" + en.user + "', 'Listo', '" + en.date + "', " + resultado + ")";
             SqlConnection connection = new SqlConnection(constring);
 
             try {
@@ -24,16 +27,13 @@ namespace library {
                 SqlCommand command = new SqlCommand(consulta, connection);
                 command.ExecuteNonQuery();
 
-                creado= true;
+                creado = true;
 
-            }
-            catch (SqlException e) {
+            } catch (SqlException e) {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
-            }
-            finally {
+            } finally {
                 if (connection.State == ConnectionState.Open) {
                     connection.Close();
                 }
@@ -55,19 +55,16 @@ namespace library {
                     en.user = reader["usuario"].ToString();
                     en.date = String.Format("{0:mm/dd/yyyy}", reader["fecha"]);
                     reader.Close();
-                    read= true;
-                }else {
+                    read = true;
+                } else {
                     reader.Close();
-                    read= false;
+                    read = false;
                 }
-            }
-            catch (SqlException e) {
+            } catch (SqlException e) {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
-            }
-            finally {
+            } finally {
                 if (connection.State == ConnectionState.Open) {
                     connection.Close();
                 }
@@ -78,7 +75,7 @@ namespace library {
         public int getId() {
 
             int newId = 1;
-            string consulta= "Select max(num_pedido) max from[dbo].[Pedido]";
+            string consulta = "Select max(num_pedido) max from[dbo].[Pedido]";
             SqlConnection connection = new SqlConnection(constring);
 
             try {
@@ -91,14 +88,11 @@ namespace library {
                     newId = int.Parse(reader["max"].ToString()) + 1;
                     reader.Close();
                 }
-            }
-            catch (SqlException e) {
+            } catch (SqlException e) {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
-            }
-            finally {
+            } finally {
                 if (connection.State == ConnectionState.Open) {
                     connection.Close();
                 }

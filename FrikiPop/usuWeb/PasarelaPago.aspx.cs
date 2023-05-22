@@ -98,7 +98,7 @@ namespace usuWeb {
             pedido.idPedido = maxNumPedido + 1;
             pedido.user = (string)Session["nick"];
             DateTime now = DateTime.Now;
-            pedido.date = now.ToString("yyyy-MM-dd");
+            pedido.date = now.ToString();
             pedido.state = "listo";
 
             if (id_articulo != null) {
@@ -114,6 +114,7 @@ namespace usuWeb {
                 ENCarrito carroCompra = new ENCarrito();
                 carroCompra.numeroCarrito = int.Parse(id_carrito);
                 DataTable unirCarrito;
+
                 unirCarrito = carroCompra.unirCarrito();
                 string importeS = "importe";
                 double importeTotal;
