@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Estadisticas.aspx.cs" Inherits="usuWeb.Formulario_web12" %>
 <%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <!--agrega una referencia a una hoja de estilos CSS externa que se encuentra en la ruta -->
     <link rel="stylesheet" href="..\App_Style\estadisticasStyle.css" />
     <div class="texto1" >
         <h2 class="Stats"> Estadísticas</h2>
@@ -15,6 +15,7 @@
         <article id="tablausuarios">
             <asp:GridView ID="topUsuarios" runat="server" AutoGenerateColumns="False" DataKeyNames="nick_name" CssClass="gridView" >
                 <Columns>
+                    <!--Tabla de datos-->
                     <asp:BoundField DataField="nick_name" HeaderText="Nickname" ReadOnly="True" SortExpression="nick_name" />
                     <asp:BoundField DataField="nombre" HeaderText="Nombre" SortExpression="nombre" />
                     <asp:BoundField DataField="apellidos" HeaderText="Apellidos" SortExpression="apellidos" />
@@ -23,6 +24,7 @@
             </asp:GridView> 
              <br><!--salto de linea-->
             <section id="colocarGrafica">
+            <!--Gráfica-->
             <asp:Chart ID="Grafica1" runat="server" Width="400px" BackColor="#c08bbf" >
                 <Series>
                     <asp:Series Name="Series1" XValueMember="nick_name" IsXValueIndexed="true"  YValueMembers="numVentas" Color="#a70084"></asp:Series>
