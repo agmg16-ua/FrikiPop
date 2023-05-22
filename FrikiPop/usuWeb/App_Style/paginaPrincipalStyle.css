@@ -2,24 +2,32 @@
 }
 
 .articulos{
-    text-align: center;
+    margin-top: 2em;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:1em;
 }
 
 .articulo-card{
+    margin-bottom: 1em;
+    margin-left: 1em;
     display:flex;
+    grid-auto-columns:auto;
+    grid-auto-rows: auto;   
     flex-direction:column;
     row-gap: 16px;
-    width: 280px;
+    width: 180px;
     background-color: #ffff;
-    padding: 10px;
+    padding: 1em;
     border-radius: 8px;
     overflow-y: hidden;
 }
 
-.imagen_articulo{
+.imagen_articulo {
     display: block;
-    max-width: 100%;
-    animation: fadeIn .25s;
+    max-width: 70%;
+    animation: fadeIn .5s;
+    width: 200px;
 }
 
 .articulo-card__caption{
@@ -29,15 +37,27 @@
     background-color: #2b2b2b;
     font-size: 14px;
     color: #ffff;
+    height: fit-content;
     letter-spacing: 1px;
     padding: 20px;
     border-radius:inherit;
     animation: fadeIn .5s;
 }
 
+.articulo-card:hover{
+    transform: scale(1.1);
+    transition: .5s;
+}
+
 .articulo-card__nombre{
     font-size: 18px;
     text-transform: uppercase;
+}
+
+.articulo-card__footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
