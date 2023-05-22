@@ -790,5 +790,5 @@ INSERT INTO RedesSociales VALUES
 	('Facebook', '/App_Images/Web/facebook.png', 'https://www.facebook.com');
 
 INSERT INTO Publicidad VALUES
-	('Game0523', 'GAME S.L.', '/App_Images/Web/Game0523.png', 'https://www.game.com'),
-	('Steam0523', 'STEAM S.L.', '/App_Images/Web/Steam0523.png', 'https://www.steam.com');
+	('Game0523', 'GAME S.L.', '/App_Images/Web/Game0523.png', 'https://www.game.es'),
+	('Steam0523', 'STEAM S.L.', '/App_Images/Web/Steam0523.png', 'https://store.steampowered.com/');
