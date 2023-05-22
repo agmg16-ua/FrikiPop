@@ -11,9 +11,17 @@ namespace usuWeb {
     public partial class Publicidad : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
 
-            ENPublicidad publicidad = new ENPublicidad();
-            GridView.DataSource = publicidad.listarPublicidad();
-            GridView.DataBind();
+            if (Session["nick"] != null && (int)Session["admin"] == 1) {
+                ENTarjeta tarjeta = new ENTarjeta();
+
+                ENPublicidad publicidad = new ENPublicidad();
+                GridView.DataSource = publicidad.listarPublicidad();
+                GridView.DataBind();
+            }
+            else {
+                Response.Redirect("~/SignUp.aspx");
+            }
+            
         }
 
         protected void actualizar_Click(object sender, EventArgs e) {
