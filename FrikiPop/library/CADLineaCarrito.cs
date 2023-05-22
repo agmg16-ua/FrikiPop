@@ -184,5 +184,41 @@ namespace library
 
 		}
 
+		public int obtenerMaxLineaCarrito(int num_carrito) {
+			int linea = 0;
+			SqlConnection conex = null;
+
+			try {
+				conex = new SqlConnection(constring);
+				conex.Open();
+				string consultaSQL;
+
+				consultaSQL = "Select * from LinCarrito where id_carrito=" + num_carrito;
+				SqlCommand comandoSQL;
+				comandoSQL = new SqlCommand(consultaSQL, conex);
+
+				SqlDataReader readerSQL;
+				readerSQL = comandoSQL.ExecuteReader();
+
+				while(readerSQL.Read()) {
+					if(linea < int.Parse(readerSQL["linea"].ToString())) {
+						linea = int.Parse(readerSQL["linea"].ToString());
+                    }
+                }
+
+			} catch (SqlException exception) {
+				Console.WriteLine("User operation has failed. Error: {0}", exception.Message);
+			} catch (Exception exception) {
+				Console.WriteLine("User operation has failed. Error: {0}", exception.Message);
+			} finally {
+
+				if (conex.State == ConnectionState.Open) {
+					conex.Close();
+				}
+			}
+
+			return linea;
+		}
+
     }
 }
