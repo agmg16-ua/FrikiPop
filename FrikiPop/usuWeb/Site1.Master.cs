@@ -46,11 +46,15 @@ namespace usuWeb {
                     }
                 }
 
-                string salir = "cerrar";
-                MenuItem item2 = new MenuItem();
-                item2.Text = "Cerrar Sesion";
-                item2.NavigateUrl = "~/paginaPrincipal.aspx?sesion=" + salir;
-                Menu.Items.Add(item2);
+                if(Menu.FindItem("Cerrar Sesion") == null) {
+                    string salir = "cerrar";
+                    MenuItem item2 = new MenuItem();
+                    item2.Text = "Cerrar Sesion";
+                    item2.NavigateUrl = "~/paginaPrincipal.aspx?sesion=" + salir;
+                    Menu.Items.Add(item2);
+                }
+
+                
             }
         }
     }
