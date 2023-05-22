@@ -10,11 +10,17 @@ using System.Web.UI.WebControls;
 namespace usuWeb {
     public partial class Tarjeta : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            ENTarjeta tarjeta = new ENTarjeta();
-            
-            GridView.DataSource = tarjeta.listarTarjetas();
-            GridView.DataBind();
-            Message.Text = "";
+
+            if (Session["nick"] != null && (int)Session["admin"] == 1) {
+                ENTarjeta tarjeta = new ENTarjeta();
+
+                GridView.DataSource = tarjeta.listarTarjetas();
+                GridView.DataBind();
+                Message.Text = "";
+            }
+            else {
+                Response.Redirect("~/SignUp.aspx");
+            }
         }
 
         protected bool DataValidation(ENTarjeta tarjeta) {

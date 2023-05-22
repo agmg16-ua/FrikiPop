@@ -12,8 +12,8 @@ using System.Web.UI.WebControls;
 namespace usuWeb {
     public partial class PasarelaPago : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            if ((string)Session["nick"] == "invitado") {
-                Response.Redirect("~/SingUp.aspx");
+            if (Session["nick"] == null) {
+                Response.Redirect("~/SignUp.aspx");
             }
             else {
                 DataSet data = new DataSet();
