@@ -84,6 +84,7 @@ namespace usuWeb {
         protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
 
             string id_articulo = Request.QueryString["articulo"];
+            string id_carrito = Request.QueryString["carrito"];
 
             ENPedido pedido = new ENPedido();
 
@@ -108,11 +109,11 @@ namespace usuWeb {
 
                 pedido.total = precio;
             }
-            else {
+            
+            if(id_carrito != null) {
                 ENCarrito carroCompra = new ENCarrito();
-                carroCompra.usuario = (string)Session["nick"];
+                carroCompra.numeroCarrito = int.Parse(id_carrito);
                 DataTable unirCarrito;
-
                 unirCarrito = carroCompra.unirCarrito();
                 string importeS = "importe";
                 double importeTotal;
@@ -125,6 +126,8 @@ namespace usuWeb {
                 }
 
                 pedido.total = ((float)(importeTotal + 5.49));
+
+                carroCompra.vaciarCarrito();
             }
             
             pedido.createPedido();
