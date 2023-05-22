@@ -10,6 +10,7 @@ using System.Data.Common;
 using System.Data;
 using System.Configuration;
 using library;
+using System.Globalization;
 
 namespace library
 {
@@ -32,8 +33,10 @@ namespace library
                 //abre la conexion
                 connection.Open();
                 //realiza la consulta
-                SqlCommand command = new SqlCommand("INSERT INTO [dbo].[LINPED] (numPedido, linea, articulo, importe) " +
-                    "VALUES ('" + en._pedido + "', '" + en._linea + "', '" + en._articulo + "', '" + en._importe , connection);
+
+                CultureInfo culture = new CultureInfo("en-US");
+                string resultado = en._importe.ToString("0.00", culture);
+                SqlCommand command = new SqlCommand("INSERT INTO [dbo].[LinPedido] (id_pedido, linea, articulo, importe, usuario) VALUES (" + en._pedido + ", " + en._linea + ", '" + en._articulo + "', " + resultado + ", '" + en._usuario + "')" , connection);
                 command.ExecuteNonQuery();
                 return true;
 
@@ -65,26 +68,32 @@ namespace library
                 //abro la conexion
                 connection.Open();
                 //realiza una consulta de seleccion
-                SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[LINPED] " +
-                    "WHERE numPedido = '" + en._pedido + "'", connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[LinPedido] " +
+                    "WHERE id_pedido = " + en._pedido, connection);
                 SqlDataReader reader = command.ExecuteReader();
                 //llama al metodo 'Read()' en el objeto 'reader'
                 //para avanzar al primer registro devuelto por la consulta.
-                reader.Read();
+                if(!reader.Read()) {
+                    reader.Close(); 
+                    connection.Close();
+                    return false;
+                }
                 //compara si el número de pedido del registro es igual al número de pedido del objeto 
-                if (int.Parse(reader["numPedido"].ToString()) == en._pedido)
+                if (int.Parse(reader["linea"].ToString()) == en._pedido)
                 {
-                    en._pedido = (int)reader["numPedido"];
+                    en._pedido = (int)reader["id_pedido"];
                     en._linea = (int)reader["linea"];
                     en._articulo = reader["articulo"].ToString();
                     en._importe = (float)reader["importe"];
                     //cierro el lector de datos
                     reader.Close();
+                    connection.Close();
                     return true;
                 }
                 else
                 {
                     reader.Close();
+                    connection.Close();
                     return false;
                 }
             }

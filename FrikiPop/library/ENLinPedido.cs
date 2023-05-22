@@ -12,6 +12,7 @@ namespace library
         private int linea;
         private string articulo;
         private float importe;
+        private string usuario;
         public int _pedido
         {
             get { return pedido; }
@@ -32,13 +33,19 @@ namespace library
             get { return importe; }
             set { importe = value; }
         }
+
+        public string _usuario {
+            get { return usuario; }
+            set { usuario = value; }
+        }
  
-        public ENLinPedido(int linea, int pedido, string articulo, float importe)
+        public ENLinPedido(int linea, int pedido, string articulo, float importe, string usuario)
         {
             this.pedido = pedido;
             this.linea = linea;
             this.articulo = articulo;
             this.importe = importe;
+            this.usuario = usuario;
         }
         public bool createLinPedido()
         {

@@ -112,7 +112,7 @@ namespace library
 
         public int obtenerMaxLineaCarrito(int num_carrito) {
             CADLineaCarrito linCarrito = new CADLineaCarrito();
-            int linea = obtenerMaxLineaCarrito(num_carrito);
+            int linea = linCarrito.obtenerMaxLineaCarrito(num_carrito);
             return linea;
         }
     }
