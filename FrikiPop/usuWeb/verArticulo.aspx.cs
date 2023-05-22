@@ -37,7 +37,7 @@ namespace usuWeb
             ENLineaCarrito lincar = new ENLineaCarrito();
             lincar.id_carrito = idCar;
             lincar.importe = (float)articulo.precio;
-            lincar.linea = lincar.obtenerMaxLineaCarrito(carrito.numeroCarrito)+1;
+            lincar.linea = lincar.obtenerMaxLineaCarrito(idCar)+1;
             lincar.usuario = (string)Session["nick"];
             lincar.articulo = articulo.codigo;
 
