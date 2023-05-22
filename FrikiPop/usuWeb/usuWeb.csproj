@@ -94,7 +94,6 @@
     <Content Include="paginaPrincipal.aspx" />
     <Content Include="MenuUsuario.aspx" />
     <Content Include="Estadisticas.aspx" />
-    <Content Include="MenuArticulo.aspx" />
     <Content Include="Paises.aspx" />
     <Content Include="Localidades.aspx" />
     <Content Include="Publicidad.aspx" />
@@ -153,13 +152,6 @@
     </Compile>
     <Compile Include="Estadisticas.aspx.designer.cs">
       <DependentUpon>Estadisticas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MenuArticulo.aspx.cs">
-      <DependentUpon>MenuArticulo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MenuArticulo.aspx.designer.cs">
-      <DependentUpon>MenuArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paises.aspx.cs">
       <DependentUpon>Paises.aspx</DependentUpon>
