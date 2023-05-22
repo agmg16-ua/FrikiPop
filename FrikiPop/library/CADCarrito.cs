@@ -304,5 +304,41 @@ namespace library
 			return borrado;
 		}
 
+		public int obtenerIdCarrito(string nick) {
+			int id = 0;
+			SqlConnection conex;
+			conex = new SqlConnection(constring);
+
+			try {
+				SqlCommand comandoSQL;
+				string consultaSQL;
+
+				conex.Open();
+
+				consultaSQL = "Select * from Carrito where usuario = '" + nick + "'";
+
+				comandoSQL = new SqlCommand(consultaSQL, conex);
+
+				SqlDataReader readerSQL;
+				readerSQL = comandoSQL.ExecuteReader();
+
+				readerSQL.Read();
+
+				id = int.Parse(readerSQL["num_carrito"].ToString());
+
+				readerSQL.Close();
+			} catch (SqlException exception) {
+				Console.WriteLine("User operation has failed. Error: {0}", exception.Message);
+			} catch (Exception exception) {
+				Console.WriteLine("User operation has failed. Error: {0}", exception.Message);
+			} finally {
+
+				if (conex.State == ConnectionState.Open) {
+					conex.Close();
+				}
+			}
+
+			return id;
+		}
 	}
 }
