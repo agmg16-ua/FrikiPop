@@ -4,6 +4,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" href="..\App_Style\estadisticasStyle.css" />
     <div class="texto1" >
         <h2 class="Stats"> Estadísticas</h2>
     </div>
@@ -12,7 +13,7 @@
     </div> 
     <section id="content" >
         <article id="tablausuarios">
-            <asp:GridView ID="topUsuarios" runat="server" AutoGenerateColumns="False" DataKeyNames="nick_name" >
+            <asp:GridView ID="topUsuarios" runat="server" AutoGenerateColumns="False" DataKeyNames="nick_name" CssClass="gridView" >
                 <Columns>
                     <asp:BoundField DataField="nick_name" HeaderText="Nickname" ReadOnly="True" SortExpression="nick_name" />
                     <asp:BoundField DataField="nombre" HeaderText="Nombre" SortExpression="nombre" />
@@ -21,17 +22,19 @@
                 </Columns>
             </asp:GridView> 
              <br><!--salto de linea-->
-            <asp:Chart ID="Grafica1" runat="server" Width="400px"   >
+            <section id="colocarGrafica">
+            <asp:Chart ID="Grafica1" runat="server" Width="400px" BackColor="#c08bbf" >
                 <Series>
-                    <asp:Series Name="Series1" XValueMember="nick_name" IsXValueIndexed="true"  YValueMembers="numVentas"></asp:Series>
+                    <asp:Series Name="Series1" XValueMember="nick_name" IsXValueIndexed="true"  YValueMembers="numVentas" Color="#a70084"></asp:Series>
                 </Series>
                 <Titles>
-                    <asp:Title Text="Nº de ventas por usuario"></asp:Title>
+                    <asp:Title Text="Nº de ventas por usuario" ></asp:Title>
                 </Titles>
                 <ChartAreas>
-                    <asp:ChartArea  Name="ChartArea1"> <AxisX IntervalAutoMode="VariableCount"></AxisX></asp:ChartArea>
+                    <asp:ChartArea  Name="ChartArea1" BackColor="#c08bbf"  > <AxisX IntervalAutoMode="VariableCount"></AxisX></asp:ChartArea>
                 </ChartAreas>
             </asp:Chart>
+            </section>
 
             </article>
          <br>
@@ -40,24 +43,26 @@
          </div>
          <br>
         <article id="tablatipoarticulos">
-            <asp:GridView ID="topTipoArticulos" runat="server" AutoGenerateColumns="False" DataKeyNames="tipo">
+            <asp:GridView ID="topTipoArticulos" runat="server" AutoGenerateColumns="False" DataKeyNames="tipo" CssClass="gridView">
                 <Columns>
                     <asp:BoundField DataField="tipo" HeaderText="Tipo" ReadOnly="True" SortExpression="tipo" />
                     <asp:BoundField DataField="numVentas" HeaderText="Ventas realizadas" SortExpression="numVentas" />
                 </Columns>
             </asp:GridView>
              <br>
-               <asp:Chart ID="Grafica2" runat="server" Width="400px"   >
+                <section id="colocarGrafica2">
+               <asp:Chart ID="Grafica2" runat="server" Width="400px" BackColor="#c08bbf"  >
                 <Series>
-                    <asp:Series Name="Series1" XValueMember="tipo" IsXValueIndexed="true"  YValueMembers="numVentas"></asp:Series>
+                    <asp:Series Name="Series1" XValueMember="tipo" IsXValueIndexed="true"  YValueMembers="numVentas" Color="#a70084"></asp:Series>
                 </Series>
                 <Titles>
                     <asp:Title Text="Nº de ventas de articulos por tipos"></asp:Title>
                 </Titles>
                 <ChartAreas>
-                    <asp:ChartArea  Name="ChartArea1"> <AxisX IntervalAutoMode="VariableCount"></AxisX></asp:ChartArea>
+                    <asp:ChartArea  Name="ChartArea1" BackColor="#c08bbf" > <AxisX IntervalAutoMode="VariableCount"></AxisX></asp:ChartArea>
                 </ChartAreas>
             </asp:Chart>
+            </section>
              <br>
             </article>
     </section>
