@@ -161,5 +161,11 @@ namespace library
             string max = articulo.getMaxID();
             return max;
         }
+
+        public DataTable filtrarPorTipo(string tipo) {
+            CADArticulo articulo = new CADArticulo();
+            DataTable tabla = articulo.filtrarPorTipo(tipo);
+            return tabla;
+        }
     }
 }

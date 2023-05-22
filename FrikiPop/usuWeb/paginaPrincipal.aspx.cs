@@ -21,8 +21,20 @@ namespace usuWeb {
                 Response.Redirect("~/paginaPrincipal.aspx");
             }
 
-            PrincipalListView.DataSource = articulo.usuarioArticulo("");
-            PrincipalListView.DataBind();
+            if(Request.QueryString["param"] == "Merchan") {
+                PrincipalListView.DataSource = articulo.filtrarPorTipo("Merchan");
+                PrincipalListView.DataBind();
+            } else if(Request.QueryString["param"] == "Videojuegos") {
+                PrincipalListView.DataSource = articulo.filtrarPorTipo("Videojuego");
+                PrincipalListView.DataBind();
+            } else if(Request.QueryString["param"] == "Consolas") {
+                PrincipalListView.DataSource = articulo.filtrarPorTipo("Consola");
+                PrincipalListView.DataBind();
+            } else {
+                PrincipalListView.DataSource = articulo.usuarioArticulo("");
+                PrincipalListView.DataBind();
+            }
+           
 
             if (!IsPostBack) {
                 string connectionString = ConfigurationManager.ConnectionStrings["Database"].ToString(); ;
@@ -64,7 +76,7 @@ namespace usuWeb {
 
                             // Asignar la URL de la imagen y la URL de redirección al control ImageButton
                             publicidad_imagen.ImageUrl = imageUrl;
-                            publicidad_imagen.Attributes["onclick"] = $"window.location='{linkUrl}'";
+                            publicidad_imagen.PostBackUrl = linkUrl;
                         }
 
                         reader.Close();
