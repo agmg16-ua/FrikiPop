@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -138,6 +139,12 @@ namespace library
                 leido = publicidad.deletePublicidad(this);
             }
             return leido;
+        }
+
+        //lista la publicidad
+        public DataTable listarPublicidad() {
+            CADPublicidad publicidad = new CADPublicidad();
+            return publicidad.listarPublicidad();
         }
 
     }

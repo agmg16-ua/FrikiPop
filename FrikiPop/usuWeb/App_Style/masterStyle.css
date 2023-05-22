@@ -3,6 +3,11 @@
     /*color: whitesmoke;*/
 }
 
+.header{
+    width: 100%;
+    height: 110px;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -69,6 +74,12 @@ body {
         transform: scale(1.2);
         transition: 1s;
     }
+
+
+.principal_container {
+    min-height: calc(100vh - (110px + 40px));
+}
+
 
 .footer_master {
     position: relative;

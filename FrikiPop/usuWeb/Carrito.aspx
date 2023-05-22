@@ -1,94 +1,55 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="usuWeb.Carrito" %>
-<asp:Content ID="Carrito1" ContentPlaceHolderID="head" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="usuWeb.Carrito" EnableEventValidation="true" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Carrito2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" href="..\App_Style\carritoStyle.css" />
       <div class="carritoCompra">
 
-          <div class="topBar">
+          <section class="topBar">
 
-              <h3 id= "carritoFrikiPop">Carrito FrikiPop </h3>
+              <h3 id= "carritoFrikiPop" style="font-size: 35px">Carrito FrikiPop </h3>
                <h3 id= "BorrarTodoCarrito"> 
-                   <asp:LinkButton ID = "BorrarCarrito" Text= "Borrar todo el carrito" runat="server" OnClick="eliminarCarritoCompra"/>  
+                   <asp:LinkButton ID = "BorrarCarrito" Text= "Borrar todo el carrito" runat="server" OnClick="eliminarCarritoCompra" ForeColor="white" />  
                </h3>
-          </div>
+          </section>
           
           <div class="ContentCarrito">
 
-                <div class= "EnlistarArticulos">
-
-                  <asp:Repeater ID = "Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
-
-                    <ItemTemplate>
-
-                        <div class = "Articulo">
-
-                            <div class = "Image">
-
-                                <asp:ImageButton PostBackUrl = '<%#"~/Articulos.aspx?nombre = "+ Eval("nombre") + "&url_imagen=" + Eval("url_imagen") + 
-                               "&precio = " + Eval("precio") + "&codigo=" + Eval("codigo")%>' runat = "server" ImageUrl = '<%#Eval("url_imagen")%>'/>
-
-                            </div>
-
-                            <div  class = "Info" >
-
-                               <h3> <asp:Literal runat = "server" Text='<%# Eval("nombre") %>'/> </h3>
-
-                                <asp:GridView runat= "server" AutoGenerateColumns= "false">
-                                    <Columns>
-                                         <asp:BoundField DataField= "precio" DataFormatString="{0:C}" HeaderText="Precio" />
-                                    </Columns>
-                                </asp:GridView>
-
-                               <strong>ID del Articulo: </strong> 
-                               <span> <%= string.Format("{0:C2}", Eval("articulo")) %> </span>
-                               <br/>
-
-                            
-                            </div>
-
-                            <div class = "PrecioFinal">
-
-                                <<asp:Button ID = "Button1" Text = "Borrar" runat="server" OnClick="deleteArticulo" CommandArgument='<%# Eval("articulo") %>' CssClass="Borrar" />
-
-                                <h3>
-                                    <strong> <asp:Label runat = "server" Text='<%# Eval("importe") %>' />€ </strong>
-
-                                </h3>
-
-                            </div>
-
-                        </div>
-
-                    </ItemTemplate>
-
-                   </asp:Repeater>
-
+                <div class= "EnlistarArticulos" style="width: 100%">
+                    <asp:GridView runat="server" ID="GridView" CssClass="gridViewCarrito" AutoGenerateColumns="false" DataKeyNames="linea" OnSelectedIndexChanged="GridView_SelectedIndexChanged" ShowHeader="false" Width="75%" BorderColor="#0f1618" >
+                        <Columns>
+                            <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="selectButton" SelectText="Borrar Articulo" />
+                            <asp:BoundField DataField="linea" />
+                            <asp:ImageField DataImageUrlField="url_imagen" ControlStyle-Width="100px"></asp:ImageField>
+                            <asp:BoundField DataField="nombre" />
+                            <asp:BoundField DataField="precio" />
+                        </Columns>
+                    </asp:GridView>
                 </div>
 
-                <div class = "EfectuarPedido">
-
+                <div class = "EfectuarPedido" style="font-size: 20px">
                     <h3> Precio total del pedido </h3>
 
                         <div id = "ValorCarritoContainer">
 
-                            <div class = "ContainerLeft"> valor del carrito de compra </div>
+                            <div class = "ContainerLeft"> Valor del carrito:  </div>
 
                              <div class = "ContainerRight">
-                                 <asp:Label ID = "value" runat = "server"> </asp:Label>
+                                 <asp:Label ID = "value" runat = "server"></asp:Label>
+                                 €
                              </div>
 
                         </div>
 
-                        <div id = "EnvioContainer">
+                        <div id = "EnvioContainer" style="font-size: 20px">
 
-                            <div class = "ContainerLeft"> Envio del pedido </div>
+                            <div class = "ContainerLeft"> Envio del pedido: </div>
 
                             <div class = "ContainerRight">5.49€ </div>
 
                         </div>
 
-                        <div id = "PrecioTotalContainer">
+                        <div id = "PrecioTotalContainer" style="font-size: 23px">
 
                             <div class = "ContainerLeft">
                                 <h5>Total del pedido:</h5>
@@ -97,15 +58,18 @@
                             <div class = "ContainerRight">
                                 <h5>
                                     <asp:Label ID = "TotalPrecio" runat = "server"> </asp:Label>
+                                    €
                                 </h5>
+                                
                             </div>
+                            
 
                         </div>
 
                     <h4> Efectuar Pedido </h4>
              
                             <div id="PedidoContainer">
-                                <asp:Button ID = "Button2" runat = "server" Text="Tramitar pedido" CssClass="pedido" OnClick="tramitarPedido"/>
+                                <asp:Button ID = "Button2" runat = "server" Text="Tramitar pedido" CssClass="boton" OnClick="tramitarPedido"/>
                              </div>
                 </div>
 

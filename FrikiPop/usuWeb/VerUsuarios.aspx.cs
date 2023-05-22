@@ -10,24 +10,12 @@ namespace usuWeb
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            GridViewRow row = GridView1.SelectedRow;
-
-            string nick = row.Cells[0].Text;
-            string nombre = row.Cells[1].Text;
-            string apellidos = row.Cells[2].Text;
-            string edad = row.Cells[3].Text;
-            string contrasenya = row.Cells[4].Text;
-            string imagen = row.Cells[5].Text;
-            string admin = row.Cells[6].Text;
-            string localidad = row.Cells[7].Text;
-            string provincia = row.Cells[8].Text;
-            string pais = row.Cells[9].Text;
-        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null || (int)Session["admin"] != 1) {
+                Response.Redirect("~/paginaPrincipal.aspx");
+            }
             ENUsuario usuario = new ENUsuario();
             GridView1.DataSource = usuario.listarUsuarios();
             GridView1.DataBind();
@@ -49,7 +37,7 @@ namespace usuWeb
             {
                 LabelError.Text = "No se ha podido eliminar el usuario: " + eliminar.Text;
             }
-
+            Response.Redirect("~/VerUsuarios.aspx");
         }
 
         protected void Filtrar_Valores(object sender, EventArgs e)
@@ -198,6 +186,23 @@ namespace usuWeb
             {
                 faltaValorParaFiltrar.Text = "Tiene que escribir una valor que quiera filtrar";
             }
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ENUsuario usur = new ENUsuario();
+            usur.nick = GridView1.Rows[GridView1.SelectedIndex].Cells[1].Text;
+            usur.readUsuario();
+
+            if(int.Parse(GridView1.Rows[GridView1.SelectedIndex].Cells[7].Text) == 1)
+            {
+                usur.ModificarAdmin(0, GridView1.SelectedIndex);
+            }
+            else
+            {
+                usur.ModificarAdmin(1, GridView1.SelectedIndex);
+            }
+            Response.Redirect("~/VerUsuarios.aspx");
         }
     }
 }

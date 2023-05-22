@@ -33,7 +33,7 @@ namespace library
                 conexion = new SqlConnection(constring);
                 conexion.Open();
 
-                string consulta = "Insert into Articulo (codigo,nombre,descripcion,precio,url_imagen,usuario,tipo) values ('" + articulo.codigo + "', '" + articulo.nombre + "' , '" + articulo.descripcion + articulo.urlImagen + "', '" + articulo.usuario + "' , '" + articulo.tipoArticulo + "')";
+                string consulta = "Insert into Articulo (codigo,nombre,descripcion,precio,url_imagen,usuario,tipo) values ('" + articulo.codigo + "', '" + articulo.nombre + "' , '" + articulo.descripcion + "', " + articulo.precio + ", '" + articulo.urlImagen + "', '" + articulo.usuario + "' , '" + articulo.tipoArticulo + "')";
                 SqlCommand command = new SqlCommand(consulta, conexion);
 
                 command.ExecuteNonQuery();
@@ -104,7 +104,7 @@ namespace library
                 conexion = new SqlConnection(constring);
                 conexion.Open();
 
-                string consulta = "Select * from Articulo where codigo = '" + articulo.codigo + "' and nombre = '" + articulo.nombre + "' and descripcion = '" + articulo.descripcion + "' and precio = '" + articulo.precio + "' and url_imagen = '" + articulo.urlImagen + "' and usuario = '" + articulo.usuario + "' and tipo = '" + articulo.tipoArticulo + "'";
+                string consulta = "Select * from Articulo where codigo = '" + articulo.codigo + "'";
 
                 SqlCommand command = new SqlCommand(consulta, conexion);
 
@@ -113,13 +113,7 @@ namespace library
 
                 if (busqueda.HasRows)
                 {
-                    if (busqueda["codigo"].ToString() == articulo.codigo &&
-                            busqueda["nombre"].ToString() == articulo.nombre &&
-                            busqueda["descripcion"].ToString() == articulo.descripcion &&
-                            Convert.ToDouble(busqueda["precio"]) == articulo.precio &&
-                            busqueda["url_imagen"].ToString() == articulo.urlImagen &&
-                            busqueda["usuario"].ToString() == articulo.usuario &&
-                            busqueda["tipo"].ToString() == articulo.tipoArticulo)
+                    if (busqueda["codigo"].ToString() == articulo.codigo)
                     {
                         articulo.codigo = busqueda["codigo"].ToString();
                         articulo.nombre = busqueda["nombre"].ToString();
@@ -190,7 +184,7 @@ namespace library
                 }
                 else
                 {
-                    consulta = "Select * from Articulo where codigo = '" + usuarioArticulo + "'";
+                    consulta = "Select * from Articulo where usuario = '" + usuarioArticulo + "'";
                 }
                 SqlDataAdapter data = new SqlDataAdapter(consulta, conexion);
                 data.Fill(tabla);
@@ -212,6 +206,42 @@ namespace library
                 }
             }
             return tabla;
+        }
+
+        public string getMaxID() {
+            int max = 0;
+            string result = null;
+            SqlConnection conexion = null;
+            try {
+                conexion = new SqlConnection(constring);
+                conexion.Open();
+
+                string query = "SELECT codigo FROM Articulo";
+                SqlCommand command = new SqlCommand(query, conexion);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read()) {
+                    if (reader.HasRows) {
+                        if (max < int.Parse(reader["codigo"].ToString())) {
+                            max = int.Parse(reader["codigo"].ToString());
+                            result = reader["codigo"].ToString();
+                        }
+                    }
+                }
+
+                reader.Close();
+
+            } catch (SqlException e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            } catch (Exception e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            } finally {
+                if(conexion.State == ConnectionState.Open) {
+                    conexion.Close();
+                }
+            }
+
+            return result;
         }
     }
 }
