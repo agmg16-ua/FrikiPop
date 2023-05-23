@@ -9,12 +9,15 @@ using System.Data;
 namespace library{
 	public class ENCarrito {
 
+		//atributos privados
+
 		private string usuario_;
 
 		private int numeroCarrito_;
 
 		private string estadoCarrito_;
 
+		//getters y setters
 		public int numeroCarrito{
 			get{ return numeroCarrito_;}
 			set{ numeroCarrito_=value;}
