@@ -109,5 +109,11 @@ namespace library
             dataSet = lineaCarri.enlistarLineaCarrito(this);
             return dataSet;
         }
+
+        public int obtenerMaxLineaCarrito(int num_carrito) {
+            CADLineaCarrito linCarrito = new CADLineaCarrito();
+            int linea = linCarrito.obtenerMaxLineaCarrito(num_carrito);
+            return linea;
+        }
     }
  }

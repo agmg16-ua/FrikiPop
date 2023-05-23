@@ -7,6 +7,7 @@ using library;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace library
 {
@@ -81,8 +82,9 @@ namespace library
 				conex = new SqlConnection(constring);
 				conex.Open();
 				string consultaSQL;
-
-				consultaSQL = "Insert into LinCarrito (linea, id_carrito, importe, usuario, articulo) VALUES ("+lincarrito.linea+", "+lincarrito.id_carrito+", "+lincarrito.importe+", "+lincarrito.usuario+ ", "+ lincarrito.articulo+ ", '" + "')";
+				CultureInfo culture = new CultureInfo("en-US");
+				string resultado = lincarrito.importe.ToString("0.00", culture);
+				consultaSQL = "Insert into LinCarrito (linea, id_carrito, importe, usuario, articulo) VALUES ("+lincarrito.linea+", "+lincarrito.id_carrito+", "+resultado+", '"+lincarrito.usuario+ "', '"+ lincarrito.articulo+ "')";
 				SqlCommand comandoSQL;
 				comandoSQL = new SqlCommand(consultaSQL, conex);
 
@@ -182,6 +184,44 @@ namespace library
 
 			return dataset;
 
+		}
+
+		public int obtenerMaxLineaCarrito(int num_carrito) {
+			int linea = 0;
+			SqlConnection conex = null;
+
+			try {
+				conex = new SqlConnection(constring);
+				conex.Open();
+				string consultaSQL;
+
+				consultaSQL = "Select * from LinCarrito where id_carrito=" + num_carrito;
+				SqlCommand comandoSQL;
+				comandoSQL = new SqlCommand(consultaSQL, conex);
+
+				SqlDataReader readerSQL;
+				readerSQL = comandoSQL.ExecuteReader();
+
+				while(readerSQL.Read()) {
+					if(linea < int.Parse(readerSQL["linea"].ToString())) {
+						linea = int.Parse(readerSQL["linea"].ToString());
+                    }
+                }
+
+				readerSQL.Close();
+
+			} catch (SqlException exception) {
+				Console.WriteLine("User operation has failed. Error: {0}", exception.Message);
+			} catch (Exception exception) {
+				Console.WriteLine("User operation has failed. Error: {0}", exception.Message);
+			} finally {
+
+				if (conex.State == ConnectionState.Open) {
+					conex.Close();
+				}
+			}
+
+			return linea;
 		}
 
     }

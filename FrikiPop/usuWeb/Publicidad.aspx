@@ -3,6 +3,7 @@
         <link rel="stylesheet" href="..\App_Style\tarjetasStyle.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" href="..\App_Style\publicidadStyle.css" />
     <section id="modPublicidad">
             <div>
                 <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="id_publi" CssClass="gridView">
@@ -14,6 +15,7 @@
                     </Columns>
                 </asp:GridView>
             </div>
+            <section id="textoPublicidad">
             <asp:Label runat="server" for="id_p" Text="ID Publicidad: "></asp:Label>
             <asp:TextBox runat="server" CssClass="cuadroDeTexto" id="id_p" name="id_p" placeholder="ID" Width="409px"/>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="id_p" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
@@ -30,6 +32,7 @@
             <asp:TextBox runat="server" CssClass="cuadroDeTexto" id="imagen" name="imagen" placeholder="URL"/>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="imagen" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
             <br>
+            </section>
         <section ID="botonesPublicidad">
             <asp:Button runat="server" CssClass="boton" ID="anyadir" type="submit" Text="Añadir Publicidad" OnClick="anyadir_Click" />
             <asp:Button runat="server" CssClass="boton" ID="borrar" type="submit" Text="Eliminar Publicidad" OnClick="borrar_Click" />

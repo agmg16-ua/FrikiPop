@@ -1,8 +1,17 @@
 ﻿body {
 }
 
-.cuadroDeTexto {
+#campos {
     text-align: center;
+}
+
+#botonesTarjeta{
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.cuadroDeTexto {
     color: black;
     background-color: #c3bdbd;
     border: unset;

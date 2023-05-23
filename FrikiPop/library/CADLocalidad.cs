@@ -15,6 +15,7 @@ namespace library {
 
         private String constring;
         
+        //Establece la cadena de conexion de la BD
         public CADLocalidad() {
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
@@ -23,14 +24,18 @@ namespace library {
             bool creado = false;
             SqlConnection conexion = null;
 
+            //Todo el codigo dentro del try para capturar excepciones
             try {
                 conexion = new SqlConnection(constring);
-                conexion.Open();
+                conexion.Open(); //Conexion abierta
 
                 string consulta = "Insert into Localidad (localidad, provincia, pais) values ('" + localidad.localidad + "', '" + localidad.provincia + "' , '" + localidad.pais + "')";
                 SqlCommand command = new SqlCommand(consulta, conexion);
 
+                //Ejecuta el comando
                 command.ExecuteNonQuery();
+
+                //Si no lanza excepcion, se devuelve true
                 creado = true;
 
             } catch(SqlException e) {
@@ -38,6 +43,7 @@ namespace library {
             } catch (Exception e) {
                 Console.WriteLine("User operation has failed. Error: {0}", e.Message);
             } finally {
+                //Asegurarse de cerrar la conexion con la BD
                 if(conexion.State == ConnectionState.Open) {
                     conexion.Close();
                 }
@@ -49,13 +55,15 @@ namespace library {
             bool eliminado = false;
             SqlConnection conexion = null;
 
+            //Todo el codigo dentro del try para capturar excepciones
             try {
                 conexion = new SqlConnection(constring);
-                conexion.Open();
+                conexion.Open();//Conexion abierta
 
                 string consulta = "Delete from Localidad where localidad = '" + localidad.localidad + "' and provincia = '" + localidad.provincia + "' and pais = '" + localidad.pais + "'";
                 SqlCommand command = new SqlCommand(consulta, conexion);
 
+                //Ejecuta el comando
                 command.ExecuteNonQuery();
                 eliminado = true;
 
@@ -76,16 +84,20 @@ namespace library {
             bool leido = false;
             SqlConnection conexion = null;
 
+            //Todo el codigo dentro del try para capturar excepciones
             try {
                 conexion = new SqlConnection(constring);
-                conexion.Open();
+                conexion.Open();//Conexion abierta
 
                 string consulta = "Select * from Localidad where localidad = '" + localidad.localidad + "' and provincia = '" + localidad.provincia + "' and pais = '" + localidad.pais + "'";
                 SqlCommand command = new SqlCommand(consulta, conexion);
 
+                //Ejecuta el comando y guarda los resultados leidos en busqyeda
                 SqlDataReader busqueda = command.ExecuteReader();
-                busqueda.Read();
+                
+                busqueda.Read(); //Lee el elemento leido
 
+                //Si no hay filas, es que no existe ese elemento
                 if(busqueda.HasRows) {
                     if (busqueda["localidad"].ToString() == localidad.localidad &&
                             busqueda["provincia"].ToString() == localidad.provincia &&
@@ -97,6 +109,7 @@ namespace library {
                     }
                 }
 
+                //Se cierra la conexion
                 busqueda.Close();
 
             } catch(SqlException e) {
@@ -104,6 +117,7 @@ namespace library {
             } catch (Exception e) {
                 Console.WriteLine("User operation has failed. Error: {0}", e.Message);
             } finally {
+                //Asegurarse de cerrar la conexion por si hay alguna excepcion
                 if(conexion.State == ConnectionState.Open) {
                     conexion.Close();
                 }
@@ -116,10 +130,12 @@ namespace library {
             DataTable tabla = new DataTable();
             SqlConnection conexion = null;
 
+            //Todo el codigo dentro del try para capturar excepciones
             try {
                 conexion = new SqlConnection(constring);
                 string consulta = "";
                 
+                //Si no se pasan argumentos, se leen todas. Si no, se filtra unicamente las de la provincia y pais indicadas
                 if(provincia == "" || pais == "") {
                     consulta = "Select * from Localidad";
                 } else {
@@ -127,13 +143,14 @@ namespace library {
                 }
 
                 SqlDataAdapter data = new SqlDataAdapter(consulta, conexion);
-                data.Fill(tabla);
+                data.Fill(tabla); //Se rellena la tabla con las filas leidas de la consulta
 
             }catch(SqlException e) {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
             } catch(Exception e) {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
             } finally {
+                //Se comprueba que se cierra la conexion
                 if(conexion.State == ConnectionState.Open) {
                     conexion.Close();
                 }

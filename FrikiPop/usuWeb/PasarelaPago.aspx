@@ -13,6 +13,8 @@
             </Columns>
         </asp:GridView>
    </div>
+
+    <section class="CuadrosDeTexto">
      <asp:Label runat="server" for="num" Text="Número de tarjeta: "></asp:Label>
      <asp:TextBox runat="server" CssClass="cuadroDeTexto" id="num" name="num" placeholder="Número de tarjeta"/>
      <asp:RequiredFieldValidator ID="RequiredFieldValidatorNumTarj"  runat="server" ControlToValidate="num" ErrorMessage="Rellene este campo"></asp:RequiredFieldValidator>
@@ -38,6 +40,7 @@
     <br>
 
     <asp:Label ID="Message" runat="server"></asp:Label>
+    </section>
 
      <section ID="botonesTarjeta">
             <asp:Button runat="server" CssClass="boton" ID="anyadir" type="submit" Text="Añadir tarjeta" OnClick="anyadir_Click"></asp:Button>
