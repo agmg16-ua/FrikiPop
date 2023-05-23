@@ -71,7 +71,8 @@
     text-align:center;
 }
 
-.publicidad_imagen{
+.publicidad_imagen {
+    cursor: url(https://cdn.custom-cursor.com/db/pointer/32/Super_Mario_BowserPointer.png), pointer !important;
     display: flex;
     width: 100%;
     border-radius: 15px;
