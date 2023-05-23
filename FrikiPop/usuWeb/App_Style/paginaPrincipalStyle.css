@@ -1,7 +1,7 @@
 ﻿body {
 }
 
-.articulos{
+.articulos{ /*crea la estructura de los artículos*/
     margin-top: 2em;
     display:grid;
     grid-template-columns: repeat(4,1fr);
@@ -71,12 +71,14 @@
     text-align:center;
 }
 
-.publicidad_imagen{
+.publicidad_imagen {
+    cursor: url(https://cdn.custom-cursor.com/db/pointer/32/Super_Mario_BowserPointer.png), pointer !important;
     display: flex;
     width: 100%;
     border-radius: 15px;
 }
 
+/*genera la animación de fadeIn*/
 @keyframes fadeIn {
     from{
         opacity: 0;

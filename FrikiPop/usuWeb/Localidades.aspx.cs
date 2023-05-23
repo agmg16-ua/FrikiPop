@@ -12,12 +12,16 @@ using library;
 namespace usuWeb {
     public partial class Localidades : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
+            //Lo primero se comprueba que haya una sesion activa, y que sea de administrador
             if (Session["admin"] == null || (int)Session["admin"] != 1) {
                 Response.Redirect("~/paginaPrincipal.aspx");
             }
-            string provincia = Request.QueryString["provincia"];
+
+            //Se comprueban los parametros recibidos
+            string provincia = Request.QueryString["provincia"]; 
             string pais = Request.QueryString["pais"];
-            if(pais == null || provincia == null) {
+
+            if(pais == null || provincia == null) { //Si son null, se listan todos. Si no, los indicados
                 ENLocalidad localidad = new ENLocalidad();
                 GridView.DataSource = localidad.listarLocalidad("", "");
                 GridView.DataBind();
@@ -28,6 +32,7 @@ namespace usuWeb {
             }
         }
 
+        //Lee los datos de los textBox y lo guarda en un enlocalidad para crear una nueva
         protected void añadir_Click(object sender, EventArgs e) {
             ENLocalidad localidad = new ENLocalidad();
             localidad.localidad = localidad_text.Text;
@@ -37,6 +42,7 @@ namespace usuWeb {
             Response.Redirect("~/Localidades.aspx");
         }
 
+        //Lee los datos de los textBox y lo guarda en una enLocalidad para eliminarla
         protected void borrar_Click(object sender, EventArgs e) {
             ENLocalidad localidad = new ENLocalidad();
             localidad.localidad = localidad_text.Text;
@@ -46,10 +52,12 @@ namespace usuWeb {
             Response.Redirect("~/Localidades.aspx");
         }
 
+        //Vuelve hacia provincias para visualizarlas todas
         protected void Provincias_Click(object sender, EventArgs e) {
             Response.Redirect("~/Provincias.aspx");
         }
 
+        //Metodo de seleccion de indice para gridView, no necesario actualmente
         protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
 
         }

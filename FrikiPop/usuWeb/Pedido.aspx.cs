@@ -15,9 +15,9 @@ namespace usuWeb {
         protected void Page_Load(object sender, EventArgs e) {
             pedido = new ENPedido();
 
-            if (Request.QueryString.Count != 0) {
+            if (Request.QueryString.Count != 0) { //Si hay parámetros
                 pedido.idPedido = int.Parse(Request.QueryString["num_pedido"]);
-            }else {
+            }else {//Te lleva a la página principal si 
                 Response.Redirect("paginaPrincipal.aspx");
             }
             if ((Session["nick"].ToString() != null) && pedido.readPedido()) {
