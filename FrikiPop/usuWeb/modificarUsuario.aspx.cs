@@ -45,13 +45,54 @@ namespace usuWeb {
         }
 
         protected void modificarUsuario_Click(object sender, EventArgs e) {
-            if(Nombre1.Text != "") {
-                modUsuario.nombre = Nombre1.Text;
-            } 
+            ENUsuario usuarioLeido = new ENUsuario();
+            usuarioLeido.nick = modUsuario.nick;
 
-            if(Apellidos1.Text == "") {
-                modUsuario.apellidos = Apellidos1.Text;
+            if (usuarioLeido.readUsuario()) {
+
+                if (Nombre1.Text != "") {
+                    modUsuario.nombre = Nombre1.Text;
+                } else {
+                    modUsuario.nombre = usuarioLeido.nombre;
+                }
+
+                if (Apellidos1.Text != "") {
+                    modUsuario.apellidos = Apellidos1.Text;
+                } else {
+                    modUsuario.apellidos = usuarioLeido.apellidos;
+                }
+
+                if (Edad1.Text != "") {
+                    modUsuario.edad = int.Parse(Edad1.Text);
+                } else {
+                    modUsuario.edad = usuarioLeido.edad;
+                }
+
+                if (Contrasenya1.Text != "") {
+                    modUsuario.contrasenya = Contrasenya1.Text;
+                } else {
+                    modUsuario.contrasenya = usuarioLeido.contrasenya;
+                }
+
+                modUsuario.pais = Paises.SelectedValue;
+                modUsuario.provincia = Provincias.SelectedValue;
+                modUsuario.localidad = Localidades.SelectedValue;
+    
+                modUsuario.imagen = usuarioLeido.imagen;
+
+                modUsuario.numVentas = usuarioLeido.numVentas;
+
+                modUsuario.admin = usuarioLeido.admin;
+
+                /*modUsuario.<PON EL NOMBRE DEL METODO DE UPDATE>;*/
+
+                LabelError.Text = "Los datos se han actualizado correctamente en nuestra Base de Datos.";
+
+            } else {
+                LabelError.Text = "Hay un problema con el nick. No se ha podido realizar la operacion.";
             }
+            
+
         }
 
         protected void Provincias_SelectedIndexChanged(object sender, EventArgs e)

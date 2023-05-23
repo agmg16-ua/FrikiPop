@@ -4,21 +4,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="..\App_Style\usuarioStyle.css" />
 
-    <h1 style="margin-left:75px">Nueva cuenta</h1>
-    <section id="fotoPerfil">
-        Subir imagen:&nbsp;&nbsp;  
-        <asp:FileUpload ID="FileUpload1" runat="server" Width="437px"/>
-        <asp:Label runat="server" ID="Prueba" CssClass="labelsDeError"></asp:Label>
-    </section>
+    <h1 style="margin-left:75px">Actualizar datos</h1>
     <section id="cuadrosTextoUsuario">            
         <asp:TextBox placeholder="Nombre" class ="cuadroDeTexto"  runat="server" ID="Nombre1"></asp:TextBox>
-        <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Nombre1" ErrorMessage="Falta introducir su nombre"></asp:RequiredFieldValidator>
             
         <asp:TextBox placeholder="Apellidos" class ="cuadroDeTexto" runat="server" ID="Apellidos1"></asp:TextBox>
-        <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Apellidos1" ErrorMessage="Falta introducir sus apellidos"></asp:RequiredFieldValidator>
             
         <asp:TextBox placeholder="Edad" class ="cuadroDeTexto" runat="server" ID="Edad1"></asp:TextBox>
-        <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Edad1" ErrorMessage="Falta introducir su edad"></asp:RequiredFieldValidator>
             
         <asp:DropDownList ID="Paises" runat="server" CssClass="listas" DataSourceID="Database1" DataTextField="pais" DataValueField="pais">
             <asp:ListItem Text="Seleccione un pais"></asp:ListItem>
@@ -38,7 +30,6 @@
         <asp:Label CssClass="labelsDeError" runat ="server" ID = "LabelErrorLocalidad"></asp:Label>
             
         <asp:TextBox placeholder="Nueva Contraseña" class ="cuadroDeTexto" TextMode="Password" runat="server" ID="Contrasenya1"></asp:TextBox>
-        <asp:RequiredFieldValidator CssClass="validator" runat="server" ControlToValidate="Contrasenya1" ErrorMessage="Falta introducir una contraseña"></asp:RequiredFieldValidator>
     </section>
     <br />
     <section id="botonesUsuario">
