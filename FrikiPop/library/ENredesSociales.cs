@@ -10,7 +10,7 @@ namespace library
 {
     public class ENredesSociales
     {
-        private string _red;
+        private string _red; //declara los atributos
         private string _urlLogo;
         private string _linkRed;
 
@@ -50,14 +50,14 @@ namespace library
             }
         }
 
-        public ENredesSociales()
+        public ENredesSociales() //crea la clase
         {
             red = null;
             urlLogo = null;
             linkRed = null;
         }
 
-        public bool createRedesSociales()
+        public bool createRedesSociales() //funciones del en
         {
             CADredesSociales redesSociales = new CADredesSociales();
             if (!redesSociales.readRedesSociales(this))
