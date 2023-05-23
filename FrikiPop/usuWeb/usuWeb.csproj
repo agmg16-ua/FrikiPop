@@ -92,6 +92,7 @@
     <Content Include="App_Style\verPedidoStyle.css" />
     <Content Include="App_Style\verUsuariosStyle.css" />
     <Content Include="añadirArticulo.aspx" />
+    <Content Include="modificarUsuario.aspx" />
     <Content Include="PasarelaPago.aspx" />
     <Content Include="paginaPrincipal.aspx" />
     <Content Include="MenuUsuario.aspx" />
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modificarUsuario.aspx.cs">
+      <DependentUpon>modificarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modificarUsuario.aspx.designer.cs">
+      <DependentUpon>modificarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="MenuUsuario.aspx.cs">
       <DependentUpon>MenuUsuario.aspx</DependentUpon>

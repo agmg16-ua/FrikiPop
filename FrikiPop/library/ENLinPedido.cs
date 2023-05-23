@@ -8,11 +8,14 @@ namespace library
 {
     public class ENLinPedido
     {
+        //variables privadas
         private int pedido;
         private int linea;
         private string articulo;
         private float importe;
         private string usuario;
+        //(_pedido, _linea, _articulo, _importe) permiten acceder
+        //y modificar los valores de las variables privadas correspondientes.
         public int _pedido
         {
             get { return pedido; }
@@ -39,7 +42,10 @@ namespace library
             set { usuario = value; }
         }
  
-        public ENLinPedido(int linea, int pedido, string articulo, float importe, string usuario)
+        //se utiliza para crear instancias de la clase
+        //Recibe como parámetros los valores para linea, pedido, articulo e importe, 
+        //y asigna esos valores a las variables correspondientes
+        public ENLinPedido(int linea, int pedido, string articulo, float importe)
         {
             this.pedido = pedido;
             this.linea = linea;
@@ -47,6 +53,7 @@ namespace library
             this.importe = importe;
             this.usuario = usuario;
         }
+        // crear un nuevo registro
         public bool createLinPedido()
         {
             CADLinPedido pedido = new CADLinPedido();
@@ -56,11 +63,13 @@ namespace library
             }
             return false;
         }
+        //Lee un registro
         public bool readLinPedido()
         {
             CADLinPedido pedido = new CADLinPedido();
             return pedido.readLinPedido(this);
         }
+        //actualiza un registro
         public bool updateLinPedido()
         {
             CADLinPedido pedido = new CADLinPedido();
@@ -71,6 +80,7 @@ namespace library
 
             return false;
         }
+        //elimina un registro
         public bool deleteLinPedido()
         {
             CADLinPedido pedido = new CADLinPedido();
