@@ -25,8 +25,10 @@ namespace usuWeb {
 
         protected bool DataValidation(ENTarjeta tarjeta) {
 
-            if (int.TryParse(num.Text, out int num_tarj) && num.Text.Length == 16) {
-                tarjeta.num = num.Text;
+            if (long.TryParse(num.Text, out long num_tarj)) {
+                if(num.Text.Length == 16) {
+                    tarjeta.num = num.Text;
+                }
             }
             else {
                 Message.Text = "Formato del nº de tarjeta INCORRECTO!";
@@ -98,7 +100,7 @@ namespace usuWeb {
             pedido.idPedido = maxNumPedido + 1;
             pedido.user = (string)Session["nick"];
             DateTime now = DateTime.Now;
-            pedido.date = now.ToString();
+            pedido.date = now.ToString("yyy-MM-dd");
             pedido.state = "listo";
 
             if (id_articulo != null) {
@@ -108,6 +110,10 @@ namespace usuWeb {
                 conex.Close();
 
                 pedido.total = precio;
+                pedido.createPedido();
+                ENLinPedido linped = new ENLinPedido(1, pedido.idPedido, id_articulo, pedido.total, (string)Session["nick"]);
+                linped.createLinPedido();
+
             }
             
             if(id_carrito != null) {
@@ -117,21 +123,27 @@ namespace usuWeb {
 
                 unirCarrito = carroCompra.unirCarrito();
                 string importeS = "importe";
-                double importeTotal;
-                double importe;
+                float importeTotal;
+                float importe;
                 importeTotal = 0;
 
+                int contador = 1;
+                pedido.total = 0;
+                pedido.createPedido();
                 foreach (DataRow lineaCarri in unirCarrito.Rows) {
-                    importe = double.Parse(lineaCarri[importeS].ToString());
+                    importe = float.Parse(lineaCarri[importeS].ToString());
                     importeTotal = importeTotal + importe;
+                    ENLinPedido lineaPedido = new ENLinPedido(contador, pedido.idPedido, lineaCarri["codigo"].ToString(), importe, (string)Session["nick"]);
+                    lineaPedido.createLinPedido();
+                    contador++;
                 }
+
 
                 pedido.total = ((float)(importeTotal + 5.49));
 
                 carroCompra.vaciarCarrito();
             }
-            ENLinPedido linped = new ENLinPedido(1, pedido.idPedido, id_articulo, pedido.total);
-            pedido.createPedido();
+            
             Response.Redirect("~/paginaPrincipal.aspx");
         }
     }

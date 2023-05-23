@@ -13,6 +13,7 @@ namespace library
         private int linea;
         private string articulo;
         private float importe;
+        private string usuario;
         //(_pedido, _linea, _articulo, _importe) permiten acceder
         //y modificar los valores de las variables privadas correspondientes.
         public int _pedido
@@ -35,6 +36,12 @@ namespace library
             get { return importe; }
             set { importe = value; }
         }
+
+        public string _usuario {
+            get { return usuario; }
+            set { usuario = value; }
+        }
+ 
         //se utiliza para crear instancias de la clase
         //Recibe como parámetros los valores para linea, pedido, articulo e importe, 
         //y asigna esos valores a las variables correspondientes
@@ -44,6 +51,7 @@ namespace library
             this.linea = linea;
             this.articulo = articulo;
             this.importe = importe;
+            this.usuario = usuario;
         }
         // crear un nuevo registro
         public bool createLinPedido()

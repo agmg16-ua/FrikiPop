@@ -126,9 +126,11 @@ namespace library
 
             try {
 				string consultaSQL;
-				consultaSQL = "Select * from LinCarrito l, Articulo a where l.articulo = a.codigo  and l.id_carrito = '"+carrito.numeroCarrito+ "'";
+				consultaSQL = "Select * from LinCarrito, Articulo where articulo = codigo and id_carrito = "+carrito.numeroCarrito;
 
 				conex = new SqlConnection(constring);
+
+				conex.Open();
 
 				SqlDataAdapter dataAdapter;
 				dataAdapter = new SqlDataAdapter(consultaSQL, conex);
@@ -236,7 +238,7 @@ namespace library
 					importeF = float.Parse(dataRow[importe].ToString());
 					string articuloI = dataRow[articulo].ToString();
 
-					linped = new ENLinPedido(iter, ped.idPedido,articuloI,importeF);
+					linped = new ENLinPedido(iter, ped.idPedido,articuloI,importeF,carrito.usuario);
 
 					linped.createLinPedido();
 
@@ -304,5 +306,41 @@ namespace library
 			return borrado;
 		}
 
+		public int obtenerIdCarrito(string nick) {
+			int id = 0;
+			SqlConnection conex;
+			conex = new SqlConnection(constring);
+
+			try {
+				SqlCommand comandoSQL;
+				string consultaSQL;
+
+				conex.Open();
+
+				consultaSQL = "Select * from Carrito where usuario = '" + nick + "'";
+
+				comandoSQL = new SqlCommand(consultaSQL, conex);
+
+				SqlDataReader readerSQL;
+				readerSQL = comandoSQL.ExecuteReader();
+
+				readerSQL.Read();
+
+				id = int.Parse(readerSQL["num_carrito"].ToString());
+
+				readerSQL.Close();
+			} catch (SqlException exception) {
+				Console.WriteLine("User operation has failed. Error: {0}", exception.Message);
+			} catch (Exception exception) {
+				Console.WriteLine("User operation has failed. Error: {0}", exception.Message);
+			} finally {
+
+				if (conex.State == ConnectionState.Open) {
+					conex.Close();
+				}
+			}
+
+			return id;
+		}
 	}
 }
