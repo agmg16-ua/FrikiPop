@@ -110,8 +110,52 @@ namespace library {
 
             return dbVirtual.Tables["LINPED"];
         }
+
+        public bool updatePedido(ENPedido en) {
+            SqlConnection connection = new SqlConnection(constring);
+
+            try {
+                CultureInfo culture = new CultureInfo("en-US");
+                string resultado = en.total.ToString("0.00", culture);
+                connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE [dbo].[Pedido] set usuario= '" + en.user + "', estado_carrito= 'Listo', fecha= '" + en.date + "', total=" + resultado + "where num_pedido=" + en.idPedido, connection);
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e) {
+                Console.WriteLine("Updating table PEDIDO has failed. Error: {0}", e.Message);
+                return false;
+            }
+            finally {
+                connection.Close();
+            }
+        }
+
         public bool deletePedido(ENPedido en) {
-            return false;
+            bool borrado = false;
+            string consulta = "delete from [dbo].[Pedido] where num_pedido=" + en.idPedido;
+            SqlConnection connection = new SqlConnection(constring);
+
+            try {
+                connection.Open();
+                SqlCommand command = new SqlCommand(consulta, connection);
+                command.ExecuteNonQuery();
+
+                borrado = true;
+
+            }
+            catch (SqlException e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            catch (Exception e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            }
+            finally {
+                if (connection.State == ConnectionState.Open) {
+                    connection.Close();
+                }
+            }
+            return borrado;
         }
 
         public DataSet listPedidos(string en) {

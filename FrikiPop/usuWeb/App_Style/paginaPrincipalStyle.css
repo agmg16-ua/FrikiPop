@@ -1,7 +1,7 @@
 ﻿body {
 }
 
-.articulos{
+.articulos{ /*crea la estructura de los artículos*/
     margin-top: 2em;
     display:grid;
     grid-template-columns: repeat(4,1fr);
@@ -78,6 +78,7 @@
     border-radius: 15px;
 }
 
+/*genera la animación de fadeIn*/
 @keyframes fadeIn {
     from{
         opacity: 0;
