@@ -83,6 +83,7 @@
     <Content Include="Admin.aspx" />
     <Content Include="App_Style\masterStyle.css" />
     <Content Include="App_Style\paginaPrincipalStyle.css" />
+    <Content Include="App_Style\publicidadStyle.css" />
     <Content Include="App_Style\redesSocialesStyle.css" />
     <Content Include="App_Style\tarjetasStyle.css" />
     <Content Include="App_Style\ubicacionesStyle.css" />
