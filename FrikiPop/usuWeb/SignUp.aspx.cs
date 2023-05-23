@@ -16,7 +16,8 @@ namespace usuWeb
 {
     public partial class Formulario_web2 : System.Web.UI.Page
     {
-            protected void createUsuario(object sender, EventArgs e)
+        //Crea el usuario si los datos introducidos son correctos y guarda la imagen en el directorio imagenes.
+        protected void createUsuario(object sender, EventArgs e)
         {
             ENUsuario usur;
             ENCarrito carrito;
@@ -94,6 +95,7 @@ namespace usuWeb
             }
         }
 
+        //Comprueba que la provincia seleccionada pertenece al pais seleccionado en la lista de paises.
         protected void Provincias_SelectedIndexChanged(object sender, EventArgs e)
         {
             ENProvincia provincia = new ENProvincia();
@@ -112,6 +114,7 @@ namespace usuWeb
             }
         }
 
+        //Comprueba que la localidad seleccionada pertenece a la provincia seleccionada en la lista de paises.
         protected void Localidades_SelectedIndexChanged(object sender, EventArgs e)
         {
             ENLocalidad localidad = new ENLocalidad();

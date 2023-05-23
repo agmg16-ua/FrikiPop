@@ -7,6 +7,11 @@ using System.Data;
 
 namespace library
 {
+    /// <summary>
+    /// Clase encargada de gestionar la entidad paises.
+    /// Solo posee una propiedad la cual tiene el nombre del pais.
+    /// Solo puede haber un pais asociado a un nombre.
+    /// </summary>
      public class ENPais
     {
         private string _pais;
@@ -69,7 +74,8 @@ namespace library
             }
             return pais.deletePais(this);
         }
-        //Un dataSet que solo contiene los paises
+
+        //Un dataSet que solo lista los paises
         public DataSet listarPaises()
         {
             CADPais pais = new CADPais();

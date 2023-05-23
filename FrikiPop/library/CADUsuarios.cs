@@ -11,10 +11,14 @@ using System.Data.SqlTypes;
 
 namespace library
 {
+    /// <summary>
+    /// Esta clase es la encargada de realizar operaciones solo la base de datos.
+    /// </summary>
     public class CADUsuario
     {
         private string constring;
 
+        //El contructor lo que hace es guardar la cadena de coneccion en la propiedad de esta clase
         public CADUsuario()
         {
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();

@@ -10,6 +10,8 @@ namespace usuWeb
 {
     public partial class Formulario_web11 : System.Web.UI.Page
     {
+
+        //Si el usuario es correcto añade las propiedades imagen, nick, admin a la session. En caso contrario enseña un mensaje de error
         protected void LogIn(object sender, EventArgs e)
         {
 
@@ -25,14 +27,6 @@ namespace usuWeb
                 Session.Add("imagen", en.imagen);
                 Session.Add("nick", en.nick);
                 Session.Add("admin", en.admin);
-                if (en.esAdmin() == true)
-                {
-                    Response.Redirect("~/paginaPrincipal.aspx");
-                }
-                else
-                {
-                    Response.Redirect("~/paginaPrincipal.aspx");
-                }
             }
             else
             {

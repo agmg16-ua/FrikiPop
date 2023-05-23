@@ -11,6 +11,9 @@ using System.Data.SqlTypes;
 
 namespace library
 {
+    /// <summary>
+    /// Clase encargada de trabajar con los datos del servidor relacionados con la entidad paises.
+    /// </summary>
     public class CADPais
     {
         private string constring;

@@ -8,6 +8,13 @@ using System.Data;
 
 namespace library
 {
+    /// <summary>
+    /// Clase correspondiente a la entidad usuario. 
+    /// Tiene metodos para crear,actualizar,borrar y filtrar sobre los usuarios.
+    /// Guarda valores como el nombre de la imagen que utilizara el usuario, el nick que sera unico para el y demas datos personales ademas de la contraseña.
+    /// Tiene una propiedad llamada admin que funciona como un bool. Si vale 1 es admin y si vale 0 no es admin.
+    /// Por ultimo tiene una propiedad llamada numVentas la cual sera utilizada para las estadisticas y la modifica el encargado de los pedidos.
+    /// </summary>
     public class ENUsuario
     {
         private string _nick;
@@ -164,6 +171,7 @@ namespace library
             edad = 0;
             numVentas = 0;
         }
+
         /// <summary>
         ///  nick,  nombre, apellidos, contrasenya, localidad,  provincia, pais,  imagen,  edad,  admin,numVentas
         /// </summary>
@@ -217,12 +225,6 @@ namespace library
             return cADUsuario.deleteUsuario(this);
         }
 
-        public bool esAdmin()
-        {
-            CADUsuario cADUsuario = new CADUsuario();
-            return cADUsuario.esAdmin(this);
-        }
-
         //FILTROS DE LOS USUARIOS SEGUN SUS ATRIBUTOS(No filtro por contraseña porque no tiene sentido, se supone que es privada para nosotros)
         public DataSet filtrarPorAdministrador(int admin)
         {
@@ -273,6 +275,7 @@ namespace library
             return cADUsuario.listarUsuarios();
         }
 
+        //Metodo con el que cambio la propiedad de admin del usuario
         public void ModificarAdmin(int admin,int index)
         {
             CADUsuario cADUsuario = new CADUsuario();

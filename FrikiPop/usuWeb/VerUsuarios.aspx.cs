@@ -20,11 +20,14 @@ namespace usuWeb
             GridView1.DataSource = usuario.listarUsuarios();
             GridView1.DataBind();
         }
+
+        //Pasa por parametro una variable llamada desde igualandola a admin. Asi reutilizo la interfaz de signUp para crear un usuario nuevo.
         protected void CrearUsuario(object sender, EventArgs e)
         {
             Response.Redirect("~/SignUp.aspx?desde=admin");
         }
 
+        //Elimina el usuario cuyo nick es el especificado en el cuadro de texto encima del boton Eliminar Usuario.
         protected void EliminarUsuario(object sender, EventArgs e)
         {
             ENUsuario usur = new ENUsuario();
@@ -40,6 +43,7 @@ namespace usuWeb
             Response.Redirect("~/VerUsuarios.aspx");
         }
 
+        //Metodo encargado de realizar el filtro especificado en el desplegable segun el valor pasado en el cuadro de texto.
         protected void Filtrar_Valores(object sender, EventArgs e)
         {
             if (filtros.SelectedItem == valorInicial)
@@ -190,6 +194,7 @@ namespace usuWeb
             }
         }
 
+        ///Al seleccionar el indice se cambia el valor de la casilla administrador del usuario seleccionado
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ENUsuario usur = new ENUsuario();
