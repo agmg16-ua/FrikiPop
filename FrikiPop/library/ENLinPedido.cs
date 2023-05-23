@@ -45,7 +45,7 @@ namespace library
         //se utiliza para crear instancias de la clase
         //Recibe como parámetros los valores para linea, pedido, articulo e importe, 
         //y asigna esos valores a las variables correspondientes
-        public ENLinPedido(int linea, int pedido, string articulo, float importe)
+        public ENLinPedido(int linea, int pedido, string articulo, float importe, string usuario)
         {
             this.pedido = pedido;
             this.linea = linea;
