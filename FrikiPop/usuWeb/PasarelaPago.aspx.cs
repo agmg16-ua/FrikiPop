@@ -25,8 +25,10 @@ namespace usuWeb {
 
         protected bool DataValidation(ENTarjeta tarjeta) {
 
-            if (int.TryParse(num.Text, out int num_tarj) && num.Text.Length == 16) {
-                tarjeta.num = num.Text;
+            if (long.TryParse(num.Text, out long num_tarj)) {
+                if(num.Text.Length == 16) {
+                    tarjeta.num = num.Text;
+                }
             }
             else {
                 Message.Text = "Formato del nº de tarjeta INCORRECTO!";

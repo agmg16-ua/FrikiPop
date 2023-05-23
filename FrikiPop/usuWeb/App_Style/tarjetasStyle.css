@@ -1,6 +1,10 @@
 ﻿body {
 }
 
+#CuadrosDeTexto {
+    text-align: center;
+}
+
 .cuadroDeTexto {
     text-align: center;
     color: black;
