@@ -16,24 +16,27 @@ namespace usuWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //declaro la varibale pos inicializado en 0
             int pos = 0;
-            //Session["admin"] = 1;// Lo he puesto yo aposta para que me entre en el if y cuando victor lo cambie lo elimino
+            //si existe un valor en la sesión con la clave "admin", da valor a pos
             if (Session["admin"] != null)
             {
                pos = int.Parse(Session["admin"].ToString());
             }
+            //si inicia session como admin podrá entrar a ver las estadísticas
             if (pos == 1)
             {
+                //realiza la conexión con la base de datos
                 string s = ConfigurationManager.ConnectionStrings["Database"].ToString();
                 DataSet bdvirtual = new DataSet();
                 SqlConnection c = new SqlConnection(s);
+                //obtiene datos de la tabla "Usuario" y ordenarlos por "numVentas" de forma descendente.
                 SqlDataAdapter da = new SqlDataAdapter("SELECT [nick_name], [nombre], [apellidos],[numVentas] FROM [Usuario] ORDER BY [numVentas] desc", c);
-
                 da.Fill(bdvirtual, 0, 10, "Usuario");
-
+                //grafica
                 Grafica1.DataSource = bdvirtual;
                 Grafica1.DataBind();
-
+                //tabla
                 topUsuarios.DataSource = bdvirtual;
                 topUsuarios.DataBind();
 
@@ -52,6 +55,7 @@ namespace usuWeb
 
             }
             else
+                //si no esta en la sesion del admin le redirige a la pagina principal
                 Response.Redirect("paginaPrincipal.aspx");
         }
     }

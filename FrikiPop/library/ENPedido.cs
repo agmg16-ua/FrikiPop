@@ -54,6 +54,11 @@ namespace library {
             CADPedido pedido = new CADPedido();
             return pedido.readPedido(this);
         }
+
+        public bool updatePedido() {
+            CADPedido pedido = new CADPedido();
+            return pedido.updatePedido(this);
+        }
         public bool deletePedido() {
             CADPedido pedido = new CADPedido();
             return pedido.deletePedido(this);

@@ -12,21 +12,23 @@ using System.Web.UI.WebControls;
 namespace usuWeb {
     public partial class PasarelaPago : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            if (Session["nick"] == null) {
+            if (Session["nick"] == null) {  //verifica si el usuario está logueado
                 Response.Redirect("~/SignUp.aspx");
             }
-            else {
+            else {  //lista las tarjetas del usuario
                 DataSet data = new DataSet();
-                data = ENTarjeta.listarTarjetas((string)Session["nick"]);
+                data = ENTarjeta.listarTarjetas((string)Session["nick"]); 
                 GridView.DataSource = data;
                 GridView.DataBind();
             }
         }
 
-        protected bool DataValidation(ENTarjeta tarjeta) {
+        protected bool DataValidation(ENTarjeta tarjeta) {  //valida los datos de la tarjeta
 
-            if (int.TryParse(num.Text, out int num_tarj) && num.Text.Length == 16) {
-                tarjeta.num = num.Text;
+            if (long.TryParse(num.Text, out long num_tarj)) {
+                if(num.Text.Length == 16) {
+                    tarjeta.num = num.Text;
+                }
             }
             else {
                 Message.Text = "Formato del nº de tarjeta INCORRECTO!";
@@ -61,7 +63,8 @@ namespace usuWeb {
             return true;
         }
 
-        protected void anyadir_Click(object sender, EventArgs e) {
+        //Añade una tarjeta introducida por el usuario
+        protected void anyadir_Click(object sender, EventArgs e) { 
 
             ENTarjeta tarjeta = new ENTarjeta();
 
@@ -71,6 +74,7 @@ namespace usuWeb {
             Response.Redirect("~/PasarelaPago.aspx");
         }
 
+        //Borra la tarjeta introducida por el usuario
         protected void borrar_Click(object sender, EventArgs e) {
             ENTarjeta tarjeta = new ENTarjeta();
 
@@ -81,11 +85,13 @@ namespace usuWeb {
             Response.Redirect("~/PasarelaPago.aspx");
         }
 
+        //Hace el proceso de pago
         protected void GridView_SelectedIndexChanged(object sender, EventArgs e) {
 
-            string id_articulo = Request.QueryString["codigo"];
-            string id_carrito = Request.QueryString["carrito"];
+            string id_articulo = Request.QueryString["codigo"]; //recibe el codigo del articulo
+            string id_carrito = Request.QueryString["carrito"]; //recibe el id del carrito
 
+            //prepara los atributos del pedido
             ENPedido pedido = new ENPedido();
 
             string connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
@@ -95,43 +101,65 @@ namespace usuWeb {
             string query = "SELECT MAX(num_pedido) AS max_numPedido FROM Pedido";
             SqlCommand command = new SqlCommand(query, conex);
             int maxNumPedido = Convert.ToInt32(command.ExecuteScalar());
-            pedido.idPedido = maxNumPedido + 1;
+            pedido.idPedido = maxNumPedido + 1; //Asigna a idPedido el max id actual + 1
             pedido.user = (string)Session["nick"];
             DateTime now = DateTime.Now;
-            pedido.date = now.ToString();
+            pedido.date = now.ToString("yyy-MM-dd");
             pedido.state = "listo";
 
-            if (id_articulo != null) {
+            if (id_articulo != null) {  //caso se ha comprado directamente el articulo
 
+                //obtiene el precio del articulo
                 SqlCommand sql = new SqlCommand("SELECT precio from Articulo where codigo='" + id_articulo + "'", conex);
                 float precio = float.Parse(sql.ExecuteScalar().ToString());
                 conex.Close();
 
                 pedido.total = precio;
+                //crea el pedido
+                pedido.createPedido();
+                //crea una línea de pedido
+                ENLinPedido linped = new ENLinPedido(1, pedido.idPedido, id_articulo, pedido.total, (string)Session["nick"]);
+                linped.createLinPedido();
+
             }
             
-            if(id_carrito != null) {
+            if(id_carrito != null) {    //caso se compra desde una cesta
+
+                //creamos la cesta
                 ENCarrito carroCompra = new ENCarrito();
                 carroCompra.numeroCarrito = int.Parse(id_carrito);
                 DataTable unirCarrito;
 
                 unirCarrito = carroCompra.unirCarrito();
                 string importeS = "importe";
-                double importeTotal;
-                double importe;
+                float importeTotal;
+                float importe;
                 importeTotal = 0;
 
+                int contador = 1;
+                pedido.total = 0;
+
+                //crea el pedido
+                pedido.createPedido();
+
+                //hace el sumatorio del precio de todos los artículos de la cesta
                 foreach (DataRow lineaCarri in unirCarrito.Rows) {
-                    importe = double.Parse(lineaCarri[importeS].ToString());
+                    importe = float.Parse(lineaCarri[importeS].ToString());
                     importeTotal = importeTotal + importe;
+                    //crea una línea de pedido por artículo leído de la cesta
+                    ENLinPedido lineaPedido = new ENLinPedido(contador, pedido.idPedido, lineaCarri["codigo"].ToString(), importe, (string)Session["nick"]);
+                    lineaPedido.createLinPedido();
+                    contador++;
                 }
 
+                //actualiza el precio del pedido
                 pedido.total = ((float)(importeTotal + 5.49));
+                pedido.updatePedido();
 
+                //vacia el carrito
                 carroCompra.vaciarCarrito();
             }
-            ENLinPedido linped = new ENLinPedido(1, pedido.idPedido, id_articulo, pedido.total);
-            pedido.createPedido();
+            
             Response.Redirect("~/paginaPrincipal.aspx");
         }
     }

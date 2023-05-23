@@ -12,5 +12,10 @@ namespace usuWeb {
                 Response.Redirect("~/Usuario.aspx");
             }
         }
+
+        protected void modificarUsuario_Click(object sender, EventArgs e) {
+            string sigPag = "~/modificarUsuario.aspx?nick=" + (string)Session["nick"];
+            Response.Redirect(sigPag);
+        }
     }
 }

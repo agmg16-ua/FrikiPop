@@ -10,12 +10,15 @@ using library;
 namespace library
 {
     public class ENLineaCarrito {
+
+        //atributos privados
         private int linea_;
         private int id_carrito_;
         private float importe_;
         private string usuario_;
         private string articulo_;
 
+        //getters y setters
         public int linea {
             get{
                 return linea_;
@@ -61,6 +64,7 @@ namespace library
             }
         }
 
+        //construtor por defectos que inicializa los atributos.
         public ENLineaCarrito() {
 
             linea=0;
@@ -70,6 +74,8 @@ namespace library
             articulo = null;
 
         }
+
+        //constructor parametrizado que inicializa los atributos con los parametros pasados.
         public ENLineaCarrito(int linea_, int id_carrito_, float importe_, string usuario_, string articulo_) {
 
             linea = linea_;
@@ -78,7 +84,9 @@ namespace library
             usuario = usuario_;
             articulo = articulo_;
         }
-
+        /* Funcion que lee una linea de carrito
+		  * retorno: una variable de tipo bool denominada leido.
+		 */
         public bool readLineaCarrito() {
             bool leido;
             CADLineaCarrito lineaCarri;
@@ -86,6 +94,10 @@ namespace library
             leido = lineaCarri.readLineaCarrito(this);
             return leido;
         }
+
+        /* Funcion que crea una linea de carrito
+         * retorno: una variable de tipo bool denominada creado.
+        */
         public bool createLineaCarrito() {
             bool creado;
             CADLineaCarrito lineaCarri;
@@ -93,6 +105,10 @@ namespace library
             creado = lineaCarri.createLineaCarrito(this);
             return creado;
         }
+
+        /* Funcion que elimina una linea de carrito
+         *retorno: una variable de tipo bool denominada borrado.
+        */
         public bool deleteLineaCarrito() {
             bool borrado;
             CADLineaCarrito lineaCarri;
@@ -101,6 +117,10 @@ namespace library
             return borrado;
         }
 
+        /* Funcion que lista una linea de carrito
+         * retorno: una variable de tipo DataSet denominada dataSet.
+        */
+
         public DataSet enlistarLineaCarrito() {
 
             CADLineaCarrito lineaCarri;
@@ -108,6 +128,17 @@ namespace library
             DataSet dataSet; new DataTable();
             dataSet = lineaCarri.enlistarLineaCarrito(this);
             return dataSet;
+        }
+
+        /* Funcion que obtiene la maxima linea de carrito
+         * parametros: un tipo de dato int llamado num_carrito
+         * retorno: una variable de tipo int denominada linea.
+        */
+
+        public int obtenerMaxLineaCarrito(int num_carrito) {
+            CADLineaCarrito linCarrito = new CADLineaCarrito();
+            int linea = linCarrito.obtenerMaxLineaCarrito(num_carrito);
+            return linea;
         }
     }
  }
