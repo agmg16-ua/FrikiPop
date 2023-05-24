@@ -33,6 +33,23 @@
         font-weight: bold;
     }
 
+.gridViewUsuarios .Modificar {
+    width:140px;
+    height:30px;
+    background-color: #a70084;
+    color: aqua;
+    font-size:20px;
+}
+
+    .gridViewUsuarios .Modificar:hover {
+        width: 150px;
+        height: 40px;
+        color: white;
+        background-color: black;
+        transition: 0.5s;
+        font-size: 30px;
+    }
+
 #botonesVerUsuarios {
     text-align: center;
 }
