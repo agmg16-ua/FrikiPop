@@ -329,5 +329,32 @@ namespace library
             updateUsuario(usur);
         }
 
+        public bool incrementarNumVentas(ENUsuario usuario, int numVentasNuevo) {
+            bool incrementado = false;
+            SqlConnection conexion = null;
+
+            try {
+                conexion = new SqlConnection(constring);
+                conexion.Open();
+
+                string consulta = "Update Usuario set numVentas = " + numVentasNuevo + " where nick_name = '" + usuario.nick + "'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+
+                comando.ExecuteNonQuery();
+
+                incrementado = true;
+            } catch(SqlException e) {
+                Console.WriteLine("User operation has failed.Error: " + e.Message);
+            } catch(Exception e) {
+                Console.WriteLine("User operation has failed.Error: " + e.Message);
+            } finally {
+                if(conexion.State == ConnectionState.Open) {
+                    conexion.Close();
+                }
+            }
+
+            return incrementado;
+        }
+
     }
 }

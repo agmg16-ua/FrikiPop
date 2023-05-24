@@ -277,6 +277,11 @@ namespace library
             CADUsuario cADUsuario = new CADUsuario();
              cADUsuario.ModificarAdmin(admin,index);
         }
+
+        public bool incrementarNumVentas(int numVentasNuevo) {
+            CADUsuario usuario = new CADUsuario();
+            return usuario.incrementarNumVentas(this, numVentasNuevo);
+        }
     }
 }
 
