@@ -4,7 +4,7 @@
 
 .gridViewUsuarios {
     margin: 20px auto;
-    width: 75%;
+    width: 80%;
     table-layout: auto;
     border-collapse: collapse;
 }
@@ -20,6 +20,17 @@
         text-align: center;
         white-space: normal;
         word-wrap: break-word;
+    }
+
+    .gridViewUsuario .selectButtonUsuarios {
+    color: #a70084; /* Letra blanca */
+    text-decoration: none; /* Sin subrayado */
+    text-transform: uppercase; /* Letra en mayúsculas */
+    }
+
+    .gridViewUsuarios .selectButtonUsuarios:hover {
+        color: #00BFFF; /* Letra blanca */
+        font-weight: bold;
     }
 
 #botonesVerUsuarios {
