@@ -22,8 +22,8 @@
     </section>
     <asp:GridView CssClass="gridViewUsuarios" ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowEditing="Editar" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <Columns>
-            <asp:CommandField ShowSelectButton="True" SelectText="Change admin"/>
-            <asp:ButtonField Text="Modificar" CommandName="Editar" />
+            <asp:CommandField HeaderText="Hacer admin" ShowSelectButton="True" SelectText="Change admin"/>
+            <asp:CommandField HeaderText="Modificar usuario" ShowEditButton="true" EditText="Modificar" ButtonType="Button" />
             <asp:BoundField HeaderText="Nick_name" DataField="nick_name" SortExpression="nick_name"/>
             <asp:BoundField HeaderText="Nombre" DataField="nombre" SortExpression="nombre"/>
             <asp:BoundField HeaderText="Apellidos" DataField="apellidos" SortExpression="apellidos"/>

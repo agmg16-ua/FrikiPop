@@ -198,10 +198,10 @@ namespace usuWeb
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ENUsuario usur = new ENUsuario();
-            usur.nick = GridView1.Rows[GridView1.SelectedIndex].Cells[1].Text;
+            usur.nick = GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text;
             usur.readUsuario();
 
-            if(int.Parse(GridView1.Rows[GridView1.SelectedIndex].Cells[7].Text) == 1)
+            if(int.Parse(GridView1.Rows[GridView1.SelectedIndex].Cells[8].Text) == 1)
             {
                 usur.ModificarAdmin(0, GridView1.SelectedIndex);
             }
@@ -213,9 +213,12 @@ namespace usuWeb
         }
 
         //Al hacer click sobre el boton editar te redirije a la pagina modificarUsuario. Pasa por parametro una variable desde para saber que voy desde admin.
-        protected void Editar(object sender, EventArgs e)
+        protected void Editar(object sender, GridViewEditEventArgs e)
         {
-            Response.Redirect("~/modificarUsuario.aspx?desde=admin");
+            int index = e.NewEditIndex;
+            GridViewRow row = GridView1.Rows[index];
+            string usuario = row.Cells[2].Text;
+            Response.Redirect("~/modificarUsuario.aspx?desde=admin&nick="+ usuario);
         }
     }
 }
