@@ -21,7 +21,7 @@ namespace library
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
 
-        public bool createRedesSociales(ENredesSociales redesSociales)
+        public bool createRedesSociales(ENredesSociales redesSociales) //funcion que crea una red social con un insert
         {
             bool creado = false;
             SqlConnection conexion = null;
@@ -38,7 +38,7 @@ namespace library
                 creado = true;
 
             }
-            catch (SqlException e)
+            catch (SqlException e) //si hay una excepcion tira un error
             {
                 Console.WriteLine("User operation has failed. Error: {0}", e.Message);
             }
@@ -56,7 +56,7 @@ namespace library
             return creado;
         }
 
-        public bool deleteRedesSociales(ENredesSociales redesSociales)
+        public bool deleteRedesSociales(ENredesSociales redesSociales) //funcion que borra una red social con un delete
         {
             bool eliminado = false;
             SqlConnection conexion = null;
@@ -73,7 +73,7 @@ namespace library
                 eliminado = true;
 
             }
-            catch (SqlException e)
+            catch (SqlException e) //si hay una excepcion tira un error
             {
                 Console.WriteLine("User operation has failed.Error: {0}", e.Message);
             }
@@ -92,7 +92,7 @@ namespace library
             return eliminado;
         }
 
-        public bool readRedesSociales(ENredesSociales redesSociales)
+        public bool readRedesSociales(ENredesSociales redesSociales) //lee una red social mediante un select
         {
             bool leido = false;
             SqlConnection conexion = null;
@@ -124,7 +124,7 @@ namespace library
                 busqueda.Close();
 
             }
-            catch (SqlException e)
+            catch (SqlException e) //si hay una excepcion tira un error
             {
                 Console.WriteLine("User operation has failed. Error: {0}", e.Message);
             }
@@ -143,7 +143,7 @@ namespace library
             return leido;
         }
 
-        public bool updateRedesSociales(ENredesSociales redesSociales)
+        public bool updateRedesSociales(ENredesSociales redesSociales) //actualiza una red social con un update
         {
             SqlConnection connection = new SqlConnection(constring);
             try
@@ -153,7 +153,7 @@ namespace library
                 command.ExecuteNonQuery();
                 return true;
             }
-            catch (Exception e)
+            catch (Exception e) //si hay una excepcion tira un error
             {
                 Console.WriteLine("User operation has failed. Error: {0}", e.Message);
                 return false;
@@ -164,7 +164,7 @@ namespace library
             }
         }
 
-        public DataTable listarRedesSociales()
+        public DataTable listarRedesSociales() //lista las redes sociales con un select
         {
             DataTable tabla = new DataTable();
             SqlConnection conexion = null;
@@ -180,7 +180,7 @@ namespace library
                 data.Fill(tabla);
 
             }
-            catch (SqlException e)
+            catch (SqlException e) //si hay una excepcion tira un error
             {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
             }

@@ -9,7 +9,7 @@ namespace library
 {
     public class ENArticulo
     {
-        private string _codigo;
+        private string _codigo; //declara los atributos
         private string _nombre;
         private string _descripcion;
         private double _precio;
@@ -101,7 +101,7 @@ namespace library
             }
         }
 
-        public ENArticulo()
+        public ENArticulo() //crea la clase
         {
             codigo = null;
             nombre = null;
@@ -113,7 +113,7 @@ namespace library
 
         }
 
-        public bool createArticulo()
+        public bool createArticulo() //funciones del en
         {
             CADArticulo articulo = new CADArticulo();
             if (!articulo.readArticulo(this))

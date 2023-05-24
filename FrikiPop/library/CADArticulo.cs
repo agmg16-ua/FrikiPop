@@ -23,7 +23,7 @@ namespace library
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
 
-        public bool createArticulo(ENArticulo articulo)
+        public bool createArticulo(ENArticulo articulo) //funcion para crear un articulo haciendo un insert
         {
             bool creado = false;
             SqlConnection conexion = null;
@@ -40,7 +40,7 @@ namespace library
                 creado = true;
 
             }
-            catch (SqlException e)
+            catch (SqlException e) //si hay excepcion tira un error
             {
                 Console.WriteLine("User operation has failed. Error: {0}", e.Message);
             }
@@ -58,7 +58,7 @@ namespace library
             return creado;
         }
 
-        public bool deleteArticulo(ENArticulo articulo)
+        public bool deleteArticulo(ENArticulo articulo) //borra uin articulo haciendo un delete
         {
             bool eliminado = false;
             SqlConnection conexion = null;
@@ -75,7 +75,7 @@ namespace library
                 eliminado = true;
 
             }
-            catch (SqlException e)
+            catch (SqlException e) //si hay excepcion tira un error
             {
                 Console.WriteLine("User operation has failed.Error: {0}", e.Message);
             }
@@ -94,7 +94,7 @@ namespace library
             return eliminado;
         }
 
-        public bool readArticulo(ENArticulo articulo)
+        public bool readArticulo(ENArticulo articulo) //lee un articulo haciendo un select
         {
             bool leido = false;
             SqlConnection conexion = null;
@@ -129,7 +129,7 @@ namespace library
                 busqueda.Close();
 
             }
-            catch (SqlException e)
+            catch (SqlException e) //si hay excepcion tira un error
             {
                 Console.WriteLine("User operation has failed. Error: {0}", e.Message);
             }
@@ -148,7 +148,7 @@ namespace library
             return leido;
         }
 
-        public bool updateArticulo(ENArticulo articulo)
+        public bool updateArticulo(ENArticulo articulo) //actualiza un articulo haciendo un update
         {
             SqlConnection connection = new SqlConnection(constring);
             try
@@ -158,7 +158,7 @@ namespace library
                 command.ExecuteNonQuery();
                 return true;
             }
-            catch (Exception e)
+            catch (Exception e) //si hay excepcion tira un error
             {
                 Console.WriteLine("User operation has failed. Error: {0}", e.Message);
                 return false;
@@ -169,7 +169,7 @@ namespace library
             }
         }
 
-        public DataTable usuarioArticulo(string usuarioArticulo)
+        public DataTable usuarioArticulo(string usuarioArticulo) //devuelve los articulos de un usuario
         {
             DataTable tabla = new DataTable();
             SqlConnection conexion = null;
@@ -190,7 +190,7 @@ namespace library
                 data.Fill(tabla);
 
             }
-            catch (SqlException e)
+            catch (SqlException e) //si hay excepcion tira un error
             {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
             }
@@ -208,7 +208,7 @@ namespace library
             return tabla;
         }
 
-        public string getMaxID() {
+        public string getMaxID() { //devuelve el MaxID
             int max = 0;
             string result = null;
             SqlConnection conexion = null;
@@ -231,8 +231,8 @@ namespace library
 
                 reader.Close();
 
-            } catch (SqlException e) {
-                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            } catch (SqlException e) { //si hay excepcion tira un error
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message); 
             } catch (Exception e) {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
             } finally {
@@ -244,7 +244,7 @@ namespace library
             return result;
         }
 
-        public DataTable filtrarPorTipo(string tipo) {
+        public DataTable filtrarPorTipo(string tipo) { //filtra los articulos haciendo un select
             DataTable tabla = new DataTable();
             SqlConnection conexion = null;
 
@@ -258,8 +258,8 @@ namespace library
                 }
                 SqlDataAdapter data = new SqlDataAdapter(consulta, conexion);
                 data.Fill(tabla);
-
-            } catch (SqlException e) {
+ 
+            } catch (SqlException e) { //si hay excepcion tira un error
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);
             } catch (Exception e) {
                 Console.WriteLine("The operation has failed.Error: {0}", e.Message);

@@ -33,13 +33,14 @@ namespace usuWeb
         protected void añadirCestaClick(object sender, EventArgs e) {
             ENCarrito carrito = new ENCarrito();
 
-            carrito.obtenerIdCarrito((string)Session["nick"]);
+            int idCar = carrito.obtenerIdCarrito((string)Session["nick"]);
             ENLineaCarrito lincar = new ENLineaCarrito();
-            lincar.id_carrito = carrito.numeroCarrito;
+            lincar.id_carrito = idCar;
             lincar.importe = (float)articulo.precio;
-            lincar.linea = lincar.obtenerMaxLineaCarrito(carrito.numeroCarrito)+1;
+            lincar.linea = lincar.obtenerMaxLineaCarrito(idCar)+1;
             lincar.usuario = (string)Session["nick"];
             lincar.articulo = articulo.codigo;
+
             lincar.createLineaCarrito();
             Response.Redirect("~/verArticulo.aspx?codigo=" + articulo.codigo);
         }

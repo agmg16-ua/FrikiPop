@@ -1,8 +1,17 @@
 ﻿body {
 }
 
-.cuadroDeTexto {
+#campos {
     text-align: center;
+}
+
+#botonesTarjeta{
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.cuadroDeTexto {
     color: black;
     background-color: #c3bdbd;
     border: unset;
@@ -23,7 +32,7 @@
     margin-left: 0.3em;
 }
 
-    .boton:hover {
+    .boton:hover {  /*cambia el color y hace más grande el botón*/
         color: white;
         background-color: #a70084;
         transform: scale(1.1);
