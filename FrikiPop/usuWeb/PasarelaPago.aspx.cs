@@ -104,10 +104,31 @@ namespace usuWeb {
             pedido.idPedido = maxNumPedido + 1; //Asigna a idPedido el max id actual + 1
             pedido.user = (string)Session["nick"];
             DateTime now = DateTime.Now;
-            pedido.date = now.ToString("yyy-MM-dd");
+            pedido.date = now.ToString("yyyy-MM-dd");
             pedido.state = "listo";
 
             if (id_articulo != null) {  //caso se ha comprado directamente el articulo
+                
+                //Cambiar propietario del articulo
+                ENArticulo articulo = new ENArticulo();
+                articulo.codigo = id_articulo;
+                articulo.readArticulo();
+
+                string antiguoUsuario = articulo.usuario;
+
+                articulo.cambiarUsuario((string)Session["nick"]);
+
+                //Incrementar numVentas al usuario  
+                ENUsuario usuarioIncrementar = new ENUsuario();
+                usuarioIncrementar.nick = antiguoUsuario;
+                usuarioIncrementar.readUsuario();
+                int numVentasAntiguo = usuarioIncrementar.numVentas + 1;
+                usuarioIncrementar.incrementarNumVentas(numVentasAntiguo);
+
+                //Incrementar numVentas del tipo
+                ENTipoArticulo tipoArticulo = new ENTipoArticulo();
+                tipoArticulo.tipoArticulo = articulo.tipoArticulo;
+                tipoArticulo.incrementarNumeroVentas();
 
                 //obtiene el precio del articulo
                 SqlCommand sql = new SqlCommand("SELECT precio from Articulo where codigo='" + id_articulo + "'", conex);
@@ -150,6 +171,27 @@ namespace usuWeb {
                     ENLinPedido lineaPedido = new ENLinPedido(contador, pedido.idPedido, lineaCarri["codigo"].ToString(), importe, (string)Session["nick"]);
                     lineaPedido.createLinPedido();
                     contador++;
+
+                    //Cambiar el propietario del articulo
+                    ENArticulo articulo = new ENArticulo();
+                    articulo.codigo = lineaPedido._articulo;
+                    articulo.readArticulo();
+
+                    string antiguoUsuario = articulo.usuario;
+
+                    articulo.cambiarUsuario((string)Session["nick"]);
+
+                    //Incrementar Ventas del usuario
+                    ENUsuario usuarioAntiguo = new ENUsuario();
+                    usuarioAntiguo.nick = antiguoUsuario;
+                    usuarioAntiguo.readUsuario();
+                    int numVentasAntiguo = usuarioAntiguo.numVentas + 1;
+                    usuarioAntiguo.incrementarNumVentas(numVentasAntiguo);
+
+                    //Incrementar numVentas del tipo
+                    ENTipoArticulo tipoArticulo = new ENTipoArticulo();
+                    tipoArticulo.tipoArticulo = articulo.tipoArticulo;
+                    tipoArticulo.incrementarNumeroVentas();
                 }
 
                 //actualiza el precio del pedido
