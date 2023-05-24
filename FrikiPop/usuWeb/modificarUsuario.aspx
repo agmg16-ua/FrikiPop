@@ -6,11 +6,11 @@
 
     <h1 style="margin-left:75px">Actualizar datos</h1>
     <section id="cuadrosTextoUsuario">            
-        <asp:TextBox placeholder="Nombre" class ="cuadroDeTexto"  runat="server" ID="Nombre1"></asp:TextBox>
+        <asp:TextBox placeholder="Nombre" class ="cuadroDeTexto"  runat="server" ID="Nombre1"></asp:TextBox><br />
             
-        <asp:TextBox placeholder="Apellidos" class ="cuadroDeTexto" runat="server" ID="Apellidos1"></asp:TextBox>
+        <asp:TextBox placeholder="Apellidos" class ="cuadroDeTexto" runat="server" ID="Apellidos1"></asp:TextBox><br />
             
-        <asp:TextBox placeholder="Edad" class ="cuadroDeTexto" runat="server" ID="Edad1"></asp:TextBox>
+        <asp:TextBox placeholder="Edad" class ="cuadroDeTexto" runat="server" ID="Edad1"></asp:TextBox><br />
             
         <asp:DropDownList ID="Paises" runat="server" CssClass="listas" DataSourceID="Database1" DataTextField="pais" DataValueField="pais">
             <asp:ListItem Text="Seleccione un pais"></asp:ListItem>

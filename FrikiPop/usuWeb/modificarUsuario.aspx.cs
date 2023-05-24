@@ -84,8 +84,7 @@ namespace usuWeb {
 
                 modUsuario.admin = usuarioLeido.admin;
 
-                /*modUsuario.<PON EL NOMBRE DEL METODO DE UPDATE>;*/
-
+                modUsuario.updateUsuario();
                 LabelError.Text = "Los datos se han actualizado correctamente en nuestra Base de Datos.";
 
             } else {
