@@ -3,7 +3,15 @@
 ## Descripcion
 
 Se va a desarrollar una web de compra-venta de articulos relacionados con el mundo de los videojuegos, donde 
-los usuarios pueden comprar y vender artículos y ponerle el precio que deseen.
+los usuarios pueden comprar y vender artículos y ponerle el precio que deseen. 
+
+IMPORTANTE: DADO QUE LA VERSION DE SQLSERVER CON LA QUE SE HA GENERADO LA BD ES DIFERENTE A LA DE LOS LABORATORIOS DE LA EPS, SE
+DEBE GENERAR A PARTIR DEL SCRIPT LA BD. SE DEBEN SEGUIR LOS SIGUIENTES PASOS:
+>CARPETA APP_DATA >CLICK DERECHO >ELIMINAR
+>CLICK DERECHO EN USUWEB >AGREGAR NUEVO ELEMENTO >BASE DE DATOS SQLSERVER
+>ACEPTAR CREACION DE LA CARPETA APP_DATA. LA BD SE DEBE LLAMAR 'Database1.mdf'
+>DOBLE CLICK EN 'Database1.mdf' >A LA IZQUIERDA, CLICK DERECHO EN 'Database' >NUEVA CONSULTA
+>PEGAR EL SCRIPT >CLICK EN 'EJECUTAR' >BD CREADA CORRECTAMENTE, TODO LISTO PARA EJECUTAR
 
 ## Parte pública
 
@@ -59,7 +67,7 @@ no se podrá comprar. Además, se mostrarán las redes sociales de la web y una zon
 	+Filtros: Funcionalidad donde se podrá agudizar la busqueda filtrando por tipo, vendedor, etc.
 
 
-## Reparto del trabajo
+## Reparto del trabajo Inicial
 
 	+Alejandro Guillén(48790456G)(Coordinador):
 		Crear repositorio (ramas, issues, ...)
@@ -91,8 +99,73 @@ no se podrá comprar. Además, se mostrarán las redes sociales de la web y una zon
 	+Javier Arribas(05445569C):
 		Entidad LinPedido
 		Funcionalidad Estadísticas
-		
+
+## Reparto de trabajo final
+	+Alejandro Guillén(48790456G)(Coordinador):
+		Crear repositorio (ramas, issues, ...)
+		Crear la BD y el script
+		Entidad Provincia
+		Entidad Localidad
+		Interfaz Localidades
+		Interfaz Provincias
+		Interfaz Paises
+		Interfaz MenuUsuario
+		Interfaz Administrador
+		Interfaz ModificarUsuario
+		Interfaz PaginaPrincipal (1/2)
+		Interfaz Site1.Master (1/2)
+		Css de varias interfaces
+		Arreglar fallos en otras entidades e interfaces
+
+	+Victor Padrón(55178804X):
+		Entidad Usuario
+		Entidad Pais
+		Interfaz Usuario
+		Interfaz VerUsuario
+		Interfaz SignUp
+		Css genérico (masterStyle.css)
+
+	+Iván Álvarez(49623492A):
+		Entidad Tarjetas
+		Entidad Publicidad
+		Interfaz Tarjetas
+		Interfaz PaginaPrincipal (1/2)
+		Interfaz Site1.Master
+		Interfaz Publicidad
+		Interfaz PasarelaPago
+		Css de varias interfaces
+
+	+Ilyas Umatolov(X7279165E):
+		Entidad Articulo
+		Entidad Redes Sociales
+		Interfaz AñadirArticulo
+		Interfaz Articulos
+		Interfaz RedesSociales
+		Interfaz VerArticulo
+
+	+Younes Zahid(51237104G):
+		Entidad Carrito
+		Entidad LinCarrito
+		Interfaz Carrito
+	
+	+Aurelio Bonilla(29523160S):
+		Entidad Pedido
+		Entidad TipoArticulo
+		Interfaz Pedido (1/2)
+		Interfaz VerPedido (1/2)
+		Interfaz TipoArticulo
+
+	+Javier Arribas(05445569C):
+		Entidad LinPedido
+		Funcionalidad Estadísticas
+		Interfaz Pedido (1/2)
+		Interfaz VerPedido (1/2)
+		Interfaz Estadísticas
+
 ## Base de Datos
 
 El archivo de la Base de Datos se encuentra en el directorio principal del repositorio. Su nombre es "FrikiPopBD.pdf".
 Además, se ha incluido un archivo llamado "scriptBD.txt" para que quien lo necesite pueda crear la BD directamente.
+Se explica en la descripcion como crear la BD.
+
+

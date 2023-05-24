@@ -300,9 +300,9 @@ INSERT INTO Localidad VALUES
 	('Las Palmas', 'Canarias', 'Spain');
 
 INSERT INTO TipoArticulo VALUES
-	('Videojuego', 0),
-	('Merchan', 0),
-	('Consola', 0);
+	('Videojuego', 90),
+	('Merchan', 40),
+	('Consola', 7);
 
 INSERT INTO Usuario VALUES 
 ('TuAdminDeConfianza',
