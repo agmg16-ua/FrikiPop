@@ -167,5 +167,10 @@ namespace library
             DataTable tabla = articulo.filtrarPorTipo(tipo);
             return tabla;
         }
+
+        public bool cambiarUsuario(string nuevoUsuario) {
+            CADArticulo articulo = new CADArticulo();
+            return articulo.cambiarUsuario(this, nuevoUsuario);
+        }
     }
 }

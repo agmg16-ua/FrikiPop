@@ -270,5 +270,33 @@ namespace library
             }
             return tabla;
         }
+
+        public bool cambiarUsuario(ENArticulo articulo, string nuevoUsuario) {
+            bool actualizado = false;
+            SqlConnection conexion = null;
+
+            try {
+                conexion = new SqlConnection(constring);
+                conexion.Open();
+
+                string consulta = "Update Articulo set usuario = '" + nuevoUsuario + "' where codigo = '" + articulo.codigo + "'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+
+                comando.ExecuteNonQuery();
+
+                actualizado = true;
+
+            } catch(SqlException e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            } catch(Exception e) {
+                Console.WriteLine("The operation has failed.Error: {0}", e.Message);
+            } finally {
+                if(conexion.State == ConnectionState.Open) {
+                    conexion.Close();
+                }
+            }
+
+            return actualizado;
+        }
     }
 }
