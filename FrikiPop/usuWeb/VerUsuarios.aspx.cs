@@ -211,5 +211,11 @@ namespace usuWeb
             }
             Response.Redirect("~/VerUsuarios.aspx");
         }
+
+        //Al hacer click sobre el boton editar te redirije a la pagina modificarUsuario. Pasa por parametro una variable desde para saber que voy desde admin.
+        protected void Editar(object sender, EventArgs e)
+        {
+            Response.Redirect("~/modificarUsuario.aspx?desde=admin");
+        }
     }
 }

@@ -209,10 +209,6 @@ namespace library
         public bool updateUsuario()
         {
             CADUsuario cADUsuario = new CADUsuario();
-            if(cADUsuario.readUsuario(this) == false)
-            {
-                return false;
-            }
             return cADUsuario.updateUsuario(this);
         }
         public bool deleteUsuario()

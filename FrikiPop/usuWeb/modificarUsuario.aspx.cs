@@ -84,8 +84,14 @@ namespace usuWeb {
 
                 modUsuario.admin = usuarioLeido.admin;
 
-                modUsuario.updateUsuario();
-                LabelError.Text = "Los datos se han actualizado correctamente en nuestra Base de Datos.";
+                if (modUsuario.updateUsuario() == true)
+                {
+                    LabelError.Text = "Los datos se han actualizado correctamente en nuestra Base de Datos.";
+                }
+                else
+                {
+                    LabelError.Text = "Comprueba bien tus datos";
+                }
 
             } else {
                 LabelError.Text = "Hay un problema con el nick. No se ha podido realizar la operacion.";
