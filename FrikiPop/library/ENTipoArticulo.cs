@@ -8,15 +8,22 @@ namespace library {
     public class ENTipoArticulo {
 
         private string _tipoArticulo;
+        private int _numVentas;
 
         public string tipoArticulo {
             get { return _tipoArticulo; }
             set { _tipoArticulo = value; }
         }
 
+        public int numVentas {
+            get { return _numVentas; }
+            set { _numVentas = value; }
+        }
+
         //Contructor copia
         public ENTipoArticulo() {
             tipoArticulo = null;
+            numVentas = 0;
         }
 
         //CRUD (create, read, update, delete)
@@ -47,6 +54,11 @@ namespace library {
                 return tipoArticulo.updateTipoArticulo(this);
             }
             return false;
+        }
+
+        public bool incrementarNumeroVentas() {
+            CADTipoArticulo tipoArticulo = new CADTipoArticulo();
+            return tipoArticulo.incrementarNumeroVentas(this);
         }
 
     }

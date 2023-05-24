@@ -24,7 +24,7 @@ namespace library {
                 conexion = new SqlConnection(constring);
                 conexion.Open();
 
-                string consulta = "Insert into TipoArticulo (tipo) values ('" + en.tipoArticulo + "')";
+                string consulta = "Insert into TipoArticulo tipo values ('" + en.tipoArticulo + "', 0)";
                 SqlCommand command = new SqlCommand(consulta, conexion);
 
                 command.ExecuteNonQuery();
@@ -92,6 +92,7 @@ namespace library {
                 if (busqueda.HasRows) {
                     if (busqueda["tipoArticulo"].ToString() == en.tipoArticulo) {
                         en.tipoArticulo = busqueda["tipoArticulo"].ToString();
+                        en.numVentas = int.Parse(busqueda["numVentas"].ToString());
                         leido = true;
                     }
                 }
@@ -128,6 +129,34 @@ namespace library {
             finally {
                 connection.Close();
             }
+        }
+
+        public bool incrementarNumeroVentas(ENTipoArticulo tipoArticulo) {
+            bool incrementado = false;
+            SqlConnection conexion = null;
+
+            try {
+                conexion = new SqlConnection(constring);
+                conexion.Open();
+
+                string consulta = "Update TipoArticulo set numVentas = numVentas + 1 where tipo = '" + tipoArticulo.tipoArticulo +"'";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+
+                comando.ExecuteNonQuery();
+
+                incrementado = true;
+
+            } catch(SqlException e) {
+                Console.WriteLine("User operation has failed. Error: {0}", e.Message);
+            } catch(Exception e) {
+                Console.WriteLine("User operation has failed. Error: {0}", e.Message);
+            } finally {
+                if(conexion.State == ConnectionState.Open) {
+                    conexion.Close();
+                }
+            }
+
+            return incrementado;
         }
     }
 }
