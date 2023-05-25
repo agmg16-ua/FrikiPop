@@ -171,6 +171,11 @@ El archivo de la Base de Datos se encuentra en el directorio principal del repos
 Además, se ha incluido un archivo llamado "scriptBD.txt" para que quien lo necesite pueda crear la BD directamente.
 Se explica en la descripcion como crear la BD.
 
+## Presentación
+
+La presentación se entucantra dentro de una carpeta en el directorio principal del repositorio llamada Presentación.
+El nombre del archivo es Presentacion FrikiPop.pdf
+
 ## Evaluaciones Finales
 
 La aplicación web creada consiste en una aplicación de compra-venta de articulo cuyos propietarios son los mismos usuarios.
