@@ -16,6 +16,12 @@ namespace usuWeb
 {
     public partial class Formulario_web2 : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e) {
+            if(Session["nick"] != null) {
+                Response.Redirect("~/paginaPrincipal.aspx");
+            }
+        }
+
         //Crea el usuario si los datos introducidos son correctos y guarda la imagen en el directorio imagenes.
         protected void createUsuario(object sender, EventArgs e)
         {

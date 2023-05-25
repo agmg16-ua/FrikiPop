@@ -10,6 +10,11 @@ namespace usuWeb
 {
     public partial class Formulario_web11 : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e) {
+            if(Session["nick"] != null) {
+                Response.Redirect("~/paginaPrincipal.aspx");
+            }
+        }
 
         //Si el usuario es correcto añade las propiedades imagen, nick, admin a la session. En caso contrario enseña un mensaje de error
         protected void LogIn(object sender, EventArgs e)
