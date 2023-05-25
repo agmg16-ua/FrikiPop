@@ -192,4 +192,23 @@ a otro integrante a quien se le esté acumulando el trabajo.
 
 En general, estamos satisfechos con el trabajo realizado, con el resultado final y con el ambiente y organización del grupo.
 
+## Usuarios y Contraseñas
+
+Con la finalidad de poder añadir diversos artículos a la BD, se han necesitado crear varios usuarios. Muchos de ellos son símplemente
+para poseer artículos y que aporten lo que la página necesita. Sin embargo, hay otros con pedidos, carrito, etc... Se puede acceder a cualquiera,
+pero para poder visualizar todos los rincones de la web solo se necesitarían 2 o 3:
+
+Para acceder a la parte pública no se necesita estar logueado
+
+Para acceder a la parte privada de usuario, con una cuenta estandar es suficiente. A continuación están el usuario y contraseña:
+Usuario: Usuario_Promedio
+Contraseña: Contrasenya123
+
+Para acceder a la parte privada con permisos de administrador, hace falta que la cuenta esté reconocida como tal. A continuación se muestran
+dos cuentas disponibles para ello:
+Usuario: TuAdminDeConfianza
+Contraseña: Eladmin03
+
+Usuario: alex_gm_03	
+Contraseña: Secreto123
 
