@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="modificarUsuario.aspx.cs" Inherits="usuWeb.modificarUsuario" %>
+﻿<%@ Page Title="FrikiPop: Actualizar Datos" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="modificarUsuario.aspx.cs" Inherits="usuWeb.modificarUsuario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

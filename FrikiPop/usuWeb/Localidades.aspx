@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Localidades.aspx.cs" Inherits="usuWeb.Localidades" %>
+﻿<%@ Page Title="FrikiPop: Localidades" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Localidades.aspx.cs" Inherits="usuWeb.Localidades" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="head" >
     <link rel="stylesheet" href="..\App_Style\ubicacionesStyle.css" />
