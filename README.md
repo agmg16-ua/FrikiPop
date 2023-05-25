@@ -176,6 +176,12 @@ Se explica en la descripcion como crear la BD.
 La presentación se entucantra dentro de una carpeta en el directorio principal del repositorio llamada Presentación.
 El nombre del archivo es Presentacion FrikiPop.pdf
 
+## EntregaFinal
+
+La entrega final es demasiado pesada para github, por lo que se ha optado por subir el archivo a google drive y 
+poner el enlace en un archivo en el repositorio. El archivo se llama Enlace engregaFinal.txt y se encuentra donde 
+debería estar el archivo comprimido. Desde el enlace se puede descargar el comprimido.
+
 ## Evaluaciones Finales
 
 La aplicación web creada consiste en una aplicación de compra-venta de articulo cuyos propietarios son los mismos usuarios.
