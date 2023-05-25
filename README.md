@@ -13,6 +13,9 @@ DEBE GENERAR A PARTIR DEL SCRIPT LA BD. SE DEBEN SEGUIR LOS SIGUIENTES PASOS:
 >DOBLE CLICK EN 'Database1.mdf' >A LA IZQUIERDA, CLICK DERECHO EN 'Database' >NUEVA CONSULTA
 >PEGAR EL SCRIPT >CLICK EN 'EJECUTAR' >BD CREADA CORRECTAMENTE, TODO LISTO PARA EJECUTAR
 
+SE RECOMIENDA EJECUTAR LA APLICACIÓN WEB EN EL NAVEGADOR GOOGLE CHROME, YA QUE HAY ALGUNAS IMÁGENES QUE POR ALGUNA RAZÓN EN EL
+NAVEGADOR MICROSOFT EDGE NO CARGAN CORRECTAMENTE.
+
 ## Parte pública
 
 Desde la parte pública se podrá ver el logo de la web. Además, se podrá acceder a una sección para hacer log in o crear un usuario.
@@ -172,7 +175,7 @@ Se explica en la descripcion como crear la BD.
 
 La aplicación web creada consiste en una aplicación de compra-venta de articulo cuyos propietarios son los mismos usuarios.
 Cuenta con una parte pública y otra privada, dividida entre el usuario normal y el usuario-administrador, cada uno con mas 
-privilegios que el anterior. Los usuarios pueden comprar uno o más artículos al mismo tiempo, almacenar tarjetas de credito
+privilegios que el anterior. Los usuarios pueden comprar uno o más artículos al mismo tiempo, almacenar tarjetas de crédito
 para pagar y visualizar sus pedidos. Además, se lleva un conteo de ventas de cada usuario, con las que se hacen estadísticas, 
 y se tiene un apartado de acuerdos con empresas para publicitarse en la web.
 
