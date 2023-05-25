@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Tarjetas.aspx.cs" Inherits="usuWeb.Tarjeta" %>
+﻿<%@ Page Title="FrikiPop: Tarjetas" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Tarjetas.aspx.cs" Inherits="usuWeb.Tarjeta" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="head" >
     <link rel="stylesheet" href="..\App_Style\tarjetasStyle.css" />
