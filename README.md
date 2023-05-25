@@ -111,9 +111,9 @@ no se podrá comprar. Además, se mostrarán las redes sociales de la web y una zon
 		Interfaz Paises
 		Interfaz MenuUsuario
 		Interfaz Administrador
-		Interfaz ModificarUsuario
 		Interfaz PaginaPrincipal (1/2)
 		Interfaz Site1.Master (1/2)
+		Interfaz TipoArticulo
 		Css de varias interfaces
 		Arreglar fallos en otras entidades e interfaces
 
@@ -123,6 +123,7 @@ no se podrá comprar. Además, se mostrarán las redes sociales de la web y una zon
 		Interfaz Usuario
 		Interfaz VerUsuario
 		Interfaz SignUp
+		Interfaz ModificarUsuario
 		Css genérico (masterStyle.css)
 
 	+Iván Álvarez(49623492A):
@@ -151,15 +152,14 @@ no se podrá comprar. Además, se mostrarán las redes sociales de la web y una zon
 	+Aurelio Bonilla(29523160S):
 		Entidad Pedido
 		Entidad TipoArticulo
-		Interfaz Pedido (1/2)
-		Interfaz VerPedido (1/2)
-		Interfaz TipoArticulo
+		Interfaz Pedido
+		Interfaz VerPedido
 
 	+Javier Arribas(05445569C):
 		Entidad LinPedido
 		Funcionalidad Estadísticas
-		Interfaz Pedido (1/2)
-		Interfaz VerPedido (1/2)
+		Interfaz Pedido (Ayuda)
+		Interfaz VerPedido (Ayuda)
 		Interfaz Estadísticas
 
 ## Base de Datos
@@ -167,5 +167,26 @@ no se podrá comprar. Además, se mostrarán las redes sociales de la web y una zon
 El archivo de la Base de Datos se encuentra en el directorio principal del repositorio. Su nombre es "FrikiPopBD.pdf".
 Además, se ha incluido un archivo llamado "scriptBD.txt" para que quien lo necesite pueda crear la BD directamente.
 Se explica en la descripcion como crear la BD.
+
+## Evaluaciones Finales
+
+La aplicación web creada consiste en una aplicación de compra-venta de articulo cuyos propietarios son los mismos usuarios.
+Cuenta con una parte pública y otra privada, dividida entre el usuario normal y el usuario-administrador, cada uno con mas 
+privilegios que el anterior. Los usuarios pueden comprar uno o más artículos al mismo tiempo, almacenar tarjetas de credito
+para pagar y visualizar sus pedidos. Además, se lleva un conteo de ventas de cada usuario, con las que se hacen estadísticas, 
+y se tiene un apartado de acuerdos con empresas para publicitarse en la web.
+
+Entre las dificultades mas notables está poder coordinar lo que otros van a necesitar de lo que uno mismo está haciendo, ya que
+alguien puede necesitar un método/botón/parámetro/validación que no controlas y a la larga dan fallos. Otra cosa que se nos ha
+complicado es la validación de ciertos datos, aunque todos estos problemas los hemos podido solucionar.
+
+Se planteó en un inicio finalizar la práctica una semana antes de la fecha de la presentación, para dejar suficiente margen para
+solución de errores. Al final, la práctica visualmente se terminó dos dias antes de la presentación, por lo que pudimos hacer una 
+presentación real con lo que nuestra aplicación web presenta sin faltar nada por hacer. Durante la realización de toda la práctica,
+se iban planteando unos objetivos semanales adaptados al avance de las tareas particulares de cada integrante de grupo, pudiendo 
+organizarse con tiempo suficiente para prevenir errores. Además, de esta manera quien acabase en su tiempo estimado podría ayudar
+a otro integrante a quien se le esté acumulando el trabajo.
+
+En general, estamos satisfechos con el trabajo realizado, con el resultado final y con el ambiente y organización del grupo.
 
 
