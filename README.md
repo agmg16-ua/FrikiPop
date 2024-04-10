@@ -3,108 +3,112 @@
 ## Descripcion
 
 Se va a desarrollar una web de compra-venta de articulos relacionados con el mundo de los videojuegos, donde 
-los usuarios pueden comprar y vender artículos y ponerle el precio que deseen. 
+los usuarios pueden comprar y vender artï¿½culos y ponerle el precio que deseen. 
 
 IMPORTANTE: DADO QUE LA VERSION DE SQLSERVER CON LA QUE SE HA GENERADO LA BD ES DIFERENTE A LA DE LOS LABORATORIOS DE LA EPS, SE
 DEBE GENERAR A PARTIR DEL SCRIPT LA BD. SE DEBEN SEGUIR LOS SIGUIENTES PASOS:
 >CARPETA APP_DATA >CLICK DERECHO >ELIMINAR
+
 >CLICK DERECHO EN USUWEB >AGREGAR NUEVO ELEMENTO >BASE DE DATOS SQLSERVER
+
 >ACEPTAR CREACION DE LA CARPETA APP_DATA. LA BD SE DEBE LLAMAR 'Database1.mdf'
+
 >DOBLE CLICK EN 'Database1.mdf' >A LA IZQUIERDA, CLICK DERECHO EN 'Database' >NUEVA CONSULTA
+
 >PEGAR EL SCRIPT >CLICK EN 'EJECUTAR' >BD CREADA CORRECTAMENTE, TODO LISTO PARA EJECUTAR
 
-SE RECOMIENDA EJECUTAR LA APLICACIÓN WEB EN EL NAVEGADOR GOOGLE CHROME, YA QUE HAY ALGUNAS IMÁGENES QUE POR ALGUNA RAZÓN EN EL
+SE RECOMIENDA EJECUTAR LA APLICACIï¿½N WEB EN EL NAVEGADOR GOOGLE CHROME, YA QUE HAY ALGUNAS IMï¿½GENES QUE POR ALGUNA RAZï¿½N EN EL
 NAVEGADOR MICROSOFT EDGE NO CARGAN CORRECTAMENTE.
 
-## Parte pública
+## Parte pï¿½blica
 
-Desde la parte pública se podrá ver el logo de la web. Además, se podrá acceder a una sección para hacer log in o crear un usuario.
-Se visualizará tambien a una columna con un menú donde poder aplicar filtros a los productos mostrados.
-Por último, en la zona principal de la pantalla se mostrará un listado de articulos en venta por usuarios, pero que hasta no estar identificado
-no se podrá comprar. Además, se mostrarán las redes sociales de la web y una zona con publicidad.
+Desde la parte pï¿½blica se podrï¿½ ver el logo de la web. Ademï¿½s, se podrï¿½ acceder a una secciï¿½n para hacer log in o crear un usuario.
+Se visualizarï¿½ tambien a una columna con un menï¿½ donde poder aplicar filtros a los productos mostrados.
+Por ï¿½ltimo, en la zona principal de la pantalla se mostrarï¿½ un listado de articulos en venta por usuarios, pero que hasta no estar identificado
+no se podrï¿½ comprar. Ademï¿½s, se mostrarï¿½n las redes sociales de la web y una zona con publicidad.
 
 ### Listado EN publica
 
-	+ENUsuarios: Servirá para iniciar sesión y saber de quien es cada artículo.
+	+ENUsuarios: Servirï¿½ para iniciar sesiï¿½n y saber de quien es cada artï¿½culo.
 	+ENProvincia: Seleccionar la provincia al crear cuenta.
 	+ENLocalidad: Seleccionar la localidad al crear cuenta.
 	+ENPais: Seleccionar el pais al crear cuenta.
-	+ENArticulos: Servirá para poder ver los artículos de otras personas.
-	+ENTipoArticulo: Servirá para saber de que tipo es cada artículo de los mostrados.
-	+ENPublicidad: Servirá para visualizar alguna de las empresas que se publicitan almacenadas en la BD.
-	+ENRedesSociales: Servirá para poder acceder a los perfiles de redes sociales de la web.
+	+ENArticulos: Servirï¿½ para poder ver los artï¿½culos de otras personas.
+	+ENTipoArticulo: Servirï¿½ para saber de que tipo es cada artï¿½culo de los mostrados.
+	+ENPublicidad: Servirï¿½ para visualizar alguna de las empresas que se publicitan almacenadas en la BD.
+	+ENRedesSociales: Servirï¿½ para poder acceder a los perfiles de redes sociales de la web.
 
 ## Parte privada
 
-	+Usuario normal: Se visualizará lo mismo que en la parte pública, con la diferencia de 
-	que se mostrará el username y accediendo a este se puede modificar la información del 
-	usuario. Además, se mostrará una opción "vender" para añadir articulos en venta a tu perfil.
+	+Usuario normal: Se visualizarï¿½ lo mismo que en la parte pï¿½blica, con la diferencia de 
+	que se mostrarï¿½ el username y accediendo a este se puede modificar la informaciï¿½n del 
+	usuario. Ademï¿½s, se mostrarï¿½ una opciï¿½n "vender" para aï¿½adir articulos en venta a tu perfil.
 
-	+Administrador: Muestra lo mismo que en la parte pública a diferencia que en vez de hacer 
-	log in aparecerá un boton para administrar la informacion de
-	la web. Todo lo que hay en la web se puede administrar desde ahí (usuarios, productos, ver estado de pedidos, etc).
+	+Administrador: Muestra lo mismo que en la parte pï¿½blica a diferencia que en vez de hacer 
+	log in aparecerï¿½ un boton para administrar la informacion de
+	la web. Todo lo que hay en la web se puede administrar desde ahï¿½ (usuarios, productos, ver estado de pedidos, etc).
 
 ### Listado EN privada
 
-	+ENUsuario: Servirá para configurar el perfil de usuario.
-	+ENArticulos: Servirá para poder acceder a los articulos propios que vendes o a los 
+	+ENUsuario: Servirï¿½ para configurar el perfil de usuario.
+	+ENArticulos: Servirï¿½ para poder acceder a los articulos propios que vendes o a los 
 	de otros usuarios que se pueden comprar.
-	+ENProvincia: Servirá para seleccionar una provincia para gestionar el usuario, las entregas, ...
-	+ENLocalidad: Servirá para seleccionar una localidad de las almacenadas a la 
+	+ENProvincia: Servirï¿½ para seleccionar una provincia para gestionar el usuario, las entregas, ...
+	+ENLocalidad: Servirï¿½ para seleccionar una localidad de las almacenadas a la 
 	hora de crear gestionar el usuario.
-	+ENPais: Servirá para almacenar paises en la BD que los ususario podrán seleccionar 
-	al registrarse o seleccionar la dirección de envío.
-	+ENTarjetas: Servirá para acceder a la tarjeta de credito que tenga el usuario guardado.
-	+ENCarrito: Servirá para almacenar varios articulos y hacer una compra conjunta.
-	+ENLinCarrito: Servirá para ver cada articulo dentro del carrito.
-	+ENPedido: Se podrá ver el pedido del usuario y el estado del mismo.
-	+ENLinPedido: Servirá para acceder a cada articulo del pedido.
-	+ENTipoArticulo: Servirá para saber de que tipo es cada artículo, o asignar un tipo al crear 
-	uno nuevo. Además, se podrán añadir nuevos tipos.
-	+ENPublicidad: Servirá para visualizar alguna de las empresas que se publicitan almacenadas en la BD.
-	+ENRedesSociales: Servirá para poder acceder a los perfiles de redes sociales de la web.
+	+ENPais: Servirï¿½ para almacenar paises en la BD que los ususario podrï¿½n seleccionar 
+	al registrarse o seleccionar la direcciï¿½n de envï¿½o.
+	+ENTarjetas: Servirï¿½ para acceder a la tarjeta de credito que tenga el usuario guardado.
+	+ENCarrito: Servirï¿½ para almacenar varios articulos y hacer una compra conjunta.
+	+ENLinCarrito: Servirï¿½ para ver cada articulo dentro del carrito.
+	+ENPedido: Se podrï¿½ ver el pedido del usuario y el estado del mismo.
+	+ENLinPedido: Servirï¿½ para acceder a cada articulo del pedido.
+	+ENTipoArticulo: Servirï¿½ para saber de que tipo es cada artï¿½culo, o asignar un tipo al crear 
+	uno nuevo. Ademï¿½s, se podrï¿½n aï¿½adir nuevos tipos.
+	+ENPublicidad: Servirï¿½ para visualizar alguna de las empresas que se publicitan almacenadas en la BD.
+	+ENRedesSociales: Servirï¿½ para poder acceder a los perfiles de redes sociales de la web.
 
 ## Posibles mejoras
     En las mejoras, tenemos en mente algunas funcionalidades para desarrollar:
-	+Estadísticas: Funcionalidad donde se mostrarán algunos tops de mas vendidos, mejor valorados, etc.
-	+Filtros: Funcionalidad donde se podrá agudizar la busqueda filtrando por tipo, vendedor, etc.
+	+Estadï¿½sticas: Funcionalidad donde se mostrarï¿½n algunos tops de mas vendidos, mejor valorados, etc.
+	+Filtros: Funcionalidad donde se podrï¿½ agudizar la busqueda filtrando por tipo, vendedor, etc.
 
 
 ## Reparto del trabajo Inicial
 
-	+Alejandro Guillén(48790456G)(Coordinador):
+	+Alejandro Guillï¿½n(agmg16-ua)(Coordinador):
 		Crear repositorio (ramas, issues, ...)
 		Crear la BD
 		Entidad Provincia
 		Entidad Localidad
 
-	+Victor Padrón(55178804X):
+	+Victor Padrï¿½n(vpg66-ua):
 		Entidad Usuario
 		Entidad Pais
 
-	+Iván Álvarez(49623492A):
+	+Ivï¿½n ï¿½lvarez(iaga2-ua):
 		Entidad Tarjetas
 		Entidad Publicidad
-		Organización del CSS
+		Organizaciï¿½n del CSS
 
-	+Ilyas Umatolov(X7279165E):
+	+Ilyas Umatolov(isumalotov):
 		Entidad Articulo
 		Entidad Redes Sociales
 
-	+Younes Zahid(51237104G):
+	+Younes Zahid(yzcz1):
 		Entidad Carrito
 		Entidad LinCarrito
 	
-	+Aurelio Bonilla(29523160S):
+	+Aurelio Bonilla(abab4-ua):
 		Entidad Pedido
 		Entidad TipoArticulo
 
-	+Javier Arribas(05445569C):
+	+Javier Arribas(jag99-ua):
 		Entidad LinPedido
-		Funcionalidad Estadísticas
+		Funcionalidad Estadï¿½sticas
 
 ## Reparto de trabajo final
-	+Alejandro Guillén(48790456G)(Coordinador):
+	+Alejandro Guillï¿½n(agmg16-ua)(Coordinador):
 		Crear repositorio (ramas, issues, ...)
 		Crear la BD y el script
 		Entidad Provincia
@@ -120,16 +124,16 @@ no se podrá comprar. Además, se mostrarán las redes sociales de la web y una zon
 		Css de varias interfaces
 		Arreglar fallos en otras entidades e interfaces
 
-	+Victor Padrón(55178804X):
+	+Victor Padrï¿½n(vpg66-ua):
 		Entidad Usuario
 		Entidad Pais
 		Interfaz Usuario
 		Interfaz VerUsuario
 		Interfaz SignUp
 		Interfaz ModificarUsuario
-		Css genérico (masterStyle.css)
+		Css genï¿½rico (masterStyle.css)
 
-	+Iván Álvarez(49623492A):
+	+Ivï¿½n ï¿½lvarez(iaga2-ua):
 		Entidad Tarjetas
 		Entidad Publicidad
 		Interfaz Tarjetas
@@ -139,87 +143,87 @@ no se podrá comprar. Además, se mostrarán las redes sociales de la web y una zon
 		Interfaz PasarelaPago
 		Css de varias interfaces
 
-	+Ilyas Umatolov(X7279165E):
+	+Ilyas Umatolov(isumalotov):
 		Entidad Articulo
 		Entidad Redes Sociales
-		Interfaz AñadirArticulo
+		Interfaz Aï¿½adirArticulo
 		Interfaz Articulos
 		Interfaz RedesSociales
 		Interfaz VerArticulo
 
-	+Younes Zahid(51237104G):
+	+Younes Zahid(yzcz1):
 		Entidad Carrito
 		Entidad LinCarrito
 		Interfaz Carrito
 	
-	+Aurelio Bonilla(29523160S):
+	+Aurelio Bonilla(abab4-ua):
 		Entidad Pedido
 		Entidad TipoArticulo
 		Interfaz Pedido
 		Interfaz VerPedido
 
-	+Javier Arribas(05445569C):
+	+Javier Arribas(jag99-ua):
 		Entidad LinPedido
-		Funcionalidad Estadísticas
+		Funcionalidad Estadï¿½sticas
 		Interfaz Pedido (Ayuda)
 		Interfaz VerPedido (Ayuda)
-		Interfaz Estadísticas
+		Interfaz Estadï¿½sticas
 
 ## Base de Datos
 
 El archivo de la Base de Datos se encuentra en el directorio principal del repositorio. Su nombre es "FrikiPopBD.pdf".
-Además, se ha incluido un archivo llamado "scriptBD.txt" para que quien lo necesite pueda crear la BD directamente.
+Ademï¿½s, se ha incluido un archivo llamado "scriptBD.txt" para que quien lo necesite pueda crear la BD directamente.
 Se explica en la descripcion como crear la BD.
 
-## Presentación
+## Presentaciï¿½n
 
-La presentación se entucantra dentro de una carpeta en el directorio principal del repositorio llamada Presentación.
+La presentaciï¿½n se entucantra dentro de una carpeta en el directorio principal del repositorio llamada Presentaciï¿½n.
 El nombre del archivo es Presentacion FrikiPop.pdf
 
 ## EntregaFinal
 
 La entrega final es demasiado pesada para github, por lo que se ha optado por subir el archivo a google drive y 
 poner el enlace en un archivo en el repositorio. El archivo se llama Enlace engregaFinal.txt y se encuentra donde 
-debería estar el archivo comprimido. Desde el enlace se puede descargar el comprimido.
+deberï¿½a estar el archivo comprimido. Desde el enlace se puede descargar el comprimido.
 
 ## Evaluaciones Finales
 
-La aplicación web creada consiste en una aplicación de compra-venta de articulo cuyos propietarios son los mismos usuarios.
-Cuenta con una parte pública y otra privada, dividida entre el usuario normal y el usuario-administrador, cada uno con mas 
-privilegios que el anterior. Los usuarios pueden comprar uno o más artículos al mismo tiempo, almacenar tarjetas de crédito
-para pagar y visualizar sus pedidos. Además, se lleva un conteo de ventas de cada usuario, con las que se hacen estadísticas, 
+La aplicaciï¿½n web creada consiste en una aplicaciï¿½n de compra-venta de articulo cuyos propietarios son los mismos usuarios.
+Cuenta con una parte pï¿½blica y otra privada, dividida entre el usuario normal y el usuario-administrador, cada uno con mas 
+privilegios que el anterior. Los usuarios pueden comprar uno o mï¿½s artï¿½culos al mismo tiempo, almacenar tarjetas de crï¿½dito
+para pagar y visualizar sus pedidos. Ademï¿½s, se lleva un conteo de ventas de cada usuario, con las que se hacen estadï¿½sticas, 
 y se tiene un apartado de acuerdos con empresas para publicitarse en la web.
 
-Entre las dificultades mas notables está poder coordinar lo que otros van a necesitar de lo que uno mismo está haciendo, ya que
-alguien puede necesitar un método/botón/parámetro/validación que no controlas y a la larga dan fallos. Otra cosa que se nos ha
-complicado es la validación de ciertos datos, aunque todos estos problemas los hemos podido solucionar.
+Entre las dificultades mas notables estï¿½ poder coordinar lo que otros van a necesitar de lo que uno mismo estï¿½ haciendo, ya que
+alguien puede necesitar un mï¿½todo/botï¿½n/parï¿½metro/validaciï¿½n que no controlas y a la larga dan fallos. Otra cosa que se nos ha
+complicado es la validaciï¿½n de ciertos datos, aunque todos estos problemas los hemos podido solucionar.
 
-Se planteó en un inicio finalizar la práctica una semana antes de la fecha de la presentación, para dejar suficiente margen para
-solución de errores. Al final, la práctica visualmente se terminó dos dias antes de la presentación, por lo que pudimos hacer una 
-presentación real con lo que nuestra aplicación web presenta sin faltar nada por hacer. Durante la realización de toda la práctica,
+Se planteï¿½ en un inicio finalizar la prï¿½ctica una semana antes de la fecha de la presentaciï¿½n, para dejar suficiente margen para
+soluciï¿½n de errores. Al final, la prï¿½ctica visualmente se terminï¿½ dos dias antes de la presentaciï¿½n, por lo que pudimos hacer una 
+presentaciï¿½n real con lo que nuestra aplicaciï¿½n web presenta sin faltar nada por hacer. Durante la realizaciï¿½n de toda la prï¿½ctica,
 se iban planteando unos objetivos semanales adaptados al avance de las tareas particulares de cada integrante de grupo, pudiendo 
-organizarse con tiempo suficiente para prevenir errores. Además, de esta manera quien acabase en su tiempo estimado podría ayudar
-a otro integrante a quien se le esté acumulando el trabajo.
+organizarse con tiempo suficiente para prevenir errores. Ademï¿½s, de esta manera quien acabase en su tiempo estimado podrï¿½a ayudar
+a otro integrante a quien se le estï¿½ acumulando el trabajo.
 
-En general, estamos satisfechos con el trabajo realizado, con el resultado final y con el ambiente y organización del grupo.
+En general, estamos satisfechos con el trabajo realizado, con el resultado final y con el ambiente y organizaciï¿½n del grupo.
 
-## Usuarios y Contraseñas
+## Usuarios y Contraseï¿½as
 
-Con la finalidad de poder añadir diversos artículos a la BD, se han necesitado crear varios usuarios. Muchos de ellos son símplemente
-para poseer artículos y que aporten lo que la página necesita. Sin embargo, hay otros con pedidos, carrito, etc... Se puede acceder a cualquiera,
-pero para poder visualizar todos los rincones de la web solo se necesitarían 2 o 3:
+Con la finalidad de poder aï¿½adir diversos artï¿½culos a la BD, se han necesitado crear varios usuarios. Muchos de ellos son sï¿½mplemente
+para poseer artï¿½culos y que aporten lo que la pï¿½gina necesita. Sin embargo, hay otros con pedidos, carrito, etc... Se puede acceder a cualquiera,
+pero para poder visualizar todos los rincones de la web solo se necesitarï¿½an 2 o 3:
 
-Para acceder a la parte pública no se necesita estar logueado
+Para acceder a la parte pï¿½blica no se necesita estar logueado
 
-Para acceder a la parte privada de usuario, con una cuenta estandar es suficiente. A continuación están el usuario y contraseña:
+Para acceder a la parte privada de usuario, con una cuenta estandar es suficiente. A continuaciï¿½n estï¿½n el usuario y contraseï¿½a:
 Usuario: Usuario_Promedio
-Contraseña: Contrasenya123
+Contraseï¿½a: Contrasenya123
 
-Para acceder a la parte privada con permisos de administrador, hace falta que la cuenta esté reconocida como tal. A continuación se muestran
+Para acceder a la parte privada con permisos de administrador, hace falta que la cuenta estï¿½ reconocida como tal. A continuaciï¿½n se muestran
 dos cuentas disponibles para ello:
 Usuario: TuAdminDeConfianza
-Contraseña: Eladmin03
+Contraseï¿½a: Eladmin03
 
 Usuario: alex_gm_03	
-Contraseña: Secreto123
+Contraseï¿½a: Secreto123
 
